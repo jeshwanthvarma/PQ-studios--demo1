@@ -812,7 +812,7 @@
             align-items: center;
             background-attachment: fixed;
             background: linear-gradient(135deg, rgba(26,26,46,0.9), rgba(22,33,62,0.8)),
-                        url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
+                        url('images/profile/sai-profile.jpg') center/cover;
             color: var(--white);
         }
 
@@ -967,7 +967,7 @@
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, rgba(26,26,46,0.9), rgba(22,33,62,0.8)),
-                        url('https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
+                        url('images/homepage/homepage-slideshow-02.jpg') center/cover;
             color: var(--white);
         }
 
@@ -1410,7 +1410,7 @@
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, rgba(26,26,46,0.9), rgba(22,33,62,0.8)),
-                        url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
+                        url('images/homepage/homepage-slideshow-01.jpg') center/cover;
             color: var(--white);
         }
 
@@ -2122,7 +2122,7 @@
             <section class="section">
                 <div class="container">
                     <div class="text-center mb-4">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                        <img src="images/profile/sai-profile.jpg" 
                              alt="Sai Kumar Maddina - Professional Photographer" 
                              class="profile-image"
                              loading="lazy">
@@ -2628,29 +2628,29 @@
             link.addEventListener('click', closeMenu);
         });
 
-        // ===== SLIDESHOW DATA - UPDATED WITH UNSPLASH IMAGES =====
+        // ===== SLIDESHOW DATA - UPDATED WITH YOUR FILE NAMES =====
         const slideshowData = [
             {
                 id: 1,
-                filename: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+                filename: "images/homepage/homepage-slideshow-01.jpg",
                 alt: "Professional photography studio setup at PQ Studios",
                 title: "Our Modern Studio"
             },
             {
                 id: 2,
-                filename: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+                filename: "images/homepage/homepage-slideshow-02.jpg",
                 alt: "Food photography session with delicious dishes",
                 title: "Food Photography Excellence"
             },
             {
                 id: 3,
-                filename: "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+                filename: "images/homepage/homepage-slideshow-03.jpg",
                 alt: "Product photography setup with professional lighting",
                 title: "Product Photography"
             },
             {
                 id: 4,
-                filename: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+                filename: "images/homepage/homepage-slideshow-04.jpg",
                 alt: "Fashion photography shoot with professional models",
                 title: "Fashion & Lifestyle"
             }
@@ -2678,13 +2678,13 @@
                 
                 // Create image element
                 const img = document.createElement('img');
-                img.src = slide.filename; // Use the Unsplash URL directly
+                img.src = slide.filename;
                 img.alt = slide.alt;
                 img.loading = "lazy";
                 
                 // Add fallback if image fails to load
                 img.onerror = function() {
-                    this.src = 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
+                    this.src = 'images/homepage/homepage-slideshow-01.jpg';
                     this.alt = 'Image loading error';
                 };
                 
@@ -2962,13 +2962,13 @@
 
         // ===== GALLERY DATA =====
         const galleryCategories = [
-            { id: 'food', name: 'Food Photography', count: 9 },
-            { id: 'product', name: 'Product Photography', count: 9 },
-            { id: 'ecommerce', name: 'E-Commerce Visuals', count: 9 },
-            { id: 'fashion', name: 'Fashion & Lifestyle', count: 9 },
-            { id: 'pets', name: 'Pet Photography', count: 9 },
-            { id: 'interiors', name: 'Interiors & Architecture', count: 9 },
-            { id: 'studio', name: 'Studio Shots', count: 9 }
+            { id: 'food', name: 'Food Photography', count: 12 },
+            { id: 'product', name: 'Product Photography', count: 12 },
+            { id: 'ecommerce', name: 'E-Commerce Visuals', count: 12 },
+            { id: 'fashion', name: 'Fashion & Lifestyle', count: 12 },
+            { id: 'pets', name: 'Pet Photography', count: 12 },
+            { id: 'interiors', name: 'Interiors & Architecture', count: 12 },
+            { id: 'studio', name: 'Studio Shots', count: 12 }
         ];
 
         // ===== GALLERY POPUP =====
@@ -3077,7 +3077,7 @@
             };
             
             img.onerror = () => {
-                modalImage.src = 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
+                modalImage.src = 'images/homepage/homepage-slideshow-01.jpg';
                 modalImage.style.opacity = '1';
                 modalTitle.textContent = 'Image';
                 modalCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
@@ -3154,31 +3154,122 @@
 
             grid.innerHTML = '';
             
-            const categoryColors = {
-                'food': ['#FF6B6B', '#FFA726', '#FFE082', '#81C784', '#4FC3F7', '#9575CD', '#F48FB1'],
-                'product': ['#42A5F5', '#26C6DA', '#66BB6A', '#FFA726', '#EC407A', '#AB47BC', '#5C6BC0'],
-                'ecommerce': ['#2196F3', '#00BCD4', '#4CAF50', '#FFC107', '#FF5722', '#9C27B0', '#3F51B5'],
-                'fashion': ['#F44336', '#E91E63', '#9C27B0', '#673AB7', '#3F51B5', '#2196F3', '#00BCD4'],
-                'pets': ['#795548', '#8D6E63', '#A1887F', '#BCAAA4', '#D7CCC8', '#EFEBE9', '#FFCCBC'],
-                'interiors': ['#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800', '#FF5722', '#795548'],
-                'studio': ['#607D8B', '#546E7A', '#455A64', '#37474F', '#263238', '#FF7043', '#29B6F6']
+            // Define image paths for each category
+            const imagePaths = {
+                'food': [
+                    'images/gallery/food/food-photography-01.jpg',
+                    'images/gallery/food/food-photography-02.jpg',
+                    'images/gallery/food/food-photography-03.jpg',
+                    'images/gallery/food/food-photography-04.jpg',
+                    'images/gallery/food/food-photography-05.jpg',
+                    'images/gallery/food/food-photography-06.jpg',
+                    'images/gallery/food/food-photography-07.jpg',
+                    'images/gallery/food/food-photography-08.jpg',
+                    'images/gallery/food/food-photography-09.jpg',
+                    'images/gallery/food/food-photography-10.jpg',
+                    'images/gallery/food/food-photography-11.jpg',
+                    'images/gallery/food/food-photography-12.jpg'
+                ],
+                'product': [
+                    'images/gallery/product/product-photography-01.jpg',
+                    'images/gallery/product/product-photography-02.jpg',
+                    'images/gallery/product/product-photography-03.jpg',
+                    'images/gallery/product/product-photography-04.jpg',
+                    'images/gallery/product/product-photography-05.jpg',
+                    'images/gallery/product/product-photography-06.jpg',
+                    'images/gallery/product/product-photography-07.jpg',
+                    'images/gallery/product/product-photography-08.jpg',
+                    'images/gallery/product/product-photography-09.jpg',
+                    'images/gallery/product/product-photography-10.jpg',
+                    'images/gallery/product/product-photography-11.jpg',
+                    'images/gallery/product/product-photography-12.jpg'
+                ],
+                'ecommerce': [
+                    'images/gallery/ecommerce/ecommerce-visuals-01.jpg',
+                    'images/gallery/ecommerce/ecommerce-visuals-02.jpg',
+                    'images/gallery/ecommerce/ecommerce-visuals-03.jpg',
+                    'images/gallery/ecommerce/ecommerce-visuals-04.jpg',
+                    'images/gallery/ecommerce/ecommerce-visuals-05.jpg',
+                    'images/gallery/ecommerce/ecommerce-visuals-06.jpg',
+                    'images/gallery/ecommerce/ecommerce-visuals-07.jpg',
+                    'images/gallery/ecommerce/ecommerce-visuals-08.jpg',
+                    'images/gallery/ecommerce/ecommerce-visuals-09.jpg',
+                    'images/gallery/ecommerce/ecommerce-visuals-10.jpg',
+                    'images/gallery/ecommerce/ecommerce-visuals-11.jpg',
+                    'images/gallery/ecommerce/ecommerce-visuals-12.jpg'
+                ],
+                'fashion': [
+                    'images/gallery/fashion/fashion-lifestyle-01.jpg',
+                    'images/gallery/fashion/fashion-lifestyle-02.jpg',
+                    'images/gallery/fashion/fashion-lifestyle-03.jpg',
+                    'images/gallery/fashion/fashion-lifestyle-04.jpg',
+                    'images/gallery/fashion/fashion-lifestyle-05.jpg',
+                    'images/gallery/fashion/fashion-lifestyle-06.jpg',
+                    'images/gallery/fashion/fashion-lifestyle-07.jpg',
+                    'images/gallery/fashion/fashion-lifestyle-08.jpg',
+                    'images/gallery/fashion/fashion-lifestyle-09.jpg',
+                    'images/gallery/fashion/fashion-lifestyle-10.jpg',
+                    'images/gallery/fashion/fashion-lifestyle-11.jpg',
+                    'images/gallery/fashion/fashion-lifestyle-12.jpg'
+                ],
+                'pets': [
+                    'images/gallery/pets/pet-photography-01.jpg',
+                    'images/gallery/pets/pet-photography-02.jpg',
+                    'images/gallery/pets/pet-photography-03.jpg',
+                    'images/gallery/pets/pet-photography-04.jpg',
+                    'images/gallery/pets/pet-photography-05.jpg',
+                    'images/gallery/pets/pet-photography-06.jpg',
+                    'images/gallery/pets/pet-photography-07.jpg',
+                    'images/gallery/pets/pet-photography-08.jpg',
+                    'images/gallery/pets/pet-photography-09.jpg',
+                    'images/gallery/pets/pet-photography-10.jpg',
+                    'images/gallery/pets/pet-photography-11.jpg',
+                    'images/gallery/pets/pet-photography-12.jpg'
+                ],
+                'interiors': [
+                    'images/gallery/interiors/interiors-architecture-01.jpg',
+                    'images/gallery/interiors/interiors-architecture-02.jpg',
+                    'images/gallery/interiors/interiors-architecture-03.jpg',
+                    'images/gallery/interiors/interiors-architecture-04.jpg',
+                    'images/gallery/interiors/interiors-architecture-05.jpg',
+                    'images/gallery/interiors/interiors-architecture-06.jpg',
+                    'images/gallery/interiors/interiors-architecture-07.jpg',
+                    'images/gallery/interiors/interiors-architecture-08.jpg',
+                    'images/gallery/interiors/interiors-architecture-09.jpg',
+                    'images/gallery/interiors/interiors-architecture-10.jpg',
+                    'images/gallery/interiors/interiors-architecture-11.jpg',
+                    'images/gallery/interiors/interiors-architecture-12.jpg'
+                ],
+                'studio': [
+                    'images/gallery/studio/studio-shots-01.jpg',
+                    'images/gallery/studio/studio-shots-02.jpg',
+                    'images/gallery/studio/studio-shots-03.jpg',
+                    'images/gallery/studio/studio-shots-04.jpg',
+                    'images/gallery/studio/studio-shots-05.jpg',
+                    'images/gallery/studio/studio-shots-06.jpg',
+                    'images/gallery/studio/studio-shots-07.jpg',
+                    'images/gallery/studio/studio-shots-08.jpg',
+                    'images/gallery/studio/studio-shots-09.jpg',
+                    'images/gallery/studio/studio-shots-10.jpg',
+                    'images/gallery/studio/studio-shots-11.jpg',
+                    'images/gallery/studio/studio-shots-12.jpg'
+                ]
             };
-            
-            const colors = categoryColors[categoryId] || ['#3B82F6', '#EF4444', '#10B981', '#F59E0B', '#8B5CF6', '#06B6D4', '#84CC16'];
+
+            const paths = imagePaths[categoryId] || [];
             
             for (let i = 1; i <= count; i++) {
-                const color = colors[(i - 1) % colors.length];
-                
-                const svgPlaceholder = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='${color.replace('#', '%23')}'/%3E%3Ctext x='200' y='200' text-anchor='middle' dy='.3em' fill='white' font-family='Arial, sans-serif' font-size='24' font-weight='bold'%3E${categoryId.charAt(0).toUpperCase() + categoryId.slice(1)} ${i}%3C/text%3E%3C/svg%3E`;
+                const path = paths[i-1] || `images/gallery/${categoryId}/${categoryId}-${i.toString().padStart(2, '0')}.jpg`;
                 
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'gallery-item';
                 galleryItem.innerHTML = `
-                    <img src="${svgPlaceholder}" 
+                    <img src="${path}" 
                          alt="${categoryId} photography image ${i}" 
                          loading="lazy"
                          width="400"
-                         height="400">
+                         height="400"
+                         data-src="${path}">
                 `;
                 
                 galleryItem.addEventListener('click', () => {
@@ -3194,20 +3285,26 @@
         }
 
         function lazyLoadGalleryImages() {
-            const galleryItems = document.querySelectorAll('.gallery-item img');
+            const galleryItems = document.querySelectorAll('.gallery-item img[data-src]');
             
             const imageObserver = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const img = entry.target;
-                        const src = img.src;
+                        const src = img.getAttribute('data-src');
                         
                         const image = new Image();
                         image.onload = () => {
+                            img.src = src;
                             img.classList.add('loaded');
                             img.style.opacity = '1';
-                            const parent = img.parentElement;
-                            parent.style.setProperty('--loading', 'none');
+                            img.removeAttribute('data-src');
+                        };
+                        image.onerror = () => {
+                            // Use placeholder if image fails to load
+                            img.src = 'images/homepage/homepage-slideshow-01.jpg';
+                            img.classList.add('loaded');
+                            img.style.opacity = '1';
                         };
                         image.src = src;
                         
@@ -3235,7 +3332,7 @@
             }
         }
 
-        // ===== FEATURED WORK - UPDATED WITH UNSPLASH IMAGES =====
+        // ===== FEATURED WORK - UPDATED WITH YOUR FILE NAMES =====
         const featuredGrid = document.getElementById('featuredGrid');
 
         function loadFeaturedWork() {
@@ -3244,22 +3341,22 @@
             const featuredImages = [
                 { 
                     category: 'food', 
-                    image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    image: "images/homepage/featured-01.jpg",
                     title: 'Gourmet Burger'
                 },
                 { 
                     category: 'product', 
-                    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    image: "images/homepage/featured-02.jpg",
                     title: 'Tech Product'
                 },
                 { 
                     category: 'fashion', 
-                    image: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    image: "images/homepage/featured-03.jpg",
                     title: 'Fashion Shoot'
                 },
                 { 
                     category: 'pets', 
-                    image: "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    image: "images/homepage/featured-04.jpg",
                     title: 'Pet Portrait'
                 }
             ];
@@ -3281,7 +3378,8 @@
                          alt="${item.title}" 
                          loading="lazy"
                          width="400"
-                         height="400">
+                         height="400"
+                         data-src="${item.image}">
                 `;
                 featuredGrid.appendChild(featuredItem);
             });
@@ -3290,20 +3388,20 @@
         // ===== CLIENTS SECTION =====
         const clientsTrack = document.getElementById('clientsTrack');
 
-        // UPDATED CLIENT LOGOS DATA - 12 LOGOS
+        // CLIENT LOGOS DATA - 12 LOGOS
         const clientBrands = [
-            { name: "Client Logo 1", filename: "client-logo1.jpg", color: "#FC8019" },
-            { name: "Client Logo 2", filename: "client-logo2.jpg", color: "#000000" },
-            { name: "Client Logo 3", filename: "client-logo3.jpg", color: "#FF9900" },
-            { name: "Client Logo 4", filename: "client-logo4.jpg", color: "#E50914" },
-            { name: "Client Logo 5", filename: "client-logo5.jpg", color: "#1DB954" },
-            { name: "Client Logo 6", filename: "client-logo6.jpg", color: "#FF5A5F" },
-            { name: "Client Logo 7", filename: "client-logo7.jpg", color: "#4285F4" },
-            { name: "Client Logo 8", filename: "client-logo8.jpg", color: "#0078D4" },
-            { name: "Client Logo 9", filename: "client-logo9.jpg", color: "#3B82F6" },
-            { name: "Client Logo 10", filename: "client-logo10.jpg", color: "#10B981" },
-            { name: "Client Logo 11", filename: "client-logo11.jpg", color: "#F59E0B" },
-            { name: "Client Logo 12", filename: "client-logo12.jpg", color: "#8B5CF6" }
+            { name: "Client Logo 1", filename: "client-logo-01.jpg" },
+            { name: "Client Logo 2", filename: "client-logo-02.jpg" },
+            { name: "Client Logo 3", filename: "client-logo-03.jpg" },
+            { name: "Client Logo 4", filename: "client-logo-04.jpg" },
+            { name: "Client Logo 5", filename: "client-logo-05.jpg" },
+            { name: "Client Logo 6", filename: "client-logo-06.jpg" },
+            { name: "Client Logo 7", filename: "client-logo-07.jpg" },
+            { name: "Client Logo 8", filename: "client-logo-08.jpg" },
+            { name: "Client Logo 9", filename: "client-logo-09.jpg" },
+            { name: "Client Logo 10", filename: "client-logo-10.jpg" },
+            { name: "Client Logo 11", filename: "client-logo-11.jpg" },
+            { name: "Client Logo 12", filename: "client-logo-12.jpg" }
         ];
 
         function loadClients() {
@@ -3313,51 +3411,23 @@
 
             // Create 3 sets for infinite scrolling effect
             for (let set = 0; set < 3; set++) {
-                clientBrands.forEach(client => {
-                    // Create SVG placeholder with the filename
-                    const svgPlaceholder = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Crect width='200' height='100' fill='${client.color.replace('#', '%23')}' rx='12'/%3E%3Ctext x='100' y='45' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-size='16' font-weight='bold'%3E${encodeURIComponent(client.name)}%3C/text%3E%3Ctext x='100' y='70' text-anchor='middle' fill='rgba(255,255,255,0.8)' font-family='Arial, sans-serif' font-size='11'%3E${encodeURIComponent(client.filename)}%3C/text%3E%3C/svg%3E`;
-                    
+                clientBrands.forEach((client, index) => {
                     const clientItem = document.createElement('div');
                     clientItem.className = 'client-logo-item';
                     clientItem.setAttribute('data-client', client.filename.replace('.jpg', ''));
                     
                     clientItem.innerHTML = `
-                        <img src="${svgPlaceholder}" 
+                        <img src="images/clients/${client.filename}" 
                              alt="${client.name}" 
                              class="client-logo-img"
                              loading="lazy"
                              width="200"
-                             height="100"
-                             data-src="images/clients/${client.filename}">
+                             height="100">
                     `;
                     
                     clientsTrack.appendChild(clientItem);
                 });
             }
-            
-            // Add lazy loading for client logos
-            lazyLoadClientLogos();
-        }
-
-        function lazyLoadClientLogos() {
-            const clientLogos = document.querySelectorAll('.client-logo-img[data-src]');
-            
-            const logoObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        const realSrc = img.getAttribute('data-src');
-                        
-                        // In a real scenario, you would load the actual image
-                        // For now, we'll just keep the placeholder
-                        // img.src = realSrc;
-                        
-                        logoObserver.unobserve(img);
-                    }
-                });
-            }, { rootMargin: '50px' });
-            
-            clientLogos.forEach(img => logoObserver.observe(img));
         }
 
         // ===== CONTACT FORM =====
@@ -3500,7 +3570,7 @@
 
         // ===== INITIALIZE EVERYTHING =====
         document.addEventListener('DOMContentLoaded', function() {
-            // Generate the enhanced background - NOW VERY VISIBLE
+            // Generate the enhanced background
             generateIcons();
             
             // Initialize page
@@ -3512,8 +3582,8 @@
             // Load all content
             loadServices();
             loadGallery();
-            loadFeaturedWork(); // This will now show Unsplash images
-            loadClients(); // This now loads 12 logos
+            loadFeaturedWork();
+            loadClients(); // This loads 12 logos
             
             // Handle gallery category from URL
             const urlParams = new URLSearchParams(window.location.search);
