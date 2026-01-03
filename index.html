@@ -2628,29 +2628,29 @@
             link.addEventListener('click', closeMenu);
         });
 
-        // ===== SLIDESHOW DATA =====
+        // ===== SLIDESHOW DATA - UPDATED WITH UNSPLASH IMAGES =====
         const slideshowData = [
             {
                 id: 1,
-                filename: "homepage-slideshow-01.jpg",
+                filename: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
                 alt: "Professional photography studio setup at PQ Studios",
                 title: "Our Modern Studio"
             },
             {
                 id: 2,
-                filename: "homepage-slideshow-02.jpg",
+                filename: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
                 alt: "Food photography session with delicious dishes",
                 title: "Food Photography Excellence"
             },
             {
                 id: 3,
-                filename: "homepage-slideshow-03.jpg",
+                filename: "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
                 alt: "Product photography setup with professional lighting",
                 title: "Product Photography"
             },
             {
                 id: 4,
-                filename: "homepage-slideshow-04.jpg",
+                filename: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
                 alt: "Fashion photography shoot with professional models",
                 title: "Fashion & Lifestyle"
             }
@@ -2678,14 +2678,14 @@
                 
                 // Create image element
                 const img = document.createElement('img');
-                img.src = `images/homepage/${slide.filename}`;
+                img.src = slide.filename; // Use the Unsplash URL directly
                 img.alt = slide.alt;
                 img.loading = "lazy";
                 
                 // Add fallback if image fails to load
                 img.onerror = function() {
-                    this.src = `https://images.unsplash.com/photo-${1554048612 + index}-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80`;
-                    this.alt = `Photography studio image ${index + 1}`;
+                    this.src = 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
+                    this.alt = 'Image loading error';
                 };
                 
                 slideElement.appendChild(img);
@@ -3235,25 +3235,38 @@
             }
         }
 
-        // ===== FEATURED WORK =====
+        // ===== FEATURED WORK - UPDATED WITH UNSPLASH IMAGES =====
         const featuredGrid = document.getElementById('featuredGrid');
 
         function loadFeaturedWork() {
             if (!featuredGrid) return;
 
             const featuredImages = [
-                { category: 'food', number: 1, title: 'Gourmet Burger' },
-                { category: 'product', number: 1, title: 'Tech Product' },
-                { category: 'fashion', number: 1, title: 'Fashion Shoot' },
-                { category: 'pets', number: 1, title: 'Pet Portrait' }
+                { 
+                    category: 'food', 
+                    image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    title: 'Gourmet Burger'
+                },
+                { 
+                    category: 'product', 
+                    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    title: 'Tech Product'
+                },
+                { 
+                    category: 'fashion', 
+                    image: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    title: 'Fashion Shoot'
+                },
+                { 
+                    category: 'pets', 
+                    image: "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                    title: 'Pet Portrait'
+                }
             ];
 
             featuredGrid.innerHTML = '';
 
             featuredImages.forEach(item => {
-                const color = getCategoryColor(item.category);
-                const svgPlaceholder = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='${color.replace('#', '%23')}'/%3E%3Ctext x='200' y='200' text-anchor='middle' dy='.3em' fill='white' font-family='Arial, sans-serif' font-size='20' font-weight='bold'%3E${item.title}%3C/text%3E%3C/svg%3E`;
-                
                 const featuredItem = document.createElement('div');
                 featuredItem.className = 'featured-item';
                 featuredItem.addEventListener('click', () => {
@@ -3264,7 +3277,7 @@
                 });
                 
                 featuredItem.innerHTML = `
-                    <img src="${svgPlaceholder}" 
+                    <img src="${item.image}" 
                          alt="${item.title}" 
                          loading="lazy"
                          width="400"
@@ -3272,19 +3285,6 @@
                 `;
                 featuredGrid.appendChild(featuredItem);
             });
-        }
-
-        function getCategoryColor(category) {
-            const colors = {
-                'food': '#F59E0B',
-                'product': '#3B82F6',
-                'ecommerce': '#10B981',
-                'fashion': '#EC4899',
-                'pets': '#8B5CF6',
-                'interiors': '#F97316',
-                'studio': '#06B6D4'
-            };
-            return colors[category] || '#6B7280';
         }
 
         // ===== CLIENTS SECTION =====
@@ -3512,7 +3512,7 @@
             // Load all content
             loadServices();
             loadGallery();
-            loadFeaturedWork();
+            loadFeaturedWork(); // This will now show Unsplash images
             loadClients(); // This now loads 12 logos
             
             // Handle gallery category from URL
