@@ -628,7 +628,7 @@
         /* ===== HOME PAGE - Slideshow Hero ===== */
         .slideshow-hero {
             position: relative;
-            min-height: 100vh; /* Full height */
+            min-height: 85vh;
             display: flex;
             align-items: center;
             overflow: hidden;
@@ -681,15 +681,12 @@
             padding: 10vh 1.5rem 10vh;
             color: var(--white);
             width: 100%;
-            /* REMOVED ALL TEXT AND BUTTONS */
-            display: none;
         }
 
         .hero-title {
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             color: var(--white);
-            display: none; /* Hidden */
         }
 
         .hero-subtitle {
@@ -701,7 +698,6 @@
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
-            display: none; /* Hidden */
         }
 
         @media (min-width: 768px) {
@@ -710,21 +706,35 @@
             }
         }
 
-        /* Video comment section - REMOVED */
+        /* Video comment section */
         .video-comment {
-            display: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            margin: 1.5rem auto;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            font-size: 0.9rem;
+            max-width: 400px;
         }
 
-        /* Slideshow dots - KEPT FOR NAVIGATION */
+        .video-comment i {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        /* Slideshow dots */
         .slideshow-dots {
             display: flex;
             gap: 0.75rem;
             justify-content: center;
             margin-top: 2rem;
-            position: absolute;
-            bottom: 30px;
-            left: 0;
-            right: 0;
+            position: relative;
             z-index: 3;
         }
 
@@ -802,7 +812,7 @@
             align-items: center;
             background-attachment: fixed;
             background: linear-gradient(135deg, rgba(26,26,46,0.9), rgba(22,33,62,0.8)),
-                        url('images/profile/sai-profile.jpg') center/cover;
+                        url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
             color: var(--white);
         }
 
@@ -957,7 +967,7 @@
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, rgba(26,26,46,0.9), rgba(22,33,62,0.8)),
-                        url('images/homepage/homepage-slideshow-02.jpg') center/cover;
+                        url('https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
             color: var(--white);
         }
 
@@ -1081,147 +1091,263 @@
             transform: translateY(-3px);
         }
 
-        /* ===== GALLERY PAGE ===== */
-        .gallery-hero {
-            position: relative;
-            min-height: 40vh;
-            display: flex;
-            align-items: center;
-            background: var(--primary);
-            color: var(--white);
+        /* ===== GALLERY PAGE - COMPLETELY REDESIGNED ===== */
+        #gallery-page {
+            background: var(--white);
         }
 
-        .gallery-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
+        #gallery-page .header {
+            position: fixed;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 100px;
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='100' viewBox='0 0 120 100'%3E%3Cpath d='M0,0 L120,0 L120,20 L60,20 L40,40 L20,20 L0,40 Z' fill='white' fill-opacity='0.05'/%3E%3Cpath d='M0,40 L120,40 L120,60 L60,60 L40,80 L20,60 L0,80 Z' fill='white' fill-opacity='0.05'/%3E%3Cpath d='M0,80 L120,80 L120,100 L60,100 L40,120 L20,100 L0,120 Z' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
-            background-repeat: repeat-x;
-            background-position: bottom;
-            z-index: 2;
-            pointer-events: none;
+            z-index: 1000;
         }
 
-        .gallery-section {
-            margin: 2.5rem 0;
-            padding: 2.5rem 0;
-            border-bottom: 1px solid var(--gray-light);
+        /* Remove hero section from gallery page */
+        #gallery-page .slideshow-hero,
+        #gallery-page .gallery-hero {
+            display: none !important;
+        }
+
+        /* Gallery page specific styles */
+        .gallery-page-content {
+            padding-top: 70px;
+            min-height: 100vh;
             position: relative;
         }
 
-        .gallery-section:last-child {
+        /* Category dropdown toggle */
+        .category-toggle {
+            position: fixed;
+            top: 80px;
+            left: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.3);
+            transition: all 0.2s ease;
+            width: calc(100% - 40px);
+            max-width: 400px;
+            margin: 0 auto;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .category-toggle:active {
+            background: #d43c55;
+            transform: scale(0.98);
+        }
+
+        .category-toggle i {
+            font-size: 1rem;
+        }
+
+        /* Category dropdown menu */
+        .category-selector {
+            position: fixed;
+            top: 140px;
+            left: 20px;
+            right: 20px;
+            z-index: 999;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            max-height: 70vh;
+            overflow: hidden;
+            display: none;
+            max-width: 400px;
+            margin: 0 auto;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .category-selector.active {
+            display: block;
+            animation: slideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .category-title {
+            padding: 18px 20px;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .category-list {
+            list-style: none;
+            max-height: calc(70vh - 60px);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .category-list::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .category-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        .category-list::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .category-list li {
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .category-list li:last-child {
             border-bottom: none;
         }
 
-        .gallery-section:first-of-type {
-            margin-top: 1.5rem;
+        .category-link {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            background: transparent;
+            font-size: 0.95rem;
+            min-height: 56px;
         }
 
-        /* ===== GALLERY PAGE COMPLETE REDESIGN ===== */
-        #gallery-page .container {
-            padding: 0 !important;
-            max-width: 100% !important;
+        .category-link:active,
+        .category-link.active {
+            background: rgba(233, 69, 96, 0.08);
+            color: var(--accent);
+            padding-left: 24px;
         }
 
+        .category-link i {
+            margin-right: 12px;
+            width: 20px;
+            text-align: center;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        /* Gallery sections */
         .gallery-section {
-            padding-left: 20px !important;
-            padding-right: 20px !important;
+            padding: 40px 20px;
+            position: relative;
+            scroll-margin-top: 140px;
         }
 
-        @media (min-width: 768px) {
-            #gallery-page .container {
-                padding: 0 !important;
-            }
-            
-            .gallery-section {
-                padding-left: 40px !important;
-                padding-right: 40px !important;
-            }
+        .gallery-section:nth-child(odd) {
+            background: rgba(248, 249, 250, 0.5);
         }
 
-        @media (min-width: 1200px) {
-            .gallery-section {
-                padding-left: 60px !important;
-                padding-right: 60px !important;
-            }
+        .section-header {
+            text-align: center;
+            margin-bottom: 24px;
         }
 
-        /* ===== INSTAGRAM-STYLE GALLERY GRID (3-COLUMN BORDERLESS) ===== */
+        .gallery-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .gallery-section p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Instagram-style grid - 3 columns mobile, 5 columns desktop */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2px;
-            margin-top: 1.5rem;
-            position: relative;
-            z-index: 2;
+            width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
-        @media (max-width: 767px) {
-            #gallery-page .container {
-                padding: 0 !important;
-            }
-            
+        @media (min-width: 1024px) {
             .gallery-grid {
-                grid-template-columns: repeat(3, 1fr) !important;
-                gap: 2px !important;
-            }
-            
-            .gallery-item {
-                border-radius: 0 !important;
-                margin: 0 !important;
+                grid-template-columns: repeat(5, 1fr);
             }
             
             .gallery-section {
-                margin: 0 !important;
-                padding: 15px 0 !important;
+                padding: 50px 40px;
             }
             
             .gallery-section h2 {
-                padding-left: 15px;
-                padding-right: 15px;
-                font-size: 1.3rem;
-                margin-bottom: 0.5rem;
+                font-size: 1.8rem;
             }
-            
-            .gallery-section p {
-                padding-left: 15px;
-                padding-right: 15px;
-                font-size: 0.9rem;
-                margin-bottom: 1rem;
-            }
+        }
+
+        /* Remove all gaps for true border-to-border */
+        .gallery-grid {
+            gap: 0 !important;
         }
 
         .gallery-item {
             position: relative;
-            border-radius: 0;
+            width: 100%;
             overflow: hidden;
             aspect-ratio: 1;
-            background: var(--light);
+            background: #f8f9fa;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            transition: transform 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
         }
 
-        .gallery-item:hover {
-            transform: translateY(-3px);
+        .gallery-item:active {
+            transform: scale(0.98);
         }
 
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
             display: block;
             opacity: 0;
+            transition: opacity 0.3s ease;
+            will-change: opacity;
         }
 
         .gallery-item img.loaded {
             opacity: 1;
         }
 
+        /* Loading animation */
         .gallery-item::before {
             content: '';
             position: absolute;
@@ -1229,168 +1355,14 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background: linear-gradient(90deg, #f5f5f5 25%, #e8e8e8 50%, #f5f5f5 75%);
             background-size: 200% 100%;
-            animation: loading 1.5s infinite;
+            animation: loading 1.5s infinite ease-in-out;
             z-index: 1;
         }
 
-        @keyframes loading {
-            0% { background-position: -200% 0; }
-            100% { background-position: 200% 0; }
-        }
-
-        /* ===== GALLERY POPUP MODAL ===== */
-        .gallery-modal {
+        .gallery-item img.loaded ~ .gallery-item::before {
             display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.95) !important;
-            z-index: 1100;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .gallery-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .modal-content {
-            position: relative;
-            width: 100% !important;
-            height: 100% !important;
-            max-width: none !important;
-            max-height: none !important;
-            background: transparent;
-        }
-
-        .modal-image-container {
-            width: 100%;
-            height: 100vh !important;
-            position: relative;
-            overflow: hidden;
-            border-radius: 0 !important;
-        }
-
-        .modal-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain !important;
-            background: #000 !important;
-        }
-
-        .modal-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 70px !important;
-            height: 70px !important;
-            background: rgba(0,0,0,0.7) !important;
-            border: 2px solid rgba(255,255,255,0.3) !important;
-            color: var(--white);
-            font-size: 1.75rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 2;
-            border-radius: 50%;
-        }
-
-        .modal-nav-btn:hover {
-            background: rgba(255,255,255,0.3);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .modal-prev {
-            left: 1.5rem;
-        }
-
-        .modal-next {
-            right: 1.5rem;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 30px !important;
-            right: 30px !important;
-            width: 50px;
-            height: 50px;
-            background: rgba(0,0,0,0.7) !important;
-            border: 2px solid rgba(255,255,255,0.3) !important;
-            color: var(--white);
-            font-size: 1.5rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            z-index: 2;
-            border-radius: 50%;
-        }
-
-        .modal-close:hover {
-            background: rgba(255,255,255,0.3);
-            transform: rotate(90deg);
-        }
-
-        .modal-info {
-            position: absolute;
-            bottom: 1.5rem;
-            left: 0;
-            right: 0;
-            text-align: center;
-            color: var(--white);
-            padding: 1.5rem;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
-        }
-
-        .modal-title {
-            font-size: 1.4rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        .modal-counter {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-
-        @media (max-width: 768px) {
-            .modal-nav-btn {
-                width: 50px !important;
-                height: 50px !important;
-                font-size: 1.5rem;
-            }
-            
-            .modal-prev {
-                left: 1rem;
-            }
-            
-            .modal-next {
-                right: 1rem;
-            }
-            
-            .modal-close {
-                width: 45px;
-                height: 45px;
-                top: 1rem !important;
-                right: 1rem !important;
-            }
         }
 
         /* ===== CONTACT PAGE ===== */
@@ -1400,7 +1372,7 @@
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, rgba(26,26,46,0.9), rgba(22,33,62,0.8)),
-                        url('images/homepage/homepage-slideshow-01.jpg') center/cover;
+                        url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
             color: var(--white);
         }
 
@@ -2041,13 +2013,28 @@
                 
                 <div class="slideshow-overlay"></div>
                 
-                <!-- REMOVED ALL TEXT AND BUTTONS FROM HERO CONTENT -->
                 <div class="hero-content container">
-                    <!-- Text and buttons removed as requested -->
+                    <h1 class="hero-title">Capture Life's <span class="highlight">Beautiful</span> Moments</h1>
+                    <p class="hero-subtitle">Professional photography studio specializing in food, product, fashion, and commercial photography. Creating stunning visuals that tell your story.</p>
+                    
+                    <!-- Video comment section -->
+                    <div class="video-comment">
+                        <i class="fas fa-video"></i>
+                        <span>We also create cinematic video content for your brand</span>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <a href="#gallery" class="btn btn-primary btn-spacing" onclick="showPage('gallery'); return false;">
+                            <i class="fas fa-images"></i> View Gallery
+                        </a>
+                        <a href="#contact" class="btn btn-outline btn-spacing" style="color: white; border-color: white;" onclick="showPage('contact'); return false;">
+                            <i class="fas fa-calendar"></i> Book a Session
+                        </a>
+                    </div>
+                    
+                    <!-- Slideshow Navigation Dots -->
+                    <div class="slideshow-dots" id="slideshowDots"></div>
                 </div>
-                
-                <!-- Slideshow Navigation Dots (KEPT FOR NAVIGATION) -->
-                <div class="slideshow-dots" id="slideshowDots"></div>
             </section>
 
             <!-- Featured Work Section -->
@@ -2097,11 +2084,10 @@
             <section class="section">
                 <div class="container">
                     <div class="text-center mb-4">
-                        <img src="images/profile/sai-profile.jpg" 
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                              alt="Sai Kumar Maddina - Professional Photographer" 
                              class="profile-image"
-                             loading="lazy"
-                             onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80'">
+                             loading="lazy">
                     </div>
                     
                     <div>
@@ -2245,25 +2231,30 @@
             </section>
         </div>
 
-        <!-- GALLERY PAGE -->
+        <!-- ===== NEW GALLERY PAGE ===== -->
         <div id="gallery-page" class="page">
-            <section class="gallery-hero">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1 class="hero-title">Our <span class="highlight">Gallery</span></h1>
-                        <p class="hero-subtitle">Browse through our work across different photography categories</p>
-                    </div>
-                </div>
-            </section>
+            <!-- Category Dropdown Toggle -->
+            <button class="category-toggle" id="categoryToggle" aria-label="Jump to category">
+                <i class="fas fa-images"></i>
+                <span>Jump to Category</span>
+            </button>
 
-            <section class="section">
-                <div class="container">
-                    <!-- Gallery Sections -->
-                    <div id="gallerySections">
-                        <!-- Gallery sections loaded by JavaScript -->
-                    </div>
+            <!-- Category Dropdown Menu -->
+            <div class="category-selector" id="categorySelector" aria-hidden="true">
+                <div class="category-title">
+                    <i class="fas fa-filter"></i> Gallery Categories
                 </div>
-            </section>
+                <ul class="category-list" id="categoryList">
+                    <!-- Categories loaded by JavaScript -->
+                </ul>
+            </div>
+
+            <!-- Gallery Content -->
+            <div class="gallery-page-content">
+                <div id="gallerySections">
+                    <!-- Gallery sections loaded by JavaScript -->
+                </div>
+            </div>
         </div>
 
         <!-- CONTACT PAGE -->
@@ -2559,6 +2550,11 @@
             history.pushState(null, '', `#${pageId}`);
             window.scrollTo(0, 0);
             closeMenu();
+            
+            // Hide category dropdown when switching pages
+            if (pageId !== 'gallery') {
+                document.getElementById('categorySelector').classList.remove('active');
+            }
         }
 
         window.addEventListener('popstate', () => {
@@ -2604,29 +2600,29 @@
             link.addEventListener('click', closeMenu);
         });
 
-        // ===== SLIDESHOW DATA - UPDATED WITH PROPER PATHS =====
+        // ===== SLIDESHOW DATA - UPDATED WITH UNSPLASH IMAGES =====
         const slideshowData = [
             {
                 id: 1,
-                filename: "images/homepage/homepage-slideshow-01.jpg",
+                filename: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
                 alt: "Professional photography studio setup at PQ Studios",
                 title: "Our Modern Studio"
             },
             {
                 id: 2,
-                filename: "images/homepage/homepage-slideshow-02.jpg",
+                filename: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
                 alt: "Food photography session with delicious dishes",
                 title: "Food Photography Excellence"
             },
             {
                 id: 3,
-                filename: "images/homepage/homepage-slideshow-03.jpg",
+                filename: "https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
                 alt: "Product photography setup with professional lighting",
                 title: "Product Photography"
             },
             {
                 id: 4,
-                filename: "images/homepage/homepage-slideshow-04.jpg",
+                filename: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
                 alt: "Fashion photography shoot with professional models",
                 title: "Fashion & Lifestyle"
             }
@@ -2654,16 +2650,14 @@
                 
                 // Create image element
                 const img = document.createElement('img');
-                img.src = slide.filename;
+                img.src = slide.filename; // Use the Unsplash URL directly
                 img.alt = slide.alt;
                 img.loading = "lazy";
                 
                 // Add fallback if image fails to load
                 img.onerror = function() {
-                    console.log('Failed to load image:', this.src);
-                    // Use a placeholder
-                    this.src = 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80';
-                    this.alt = 'Image loading - placeholder';
+                    this.src = 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
+                    this.alt = 'Image loading error';
                 };
                 
                 slideElement.appendChild(img);
@@ -2938,18 +2932,294 @@
             });
         }
 
-        // ===== GALLERY DATA =====
+        // ===== NEW GALLERY PAGE FUNCTIONALITY =====
         const galleryCategories = [
-            { id: 'food', name: 'Food Photography', count: 12 },
-            { id: 'product', name: 'Product Photography', count: 12 },
-            { id: 'ecommerce', name: 'E-Commerce Visuals', count: 12 },
-            { id: 'fashion', name: 'Fashion & Lifestyle', count: 12 },
-            { id: 'pets', name: 'Pet Photography', count: 12 },
-            { id: 'interiors', name: 'Interiors & Architecture', count: 12 },
-            { id: 'studio', name: 'Studio Shots', count: 12 }
+            { 
+                id: 'food', 
+                name: 'Food Photography', 
+                count: 15,
+                icon: 'fas fa-utensils'
+            },
+            { 
+                id: 'product', 
+                name: 'Product Photography', 
+                count: 15,
+                icon: 'fas fa-box-open'
+            },
+            { 
+                id: 'ecommerce', 
+                name: 'E-Commerce Visuals', 
+                count: 15,
+                icon: 'fas fa-shopping-cart'
+            },
+            { 
+                id: 'fashion', 
+                name: 'Fashion & Lifestyle', 
+                count: 15,
+                icon: 'fas fa-tshirt'
+            },
+            { 
+                id: 'pets', 
+                name: 'Pet Photography', 
+                count: 15,
+                icon: 'fas fa-paw'
+            },
+            { 
+                id: 'interiors', 
+                name: 'Interiors & Architecture', 
+                count: 15,
+                icon: 'fas fa-building'
+            },
+            { 
+                id: 'studio', 
+                name: 'Studio Shots', 
+                count: 10,
+                icon: 'fas fa-camera'
+            }
         ];
 
-        // ===== GALLERY POPUP =====
+        // ===== CATEGORY DROPDOWN =====
+        const categoryToggle = document.getElementById('categoryToggle');
+        const categorySelector = document.getElementById('categorySelector');
+        const categoryList = document.getElementById('categoryList');
+
+        function initCategoryDropdown() {
+            if (!categoryToggle || !categorySelector || !categoryList) return;
+
+            // Populate category list
+            galleryCategories.forEach(category => {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <a href="#gallery-${category.id}" class="category-link" data-category="${category.id}">
+                        <i class="${category.icon}"></i>
+                        ${category.name}
+                    </a>
+                `;
+                
+                const link = li.querySelector('.category-link');
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const categoryId = e.currentTarget.dataset.category;
+                    scrollToGalleryCategory(categoryId);
+                });
+                
+                categoryList.appendChild(li);
+            });
+            
+            // Toggle dropdown
+            categoryToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isActive = categorySelector.classList.toggle('active');
+                categorySelector.setAttribute('aria-hidden', !isActive);
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!categorySelector.contains(e.target) && !categoryToggle.contains(e.target)) {
+                    categorySelector.classList.remove('active');
+                    categorySelector.setAttribute('aria-hidden', 'true');
+                }
+            });
+            
+            // Close dropdown on scroll
+            window.addEventListener('scroll', () => {
+                categorySelector.classList.remove('active');
+                categorySelector.setAttribute('aria-hidden', 'true');
+            }, { passive: true });
+            
+            // Handle escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && categorySelector.classList.contains('active')) {
+                    categorySelector.classList.remove('active');
+                    categorySelector.setAttribute('aria-hidden', 'true');
+                    categoryToggle.focus();
+                }
+            });
+        }
+
+        function scrollToGalleryCategory(categoryId) {
+            const targetSection = document.getElementById(`gallery-${categoryId}`);
+            if (!targetSection) return;
+
+            // Close dropdown
+            categorySelector.classList.remove('active');
+            categorySelector.setAttribute('aria-hidden', 'true');
+            
+            // Calculate scroll position
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const categoryToggleHeight = document.querySelector('.category-toggle').offsetHeight;
+            const offset = headerHeight + categoryToggleHeight + 20;
+            const sectionTop = targetSection.offsetTop - offset;
+            
+            // Smooth scroll
+            window.scrollTo({
+                top: sectionTop,
+                behavior: 'smooth'
+            });
+            
+            // Highlight active category
+            document.querySelectorAll('.category-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.category === categoryId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // ===== LOAD GALLERY SECTIONS =====
+        const gallerySections = document.getElementById('gallerySections');
+
+        function loadGallerySections() {
+            if (!gallerySections) return;
+
+            gallerySections.innerHTML = '';
+            
+            galleryCategories.forEach(category => {
+                const section = document.createElement('section');
+                section.className = 'gallery-section';
+                section.id = `gallery-${category.id}`;
+                
+                section.innerHTML = `
+                    <div class="section-header">
+                        <h2>${category.name}</h2>
+                        <p>${category.count} professional images</p>
+                    </div>
+                    
+                    <div class="gallery-grid" id="grid-${category.id}">
+                        <!-- Images will be loaded here -->
+                    </div>
+                `;
+                
+                gallerySections.appendChild(section);
+                loadGalleryImages(category.id, category.count);
+            });
+        }
+
+        function loadGalleryImages(categoryId, count) {
+            const grid = document.getElementById(`grid-${categoryId}`);
+            if (!grid) return;
+
+            grid.innerHTML = '';
+            
+            // Generate image filenames based on your requirements
+            function generateImageFilenames(categoryId, count) {
+                const categoryNames = {
+                    'food': 'food photography',
+                    'product': 'product photography',
+                    'ecommerce': 'e-commerce visuals',
+                    'fashion': 'fashion lifestyle',
+                    'pets': 'pet photography',
+                    'interiors': 'interiors architecture',
+                    'studio': 'studio shots'
+                };
+                
+                const baseName = categoryNames[categoryId];
+                const filenames = [];
+                
+                for (let i = 1; i <= count; i++) {
+                    filenames.push(`${baseName} ${i}.jpg`);
+                }
+                
+                return filenames;
+            }
+            
+            const imageFilenames = generateImageFilenames(categoryId, count);
+            
+            // Predefined Unsplash images for each category
+            const unsplashCategories = {
+                'food': [
+                    'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80',
+                    'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80',
+                    'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80'
+                ],
+                'product': [
+                    'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=800&q=80',
+                    'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&q=80',
+                    'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80'
+                ],
+                'fashion': [
+                    'https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?w=800&q=80',
+                    'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80',
+                    'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=800&q=80'
+                ]
+            };
+            
+            // Default images if category not found
+            const defaultImages = [
+                'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&q=80',
+                'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80',
+                'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&q=80'
+            ];
+            
+            const categoryImages = unsplashCategories[categoryId] || defaultImages;
+            
+            for (let i = 0; i < count; i++) {
+                const filename = imageFilenames[i];
+                const imageIndex = i % categoryImages.length;
+                
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.setAttribute('role', 'button');
+                galleryItem.setAttribute('tabindex', '0');
+                galleryItem.setAttribute('aria-label', `View ${filename}`);
+                
+                galleryItem.innerHTML = `
+                    <img src="${categoryImages[imageIndex]}" 
+                         alt="${filename}"
+                         data-filename="${filename}"
+                         loading="lazy"
+                         width="400"
+                         height="400"
+                         data-index="${i}">
+                `;
+                
+                galleryItem.addEventListener('click', () => {
+                    openGalleryPopup(categoryId, i);
+                });
+                
+                galleryItem.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        openGalleryPopup(categoryId, i);
+                    }
+                });
+                
+                grid.appendChild(galleryItem);
+            }
+
+            // Start lazy loading
+            lazyLoadGalleryImages();
+        }
+
+        function lazyLoadGalleryImages() {
+            const galleryItems = document.querySelectorAll('.gallery-item img');
+            
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        if (!img.classList.contains('loaded')) {
+                            img.classList.add('loaded');
+                        }
+                        observer.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '200px 0px',
+                threshold: 0.01
+            });
+            
+            galleryItems.forEach(img => {
+                // Load immediately if already in viewport
+                if (img.getBoundingClientRect().top < window.innerHeight + 200) {
+                    img.classList.add('loaded');
+                } else {
+                    imageObserver.observe(img);
+                }
+            });
+        }
+
+        // ===== GALLERY MODAL =====
         const galleryModal = document.getElementById('galleryModal');
         const modalImage = document.getElementById('modalImage');
         const modalTitle = document.getElementById('modalTitle');
@@ -2960,80 +3230,122 @@
 
         let currentGalleryImages = [];
         let currentImageIndex = 0;
+        let currentCategoryId = '';
+        let touchStartX = 0;
+        let touchEndX = 0;
 
-        function initGalleryPopup() {
-            if (modalClose) {
-                modalClose.addEventListener('click', () => {
-                    galleryModal.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            }
+        function initGalleryModal() {
+            if (!galleryModal || !modalClose) return;
 
-            if (galleryModal) {
-                galleryModal.addEventListener('click', (e) => {
-                    if (e.target === galleryModal) {
-                        galleryModal.classList.remove('active');
-                        document.body.style.overflow = '';
-                    }
-                });
-            }
+            // Close modal
+            modalClose.addEventListener('click', closeModal);
+            modalClose.addEventListener('touchend', closeModal);
 
-            if (modalPrev) {
-                modalPrev.addEventListener('click', () => {
-                    if (currentGalleryImages.length > 0) {
-                        currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
-                        updateModalImage();
-                    }
-                });
-            }
+            // Navigation buttons
+            modalPrev.addEventListener('click', showPrevImage);
+            modalPrev.addEventListener('touchend', showPrevImage);
+            
+            modalNext.addEventListener('click', showNextImage);
+            modalNext.addEventListener('touchend', showNextImage);
 
-            if (modalNext) {
-                modalNext.addEventListener('click', () => {
-                    if (currentGalleryImages.length > 0) {
-                        currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
-                        updateModalImage();
-                    }
-                });
-            }
+            // Keyboard navigation
+            document.addEventListener('keydown', handleKeyboardNavigation);
 
-            document.addEventListener('keydown', (e) => {
-                if (!galleryModal.classList.contains('active')) return;
-                
-                if (e.key === 'Escape') {
-                    galleryModal.classList.remove('active');
-                    document.body.style.overflow = '';
-                } else if (e.key === 'ArrowLeft') {
-                    modalPrev.click();
-                } else if (e.key === 'ArrowRight') {
-                    modalNext.click();
+            // Touch swipe for mobile
+            modalImage.addEventListener('touchstart', handleTouchStart, { passive: true });
+            modalImage.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+            // Close modal when clicking outside image (on mobile)
+            galleryModal.addEventListener('click', (e) => {
+                if (e.target === galleryModal) {
+                    closeModal();
                 }
             });
+        }
 
-            let touchStartX = 0;
-            let touchEndX = 0;
+        function handleTouchStart(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }
 
-            if (modalImage) {
-                modalImage.addEventListener('touchstart', (e) => {
-                    touchStartX = e.changedTouches[0].screenX;
-                });
+        function handleTouchEnd(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }
 
-                modalImage.addEventListener('touchend', (e) => {
-                    touchEndX = e.changedTouches[0].screenX;
-                    handleSwipe();
-                });
-            }
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
 
-            function handleSwipe() {
-                const swipeThreshold = 50;
-                const diff = touchStartX - touchEndX;
-
-                if (Math.abs(diff) > swipeThreshold) {
-                    if (diff > 0) {
-                        modalNext.click();
-                    } else {
-                        modalPrev.click();
-                    }
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    showNextImage(); // Swipe left
+                } else {
+                    showPrevImage(); // Swipe right
                 }
+            }
+        }
+
+        function handleKeyboardNavigation(e) {
+            if (!galleryModal.classList.contains('active')) return;
+            
+            switch(e.key) {
+                case 'Escape':
+                    closeModal();
+                    break;
+                case 'ArrowLeft':
+                    showPrevImage();
+                    break;
+                case 'ArrowRight':
+                    showNextImage();
+                    break;
+            }
+        }
+
+        function showPrevImage() {
+            if (currentGalleryImages.length > 0) {
+                currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+                updateModalImage();
+            }
+        }
+
+        function showNextImage() {
+            if (currentGalleryImages.length > 0) {
+                currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+                updateModalImage();
+            }
+        }
+
+        function openGalleryPopup(categoryId, index) {
+            const grid = document.getElementById(`grid-${categoryId}`);
+            if (!grid) return;
+
+            const imageElements = grid.querySelectorAll('.gallery-item img');
+            currentGalleryImages = Array.from(imageElements).map((img, i) => ({
+                src: img.src,
+                alt: img.alt,
+                filename: img.getAttribute('data-filename'),
+                title: galleryCategories.find(cat => cat.id === categoryId)?.name || 'Gallery Image'
+            }));
+
+            currentCategoryId = categoryId;
+            currentImageIndex = index;
+            
+            updateModalImage();
+            preloadAdjacentImages();
+
+            galleryModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            modalClose.focus();
+        }
+
+        function closeModal() {
+            galleryModal.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Return focus to the clicked image
+            const clickedImage = document.querySelector(`[data-index="${currentImageIndex}"]`);
+            if (clickedImage) {
+                clickedImage.closest('.gallery-item').focus();
             }
         }
 
@@ -3041,23 +3353,21 @@
             if (currentGalleryImages.length === 0) return;
 
             const imageData = currentGalleryImages[currentImageIndex];
-            modalImage.style.opacity = '0';
             
             const img = new Image();
             
             img.onload = () => {
                 modalImage.src = imageData.src;
                 modalImage.alt = imageData.alt;
-                modalImage.style.opacity = '1';
-                modalTitle.textContent = imageData.title;
+                
+                const categoryName = galleryCategories.find(cat => cat.id === currentCategoryId)?.name || 'Gallery';
+                modalTitle.textContent = `${categoryName} - ${imageData.filename}`;
                 modalCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
-                preloadAdjacentImages();
             };
             
             img.onerror = () => {
-                modalImage.src = 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80';
-                modalImage.style.opacity = '1';
-                modalTitle.textContent = 'Image';
+                modalImage.src = 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&q=80';
+                modalTitle.textContent = 'Image not available';
                 modalCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
             };
             
@@ -3071,247 +3381,19 @@
                 const nextIndex = (currentImageIndex + i) % currentGalleryImages.length;
                 const prevIndex = (currentImageIndex - i + currentGalleryImages.length) % currentGalleryImages.length;
                 
-                const nextImg = new Image();
-                nextImg.src = currentGalleryImages[nextIndex]?.src;
+                if (currentGalleryImages[nextIndex]) {
+                    const nextImg = new Image();
+                    nextImg.src = currentGalleryImages[nextIndex].src;
+                }
                 
-                const prevImg = new Image();
-                prevImg.src = currentGalleryImages[prevIndex]?.src;
+                if (currentGalleryImages[prevIndex]) {
+                    const prevImg = new Image();
+                    prevImg.src = currentGalleryImages[prevIndex].src;
+                }
             }
         }
 
-        function openGalleryPopup(category, index) {
-            const galleryGrid = document.getElementById(`grid-${category}`);
-            if (!galleryGrid) return;
-
-            const imageElements = galleryGrid.querySelectorAll('.gallery-item img');
-            currentGalleryImages = Array.from(imageElements).map((img, i) => ({
-                src: img.src,
-                alt: img.alt || `${category} image ${i + 1}`,
-                title: `${category.charAt(0).toUpperCase() + category.slice(1)} Photography - Image ${i + 1}`
-            }));
-
-            currentImageIndex = index;
-            preloadAdjacentImages();
-            updateModalImage();
-
-            galleryModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        // Load Gallery
-        const gallerySections = document.getElementById('gallerySections');
-
-        function loadGallery() {
-            if (!gallerySections) return;
-
-            gallerySections.innerHTML = '';
-            galleryCategories.forEach(category => {
-                const section = document.createElement('div');
-                section.className = 'gallery-section';
-                section.id = `gallery-${category.id}`;
-                
-                section.innerHTML = `
-                    <h2>${category.name}</h2>
-                    <p>Browse our ${category.count} images in this category</p>
-                    
-                    <div class="gallery-grid" id="grid-${category.id}">
-                        <!-- Images will be loaded here -->
-                    </div>
-                `;
-                
-                gallerySections.appendChild(section);
-                loadGalleryImages(category.id, category.count);
-            });
-
-            setTimeout(initGalleryPopup, 100);
-        }
-
-        function loadGalleryImages(categoryId, count) {
-            const grid = document.getElementById(`grid-${categoryId}`);
-            if (!grid) return;
-
-            grid.innerHTML = '';
-            
-            // Define image paths for each category - FIXED PATHS
-            const imagePaths = {
-                'food': [
-                    'images/gallery/food/food-photography-01.jpg',
-                    'images/gallery/food/food-photography-02.jpg',
-                    'images/gallery/food/food-photography-03.jpg',
-                    'images/gallery/food/food-photography-04.jpg',
-                    'images/gallery/food/food-photography-05.jpg',
-                    'images/gallery/food/food-photography-06.jpg',
-                    'images/gallery/food/food-photography-07.jpg',
-                    'images/gallery/food/food-photography-08.jpg',
-                    'images/gallery/food/food-photography-09.jpg',
-                    'images/gallery/food/food-photography-10.jpg',
-                    'images/gallery/food/food-photography-11.jpg',
-                    'images/gallery/food/food-photography-12.jpg'
-                ],
-                'product': [
-                    'images/gallery/product/product-photography-01.jpg',
-                    'images/gallery/product/product-photography-02.jpg',
-                    'images/gallery/product/product-photography-03.jpg',
-                    'images/gallery/product/product-photography-04.jpg',
-                    'images/gallery/product/product-photography-05.jpg',
-                    'images/gallery/product/product-photography-06.jpg',
-                    'images/gallery/product/product-photography-07.jpg',
-                    'images/gallery/product/product-photography-08.jpg',
-                    'images/gallery/product/product-photography-09.jpg',
-                    'images/gallery/product/product-photography-10.jpg',
-                    'images/gallery/product/product-photography-11.jpg',
-                    'images/gallery/product/product-photography-12.jpg'
-                ],
-                'ecommerce': [
-                    'images/gallery/ecommerce/ecommerce-visuals-01.jpg',
-                    'images/gallery/ecommerce/ecommerce-visuals-02.jpg',
-                    'images/gallery/ecommerce/ecommerce-visuals-03.jpg',
-                    'images/gallery/ecommerce/ecommerce-visuals-04.jpg',
-                    'images/gallery/ecommerce/ecommerce-visuals-05.jpg',
-                    'images/gallery/ecommerce/ecommerce-visuals-06.jpg',
-                    'images/gallery/ecommerce/ecommerce-visuals-07.jpg',
-                    'images/gallery/ecommerce/ecommerce-visuals-08.jpg',
-                    'images/gallery/ecommerce/ecommerce-visuals-09.jpg',
-                    'images/gallery/ecommerce/ecommerce-visuals-10.jpg',
-                    'images/gallery/ecommerce/ecommerce-visuals-11.jpg',
-                    'images/gallery/ecommerce/ecommerce-visuals-12.jpg'
-                ],
-                'fashion': [
-                    'images/gallery/fashion/fashion-lifestyle-01.jpg',
-                    'images/gallery/fashion/fashion-lifestyle-02.jpg',
-                    'images/gallery/fashion/fashion-lifestyle-03.jpg',
-                    'images/gallery/fashion/fashion-lifestyle-04.jpg',
-                    'images/gallery/fashion/fashion-lifestyle-05.jpg',
-                    'images/gallery/fashion/fashion-lifestyle-06.jpg',
-                    'images/gallery/fashion/fashion-lifestyle-07.jpg',
-                    'images/gallery/fashion/fashion-lifestyle-08.jpg',
-                    'images/gallery/fashion/fashion-lifestyle-09.jpg',
-                    'images/gallery/fashion/fashion-lifestyle-10.jpg',
-                    'images/gallery/fashion/fashion-lifestyle-11.jpg',
-                    'images/gallery/fashion/fashion-lifestyle-12.jpg'
-                ],
-                'pets': [
-                    'images/gallery/pets/pet-photography-01.jpg',
-                    'images/gallery/pets/pet-photography-02.jpg',
-                    'images/gallery/pets/pet-photography-03.jpg',
-                    'images/gallery/pets/pet-photography-04.jpg',
-                    'images/gallery/pets/pet-photography-05.jpg',
-                    'images/gallery/pets/pet-photography-06.jpg',
-                    'images/gallery/pets/pet-photography-07.jpg',
-                    'images/gallery/pets/pet-photography-08.jpg',
-                    'images/gallery/pets/pet-photography-09.jpg',
-                    'images/gallery/pets/pet-photography-10.jpg',
-                    'images/gallery/pets/pet-photography-11.jpg',
-                    'images/gallery/pets/pet-photography-12.jpg'
-                ],
-                'interiors': [
-                    'images/gallery/interiors/interiors-architecture-01.jpg',
-                    'images/gallery/interiors/interiors-architecture-02.jpg',
-                    'images/gallery/interiors/interiors-architecture-03.jpg',
-                    'images/gallery/interiors/interiors-architecture-04.jpg',
-                    'images/gallery/interiors/interiors-architecture-05.jpg',
-                    'images/gallery/interiors/interiors-architecture-06.jpg',
-                    'images/gallery/interiors/interiors-architecture-07.jpg',
-                    'images/gallery/interiors/interiors-architecture-08.jpg',
-                    'images/gallery/interiors/interiors-architecture-09.jpg',
-                    'images/gallery/interiors/interiors-architecture-10.jpg',
-                    'images/gallery/interiors/interiors-architecture-11.jpg',
-                    'images/gallery/interiors/interiors-architecture-12.jpg'
-                ],
-                'studio': [
-                    'images/gallery/studio/studio-shots-01.jpg',
-                    'images/gallery/studio/studio-shots-02.jpg',
-                    'images/gallery/studio/studio-shots-03.jpg',
-                    'images/gallery/studio/studio-shots-04.jpg',
-                    'images/gallery/studio/studio-shots-05.jpg',
-                    'images/gallery/studio/studio-shots-06.jpg',
-                    'images/gallery/studio/studio-shots-07.jpg',
-                    'images/gallery/studio/studio-shots-08.jpg',
-                    'images/gallery/studio/studio-shots-09.jpg',
-                    'images/gallery/studio/studio-shots-10.jpg',
-                    'images/gallery/studio/studio-shots-11.jpg',
-                    'images/gallery/studio/studio-shots-12.jpg'
-                ]
-            };
-
-            const paths = imagePaths[categoryId] || [];
-            
-            for (let i = 1; i <= count; i++) {
-                const path = paths[i-1] || `images/gallery/${categoryId}/${categoryId}-${i.toString().padStart(2, '0')}.jpg`;
-                
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item';
-                galleryItem.innerHTML = `
-                    <img src="${path}" 
-                         alt="${categoryId} photography image ${i}" 
-                         loading="lazy"
-                         width="400"
-                         height="400"
-                         data-src="${path}"
-                         onerror="this.src='https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
-                `;
-                
-                galleryItem.addEventListener('click', () => {
-                    openGalleryPopup(categoryId, i - 1);
-                });
-                
-                grid.appendChild(galleryItem);
-            }
-
-            setTimeout(() => {
-                lazyLoadGalleryImages();
-            }, 500);
-        }
-
-        function lazyLoadGalleryImages() {
-            const galleryItems = document.querySelectorAll('.gallery-item img[data-src]');
-            
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        const src = img.getAttribute('data-src');
-                        
-                        const image = new Image();
-                        image.onload = () => {
-                            img.src = src;
-                            img.classList.add('loaded');
-                            img.style.opacity = '1';
-                            img.removeAttribute('data-src');
-                        };
-                        image.onerror = () => {
-                            // Use placeholder if image fails to load
-                            img.src = 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
-                            img.classList.add('loaded');
-                            img.style.opacity = '1';
-                        };
-                        image.src = src;
-                        
-                        observer.unobserve(img);
-                    }
-                });
-            }, {
-                rootMargin: '50px',
-                threshold: 0.1
-            });
-            
-            galleryItems.forEach(img => imageObserver.observe(img));
-        }
-
-        function scrollToGalleryCategory(categoryId) {
-            const section = document.getElementById(`gallery-${categoryId}`);
-            if (section) {
-                const headerHeight = document.querySelector('.header').offsetHeight;
-                const sectionTop = section.offsetTop - headerHeight;
-
-                window.scrollTo({
-                    top: sectionTop,
-                    behavior: 'smooth'
-                });
-            }
-        }
-
-        // ===== FEATURED WORK - UPDATED WITH YOUR FILE NAMES =====
+        // ===== FEATURED WORK - UPDATED WITH UNSPLASH IMAGES =====
         const featuredGrid = document.getElementById('featuredGrid');
 
         function loadFeaturedWork() {
@@ -3320,22 +3402,22 @@
             const featuredImages = [
                 { 
                     category: 'food', 
-                    image: "images/homepage/featured-01.jpg",
+                    image: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                     title: 'Gourmet Burger'
                 },
                 { 
                     category: 'product', 
-                    image: "images/homepage/featured-02.jpg",
+                    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                     title: 'Tech Product'
                 },
                 { 
                     category: 'fashion', 
-                    image: "images/homepage/featured-03.jpg",
+                    image: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                     title: 'Fashion Shoot'
                 },
                 { 
                     category: 'pets', 
-                    image: "images/homepage/featured-04.jpg",
+                    image: "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                     title: 'Pet Portrait'
                 }
             ];
@@ -3357,9 +3439,7 @@
                          alt="${item.title}" 
                          loading="lazy"
                          width="400"
-                         height="400"
-                         data-src="${item.image}"
-                         onerror="this.src='https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'">
+                         height="400">
                 `;
                 featuredGrid.appendChild(featuredItem);
             });
@@ -3368,20 +3448,20 @@
         // ===== CLIENTS SECTION =====
         const clientsTrack = document.getElementById('clientsTrack');
 
-        // CLIENT LOGOS DATA - 12 LOGOS
+        // UPDATED CLIENT LOGOS DATA - 12 LOGOS
         const clientBrands = [
-            { name: "Client Logo 1", filename: "client-logo-01.jpg" },
-            { name: "Client Logo 2", filename: "client-logo-02.jpg" },
-            { name: "Client Logo 3", filename: "client-logo-03.jpg" },
-            { name: "Client Logo 4", filename: "client-logo-04.jpg" },
-            { name: "Client Logo 5", filename: "client-logo-05.jpg" },
-            { name: "Client Logo 6", filename: "client-logo-06.jpg" },
-            { name: "Client Logo 7", filename: "client-logo-07.jpg" },
-            { name: "Client Logo 8", filename: "client-logo-08.jpg" },
-            { name: "Client Logo 9", filename: "client-logo-09.jpg" },
-            { name: "Client Logo 10", filename: "client-logo-10.jpg" },
-            { name: "Client Logo 11", filename: "client-logo-11.jpg" },
-            { name: "Client Logo 12", filename: "client-logo-12.jpg" }
+            { name: "Client Logo 1", filename: "client logos 1.jpg", color: "#FC8019" },
+            { name: "Client Logo 2", filename: "client logos 2.jpg", color: "#000000" },
+            { name: "Client Logo 3", filename: "client logos 3.jpg", color: "#FF9900" },
+            { name: "Client Logo 4", filename: "client logos 4.jpg", color: "#E50914" },
+            { name: "Client Logo 5", filename: "client logos 5.jpg", color: "#1DB954" },
+            { name: "Client Logo 6", filename: "client logos 6.jpg", color: "#FF5A5F" },
+            { name: "Client Logo 7", filename: "client logos 7.jpg", color: "#4285F4" },
+            { name: "Client Logo 8", filename: "client logos 8.jpg", color: "#0078D4" },
+            { name: "Client Logo 9", filename: "client logos 9.jpg", color: "#3B82F6" },
+            { name: "Client Logo 10", filename: "client logos 10.jpg", color: "#10B981" },
+            { name: "Client Logo 11", filename: "client logos 11.jpg", color: "#F59E0B" },
+            { name: "Client Logo 12", filename: "client logos 12.jpg", color: "#8B5CF6" }
         ];
 
         function loadClients() {
@@ -3391,24 +3471,51 @@
 
             // Create 3 sets for infinite scrolling effect
             for (let set = 0; set < 3; set++) {
-                clientBrands.forEach((client, index) => {
+                clientBrands.forEach(client => {
+                    // Create SVG placeholder with the filename
+                    const svgPlaceholder = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 100'%3E%3Crect width='200' height='100' fill='${client.color.replace('#', '%23')}' rx='12'/%3E%3Ctext x='100' y='45' text-anchor='middle' fill='white' font-family='Arial, sans-serif' font-size='16' font-weight='bold'%3E${encodeURIComponent(client.name)}%3C/text%3E%3Ctext x='100' y='70' text-anchor='middle' fill='rgba(255,255,255,0.8)' font-family='Arial, sans-serif' font-size='11'%3E${encodeURIComponent(client.filename)}%3C/text%3E%3C/svg%3E`;
+                    
                     const clientItem = document.createElement('div');
                     clientItem.className = 'client-logo-item';
                     clientItem.setAttribute('data-client', client.filename.replace('.jpg', ''));
                     
                     clientItem.innerHTML = `
-                        <img src="images/clients/${client.filename}" 
+                        <img src="${svgPlaceholder}" 
                              alt="${client.name}" 
                              class="client-logo-img"
                              loading="lazy"
                              width="200"
                              height="100"
-                             onerror="this.src='https://via.placeholder.com/160x90/1a1a2e/ffffff?text=Client+Logo'">
+                             data-src="images/clients/${client.filename}">
                     `;
                     
                     clientsTrack.appendChild(clientItem);
                 });
             }
+            
+            // Add lazy loading for client logos
+            lazyLoadClientLogos();
+        }
+
+        function lazyLoadClientLogos() {
+            const clientLogos = document.querySelectorAll('.client-logo-img[data-src]');
+            
+            const logoObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const realSrc = img.getAttribute('data-src');
+                        
+                        // In a real scenario, you would load the actual image
+                        // For now, we'll just keep the placeholder
+                        // img.src = realSrc;
+                        
+                        logoObserver.unobserve(img);
+                    }
+                });
+            }, { rootMargin: '50px' });
+            
+            clientLogos.forEach(img => logoObserver.observe(img));
         }
 
         // ===== CONTACT FORM =====
@@ -3551,7 +3658,7 @@
 
         // ===== INITIALIZE EVERYTHING =====
         document.addEventListener('DOMContentLoaded', function() {
-            // Generate the enhanced background
+            // Generate the enhanced background - NOW VERY VISIBLE
             generateIcons();
             
             // Initialize page
@@ -3562,29 +3669,51 @@
             
             // Load all content
             loadServices();
-            loadGallery();
-            loadFeaturedWork();
-            loadClients(); // This loads 12 logos
+            loadFeaturedWork(); // This will now show Unsplash images
+            loadClients(); // This now loads 12 logos
             
-            // Handle gallery category from URL
-            const urlParams = new URLSearchParams(window.location.search);
-            const galleryCategory = urlParams.get('category');
-            if (galleryCategory) {
-                setTimeout(() => {
-                    scrollToGalleryCategory(galleryCategory);
-                }, 500);
-            }
+            // Load gallery sections
+            loadGallerySections();
+            initCategoryDropdown();
+            initGalleryModal();
             
-            // Initialize gallery popup
-            initGalleryPopup();
+            // Highlight active category based on scroll
+            window.addEventListener('scroll', highlightActiveCategory, { passive: true });
             
-            // Log for debugging
-            console.log('PQ Studios Website Loaded Successfully!');
-            console.log('If images are not showing, check:');
-            console.log('1. images/ folder structure');
-            console.log('2. File names match exactly');
-            console.log('3. Browser console for 404 errors');
+            // Initial highlight
+            setTimeout(highlightActiveCategory, 1000);
         });
+
+        function highlightActiveCategory() {
+            const sections = document.querySelectorAll('.gallery-section');
+            const header = document.querySelector('.header');
+            const categoryToggle = document.querySelector('.category-toggle');
+            
+            if (!sections.length || !header || !categoryToggle) return;
+            
+            const headerHeight = header.offsetHeight;
+            const toggleHeight = categoryToggle.offsetHeight;
+            const offset = headerHeight + toggleHeight + 20;
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - offset;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+                    currentSection = section.id.replace('gallery-', '');
+                }
+            });
+            
+            // Update active link in dropdown
+            document.querySelectorAll('.category-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.category === currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
 
         // Handle window resize
         let resizeTimeout;
