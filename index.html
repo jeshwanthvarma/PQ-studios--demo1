@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ===== CRITICAL FIXES ===== */
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            position: relative;
+            width: 100%;
+        }
+
         /* ===== EXTREME MOBILE OPTIMIZATION ===== */
         * {
             margin: 0;
@@ -70,19 +78,13 @@
         
         .icon {
             position: absolute;
-            color: rgba(140, 140, 140, 0.25); /* Darker and more visible */
-            font-size: 1.8rem; /* Slightly larger */
-            opacity: 0.7; /* Much more visible */
+            color: rgba(140, 140, 140, 0.25);
+            font-size: 1.8rem;
+            opacity: 0.7;
             z-index: -1;
             transition: all 0.5s ease;
             pointer-events: none;
             filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
-        }
-        
-        /* Hover effect */
-        .icon:hover {
-            opacity: 0.85;
-            color: rgba(120, 120, 120, 0.35);
         }
         
         /* Minimal animations */
@@ -104,14 +106,13 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* ===== SECTION BACKGROUNDS - MINIMAL TRANSPARENCY ===== */
+        /* ===== SECTION BACKGROUNDS ===== */
         .section {
             padding: 3rem 0;
             position: relative;
-            background-color: transparent; /* Completely transparent */
+            background-color: transparent;
         }
 
-        /* Add very subtle overlay only for readability */
         .section::before {
             content: '';
             position: absolute;
@@ -119,22 +120,21 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.7); /* Reduced opacity */
+            background: rgba(255, 255, 255, 0.7);
             z-index: -1;
             pointer-events: none;
-            backdrop-filter: blur(1px); /* Very subtle blur */
+            backdrop-filter: blur(1px);
         }
 
-        /* Specific sections with slightly more opacity for contrast */
         .featured-work::before,
         .brand-story::before,
         .service-cards-container::before,
         .contact-form-container::before {
-            background: rgba(255, 255, 255, 0.8); /* Still quite transparent */
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(1.5px);
         }
 
-        /* ===== FIX 1: FULL WIDTH CONTAINER ===== */
+        /* ===== FULL WIDTH CONTAINER ===== */
         .container {
             width: 100%;
             max-width: 100% !important;
@@ -190,11 +190,10 @@
             }
             
             .icon {
-                opacity: 0.6; /* Still visible on mobile */
+                opacity: 0.6;
                 font-size: 1.4rem;
             }
             
-            /* Reduce overlay opacity on mobile */
             .section::before {
                 background: rgba(255, 255, 255, 0.65);
             }
@@ -233,30 +232,6 @@
         /* ===== IMPROVED SPACING ===== */
         .section-sm {
             padding: 2rem 0;
-        }
-
-        .bg-light { 
-            background: rgba(248, 249, 250, 0.85) !important; /* Semi-transparent */
-            position: relative;
-        }
-        
-        .bg-light::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--light);
-            opacity: 0.85;
-            z-index: -1;
-        }
-        
-        .bg-dark { 
-            background: var(--primary) !important; 
-            color: var(--white);
-            position: relative;
-            z-index: 1;
         }
 
         .mb-1 { margin-bottom: 0.75rem; }
@@ -320,7 +295,7 @@
             width: 100%;
         }
 
-        /* ===== FIX 3: BUTTON SPACING ===== */
+        /* ===== BUTTON SPACING ===== */
         .btn-spacing {
             margin: 8px !important;
         }
@@ -625,7 +600,7 @@
             display: block;
         }
 
-        /* ===== HOME PAGE - Slideshow Hero ===== */
+        /* ===== HOME PAGE - CLEAN SLIDESHOW ONLY (NO TEXT) ===== */
         .slideshow-hero {
             position: relative;
             min-height: 85vh;
@@ -664,103 +639,27 @@
             object-position: center;
         }
 
+        /* REMOVED: All text and buttons over slideshow */
         .slideshow-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.75));
-            z-index: 2;
+            display: none !important;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            padding: 10vh 1.5rem 10vh;
-            color: var(--white);
-            width: 100%;
+            display: none !important;
         }
 
-        .hero-title {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-bottom: 1.5rem;
-            color: rgba(255,255,255,0.9);
-            line-height: 1.7;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media (min-width: 768px) {
-            .hero-subtitle {
-                font-size: 1.25rem !important;
-            }
-        }
-
-        /* Video comment section */
         .video-comment {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 0.75rem 1.25rem;
-            border-radius: 50px;
-            margin: 1.5rem auto;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: white;
-            font-size: 0.9rem;
-            max-width: 400px;
+            display: none !important;
         }
 
-        .video-comment i {
-            color: var(--accent);
-            font-size: 1.1rem;
-        }
-
-        /* Slideshow dots */
         .slideshow-dots {
-            display: flex;
-            gap: 0.75rem;
-            justify-content: center;
-            margin-top: 2rem;
-            position: relative;
-            z-index: 3;
-        }
-
-        .slideshow-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .slideshow-dot.active {
-            background: var(--accent);
-            border-color: var(--accent);
-            transform: scale(1.2);
-        }
-
-        .slideshow-dot:hover {
-            background: rgba(255, 255, 255, 0.6);
+            display: none !important;
         }
 
         /* ===== HOME PAGE Featured Work ===== */
         .featured-work {
             position: relative;
+            padding-top: 2rem;
         }
         
         .featured-grid {
@@ -770,11 +669,6 @@
             margin-top: 2rem;
             position: relative;
             z-index: 2;
-        }
-
-        .featured-grid::before,
-        .featured-grid::after {
-            display: none;
         }
 
         @media (min-width: 768px) {
@@ -807,28 +701,12 @@
         /* ===== ABOUT PAGE ===== */
         .about-hero {
             position: relative;
-            min-height: 40vh;
+            min-height: 20vh;
             display: flex;
             align-items: center;
-            background-attachment: fixed;
-            background: linear-gradient(135deg, rgba(26,26,46,0.9), rgba(22,33,62,0.8)),
-                        url('https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
-        }
-
-        .about-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='100' viewBox='0 0 120 100'%3E%3Cpath d='M0,0 L120,0 L120,20 L60,20 L40,40 L20,20 L0,40 Z' fill='white' fill-opacity='0.05'/%3E%3Cpath d='M0,40 L120,40 L120,60 L60,60 L40,80 L20,60 L0,80 Z' fill='white' fill-opacity='0.05'/%3E%3Cpath d='M0,80 L120,80 L120,100 L60,100 L40,120 L20,100 L0,120 Z' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
-            background-repeat: repeat-x;
-            background-position: bottom;
-            z-index: 2;
-            pointer-events: none;
+            text-align: center;
         }
 
         .profile-image {
@@ -849,9 +727,9 @@
             transform: scale(1.05);
         }
 
-        /* ===== UPDATED ABOUT PQ STUDIOS SECTION ===== */
+        /* ===== BRAND STORY SECTION ===== */
         .brand-story {
-            background: rgba(255, 255, 255, 0.9); /* Very transparent */
+            background: rgba(255, 255, 255, 0.9);
             border-radius: var(--radius-lg);
             padding: 2.5rem;
             margin: 2.5rem 0;
@@ -907,11 +785,6 @@
             min-width: 30px;
         }
 
-        .brand-value h4 {
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -919,10 +792,6 @@
             margin: 2.5rem 0;
             position: relative;
             z-index: 2;
-        }
-
-        .stats-grid::before {
-            display: none;
         }
 
         @media (min-width: 768px) {
@@ -963,27 +832,12 @@
         /* ===== SERVICES PAGE ===== */
         .services-hero {
             position: relative;
-            min-height: 40vh;
+            min-height: 20vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, rgba(26,26,46,0.9), rgba(22,33,62,0.8)),
-                        url('https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
-        }
-
-        .services-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='100' viewBox='0 0 120 100'%3E%3Cpath d='M0,0 L120,0 L120,20 L60,20 L40,40 L20,20 L0,40 Z' fill='white' fill-opacity='0.05'/%3E%3Cpath d='M0,40 L120,40 L120,60 L60,60 L40,80 L20,60 L0,80 Z' fill='white' fill-opacity='0.05'/%3E%3Cpath d='M0,80 L120,80 L120,100 L60,100 L40,120 L20,100 L0,120 Z' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
-            background-repeat: repeat-x;
-            background-position: bottom;
-            z-index: 2;
-            pointer-events: none;
+            text-align: center;
         }
 
         .service-cards-container {
@@ -1013,7 +867,7 @@
         }
 
         .service-card {
-            background: rgba(255, 255, 255, 0.95); /* Semi-transparent */
+            background: rgba(255, 255, 255, 0.95);
             border-radius: var(--radius-lg);
             padding: 2rem;
             box-shadow: var(--shadow-lg);
@@ -1025,10 +879,6 @@
             overflow: hidden;
             border: 1px solid var(--gray-light);
             backdrop-filter: blur(2px);
-        }
-
-        .service-card::before {
-            display: none;
         }
 
         .service-card:hover {
@@ -1051,33 +901,26 @@
             box-shadow: var(--shadow-md);
         }
 
-        /* ===== FIX 2: SERVICE CARD BUTTONS ===== */
+        /* ===== SERVICE CARD BUTTONS ===== */
         .service-card-buttons {
             display: flex !important;
             flex-direction: column !important;
             gap: 12px !important;
-            margin-top: 1.5rem;
+            margin-top: auto !important;
+            padding-top: 1.5rem !important;
             width: 100% !important;
         }
 
         .service-card-buttons .btn {
-            flex: 1;
+            flex: 1 !important;
             width: 100% !important;
             min-width: 100% !important;
-            text-align: center;
+            text-align: center !important;
             display: flex !important;
             justify-content: center !important;
             align-items: center !important;
-        }
-
-        @media (min-width: 640px) {
-            .service-card-buttons {
-                flex-direction: column !important;
-            }
-            
-            .service-card-buttons .btn {
-                min-width: 100% !important;
-            }
+            min-height: 56px !important;
+            height: auto !important;
         }
 
         .btn-primary:hover {
@@ -1093,13 +936,11 @@
 
         /* ===== INSTAGRAM-STYLE GALLERY MOBILE OPTIMIZATION ===== */
         @media (max-width: 768px) {
-            /* Instagram-like grid - 3 columns, no gaps */
             .gallery-grid {
                 grid-template-columns: repeat(3, 1fr) !important;
                 gap: 0 !important;
             }
             
-            /* Square items */
             .gallery-item {
                 aspect-ratio: 1 !important;
                 width: 100% !important;
@@ -1107,19 +948,16 @@
                 border-radius: 0 !important;
             }
             
-            /* Remove all shadows and borders for clean look */
             .gallery-item img {
                 border-radius: 0 !important;
                 transition: transform 0.2s ease !important;
             }
             
-            /* Instagram-like tap feedback */
             .gallery-item:active img {
                 transform: scale(0.95) !important;
                 opacity: 0.9 !important;
             }
             
-            /* Category dropdown mobile optimization */
             .category-toggle {
                 position: fixed !important;
                 top: 80px !important;
@@ -1142,7 +980,6 @@
                 max-height: 60vh !important;
             }
             
-            /* Gallery section spacing */
             .gallery-section {
                 padding: 30px 10px !important;
                 scroll-margin-top: 130px !important;
@@ -1181,7 +1018,7 @@
             100% { background-position: 200% 0; }
         }
 
-        /* ===== GALLERY PAGE - COMPLETELY REDESIGNED ===== */
+        /* ===== GALLERY PAGE ===== */
         #gallery-page {
             background: var(--white);
         }
@@ -1194,13 +1031,11 @@
             z-index: 1000;
         }
 
-        /* Remove hero section from gallery page */
         #gallery-page .slideshow-hero,
         #gallery-page .gallery-hero {
             display: none !important;
         }
 
-        /* Gallery page specific styles */
         .gallery-page-content {
             padding-top: 70px;
             min-height: 100vh;
@@ -1378,7 +1213,7 @@
             opacity: 0.8;
         }
 
-        /* Instagram-style grid - 3 columns mobile, 5 columns desktop */
+        /* Instagram-style grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -1402,7 +1237,6 @@
             }
         }
 
-        /* Remove all gaps for true border-to-border */
         .gallery-grid {
             gap: 0 !important;
         }
@@ -1626,52 +1460,24 @@
         /* ===== CONTACT PAGE ===== */
         .contact-hero {
             position: relative;
-            min-height: 40vh;
+            min-height: 20vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, rgba(26,26,46,0.9), rgba(22,33,62,0.8)),
-                        url('https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
-        }
-
-        .contact-hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='100' viewBox='0 0 120 100'%3E%3Cpath d='M0,0 L120,0 L120,20 L60,20 L40,40 L20,20 L0,40 Z' fill='white' fill-opacity='0.05'/%3E%3Cpath d='M0,40 L120,40 L120,60 L60,60 L40,80 L20,60 L0,80 Z' fill='white' fill-opacity='0.05'/%3E%3Cpath d='M0,80 L120,80 L120,100 L60,100 L40,120 L20,100 L0,120 Z' fill='white' fill-opacity='0.05'/%3E%3C/svg%3E");
-            background-repeat: repeat-x;
-            background-position: bottom;
-            z-index: 2;
-            pointer-events: none;
+            text-align: center;
         }
 
         .contact-form-container {
-            background: rgba(255, 255, 255, 0.85); /* Very transparent */
+            background: rgba(255, 255, 255, 0.85);
             border-radius: var(--radius-lg);
             padding: 2rem;
             box-shadow: var(--shadow-lg);
-            margin-top: -4rem;
+            margin-top: -2rem;
             position: relative;
             z-index: 2;
             border: 1px solid var(--gray-light);
             backdrop-filter: blur(3px);
-        }
-
-        .contact-form-container::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 60px;
-            height: 60px;
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='%23e94560' stroke-width='1.5' opacity='0.1'%3E%3Cpath d='M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            pointer-events: none;
         }
 
         .form-group {
@@ -1771,7 +1577,7 @@
         /* ===== SCROLLING CLIENTS SECTION ===== */
         .clients-section {
             padding: 3rem 0;
-            background: rgba(248, 249, 250, 0.8); /* Very transparent */
+            background: rgba(248, 249, 250, 0.8);
             position: relative;
             overflow: hidden;
         }
@@ -1865,21 +1671,6 @@
             z-index: 2;
         }
 
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 80%, rgba(233, 69, 96, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 107, 129, 0.1) 0%, transparent 50%),
-                url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
         .footer-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -1889,7 +1680,7 @@
             z-index: 1;
         }
 
-        /* ===== UPDATED SOCIAL LINKS ===== */
+        /* ===== SOCIAL LINKS ===== */
         .social-links {
             display: flex;
             gap: 10px;
@@ -1938,11 +1729,6 @@
             transform: scale(0.95);
         }
 
-        .social-link:hover {
-            transform: translateY(-3px);
-            opacity: 0.9;
-        }
-
         .footer h3 {
             font-size: 1.25rem;
             margin-bottom: 1rem;
@@ -1971,10 +1757,6 @@
             font-size: 1rem;
             transition: var(--transition);
             display: block;
-        }
-
-        .footer ul li a:active {
-            color: var(--accent);
         }
 
         /* ===== BACK TO TOP ===== */
@@ -2009,18 +1791,7 @@
             transform: scale(0.95);
         }
 
-        .back-to-top:hover {
-            transform: translateY(-5px);
-            background: var(--accent-light);
-        }
-
         /* ===== RESPONSIVE BREAKPOINTS ===== */
-        @media (min-width: 375px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-        }
-
         @media (min-width: 640px) {
             .form-row {
                 grid-template-columns: repeat(2, 1fr);
@@ -2091,98 +1862,42 @@
                 transform: scale(0.95);
             }
             
-            .gallery-item:active {
-                transform: translateY(-3px);
-            }
-            
             .back-to-top:active {
                 transform: scale(0.95);
             }
         }
 
-        /* ===== FLOATING PHOTOGRAPHY ELEMENTS ===== */
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(5deg);
-            }
+        /* ===== PERFORMANCE OPTIMIZATIONS ===== */
+        .gallery-item,
+        .featured-item,
+        .service-card,
+        .btn {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000;
         }
 
-        .floating-element {
-            position: fixed;
-            width: 40px;
-            height: 40px;
-            background-repeat: no-repeat;
-            z-index: 0;
-            pointer-events: none;
-            animation: float 6s ease-in-out infinite;
-            display: none;
-            opacity: 0.15; /* More visible */
+        /* ===== LOADING OPTIMIZATIONS ===== */
+        .lazy-load {
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
 
-        .floating-camera {
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='%23e94560' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'%3E%3C/path%3E%3Ccircle cx='12' cy='13' r='4'%3E%3C/circle%3E%3C/svg%3E");
+        .lazy-load.loaded {
+            opacity: 1;
         }
 
-        .floating-lens {
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='%23e94560' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Ccircle cx='12' cy='12' r='6'%3E%3C/circle%3E%3Ccircle cx='12' cy='12' r='2' fill='%23e94560'%3E%3C/circle%3E%3C/svg%3E");
-            animation: float 8s ease-in-out infinite;
-        }
-
-        .floating-aperture {
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='%23e94560' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'%3E%3C/circle%3E%3Cline x1='12' y1='2' x2='12' y2='22'%3E%3C/line%3E%3Cline x1='2' y1='12' x2='22' y2='12'%3E%3C/line%3E%3Cline x1='4' y1='4' x2='20' y2='20'%3E%3C/line%3E%3Cline x1='4' y1='20' x2='20' y2='4'%3E%3C/line%3E%3C/svg%3E");
-            animation: float 7s ease-in-out infinite;
-        }
-
-        .floating-film {
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='%23e94560' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='2' width='20' height='20' rx='2'/%3E%3Crect x='6' y='6' width='4' height='4' rx='1' fill='%23e94560'/%3E%3Crect x='14' y='6' width='4' height='4' rx='1' fill='%23e94560'/%3E%3Crect x='6' y='14' width='4' height='4' rx='1' fill='%23e94560'/%3E%3Crect x='14' y='14' width='4' height='4' rx='1' fill='%23e94560'/%3E%3C/svg%3E");
-            animation: float 9s ease-in-out infinite;
-        }
-
-        .floating-flash {
-            background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 24 24' fill='none' stroke='%23e94560' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolygon points='13 3 3 14 12 14 11 21 21 10 12 10 13 3'%3E%3C/polygon%3E%3C/svg%3E");
-            animation: float 5s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) { top: 15%; left: 5%; animation-delay: 0s; }
-        .floating-element:nth-child(2) { top: 25%; right: 10%; animation-delay: 2s; }
-        .floating-element:nth-child(3) { bottom: 20%; left: 15%; animation-delay: 4s; }
-        .floating-element:nth-child(4) { bottom: 30%; right: 5%; animation-delay: 1s; }
-        .floating-element:nth-child(5) { top: 40%; left: 8%; animation-delay: 3s; }
-        .floating-element:nth-child(6) { top: 60%; right: 12%; animation-delay: 5s; }
-        .floating-element:nth-child(7) { top: 20%; left: 80%; animation-delay: 1.5s; }
-        .floating-element:nth-child(8) { bottom: 40%; right: 20%; animation-delay: 3.5s; }
-        .floating-element:nth-child(9) { top: 10%; left: 70%; animation-delay: 2.5s; }
-        .floating-element:nth-child(10) { bottom: 15%; left: 25%; animation-delay: 4.5s; }
-
-        @media (min-width: 768px) {
-            .floating-element {
-                display: block;
-            }
-        }
-
-        /* Print styles - remove all decorative backgrounds */
+        /* Print styles */
         @media print {
             .photography-icons,
-            .floating-element,
-            .brand-value::after,
-            .contact-form-container::before,
-            .featured-grid::before,
-            .featured-grid::after {
+            .floating-element {
                 display: none !important;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Old Photography Icons Background - NOW VERY VISIBLE -->
+    <!-- Photography Icons Background -->
     <div class="photography-icons" id="photography-icons"></div>
 
     <!-- Header & Navigation -->
@@ -2248,51 +1963,15 @@
         </div>
     </div>
 
-    <!-- Floating Photography Elements -->
-    <div class="floating-element floating-camera"></div>
-    <div class="floating-element floating-camera"></div>
-    <div class="floating-element floating-lens"></div>
-    <div class="floating-element floating-lens"></div>
-    <div class="floating-element floating-aperture"></div>
-    <div class="floating-element floating-aperture"></div>
-    <div class="floating-element floating-film"></div>
-    <div class="floating-element floating-film"></div>
-    <div class="floating-element floating-flash"></div>
-    <div class="floating-element floating-flash"></div>
-
     <!-- Page Content -->
     <div class="page-content">
-        <!-- HOME PAGE -->
+        <!-- HOME PAGE - CLEAN SLIDESHOW ONLY (NO TEXT) -->
         <div id="home-page" class="page active">
             <section class="slideshow-hero">
                 <div class="slideshow-container" id="slideshowContainer">
                     <!-- Slides will be loaded by JavaScript -->
                 </div>
-                
-                <div class="slideshow-overlay"></div>
-                
-                <div class="hero-content container">
-                    <h1 class="hero-title">Capture Life's <span class="highlight">Beautiful</span> Moments</h1>
-                    <p class="hero-subtitle">Professional photography studio specializing in food, product, fashion, and commercial photography. Creating stunning visuals that tell your story.</p>
-                    
-                    <!-- Video comment section -->
-                    <div class="video-comment">
-                        <i class="fas fa-video"></i>
-                        <span>We also create cinematic video content for your brand</span>
-                    </div>
-                    
-                    <div class="btn-group">
-                        <a href="#gallery" class="btn btn-primary btn-spacing" onclick="showPage('gallery'); return false;">
-                            <i class="fas fa-images"></i> View Gallery
-                        </a>
-                        <a href="#contact" class="btn btn-outline btn-spacing" style="color: white; border-color: white;" onclick="showPage('contact'); return false;">
-                            <i class="fas fa-calendar"></i> Book a Session
-                        </a>
-                    </div>
-                    
-                    <!-- Slideshow Navigation Dots -->
-                    <div class="slideshow-dots" id="slideshowDots"></div>
-                </div>
+                <!-- NO TEXT OR BUTTONS HERE - Clean slideshow only -->
             </section>
 
             <!-- Featured Work Section -->
@@ -2332,10 +2011,8 @@
         <div id="about-page" class="page">
             <section class="about-hero">
                 <div class="container">
-                    <div class="hero-content">
-                        <h1 class="hero-title">Meet <span class="highlight">Sai Kumar Maddina</span></h1>
-                        <p class="hero-subtitle">The creative mind behind PQ Studios</p>
-                    </div>
+                    <h1 class="hero-title">Meet <span class="highlight">Sai Kumar Maddina</span></h1>
+                    <p class="hero-subtitle">The creative mind behind PQ Studios</p>
                 </div>
             </section>
 
@@ -2372,7 +2049,6 @@
                             </div>
                         </div>
                         
-                        <!-- ===== UPDATED BRAND STORY SECTION ===== -->
                         <div class="brand-story">
                             <h3>The PQ Studios Brand Story</h3>
                             <p class="text-center mb-4">PQ Studios isn't just a photography studio - it's a vision brought to life. Founded on the principle that every image should tell a compelling story, we've grown from a passion project into Hyderabad's premier photography destination.</p>
@@ -2471,10 +2147,8 @@
         <div id="services-page" class="page">
             <section class="services-hero">
                 <div class="container">
-                    <div class="hero-content">
-                        <h1 class="hero-title">Our <span class="highlight">Services</span></h1>
-                        <p class="hero-subtitle">Professional photography services tailored to your needs</p>
-                    </div>
+                    <h1 class="hero-title">Our <span class="highlight">Services</span></h1>
+                    <p class="hero-subtitle">Professional photography services tailored to your needs</p>
                 </div>
             </section>
 
@@ -2490,7 +2164,7 @@
             </section>
         </div>
 
-        <!-- ===== NEW GALLERY PAGE ===== -->
+        <!-- GALLERY PAGE -->
         <div id="gallery-page" class="page">
             <!-- Category Dropdown Toggle -->
             <button class="category-toggle" id="categoryToggle" aria-label="Jump to category">
@@ -2520,10 +2194,8 @@
         <div id="contact-page" class="page">
             <section class="contact-hero">
                 <div class="container">
-                    <div class="hero-content">
-                        <h1 class="hero-title">Get In <span class="highlight">Touch</span></h1>
-                        <p class="hero-subtitle">Ready to bring your vision to life? Contact us today.</p>
-                    </div>
+                    <h1 class="hero-title">Get In <span class="highlight">Touch</span></h1>
+                    <p class="hero-subtitle">Ready to bring your vision to life? Contact us today.</p>
                 </div>
             </section>
 
@@ -2710,14 +2382,12 @@
         const gridRows = 6;
         const cellWidth = 100 / gridCols;
         const cellHeight = 100 / gridRows;
-        const usedPositions = new Set();
         
         function generateIcons() {
             const container = document.getElementById('photography-icons');
             if (!container) return;
             
             container.innerHTML = '';
-            usedPositions.clear();
             
             const gridPositions = [];
             for (let row = 0; row < gridRows; row++) {
@@ -2810,7 +2480,6 @@
             window.scrollTo(0, 0);
             closeMenu();
             
-            // Hide category dropdown when switching pages
             if (pageId !== 'gallery') {
                 document.getElementById('categorySelector').classList.remove('active');
             }
@@ -2859,7 +2528,7 @@
             link.addEventListener('click', closeMenu);
         });
 
-        // ===== SLIDESHOW DATA - USING YOUR EXACT FILENAMES =====
+        // ===== SLIDESHOW DATA =====
         const slideshowData = [
             {
                 id: 1,
@@ -2887,79 +2556,72 @@
             }
         ];
 
-        // Initialize Slideshow
+        // ===== OPTIMIZED SLIDESHOW =====
         let currentSlide = 0;
         let slideshowInterval;
 
         function initSlideshow() {
             const slideshowContainer = document.getElementById('slideshowContainer');
-            const slideshowDots = document.getElementById('slideshowDots');
+            if (!slideshowContainer) return;
             
-            if (!slideshowContainer || !slideshowDots) return;
-            
-            // Clear any existing content
             slideshowContainer.innerHTML = '';
-            slideshowDots.innerHTML = '';
             
-            // Create slides
-            slideshowData.forEach((slide, index) => {
-                // Create slide element
-                const slideElement = document.createElement('div');
-                slideElement.className = `slide ${index === 0 ? 'active' : ''}`;
-                
-                // Create image element
-                const img = document.createElement('img');
-                img.src = slide.filename;
-                img.alt = slide.alt;
-                img.loading = "lazy";
-                
-                // Add fallback if image fails to load
-                img.onerror = function() {
-                    console.error('Failed to load slideshow image:', slide.filename);
-                    this.src = 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80';
-                    this.alt = 'Image failed to load: ' + slide.filename;
-                };
-                
-                slideElement.appendChild(img);
-                slideElement.setAttribute('data-slide', slide.id);
-                slideElement.setAttribute('aria-label', slide.alt);
-                
-                slideshowContainer.appendChild(slideElement);
-                
-                // Create dot
-                const dot = document.createElement('button');
-                dot.className = `slideshow-dot ${index === 0 ? 'active' : ''}`;
-                dot.setAttribute('aria-label', `Go to slide ${index + 1}: ${slide.title}`);
-                dot.setAttribute('data-slide-index', index);
-                
-                dot.addEventListener('click', () => {
-                    goToSlide(index);
+            // Preload first image
+            const firstImage = new Image();
+            firstImage.src = slideshowData[0].filename;
+            firstImage.onload = () => {
+                console.log('First slide loaded successfully');
+                createSlides();
+                startSlideshow();
+            };
+            firstImage.onerror = () => {
+                console.warn('First slide failed to load, using fallback');
+                createSlides();
+                startSlideshow();
+            };
+            
+            function createSlides() {
+                slideshowData.forEach((slide, index) => {
+                    const slideElement = document.createElement('div');
+                    slideElement.className = `slide ${index === 0 ? 'active' : ''}`;
+                    
+                    const img = document.createElement('img');
+                    img.src = slide.filename;
+                    img.alt = slide.alt;
+                    img.loading = index === 0 ? "eager" : "lazy";
+                    
+                    img.onerror = function() {
+                        console.warn('Failed to load slideshow image:', slide.filename);
+                        this.src = 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+                        this.alt = 'Professional photography studio - Default image';
+                    };
+                    
+                    slideElement.appendChild(img);
+                    slideshowContainer.appendChild(slideElement);
                 });
-                
-                slideshowDots.appendChild(dot);
-            });
+            }
             
-            // Start automatic slideshow
-            startSlideshow();
-            
-            // Pause on hover
-            slideshowContainer.addEventListener('mouseenter', pauseSlideshow);
-            slideshowContainer.addEventListener('mouseleave', startSlideshow);
-            
-            // Touch events for mobile
+            // Add touch events for mobile
             let touchStartX = 0;
-            let touchEndX = 0;
             
             slideshowContainer.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
+                touchStartX = e.touches[0].clientX;
                 pauseSlideshow();
-            });
+            }, { passive: true });
             
             slideshowContainer.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
+                const touchEndX = e.changedTouches[0].clientX;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        nextSlide(); // Swipe left
+                    } else {
+                        prevSlide(); // Swipe right
+                    }
+                }
                 startSlideshow();
-            });
+            }, { passive: true });
         }
 
         function startSlideshow() {
@@ -2979,63 +2641,20 @@
 
         function nextSlide() {
             const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.slideshow-dot');
-            
             if (slides.length === 0) return;
             
             slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
-            
             currentSlide = (currentSlide + 1) % slides.length;
-            
             slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
         }
 
         function prevSlide() {
             const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.slideshow-dot');
-            
             if (slides.length === 0) return;
             
             slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
-            
             currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            
             slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-        }
-
-        function goToSlide(index) {
-            const slides = document.querySelectorAll('.slide');
-            const dots = document.querySelectorAll('.slideshow-dot');
-            
-            if (index < 0 || index >= slides.length) return;
-            
-            slides[currentSlide].classList.remove('active');
-            dots[currentSlide].classList.remove('active');
-            
-            currentSlide = index;
-            
-            slides[currentSlide].classList.add('active');
-            dots[currentSlide].classList.add('active');
-            
-            // Restart slideshow after manual navigation
-            startSlideshow();
-        }
-
-        function handleSwipe() {
-            const swipeThreshold = 50;
-            const diff = touchStartX - touchEndX;
-            
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    nextSlide(); // Swipe left
-                } else {
-                    prevSlide(); // Swipe right
-                }
-            }
         }
 
         // ===== SERVICES DATA =====
@@ -3238,7 +2857,6 @@
             }
         ];
 
-        // Category to filename mapping - EXACTLY as in your document
         const categoryFilePatterns = {
             'food': 'food photography',
             'product': 'product photography', 
@@ -3257,7 +2875,6 @@
         function initCategoryDropdown() {
             if (!categoryToggle || !categorySelector || !categoryList) return;
 
-            // Populate category list
             galleryCategories.forEach(category => {
                 const li = document.createElement('li');
                 li.innerHTML = `
@@ -3277,14 +2894,12 @@
                 categoryList.appendChild(li);
             });
             
-            // Toggle dropdown
             categoryToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
                 const isActive = categorySelector.classList.toggle('active');
                 categorySelector.setAttribute('aria-hidden', !isActive);
             });
             
-            // Close dropdown when clicking outside
             document.addEventListener('click', (e) => {
                 if (!categorySelector.contains(e.target) && !categoryToggle.contains(e.target)) {
                     categorySelector.classList.remove('active');
@@ -3292,43 +2907,29 @@
                 }
             });
             
-            // Close dropdown on scroll
             window.addEventListener('scroll', () => {
                 categorySelector.classList.remove('active');
                 categorySelector.setAttribute('aria-hidden', 'true');
             }, { passive: true });
-            
-            // Handle escape key
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && categorySelector.classList.contains('active')) {
-                    categorySelector.classList.remove('active');
-                    categorySelector.setAttribute('aria-hidden', 'true');
-                    categoryToggle.focus();
-                }
-            });
         }
 
         function scrollToGalleryCategory(categoryId) {
             const targetSection = document.getElementById(`gallery-${categoryId}`);
             if (!targetSection) return;
 
-            // Close dropdown
             categorySelector.classList.remove('active');
             categorySelector.setAttribute('aria-hidden', 'true');
             
-            // Calculate scroll position
             const headerHeight = document.querySelector('.header').offsetHeight;
             const categoryToggleHeight = document.querySelector('.category-toggle').offsetHeight;
             const offset = headerHeight + categoryToggleHeight + 20;
             const sectionTop = targetSection.offsetTop - offset;
             
-            // Smooth scroll
             window.scrollTo({
                 top: sectionTop,
                 behavior: 'smooth'
             });
             
-            // Highlight active category
             document.querySelectorAll('.category-link').forEach(link => {
                 link.classList.remove('active');
                 if (link.dataset.category === categoryId) {
@@ -3362,7 +2963,7 @@
                 `;
                 
                 gallerySections.appendChild(section);
-                loadGalleryImages(category.id, category.count);
+                setTimeout(() => loadGalleryImages(category.id, category.count), 0);
             });
         }
 
@@ -3391,6 +2992,7 @@
                          width="400"
                          height="400"
                          data-index="${i-1}"
+                         class="lazy-load"
                          onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\"width:100%;height:100%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:12px;padding:10px;text-align:center;\">Image ${i}<br>${baseName}</div>'">
                 `;
                 
@@ -3408,7 +3010,6 @@
                 grid.appendChild(galleryItem);
             }
 
-            // Start lazy loading
             lazyLoadGalleryImages();
         }
 
@@ -3419,9 +3020,7 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const img = entry.target;
-                        if (!img.classList.contains('loaded')) {
-                            img.classList.add('loaded');
-                        }
+                        img.classList.add('loaded');
                         observer.unobserve(img);
                     }
                 });
@@ -3431,7 +3030,6 @@
             });
             
             galleryItems.forEach(img => {
-                // Load immediately if already in viewport
                 if (img.getBoundingClientRect().top < window.innerHeight + 200) {
                     img.classList.add('loaded');
                 } else {
@@ -3452,58 +3050,41 @@
         let currentGalleryImages = [];
         let currentImageIndex = 0;
         let currentCategoryId = '';
-        let modalTouchStartX = 0;
-        let modalTouchEndX = 0;
 
         function initGalleryModal() {
             if (!galleryModal || !modalClose) return;
 
-            // Close modal
             modalClose.addEventListener('click', closeModal);
-            modalClose.addEventListener('touchend', closeModal);
-
-            // Navigation buttons
             modalPrev.addEventListener('click', showPrevImage);
-            modalPrev.addEventListener('touchend', showPrevImage);
-            
             modalNext.addEventListener('click', showNextImage);
-            modalNext.addEventListener('touchend', showNextImage);
 
-            // Keyboard navigation
             document.addEventListener('keydown', handleKeyboardNavigation);
 
-            // Touch swipe for mobile
-            modalImage.addEventListener('touchstart', handleModalTouchStart, { passive: true });
-            modalImage.addEventListener('touchend', handleModalTouchEnd, { passive: true });
-
-            // Close modal when clicking outside image (on mobile)
             galleryModal.addEventListener('click', (e) => {
                 if (e.target === galleryModal) {
                     closeModal();
                 }
             });
-        }
-
-        function handleModalTouchStart(e) {
-            modalTouchStartX = e.changedTouches[0].screenX;
-        }
-
-        function handleModalTouchEnd(e) {
-            modalTouchEndX = e.changedTouches[0].screenX;
-            handleModalSwipe();
-        }
-
-        function handleModalSwipe() {
-            const swipeThreshold = 50;
-            const diff = modalTouchStartX - modalTouchEndX;
-
-            if (Math.abs(diff) > swipeThreshold) {
-                if (diff > 0) {
-                    showNextImage(); // Swipe left
-                } else {
-                    showPrevImage(); // Swipe right
+            
+            // Touch events for mobile
+            let touchStartX = 0;
+            
+            modalImage.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+            }, { passive: true });
+            
+            modalImage.addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].clientX;
+                const diff = touchStartX - touchEndX;
+                
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        showNextImage(); // Swipe left
+                    } else {
+                        showPrevImage(); // Swipe right
+                    }
                 }
-            }
+            }, { passive: true });
         }
 
         function handleKeyboardNavigation(e) {
@@ -3552,7 +3133,6 @@
             currentImageIndex = index;
             
             updateModalImage();
-            preloadAdjacentImages();
 
             galleryModal.classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -3562,12 +3142,6 @@
         function closeModal() {
             galleryModal.classList.remove('active');
             document.body.style.overflow = '';
-            
-            // Return focus to the clicked image
-            const clickedImage = document.querySelector(`[data-index="${currentImageIndex}"]`);
-            if (clickedImage) {
-                clickedImage.closest('.gallery-item').focus();
-            }
         }
 
         function updateModalImage() {
@@ -3593,25 +3167,6 @@
             };
             
             img.src = imageData.src;
-        }
-
-        function preloadAdjacentImages() {
-            const preloadCount = 2;
-            
-            for (let i = 1; i <= preloadCount; i++) {
-                const nextIndex = (currentImageIndex + i) % currentGalleryImages.length;
-                const prevIndex = (currentImageIndex - i + currentGalleryImages.length) % currentGalleryImages.length;
-                
-                if (currentGalleryImages[nextIndex]) {
-                    const nextImg = new Image();
-                    nextImg.src = currentGalleryImages[nextIndex].src;
-                }
-                
-                if (currentGalleryImages[prevIndex]) {
-                    const prevImg = new Image();
-                    prevImg.src = currentGalleryImages[prevIndex].src;
-                }
-            }
         }
 
         // ===== FEATURED WORK =====
@@ -3675,7 +3230,6 @@
 
             clientsTrack.innerHTML = '';
 
-            // Your 12 client logos - EXACT FILENAMES
             const clientFiles = [
                 "client logos 1.jpg",
                 "client logos 2.jpg",
@@ -3691,7 +3245,6 @@
                 "client logos 12.jpg"
             ];
 
-            // Create 3 sets for infinite scrolling effect
             for (let set = 0; set < 3; set++) {
                 clientFiles.forEach(filename => {
                     const clientItem = document.createElement('div');
@@ -3850,85 +3403,19 @@
             });
         }
 
-        // ===== IMAGE DEBUGGER =====
-        function debugImageLoading() {
-            console.log('🔍 Checking all images...');
-            
-            // Check slideshow images
-            console.log('📸 Slideshow Images:');
-            slideshowData.forEach(slide => {
-                const img = new Image();
-                img.onload = () => console.log(`   ✓ ${slide.filename}`);
-                img.onerror = () => console.error(`   ✗ ${slide.filename} - NOT FOUND`);
-                img.src = slide.filename;
-            });
-            
-            // Check featured images
-            console.log('⭐ Featured Images:');
-            ['featured01.jpg', 'featured02.jpg', 'featured03.jpg', 'featured04.jpg'].forEach(filename => {
-                const img = new Image();
-                img.onload = () => console.log(`   ✓ ${filename}`);
-                img.onerror = () => console.error(`   ✗ ${filename} - NOT FOUND`);
-                img.src = filename;
-            });
-            
-            // Check profile image
-            console.log('👤 Profile Image:');
-            const profileImg = new Image();
-            profileImg.onload = () => console.log(`   ✓ sai profile.jpg`);
-            profileImg.onerror = () => console.error(`   ✗ sai profile.jpg - NOT FOUND`);
-            profileImg.src = 'sai profile.jpg';
-            
-            // Check client logos
-            console.log('🏢 Client Logos:');
-            for (let i = 1; i <= 12; i++) {
-                const filename = `client logos ${i}.jpg`;
-                const img = new Image();
-                img.onload = () => console.log(`   ✓ ${filename}`);
-                img.onerror = () => console.error(`   ✗ ${filename} - NOT FOUND`);
-                img.src = filename;
-            }
-            
-            // Check gallery categories
-            console.log('🏞️ Gallery Categories:');
-            galleryCategories.forEach(category => {
-                const testFile = `${categoryFilePatterns[category.id]} 1.jpg`;
-                const img = new Image();
-                img.onload = () => console.log(`   ✓ ${category.name}: ${testFile}`);
-                img.onerror = () => console.error(`   ✗ ${category.name}: ${testFile} - NOT FOUND`);
-                img.src = testFile;
-            });
-        }
-
         // ===== INITIALIZE EVERYTHING =====
         document.addEventListener('DOMContentLoaded', function() {
-            // Generate the enhanced background
             generateIcons();
-            
-            // Initialize page
             initPage();
-            
-            // Initialize slideshow
             initSlideshow();
-            
-            // Load all content
             loadServices();
             loadFeaturedWork();
             loadClients();
-            
-            // Load gallery sections
             loadGallerySections();
             initCategoryDropdown();
             initGalleryModal();
             
-            // Highlight active category based on scroll
             window.addEventListener('scroll', highlightActiveCategory, { passive: true });
-            
-            // Initial highlight
-            setTimeout(highlightActiveCategory, 1000);
-            
-            // Run debugger
-            setTimeout(debugImageLoading, 2000);
         });
 
         function highlightActiveCategory() {
@@ -3953,7 +3440,6 @@
                 }
             });
             
-            // Update active link in dropdown
             document.querySelectorAll('.category-link').forEach(link => {
                 link.classList.remove('active');
                 if (link.dataset.category === currentSection) {
