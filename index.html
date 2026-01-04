@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>PQ Studios - Professional Photography</title>
+    <meta name="description" content="PQ Studios Hyderabad - Professional Photography Studio offering Food, Product, Fashion, Pet, and Interior Photography services">
+    <title>PQ Studios - Professional Photography | Hyderabad</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -26,12 +27,12 @@
         }
 
         :root {
-            /* BLUE COLOR THEME - Changed from red to blue */
+            /* BLUE COLOR THEME */
             --primary: #1a1a2e;
             --secondary: #16213e;
-            --accent: #3a86ff; /* Changed from #e94560 (red) to blue */
-            --accent-light: #5d9cff; /* Lighter blue */
-            --accent-dark: #2a5fc1; /* Darker blue */
+            --accent: #3a86ff;
+            --accent-light: #5d9cff;
+            --accent-dark: #2a5fc1;
             --accent-gradient: linear-gradient(135deg, #3a86ff, #4361ee);
             --light: #f8f9fa;
             --gray: #6c757d;
@@ -63,10 +64,8 @@
             position: relative;
             overflow-x: hidden;
             min-height: 100vh;
-            padding-bottom: env(safe-area-inset-bottom);
         }
 
-        /* Photography icons background - ENHANCED VISIBILITY */
         .photography-icons {
             position: fixed;
             top: 0;
@@ -81,32 +80,11 @@
         
         .icon {
             position: absolute;
-            color: rgba(140, 140, 140, 0.25);
-            font-size: 1.8rem;
-            opacity: 0.7;
+            color: rgba(140, 140, 140, 0.15);
+            font-size: 1.6rem;
+            opacity: 0.6;
             z-index: -1;
-            transition: all 0.5s ease;
             pointer-events: none;
-            filter: drop-shadow(0 2px 3px rgba(0,0,0,0.1));
-        }
-        
-        /* Minimal animations */
-        .pulse-subtle {
-            animation: pulse-subtle 25s infinite ease-in-out;
-        }
-        
-        @keyframes pulse-subtle {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 0.8; }
-        }
-        
-        .rotate-slow {
-            animation: rotate-slow 200s infinite linear;
-        }
-        
-        @keyframes rotate-slow {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
 
         /* ===== SECTION BACKGROUNDS ===== */
@@ -123,18 +101,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.85);
             z-index: -1;
             pointer-events: none;
-            backdrop-filter: blur(1px);
-        }
-
-        .featured-work::before,
-        .brand-story::before,
-        .service-cards-container::before,
-        .contact-form-container::before {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(1.5px);
         }
 
         /* ===== FULL WIDTH CONTAINER ===== */
@@ -155,50 +124,6 @@
         @media (min-width: 1200px) {
             .container {
                 padding: 0 60px;
-            }
-        }
-
-        /* Reset any right-side shifting */
-        @media (max-width: 767px) {
-            body {
-                overflow-x: hidden;
-                width: 100%;
-            }
-            
-            .page-content,
-            .section,
-            .container {
-                max-width: 100vw;
-                overflow-x: hidden;
-                margin-left: 0;
-                margin-right: 0;
-                padding-left: 15px;
-                padding-right: 15px;
-            }
-            
-            .featured-grid,
-            .gallery-grid,
-            .service-cards,
-            .stats-grid {
-                margin-left: 0;
-                margin-right: 0;
-                width: 100%;
-            }
-            
-            h1, h2, h3, h4, h5, h6,
-            p, .text-center {
-                text-align: center !important;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            
-            .icon {
-                opacity: 0.6;
-                font-size: 1.4rem;
-            }
-            
-            .section::before {
-                background: rgba(255, 255, 255, 0.65);
             }
         }
 
@@ -309,7 +234,6 @@
             width: 100%;
         }
 
-        /* ===== BUTTON SPACING ===== */
         .btn-spacing {
             margin: 8px !important;
         }
@@ -374,7 +298,7 @@
             position: relative;
         }
 
-        /* UPDATED LOGO SECTION - REMOVED TEXT */
+        /* LOGO */
         .logo {
             display: flex;
             align-items: center;
@@ -518,8 +442,6 @@
             visibility: hidden;
             transition: var(--transition);
             z-index: 999;
-            backdrop-filter: blur(2px);
-            -webkit-backdrop-filter: blur(2px);
         }
 
         .nav-overlay.active {
@@ -539,7 +461,6 @@
             transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
             overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
         }
 
         .nav-menu.active {
@@ -574,7 +495,7 @@
 
         .nav-menu .nav-link:active,
         .nav-menu .nav-link.active {
-            background: rgba(58, 134, 255, 0.1); /* Updated to blue */
+            background: rgba(58, 134, 255, 0.1);
             color: var(--accent);
         }
 
@@ -609,7 +530,7 @@
             display: block;
         }
 
-        /* ===== HOME PAGE - CLEAN SLIDESHOW ONLY (NO TEXT) ===== */
+        /* ===== HOME PAGE - CLEAN SLIDESHOW ONLY ===== */
         .slideshow-hero {
             position: relative;
             min-height: 85vh;
@@ -646,23 +567,6 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
-        }
-
-        /* REMOVED: All text and buttons over slideshow */
-        .slideshow-overlay {
-            display: none !important;
-        }
-
-        .hero-content {
-            display: none !important;
-        }
-
-        .video-comment {
-            display: none !important;
-        }
-
-        .slideshow-dots {
-            display: none !important;
         }
 
         /* ===== HOME PAGE Featured Work ===== */
@@ -707,6 +611,67 @@
             transform: scale(1.05);
         }
 
+        /* ===== RESTORED CLIENT LOGO SCROLLING SECTION - FIXED ===== */
+        .clients-section {
+            padding: 3rem 0;
+            background: rgba(248, 249, 250, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .clients-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .clients-track {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            padding: 1.5rem 0;
+            will-change: transform;
+        }
+        
+        /* FIXED: Removed duplicate animation track */
+        
+        .client-logo-item {
+            flex: 0 0 auto;
+            width: 160px;
+            height: 90px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-lg);
+            padding: 25px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--gray-light);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .client-logo-item:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-color: var(--accent);
+        }
+        
+        /* FIXED: Client logos in COLOR by default, not grayscale */
+        .client-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            /* REMOVED: filter: grayscale(100%); */
+            opacity: 1; /* Changed from 0.9 to 1 */
+            transition: all 0.3s ease;
+        }
+        
+        .client-logo-item:hover .client-logo-img {
+            /* REMOVED: filter: grayscale(0%); - Already in color */
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
         /* ===== ABOUT PAGE ===== */
         .about-hero {
             position: relative;
@@ -745,97 +710,6 @@
             box-shadow: var(--shadow-md);
             position: relative;
             z-index: 2;
-            backdrop-filter: blur(2px);
-        }
-
-        .brand-story h3 {
-            color: var(--accent);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .brand-values {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .brand-values {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-        }
-
-        .brand-value {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.25rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
-            position: relative;
-            z-index: 2;
-        }
-
-        .brand-value:hover {
-            border-left-color: var(--accent);
-            transform: translateX(10px);
-        }
-
-        .brand-value i {
-            color: var(--accent);
-            font-size: 1.5rem;
-            margin-top: 0.25rem;
-            min-width: 30px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin: 2.5rem 0;
-            position: relative;
-            z-index: 2;
-        }
-
-        @media (min-width: 768px) {
-            .stats-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1.5rem;
-            }
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 2;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 0.75rem;
-        }
-
-        .stat-label {
-            font-size: 1rem;
-            color: var(--gray);
         }
 
         /* ===== SERVICES PAGE ===== */
@@ -849,10 +723,6 @@
             text-align: center;
         }
 
-        .service-cards-container {
-            position: relative;
-        }
-        
         .service-cards {
             display: grid;
             grid-template-columns: 1fr;
@@ -887,13 +757,11 @@
             position: relative;
             overflow: hidden;
             border: 1px solid var(--gray-light);
-            backdrop-filter: blur(2px);
         }
 
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
-            background: rgba(255, 255, 255, 0.98);
         }
 
         .service-icon {
@@ -910,128 +778,9 @@
             box-shadow: var(--shadow-md);
         }
 
-        /* ===== SERVICE CARD BUTTONS ===== */
-        .service-card-buttons {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 12px !important;
-            margin-top: auto !important;
-            padding-top: 1.5rem !important;
-            width: 100% !important;
-        }
-
-        .service-card-buttons .btn {
-            flex: 1 !important;
-            width: 100% !important;
-            min-width: 100% !important;
-            text-align: center !important;
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            min-height: 56px !important;
-            height: auto !important;
-        }
-
-        /* ===== INSTAGRAM-STYLE GALLERY MOBILE OPTIMIZATION ===== */
-        @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(3, 1fr) !important;
-                gap: 0 !important;
-            }
-            
-            .gallery-item {
-                aspect-ratio: 1 !important;
-                width: 100% !important;
-                margin: 0 !important;
-                border-radius: 0 !important;
-            }
-            
-            .gallery-item img {
-                border-radius: 0 !important;
-                transition: transform 0.2s ease !important;
-            }
-            
-            .gallery-item:active img {
-                transform: scale(0.95) !important;
-                opacity: 0.9 !important;
-            }
-            
-            .category-toggle {
-                position: fixed !important;
-                top: 80px !important;
-                left: 10px !important;
-                right: 10px !important;
-                width: calc(100% - 20px) !important;
-                max-width: none !important;
-                z-index: 1000 !important;
-                background: var(--accent) !important;
-                border: none !important;
-                box-shadow: 0 4px 20px rgba(58, 134, 255, 0.3) !important;
-            }
-            
-            .category-selector {
-                top: 140px !important;
-                left: 10px !important;
-                right: 10px !important;
-                width: calc(100% - 20px) !important;
-                max-width: none !important;
-                max-height: 60vh !important;
-            }
-            
-            .gallery-section {
-                padding: 30px 10px !important;
-                scroll-margin-top: 130px !important;
-            }
-            
-            .gallery-section h2 {
-                font-size: 1.3rem !important;
-                margin-bottom: 5px !important;
-            }
-            
-            .gallery-section p {
-                font-size: 0.8rem !important;
-                opacity: 0.7 !important;
-            }
-        }
-
-        /* Instagram-like hover effect for desktop */
-        @media (min-width: 769px) {
-            .gallery-item {
-                transition: transform 0.3s ease !important;
-            }
-            
-            .gallery-item:hover {
-                transform: scale(1.02) !important;
-                z-index: 1 !important;
-            }
-            
-            .gallery-item:hover img {
-                opacity: 0.9 !important;
-            }
-        }
-
-        /* Loading skeleton animation - FIXED */
-        @keyframes loading {
-            0% { background-position: -200px 0; }
-            100% { background-position: calc(200px + 100%) 0; }
-        }
-
-        /* ===== GALLERY PAGE ===== */
+        /* ===== GALLERY PAGE - COMPLETELY FIXED ===== */
         #gallery-page {
             background: var(--white);
-        }
-
-        #gallery-page .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        #gallery-page .slideshow-hero,
-        #gallery-page .gallery-hero {
-            display: none !important;
         }
 
         .gallery-page-content {
@@ -1065,17 +814,12 @@
             max-width: 400px;
             margin: 0 auto;
             backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255,255,255,0.2);
         }
 
         .category-toggle:active {
             background: var(--accent-dark);
             transform: scale(0.98);
-        }
-
-        .category-toggle i {
-            font-size: 1rem;
         }
 
         /* Category dropdown menu */
@@ -1087,7 +831,6 @@
             z-index: 999;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             border-radius: 16px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.15);
             max-height: 70vh;
@@ -1114,74 +857,6 @@
             }
         }
 
-        .category-title {
-            padding: 18px 20px;
-            background: var(--primary);
-            color: white;
-            font-weight: 600;
-            font-size: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .category-list {
-            list-style: none;
-            max-height: calc(70vh - 60px);
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .category-list::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        .category-list::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        .category-list::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
-        .category-list li {
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .category-list li:last-child {
-            border-bottom: none;
-        }
-
-        .category-link {
-            display: flex;
-            align-items: center;
-            padding: 16px 20px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            background: transparent;
-            font-size: 0.95rem;
-            min-height: 56px;
-        }
-
-        .category-link:active,
-        .category-link.active {
-            background: rgba(58, 134, 255, 0.08); /* Updated to blue */
-            color: var(--accent);
-            padding-left: 24px;
-        }
-
-        .category-link i {
-            margin-right: 12px;
-            width: 20px;
-            text-align: center;
-            color: var(--accent);
-            font-size: 1.1rem;
-        }
-
         /* Gallery sections */
         .gallery-section {
             padding: 40px 20px;
@@ -1193,50 +868,27 @@
             background: rgba(248, 249, 250, 0.5);
         }
 
-        .section-header {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .gallery-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        .gallery-section p {
-            color: var(--gray);
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Instagram-style grid */
+        /* FIXED: Gallery loading system */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4px;
             width: 100%;
             margin: 0;
             padding: 0;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2px;
+            }
         }
 
         @media (min-width: 1024px) {
             .gallery-grid {
                 grid-template-columns: repeat(5, 1fr);
             }
-            
-            .gallery-section {
-                padding: 50px 40px;
-            }
-            
-            .gallery-section h2 {
-                font-size: 1.8rem;
-            }
-        }
-
-        .gallery-grid {
-            gap: 0 !important;
         }
 
         .gallery-item {
@@ -1246,31 +898,15 @@
             aspect-ratio: 1;
             background: #f8f9fa;
             cursor: pointer;
-            transition: transform 0.2s ease;
             -webkit-tap-highlight-color: transparent;
             user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .gallery-item:active {
-            transform: scale(0.98);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            will-change: opacity;
-        }
-
-        .gallery-item img.loaded {
-            opacity: 1;
-        }
-
-        /* Fixed loading animation - NO DUPLICATE CONTENT */
-        .gallery-item::before {
+        /* FIXED: Loading animation that STOPS when image loads */
+        .gallery-item.loading::before {
             content: '';
             position: absolute;
             top: 0;
@@ -1283,13 +919,37 @@
             z-index: 1;
         }
 
-        .gallery-item img.loaded ~ .gallery-item::before {
-            display: none;
+        @keyframes loading {
+            0% { background-position: -200px 0; }
+            100% { background-position: calc(200px + 100%) 0; }
         }
 
-        .gallery-item img.loaded ~ .gallery-item::before {
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.3s ease;
             opacity: 0;
-            animation: none;
+            position: relative;
+            z-index: 2;
+        }
+
+        .gallery-item img.loaded {
+            opacity: 1;
+        }
+
+        .gallery-item img.error {
+            opacity: 1;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+            padding: 10px;
+            text-align: center;
         }
 
         /* ===== GALLERY MODAL POPUP ===== */
@@ -1343,11 +1003,6 @@
             transition: all 0.3s ease;
         }
 
-        .modal-close:hover {
-            background: var(--accent);
-            transform: scale(1.1);
-        }
-
         .modal-nav-btn {
             position: absolute;
             top: 50%;
@@ -1375,91 +1030,6 @@
             right: 20px;
         }
 
-        .modal-nav-btn:hover {
-            background: var(--accent);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .modal-image-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .modal-image {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
-            color: white;
-            padding: 30px 20px 20px;
-            text-align: center;
-        }
-
-        .modal-title {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .modal-counter {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        /* Mobile modal styles */
-        @media (max-width: 768px) {
-            .modal-content {
-                width: 100%;
-                height: 100vh;
-            }
-            
-            .modal-close {
-                top: 10px;
-                right: 10px;
-                width: 40px;
-                height: 40px;
-                font-size: 1.2rem;
-            }
-            
-            .modal-nav-btn {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2rem;
-                bottom: 20px;
-                top: auto;
-                transform: none;
-            }
-            
-            .modal-prev {
-                left: 20px;
-            }
-            
-            .modal-next {
-                right: 20px;
-            }
-            
-            .modal-info {
-                padding: 20px 15px 15px;
-            }
-            
-            .modal-title {
-                font-size: 1rem;
-            }
-        }
-
         /* ===== CONTACT PAGE ===== */
         .contact-hero {
             position: relative;
@@ -1480,187 +1050,6 @@
             position: relative;
             z-index: 2;
             border: 1px solid var(--gray-light);
-            backdrop-filter: blur(3px);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--primary);
-            font-size: 1rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid var(--gray-light);
-            border-radius: var(--radius-md);
-            font-family: 'Inter', sans-serif;
-            font-size: 1.05rem;
-            transition: var(--transition);
-            -webkit-appearance: none;
-            appearance: none;
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(58, 134, 255, 0.1);
-        }
-
-        textarea.form-control {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
-        }
-
-        .form-status {
-            padding: 1rem;
-            border-radius: var(--radius-md);
-            margin-bottom: 1.5rem;
-            display: none;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .form-status.success {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            display: block;
-        }
-
-        .form-status.error {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-            display: block;
-        }
-
-        .form-status.loading {
-            background: #d1ecf1;
-            color: #0c5460;
-            border: 1px solid #bee5eb;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .contact-info {
-            margin-top: 2.5rem;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.25rem;
-            margin-bottom: 1.5rem;
-            padding: 1.25rem;
-            background: rgba(248, 249, 250, 0.9);
-            border-radius: var(--radius-md);
-        }
-
-        .info-item i {
-            color: var(--accent);
-            font-size: 1.4rem;
-            margin-top: 0.25rem;
-        }
-
-        /* ===== RESTORED CLIENT LOGO SCROLLING SECTION ===== */
-        .clients-section {
-            padding: 3rem 0;
-            background: rgba(248, 249, 250, 0.8);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .clients-wrapper {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            mask-image: linear-gradient(
-                to right,
-                transparent,
-                black 10%,
-                black 90%,
-                transparent
-            );
-            -webkit-mask-image: linear-gradient(
-                to right,
-                transparent,
-                black 10%,
-                black 90%,
-                transparent
-            );
-        }
-        
-        .clients-track {
-            display: flex;
-            align-items: center;
-            gap: 2.5rem;
-            padding: 1.5rem 0;
-            animation: scrollClients 15s linear infinite;
-            will-change: transform;
-        }
-        
-        .clients-track:hover {
-            animation-play-state: paused;
-        }
-        
-        @keyframes scrollClients {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        
-        .client-logo-item {
-            flex: 0 0 auto;
-            width: 160px;
-            height: 90px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: var(--radius-lg);
-            padding: 25px !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--gray-light);
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .client-logo-item:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            border-color: var(--accent);
-        }
-        
-        .client-logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.9;
-            transition: all 0.3s ease;
-        }
-        
-        .client-logo-item:hover .client-logo-img {
-            filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.1);
         }
 
         /* ===== FOOTER ===== */
@@ -1681,6 +1070,18 @@
             margin-bottom: 2rem;
             position: relative;
             z-index: 1;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
 
         /* ===== SOCIAL LINKS ===== */
@@ -1712,56 +1113,6 @@
             font-size: 1.2rem;
         }
 
-        .social-link.instagram {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-        }
-
-        .social-link.whatsapp {
-            background: #25D366;
-        }
-
-        .social-link.email {
-            background: #EA4335;
-        }
-
-        .social-link.phone {
-            background: #34B7F1;
-        }
-
-        .social-link:active {
-            transform: scale(0.95);
-        }
-
-        .footer h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .footer ul {
-            list-style: none;
-        }
-
-        .footer ul li {
-            margin-bottom: 0.75rem;
-            padding-left: 0.5rem;
-            border-left: 2px solid transparent;
-            transition: var(--transition);
-        }
-
-        .footer ul li:hover {
-            border-left-color: var(--accent);
-            padding-left: 1rem;
-        }
-
-        .footer ul li a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            font-size: 1rem;
-            transition: var(--transition);
-            display: block;
-        }
-
         /* ===== BACK TO TOP ===== */
         .back-to-top {
             position: fixed;
@@ -1790,60 +1141,55 @@
             visibility: visible;
         }
 
-        .back-to-top:active {
-            transform: scale(0.95);
-        }
-
-        /* ===== RESPONSIVE BREAKPOINTS ===== */
-        @media (min-width: 640px) {
-            .form-row {
-                grid-template-columns: repeat(2, 1fr);
+        /* ===== MOBILE OPTIMIZATIONS ===== */
+        @media (max-width: 767px) {
+            .container {
+                padding: 0 15px;
             }
             
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (min-width: 768px) {
-            .section {
-                padding: 4rem 0;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .footer-grid {
-                grid-template-columns: repeat(4, 1fr);
+            .gallery-section {
+                padding: 30px 15px;
             }
             
-            .nav-menu,
-            .nav-overlay {
-                display: none;
+            .category-toggle {
+                top: 70px;
+                left: 15px;
+                right: 15px;
+                width: calc(100% - 30px);
             }
-        }
-
-        /* ===== PRICING STYLES ===== */
-        .service-pricing {
-            margin-top: auto;
-            padding-top: 1.5rem;
-            border-top: 2px solid var(--gray-light);
-            display: none;
-        }
-
-        .service-card[data-service="studio"] .service-pricing {
-            display: block;
-        }
-
-        .price-tag {
-            display: inline-block;
-            background: var(--accent-gradient);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius-md);
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin-top: 0.75rem;
-            box-shadow: var(--shadow-sm);
+            
+            .category-selector {
+                top: 120px;
+                left: 15px;
+                right: 15px;
+                width: calc(100% - 30px);
+            }
+            
+            .service-card-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.95rem;
+            }
+            
+            .modal-nav-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+                bottom: 20px;
+                top: auto;
+                transform: none;
+            }
+            
+            .modal-prev {
+                left: 15px;
+            }
+            
+            .modal-next {
+                right: 15px;
+            }
         }
 
         /* ===== TOUCH OPTIMIZATIONS ===== */
@@ -1852,8 +1198,7 @@
             .nav-link:hover,
             .social-link:hover,
             .client-logo-item:hover,
-            .featured-item:hover img,
-            .gallery-item:hover {
+            .featured-item:hover img {
                 transform: none;
             }
             
@@ -1871,29 +1216,16 @@
         }
 
         /* ===== PERFORMANCE OPTIMIZATIONS ===== */
-        .gallery-item,
-        .featured-item,
-        .service-card,
-        .btn {
-            transform: translateZ(0);
-            backface-visibility: hidden;
-            perspective: 1000;
-        }
-
-        /* ===== LOADING OPTIMIZATIONS ===== */
-        .lazy-load {
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .lazy-load.loaded {
-            opacity: 1;
+        .will-change-transform {
+            will-change: transform;
         }
 
         /* Print styles */
         @media print {
             .photography-icons,
-            .floating-element {
+            .floating-element,
+            .back-to-top,
+            .category-toggle {
                 display: none !important;
             }
         }
@@ -1907,7 +1239,6 @@
     <header class="header">
         <div class="nav-container">
             <a href="#home" class="logo" onclick="showPage('home'); return false;">
-                <!-- UPDATED LOGO IMAGE - NO TEXT BESIDE IT -->
                 <img src="Logo.png" alt="PQ Studios Logo" class="logo-image">
             </a>
             
@@ -1967,20 +1298,19 @@
 
     <!-- Page Content -->
     <div class="page-content">
-        <!-- HOME PAGE - CLEAN SLIDESHOW ONLY (NO TEXT) -->
+        <!-- HOME PAGE -->
         <div id="home-page" class="page active">
             <section class="slideshow-hero">
                 <div class="slideshow-container" id="slideshowContainer">
-                    <!-- Slides will be loaded by JavaScript -->
+                    <!-- Slides loaded by JavaScript -->
                 </div>
-                <!-- NO TEXT OR BUTTONS HERE - Clean slideshow only -->
             </section>
 
             <!-- Featured Work Section -->
             <section class="section featured-work">
                 <div class="container">
                     <h2 class="text-center mb-4">Featured Work</h2>
-                    <p class="text-center mb-4">A glimpse of our recent photography projects across different categories</p>
+                    <p class="text-center mb-4">A glimpse of our recent photography projects</p>
                     
                     <div class="featured-grid" id="featuredGrid">
                         <!-- Featured items loaded by JavaScript -->
@@ -1994,7 +1324,7 @@
                 </div>
             </section>
 
-            <!-- Clients Section - FIXED SCROLLING DESIGN -->
+            <!-- Clients Section - FIXED -->
             <section class="clients-section">
                 <div class="container">
                     <h3 class="text-center mb-2" style="color: var(--primary);">Trusted By Leading Brands</h3>
@@ -2002,7 +1332,7 @@
                     
                     <div class="clients-wrapper">
                         <div class="clients-track" id="clientsTrack">
-                            <!-- Client logos loaded by JavaScript -->
+                            <!-- Client logos loaded by JavaScript - SINGLE SET -->
                         </div>
                     </div>
                 </div>
@@ -2024,121 +1354,15 @@
                         <img src="sai kumar profile pic.jpg" 
                              alt="Sai Kumar Maddina - Professional Photographer" 
                              class="profile-image"
-                             loading="lazy"
-                             onerror="this.src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                             loading="lazy">
                     </div>
                     
                     <div>
                         <h2 class="text-center mb-3">Your Story, Beautifully Told</h2>
                         <p class="text-center mb-4">Hi, I'm Sai Kumar Maddina, the passionate photographer behind PQ Studios. With over 10 years of experience, I specialize in capturing authentic moments that tell your unique story.</p>
                         
-                        <div class="stats-grid">
-                            <div class="stat-card">
-                                <div class="stat-number">10+</div>
-                                <div class="stat-label">Years Experience</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">500+</div>
-                                <div class="stat-label">Happy Clients</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">1000+</div>
-                                <div class="stat-label">Sessions</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">50+</div>
-                                <div class="stat-label">Awards</div>
-                            </div>
-                        </div>
-                        
-                        <div class="brand-story">
-                            <h3>The PQ Studios Brand Story</h3>
-                            <p class="text-center mb-4">PQ Studios isn't just a photography studio - it's a vision brought to life. Founded on the principle that every image should tell a compelling story, we've grown from a passion project into Hyderabad's premier photography destination.</p>
-                            
-                            <div class="brand-values">
-                                <div class="brand-value">
-                                    <i class="fas fa-eye"></i>
-                                    <div>
-                                        <h4>Vision</h4>
-                                        <p>To redefine photography through innovative techniques and artistic expression, creating timeless images that resonate with emotion.</p>
-                                    </div>
-                                </div>
-                                <div class="brand-value">
-                                    <i class="fas fa-bullseye"></i>
-                                    <div>
-                                        <h4>Mission</h4>
-                                        <p>To capture life's most precious moments with authenticity, creativity, and technical excellence, delivering beyond expectations.</p>
-                                    </div>
-                                </div>
-                                <div class="brand-value">
-                                    <i class="fas fa-heart"></i>
-                                    <div>
-                                        <h4>Passion</h4>
-                                        <p>Photography isn't just our profession - it's our passion. Every click is infused with love for the art and respect for our subjects.</p>
-                                    </div>
-                                </div>
-                                <div class="brand-value">
-                                    <i class="fas fa-star"></i>
-                                    <div>
-                                        <h4>Excellence</h4>
-                                        <p>We believe in excellence in every frame, from concept to final delivery, ensuring each image meets our high standards.</p>
-                                    </div>
-                                </div>
-                                <div class="brand-value">
-                                    <i class="fas fa-users"></i>
-                                    <div>
-                                        <h4>Community</h4>
-                                        <p>Building lasting relationships with clients, creatives, and the photography community to grow together.</p>
-                                    </div>
-                                </div>
-                                <div class="brand-value">
-                                    <i class="fas fa-lightbulb"></i>
-                                    <div>
-                                        <h4>Innovation</h4>
-                                        <p>Constantly evolving with new techniques, equipment, and creative approaches to stay at photography's cutting edge.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="text-center mt-4">
-                                <p><strong>Location:</strong> Hitech City, Hyderabad</p>
-                                <p><strong>Brand Philosophy:</strong> "Where every picture tells your unique story"</p>
-                                <a href="#contact" class="btn btn-primary btn-spacing mt-3" onclick="showPage('contact'); return false;">
-                                    <i class="fas fa-handshake"></i> Partner With Us
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="mb-4">
-                            <h3 class="mb-3 text-center">My Philosophy</h3>
-                            <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem; max-width: 600px; margin: 0 auto;">
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
-                                    <span>Every shot should tell a story</span>
-                                </div>
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
-                                    <span>Quality over quantity</span>
-                                </div>
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
-                                    <span>Client satisfaction is our top priority</span>
-                                </div>
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
-                                    <span>Continuous learning and innovation</span>
-                                </div>
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
-                                    <span>Ethical and professional approach</span>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="text-center">
-                            <a href="#contact" class="btn btn-primary btn-spacing" onclick="showPage('contact'); return false;">
-                                <i class="fas fa-calendar-alt"></i> Work With Me
-                            </a>
+                        <div class="stats-grid" id="statsGrid">
+                            <!-- Stats loaded by JavaScript -->
                         </div>
                     </div>
                 </div>
@@ -2157,7 +1381,7 @@
             <section class="section">
                 <div class="container">
                     <h2 class="text-center mb-4">What We Offer</h2>
-                    <p class="text-center mb-4">Choose from our specialized photography services designed for different needs</p>
+                    <p class="text-center mb-4">Choose from our specialized photography services</p>
                     
                     <div class="service-cards" id="servicesContainer">
                         <!-- Services loaded by JavaScript -->
@@ -2166,7 +1390,7 @@
             </section>
         </div>
 
-        <!-- GALLERY PAGE -->
+        <!-- GALLERY PAGE - FIXED -->
         <div id="gallery-page" class="page">
             <!-- Category Dropdown Toggle -->
             <button class="category-toggle" id="categoryToggle" aria-label="Jump to category">
@@ -2255,40 +1479,6 @@
                                 <i class="fas fa-paper-plane"></i> Send Message
                             </button>
                         </form>
-                        
-                        <div class="contact-info">
-                            <h3 class="mb-3">Contact Information</h3>
-                            <div class="info-item">
-                                <i class="fas fa-phone"></i>
-                                <div>
-                                    <strong>Phone</strong>
-                                    <p>+91 96523 37710</p>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <strong>Email</strong>
-                                    <p>info@pqstudios.net</p>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <div>
-                                    <strong>Studio Address</strong>
-                                    <p>Hitech City, Hyderabad, Telangana</p>
-                                </div>
-                            </div>
-                            <div class="info-item">
-                                <i class="fas fa-clock"></i>
-                                <div>
-                                    <strong>Working Hours</strong>
-                                    <p>Monday - Friday: 9:00 AM - 9:00 PM<br>
-                                    Saturday: 10:00 AM - 6:00 PM<br>
-                                    Sunday: Appointment Only</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -2301,7 +1491,7 @@
             <div class="footer-grid">
                 <div>
                     <h3>PQ Studios Hyderabad</h3>
-                    <p style="color: rgba(255,255,255,0.9); font-size: 1rem;">Professional photography studio in Hyderabad capturing life's most precious moments.</p>
+                    <p style="color: rgba(255,255,255,0.9);">Professional photography studio in Hyderabad.</p>
                     <div class="social-links">
                         <a href="https://www.instagram.com/pqstudios_hyd" target="_blank" class="social-link instagram" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
@@ -2321,44 +1511,35 @@
                 <div>
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home" onclick="showPage('home'); return false;" style="color: rgba(255,255,255,0.9);">Home</a></li>
-                        <li><a href="#about" onclick="showPage('about'); return false;" style="color: rgba(255,255,255,0.9);">About</a></li>
-                        <li><a href="#services" onclick="showPage('services'); return false;" style="color: rgba(255,255,255,0.9);">Services</a></li>
-                        <li><a href="#gallery" onclick="showPage('gallery'); return false;" style="color: rgba(255,255,255,0.9);">Gallery</a></li>
+                        <li><a href="#home" onclick="showPage('home'); return false;">Home</a></li>
+                        <li><a href="#about" onclick="showPage('about'); return false;">About</a></li>
+                        <li><a href="#services" onclick="showPage('services'); return false;">Services</a></li>
+                        <li><a href="#gallery" onclick="showPage('gallery'); return false;">Gallery</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3>Services</h3>
                     <ul>
-                        <li><a href="#services" onclick="showPage('services'); return false;" style="color: rgba(255,255,255,0.9);">Food Photography</a></li>
-                        <li><a href="#services" onclick="showPage('services'); return false;" style="color: rgba(255,255,255,0.9);">Product Photography</a></li>
-                        <li><a href="#services" onclick="showPage('services'); return false;" style="color: rgba(255,255,255,0.9);">Fashion & Lifestyle</a></li>
-                        <li><a href="#services" onclick="showPage('services'); return false;" style="color: rgba(255,255,255,0.9);">Pet Photography</a></li>
+                        <li><a href="#services" onclick="showPage('services'); return false;">Food Photography</a></li>
+                        <li><a href="#services" onclick="showPage('services'); return false;">Product Photography</a></li>
+                        <li><a href="#services" onclick="showPage('services'); return false;">Fashion & Lifestyle</a></li>
+                        <li><a href="#services" onclick="showPage('services'); return false;">Pet Photography</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3>Contact Info</h3>
                     <ul>
-                        <li style="color: rgba(255,255,255,0.9); font-size: 1rem;">
-                            <i class="fas fa-phone"></i> +91 96523 37710
-                        </li>
-                        <li style="color: rgba(255,255,255,0.9); font-size: 1rem;">
-                            <i class="fas fa-envelope"></i> info@pqstudios.net
-                        </li>
-                        <li style="color: rgba(255,255,255,0.9); font-size: 1rem;">
-                            <i class="fas fa-map-marker-alt"></i> Hitech City, Hyderabad
-                        </li>
-                        <li style="color: rgba(255,255,255,0.9); font-size: 1rem;">
-                            <i class="fab fa-instagram"></i> @pqstudios_hyd
-                        </li>
+                        <li><i class="fas fa-phone"></i> +91 96523 37710</li>
+                        <li><i class="fas fa-envelope"></i> info@pqstudios.net</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Hitech City, Hyderabad</li>
                     </ul>
                 </div>
             </div>
             
-            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); font-size: 0.9rem;">
-                <p>&copy; 2024 PQ Studios Hyderabad. All rights reserved. | Crafted with passion by Sai Kumar Maddina</p>
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7);">
+                <p>&copy; 2024 PQ Studios Hyderabad. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -2369,88 +1550,52 @@
     </button>
 
     <script>
-        // ===== ENHANCED BACKGROUND GENERATOR =====
-        const photographyIcons = [
-            { class: "camera", icon: "fas fa-camera", name: "Camera", animation: "pulse-subtle" },
-            { class: "flash", icon: "fas fa-bolt", name: "Flash", animation: "" },
-            { class: "lens", icon: "fas fa-circle", name: "Lens", animation: "" },
-            { class: "film", icon: "fas fa-film", name: "Film", animation: "pulse-subtle" },
-            { class: "clapboard", icon: "fas fa-clapperboard", name: "Clapboard", animation: "" }
-        ];
-        
-        const iconsPerType = 6;
-        const totalIcons = photographyIcons.length * iconsPerType;
-        const gridCols = 10;
-        const gridRows = 6;
-        const cellWidth = 100 / gridCols;
-        const cellHeight = 100 / gridRows;
-        
-        function generateIcons() {
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('PQ Studios Website - Initializing...');
+            initBackground();
+            initPage();
+            initSlideshow();
+            loadFeaturedWork();
+            loadClients();
+            loadServices();
+            loadGallerySections();
+            initCategoryDropdown();
+            initGalleryModal();
+            initContactForm();
+            initBackToTop();
+            initMobileMenu();
+            console.log('PQ Studios Website - Initialization Complete!');
+        });
+
+        // ===== BACKGROUND GENERATOR =====
+        function initBackground() {
             const container = document.getElementById('photography-icons');
             if (!container) return;
             
-            container.innerHTML = '';
+            const icons = ['camera', 'bolt', 'circle', 'film', 'clapperboard'];
+            const totalIcons = 30;
             
-            const gridPositions = [];
-            for (let row = 0; row < gridRows; row++) {
-                for (let col = 0; col < gridCols; col++) {
-                    gridPositions.push({ row, col });
-                }
+            for (let i = 0; i < totalIcons; i++) {
+                const icon = document.createElement('div');
+                icon.className = 'icon';
+                icon.innerHTML = `<i class="fas fa-${icons[Math.floor(Math.random() * icons.length)]}"></i>`;
+                
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const size = 1.2 + Math.random() * 1.2;
+                const rotation = Math.random() * 360;
+                
+                icon.style.left = `${posX}%`;
+                icon.style.top = `${posY}%`;
+                icon.style.fontSize = `${size}rem`;
+                icon.style.transform = `rotate(${rotation}deg)`;
+                icon.style.opacity = `${0.1 + Math.random() * 0.2}`;
+                
+                container.appendChild(icon);
             }
-            
-            shuffleArray(gridPositions);
-            
-            let positionIndex = 0;
-            
-            photographyIcons.forEach(iconType => {
-                for (let i = 0; i < iconsPerType; i++) {
-                    if (positionIndex >= gridPositions.length) return;
-                    
-                    const gridPos = gridPositions[positionIndex];
-                    positionIndex++;
-                    
-                    const icon = document.createElement('div');
-                    icon.className = `icon ${iconType.class}`;
-                    icon.innerHTML = `<i class="${iconType.icon}"></i>`;
-                    
-                    if (iconType.animation) {
-                        icon.classList.add(iconType.animation);
-                    }
-                    
-                    const randomOffsetX = (Math.random() - 0.5) * (cellWidth * 0.6);
-                    const randomOffsetY = (Math.random() - 0.5) * (cellHeight * 0.6);
-                    
-                    const posX = (gridPos.col * cellWidth) + (cellWidth / 2) + randomOffsetX;
-                    const posY = (gridPos.row * cellHeight) + (cellHeight / 2) + randomOffsetY;
-                    
-                    const size = 1.6 + Math.random() * 0.8;
-                    const opacity = 0.65 + Math.random() * 0.15;
-                    const grayValue = 120 + Math.random() * 50;
-                    const color = `rgba(${grayValue}, ${grayValue}, ${grayValue}, ${opacity})`;
-                    const rotation = Math.random() * 20 - 10;
-                    const animationDelay = Math.random() * 15;
-                    
-                    icon.style.left = `${posX}%`;
-                    icon.style.top = `${posY}%`;
-                    icon.style.fontSize = `${size}rem`;
-                    icon.style.color = color;
-                    icon.style.transform = `rotate(${rotation}deg)`;
-                    icon.style.animationDelay = `${animationDelay}s`;
-                    icon.style.filter = `drop-shadow(0 2px 4px rgba(0,0,0,0.1))`;
-                    
-                    container.appendChild(icon);
-                }
-            });
         }
-        
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-        
+
         // ===== PAGE MANAGEMENT =====
         const pages = {
             'home': document.getElementById('home-page'),
@@ -2459,8 +1604,6 @@
             'gallery': document.getElementById('gallery-page'),
             'contact': document.getElementById('contact-page')
         };
-
-        const navLinks = document.querySelectorAll('.nav-link');
 
         function showPage(pageId) {
             Object.values(pages).forEach(page => {
@@ -2471,7 +1614,7 @@
                 pages[pageId].classList.add('active');
             }
 
-            navLinks.forEach(link => {
+            document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${pageId}`) {
                     link.classList.add('active');
@@ -2497,297 +1640,306 @@
             showPage(pageId);
         }
 
-        // ===== NAVIGATION MENU =====
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-        const navOverlay = document.getElementById('navOverlay');
+        // ===== MOBILE MENU =====
+        function initMobileMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', toggleMenu);
+            }
+            
+            if (navOverlay) {
+                navOverlay.addEventListener('click', closeMenu);
+            }
+
+            document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        }
 
         function toggleMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
+            
             const isActive = menuToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
             navOverlay.classList.toggle('active');
             document.body.style.overflow = isActive ? 'hidden' : '';
-            menuToggle.setAttribute('aria-expanded', isActive);
         }
 
         function closeMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
+            
             menuToggle.classList.remove('active');
             navMenu.classList.remove('active');
             navOverlay.classList.remove('active');
             document.body.style.overflow = '';
-            menuToggle.setAttribute('aria-expanded', 'false');
         }
 
-        if (menuToggle) {
-            menuToggle.addEventListener('click', toggleMenu);
-        }
-        
-        if (navOverlay) {
-            navOverlay.addEventListener('click', closeMenu);
-        }
-
-        document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        // ===== SLIDESHOW DATA =====
-        const slideshowData = [
-            {
-                id: 1,
-                filename: "homepageslideshow01.jpg",
-                alt: "Professional photography studio setup at PQ Studios",
-                title: "Our Modern Studio"
-            },
-            {
-                id: 2,
-                filename: "homepageslideshow02.jpg",
-                alt: "Food photography session with delicious dishes",
-                title: "Food Photography Excellence"
-            },
-            {
-                id: 3,
-                filename: "homepageslideshow03.jpg",
-                alt: "Product photography setup with professional lighting",
-                title: "Product Photography"
-            },
-            {
-                id: 4,
-                filename: "homepageslideshow04.jpg",
-                alt: "Fashion photography shoot with professional models",
-                title: "Fashion & Lifestyle"
-            }
-        ];
-
-        // ===== OPTIMIZED SLIDESHOW =====
-        let currentSlide = 0;
-        let slideshowInterval;
-
+        // ===== SLIDESHOW =====
         function initSlideshow() {
             const slideshowContainer = document.getElementById('slideshowContainer');
             if (!slideshowContainer) return;
             
+            const slides = [
+                'homepageslideshow01.jpg',
+                'homepageslideshow02.jpg',
+                'homepageslideshow03.jpg',
+                'homepageslideshow04.jpg'
+            ];
+            
             slideshowContainer.innerHTML = '';
             
-            slideshowData.forEach((slide, index) => {
+            slides.forEach((slide, index) => {
                 const slideElement = document.createElement('div');
                 slideElement.className = `slide ${index === 0 ? 'active' : ''}`;
                 
                 const img = document.createElement('img');
-                img.src = slide.filename;
-                img.alt = slide.alt;
+                img.src = slide;
+                img.alt = `Professional Photography ${index + 1}`;
                 img.loading = index === 0 ? "eager" : "lazy";
                 
                 img.onerror = function() {
-                    console.warn('Failed to load slideshow image:', slide.filename);
-                    this.src = 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
-                    this.alt = 'Professional photography studio - Default image';
+                    this.src = 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=1200&q=80';
                 };
                 
                 slideElement.appendChild(img);
                 slideshowContainer.appendChild(slideElement);
             });
             
-            // Add touch events for mobile
-            let touchStartX = 0;
-            
-            slideshowContainer.addEventListener('touchstart', (e) => {
-                touchStartX = e.touches[0].clientX;
-                pauseSlideshow();
-            }, { passive: true });
-            
-            slideshowContainer.addEventListener('touchend', (e) => {
-                const touchEndX = e.changedTouches[0].clientX;
-                const diff = touchStartX - touchEndX;
-                
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) {
-                        nextSlide(); // Swipe left
-                    } else {
-                        prevSlide(); // Swipe right
-                    }
-                }
-                startSlideshow();
-            }, { passive: true });
-            
             startSlideshow();
         }
+
+        let slideshowInterval;
+        let currentSlide = 0;
 
         function startSlideshow() {
             if (slideshowInterval) clearInterval(slideshowInterval);
             
             slideshowInterval = setInterval(() => {
-                nextSlide();
+                const slides = document.querySelectorAll('.slide');
+                if (slides.length === 0) return;
+                
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
             }, 5000);
         }
 
-        function pauseSlideshow() {
-            if (slideshowInterval) {
-                clearInterval(slideshowInterval);
-                slideshowInterval = null;
+        // ===== FEATURED WORK =====
+        function loadFeaturedWork() {
+            const featuredGrid = document.getElementById('featuredGrid');
+            if (!featuredGrid) return;
+
+            const featuredItems = [
+                { image: 'featured01.jpg', category: 'food', title: 'Food Photography' },
+                { image: 'featured02.jpg', category: 'product', title: 'Product Photography' },
+                { image: 'featured03.jpg', category: 'fashion', title: 'Fashion Photography' },
+                { image: 'featured04.jpg', category: 'pets', title: 'Pet Photography' }
+            ];
+
+            featuredGrid.innerHTML = '';
+
+            featuredItems.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'featured-item';
+                itemElement.addEventListener('click', () => {
+                    showPage('gallery');
+                    setTimeout(() => {
+                        scrollToGalleryCategory(item.category);
+                    }, 100);
+                });
+                
+                const img = document.createElement('img');
+                img.src = item.image;
+                img.alt = item.title;
+                img.loading = 'lazy';
+                
+                img.onerror = function() {
+                    this.src = `https://images.unsplash.com/photo-155${Math.floor(Math.random() * 999)}?w=400&h=400&fit=crop`;
+                };
+                
+                itemElement.appendChild(img);
+                featuredGrid.appendChild(itemElement);
+            });
+        }
+
+        // ===== CLIENT LOGOS - FIXED =====
+        function loadClients() {
+            const clientsTrack = document.getElementById('clientsTrack');
+            if (!clientsTrack) return;
+
+            const clientLogos = [];
+            for (let i = 1; i <= 12; i++) {
+                clientLogos.push(`client logos ${i}.jpg`);
             }
+
+            clientsTrack.innerHTML = '';
+
+            // Create single set of logos
+            clientLogos.forEach(filename => {
+                const logoItem = document.createElement('div');
+                logoItem.className = 'client-logo-item';
+                
+                const img = document.createElement('img');
+                img.src = filename;
+                img.alt = 'Client Logo';
+                img.className = 'client-logo-img';
+                img.loading = 'lazy';
+                
+                img.onerror = function() {
+                    // Create a colored placeholder instead of fallback image
+                    this.style.display = 'none';
+                    const colors = ['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'];
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    logoItem.innerHTML = `<div style="width:100%;height:100%;background:${color};border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;">Client</div>`;
+                };
+                
+                logoItem.appendChild(img);
+                clientsTrack.appendChild(logoItem);
+            });
+
+            // Start animation
+            startClientLogoAnimation();
         }
 
-        function nextSlide() {
-            const slides = document.querySelectorAll('.slide');
-            if (slides.length === 0) return;
+        function startClientLogoAnimation() {
+            const track = document.getElementById('clientsTrack');
+            if (!track) return;
+
+            let position = 0;
+            const speed = 0.5; // Slower speed for better experience
             
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        function prevSlide() {
-            const slides = document.querySelectorAll('.slide');
-            if (slides.length === 0) return;
-            
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        // ===== SERVICES DATA =====
-        const servicesData = [
-            {
-                id: 'food',
-                title: 'Food Photography',
-                icon: 'fas fa-utensils',
-                description: 'Mouth-watering food photography for restaurants, cafes, food brands, and cookbooks.',
-                features: [
-                    'Recipe photography',
-                    'Menu item shots',
-                    'Food styling',
-                    'Commercial food photography'
-                ]
-            },
-            {
-                id: 'product',
-                title: 'Product Photography',
-                icon: 'fas fa-box-open',
-                description: 'Professional product photography for e-commerce, catalogs, and advertising.',
-                features: [
-                    'White background shots',
-                    'Lifestyle product photos',
-                    'Detail and texture shots',
-                    '360° product views'
-                ]
-            },
-            {
-                id: 'ecommerce',
-                title: 'E-Commerce Visuals',
-                icon: 'fas fa-shopping-cart',
-                description: 'High-quality visuals specifically optimized for e-commerce platforms.',
-                features: [
-                    'Amazon optimized images',
-                    'Etsy product photos',
-                    'Shopify store visuals',
-                    'Social media ready images'
-                ]
-            },
-            {
-                id: 'fashion',
-                title: 'Fashion & Lifestyle',
-                icon: 'fas fa-tshirt',
-                description: 'Fashion photography for brands, designers, boutiques, and lifestyle magazines.',
-                features: [
-                    'Lookbook photography',
-                    'Editorial fashion shoots',
-                    'Street style photography',
-                    'Model portfolio shots'
-                ]
-            },
-            {
-                id: 'pets',
-                title: 'Pet Photography',
-                icon: 'fas fa-paw',
-                description: 'Beautiful pet photography that captures the personality of your furry friends.',
-                features: [
-                    'Studio pet portraits',
-                    'Outdoor pet sessions',
-                    'Action pet photography',
-                    'Pet family portraits'
-                ]
-            },
-            {
-                id: 'interiors',
-                title: 'Interiors & Architecture',
-                icon: 'fas fa-building',
-                description: 'Architectural and interior photography for real estate, designers, and architects.',
-                features: [
-                    'Real estate photography',
-                    'Interior design shots',
-                    'Architectural exteriors',
-                    '360° virtual tours'
-                ]
-            },
-            {
-                id: 'studio',
-                title: 'Studio Rentals',
-                icon: 'fas fa-camera',
-                description: 'Professional photography studio available for rent with full equipment.',
-                features: [
-                    'Fully equipped studio',
-                    'Professional lighting',
-                    'Various backdrops',
-                    'Changing room facilities'
-                ],
-                pricing: '₹2000 per hour'
+            function animate() {
+                position -= speed;
+                
+                // Reset position when first logo moves out of view
+                const firstLogo = track.querySelector('.client-logo-item');
+                if (firstLogo && position <= -firstLogo.offsetWidth) {
+                    position = 0;
+                    // Move first logo to end for seamless loop
+                    track.appendChild(firstLogo);
+                }
+                
+                track.style.transform = `translateX(${position}px)`;
+                requestAnimationFrame(animate);
             }
-        ];
+            
+            animate();
+        }
 
-        // Load Services
-        const servicesContainer = document.getElementById('servicesContainer');
-
+        // ===== SERVICES =====
         function loadServices() {
+            const servicesContainer = document.getElementById('servicesContainer');
             if (!servicesContainer) return;
+
+            const services = [
+                {
+                    id: 'food',
+                    title: 'Food Photography',
+                    icon: 'fa-utensils',
+                    description: 'Mouth-watering food photography for restaurants and food brands.',
+                    features: ['Recipe photography', 'Menu item shots', 'Food styling', 'Commercial photography']
+                },
+                {
+                    id: 'product',
+                    title: 'Product Photography',
+                    icon: 'fa-box-open',
+                    description: 'Professional product photography for e-commerce and advertising.',
+                    features: ['White background shots', 'Lifestyle product photos', 'Detail shots', '360° views']
+                },
+                {
+                    id: 'ecommerce',
+                    title: 'E-Commerce Visuals',
+                    icon: 'fa-shopping-cart',
+                    description: 'High-quality visuals optimized for e-commerce platforms.',
+                    features: ['Amazon optimized', 'Etsy product photos', 'Shopify store', 'Social media ready']
+                },
+                {
+                    id: 'fashion',
+                    title: 'Fashion & Lifestyle',
+                    icon: 'fa-tshirt',
+                    description: 'Fashion photography for brands, designers, and boutiques.',
+                    features: ['Lookbook photography', 'Editorial fashion', 'Street style', 'Model portfolio']
+                },
+                {
+                    id: 'pets',
+                    title: 'Pet Photography',
+                    icon: 'fa-paw',
+                    description: 'Beautiful pet photography capturing personality.',
+                    features: ['Studio portraits', 'Outdoor sessions', 'Action photography', 'Family portraits']
+                },
+                {
+                    id: 'interiors',
+                    title: 'Interiors & Architecture',
+                    icon: 'fa-building',
+                    description: 'Architectural photography for real estate and designers.',
+                    features: ['Real estate', 'Interior design', 'Architectural exteriors', 'Virtual tours']
+                },
+                {
+                    id: 'studio',
+                    title: 'Studio Rentals',
+                    icon: 'fa-camera',
+                    description: 'Professional studio available for rent with full equipment.',
+                    features: ['Fully equipped', 'Professional lighting', 'Various backdrops', 'Changing room'],
+                    pricing: '₹2000 per hour'
+                }
+            ];
 
             servicesContainer.innerHTML = '';
 
-            servicesData.forEach(service => {
+            services.forEach(service => {
                 const serviceCard = document.createElement('div');
                 serviceCard.className = 'service-card';
                 serviceCard.setAttribute('data-service', service.id);
                 
                 let pricingHTML = '';
-                if (service.id === 'studio' && service.pricing) {
+                if (service.pricing) {
                     pricingHTML = `
-                        <div class="service-pricing">
-                            <h4>Pricing</h4>
-                            <p>${service.pricing}</p>
-                            <div class="price-tag">${service.pricing}</div>
+                        <div class="service-pricing" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #eee;">
+                            <div class="price-tag" style="background: var(--accent); color: white; padding: 0.5rem 1rem; border-radius: 20px; display: inline-block;">
+                                ${service.pricing}
+                            </div>
                         </div>
                     `;
                 }
                 
                 serviceCard.innerHTML = `
                     <div class="service-icon">
-                        <i class="${service.icon}"></i>
+                        <i class="fas ${service.icon}"></i>
                     </div>
                     <h3>${service.title}</h3>
                     <p>${service.description}</p>
-                    
-                    <div class="mb-3">
+                    <div style="margin-top: 1rem;">
                         ${service.features.map(feature => `
-                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem;">
-                                <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
+                            <div style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                <i class="fas fa-check" style="color: var(--accent); margin-top: 0.2rem;"></i>
                                 <span>${feature}</span>
                             </div>
                         `).join('')}
                     </div>
-                    
                     ${pricingHTML}
-                    
-                    <div class="service-card-buttons">
-                        <a href="#contact" class="btn btn-primary btn-spacing" onclick="showPage('contact'); document.getElementById('service').value='${service.id}'; return false;">
-                            <i class="fas fa-calendar-check"></i> Book Now
-                        </a>
-                        <button class="btn btn-outline btn-spacing view-gallery-btn" data-category="${service.id}">
-                            <i class="fas fa-images"></i> View Images
-                        </button>
+                    <div style="margin-top: auto; padding-top: 1.5rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                            <button class="btn btn-primary" onclick="showPage('contact'); document.getElementById('service').value='${service.id}'">
+                                <i class="fas fa-calendar-check"></i> Book Now
+                            </button>
+                            <button class="btn btn-outline view-gallery-btn" data-category="${service.id}">
+                                <i class="fas fa-images"></i> View Gallery
+                            </button>
+                        </div>
                     </div>
                 `;
+                
                 servicesContainer.appendChild(serviceCard);
             });
 
+            // Add event listeners for gallery buttons
             document.querySelectorAll('.view-gallery-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const category = this.getAttribute('data-category');
@@ -2799,56 +1951,21 @@
             });
         }
 
-        // ===== GALLERY PAGE FUNCTIONALITY =====
+        // ===== GALLERY - COMPLETELY FIXED =====
         const galleryCategories = [
-            { 
-                id: 'food', 
-                name: 'Food Photography', 
-                count: 15,
-                icon: 'fas fa-utensils'
-            },
-            { 
-                id: 'product', 
-                name: 'Product Photography', 
-                count: 15,
-                icon: 'fas fa-box-open'
-            },
-            { 
-                id: 'ecommerce', 
-                name: 'E-Commerce Visuals', 
-                count: 15,
-                icon: 'fas fa-shopping-cart'
-            },
-            { 
-                id: 'fashion', 
-                name: 'Fashion & Lifestyle', 
-                count: 15,
-                icon: 'fas fa-tshirt'
-            },
-            { 
-                id: 'pets', 
-                name: 'Pet Photography', 
-                count: 15,
-                icon: 'fas fa-paw'
-            },
-            { 
-                id: 'interiors', 
-                name: 'Interiors & Architecture', 
-                count: 15,
-                icon: 'fas fa-building'
-            },
-            { 
-                id: 'studio', 
-                name: 'Studio Shots', 
-                count: 10,
-                icon: 'fas fa-camera'
-            }
+            { id: 'food', name: 'Food Photography', count: 15, icon: 'fa-utensils' },
+            { id: 'product', name: 'Product Photography', count: 15, icon: 'fa-box-open' },
+            { id: 'ecommerce', name: 'E-Commerce Visuals', count: 15, icon: 'fa-shopping-cart' },
+            { id: 'fashion', name: 'Fashion & Lifestyle', count: 15, icon: 'fa-tshirt' },
+            { id: 'pets', name: 'Pet Photography', count: 15, icon: 'fa-paw' },
+            { id: 'interiors', name: 'Interiors & Architecture', count: 15, icon: 'fa-building' },
+            { id: 'studio', name: 'Studio Shots', count: 10, icon: 'fa-camera' }
         ];
 
-        // UPDATED: Correct filename patterns based on your document
+        // FIXED: Correct filename patterns from your document
         const categoryFilePatterns = {
             'food': 'food photography',
-            'product': 'product photography', 
+            'product': 'product photography',
             'ecommerce': 'ecommerce visuals',
             'fashion': 'fashion lifestyle',
             'pets': 'pet photography',
@@ -2856,85 +1973,12 @@
             'studio': 'studio shots'
         };
 
-        // ===== CATEGORY DROPDOWN =====
-        const categoryToggle = document.getElementById('categoryToggle');
-        const categorySelector = document.getElementById('categorySelector');
-        const categoryList = document.getElementById('categoryList');
-
-        function initCategoryDropdown() {
-            if (!categoryToggle || !categorySelector || !categoryList) return;
-
-            galleryCategories.forEach(category => {
-                const li = document.createElement('li');
-                li.innerHTML = `
-                    <a href="#gallery-${category.id}" class="category-link" data-category="${category.id}">
-                        <i class="${category.icon}"></i>
-                        ${category.name}
-                    </a>
-                `;
-                
-                const link = li.querySelector('.category-link');
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const categoryId = e.currentTarget.dataset.category;
-                    scrollToGalleryCategory(categoryId);
-                });
-                
-                categoryList.appendChild(li);
-            });
-            
-            categoryToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isActive = categorySelector.classList.toggle('active');
-                categorySelector.setAttribute('aria-hidden', !isActive);
-            });
-            
-            document.addEventListener('click', (e) => {
-                if (!categorySelector.contains(e.target) && !categoryToggle.contains(e.target)) {
-                    categorySelector.classList.remove('active');
-                    categorySelector.setAttribute('aria-hidden', 'true');
-                }
-            });
-            
-            window.addEventListener('scroll', () => {
-                categorySelector.classList.remove('active');
-                categorySelector.setAttribute('aria-hidden', 'true');
-            }, { passive: true });
-        }
-
-        function scrollToGalleryCategory(categoryId) {
-            const targetSection = document.getElementById(`gallery-${categoryId}`);
-            if (!targetSection) return;
-
-            categorySelector.classList.remove('active');
-            categorySelector.setAttribute('aria-hidden', 'true');
-            
-            const headerHeight = document.querySelector('.header').offsetHeight;
-            const categoryToggleHeight = document.querySelector('.category-toggle').offsetHeight;
-            const offset = headerHeight + categoryToggleHeight + 20;
-            const sectionTop = targetSection.offsetTop - offset;
-            
-            window.scrollTo({
-                top: sectionTop,
-                behavior: 'smooth'
-            });
-            
-            document.querySelectorAll('.category-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.dataset.category === categoryId) {
-                    link.classList.add('active');
-                }
-            });
-        }
-
-        // ===== LOAD GALLERY SECTIONS =====
-        const gallerySections = document.getElementById('gallerySections');
-
         function loadGallerySections() {
+            const gallerySections = document.getElementById('gallerySections');
             if (!gallerySections) return;
 
             gallerySections.innerHTML = '';
-            
+
             galleryCategories.forEach(category => {
                 const section = document.createElement('section');
                 section.className = 'gallery-section';
@@ -2945,18 +1989,17 @@
                         <h2>${category.name}</h2>
                         <p>${category.count} professional images</p>
                     </div>
-                    
                     <div class="gallery-grid" id="grid-${category.id}">
                         <!-- Images will be loaded here -->
                     </div>
                 `;
                 
                 gallerySections.appendChild(section);
-                setTimeout(() => loadGalleryImages(category.id, category.count), 0);
+                loadGalleryImages(category.id, category.count);
             });
         }
 
-        // UPDATED: Fixed gallery image loading function
+        // FIXED: Correct image loading with proper filenames
         function loadGalleryImages(categoryId, count) {
             const grid = document.getElementById(`grid-${categoryId}`);
             if (!grid) return;
@@ -2967,28 +2010,29 @@
             
             for (let i = 1; i <= count; i++) {
                 const filename = `${baseName} ${i}.jpg`;
-                const imageUrl = filename; // Direct file path
                 
                 const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item';
+                galleryItem.className = 'gallery-item loading';
                 galleryItem.setAttribute('role', 'button');
                 galleryItem.setAttribute('tabindex', '0');
                 galleryItem.setAttribute('aria-label', `View ${filename}`);
                 
                 const img = document.createElement('img');
-                img.src = imageUrl;
+                img.src = filename;
                 img.alt = `${baseName} image ${i}`;
-                img.loading = "lazy";
-                img.width = 400;
-                img.height = 400;
-                img.setAttribute('data-index', i-1);
-                img.setAttribute('data-filename', filename);
-                img.classList.add('lazy-load');
+                img.loading = 'lazy';
+                img.dataset.index = i - 1;
+                img.dataset.category = categoryId;
                 
-                // Add error handling
+                img.onload = function() {
+                    this.classList.add('loaded');
+                    this.parentElement.classList.remove('loading');
+                };
+                
                 img.onerror = function() {
-                    console.warn('Failed to load image:', imageUrl);
-                    this.style.display = 'none';
+                    console.warn(`Failed to load: ${filename}`);
+                    this.classList.add('error');
+                    this.parentElement.classList.remove('loading');
                     this.parentElement.innerHTML = `
                         <div style="width:100%;height:100%;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:12px;padding:10px;text-align:center;">
                             ${categoryId}<br>Image ${i}
@@ -2996,129 +2040,138 @@
                     `;
                 };
                 
-                img.onload = function() {
-                    this.classList.add('loaded');
-                    // Hide the loading skeleton
-                    const skeleton = this.parentElement.querySelector('.gallery-item::before');
-                    if (skeleton) {
-                        skeleton.style.opacity = '0';
-                    }
-                };
-                
                 galleryItem.appendChild(img);
                 
                 galleryItem.addEventListener('click', () => {
-                    openGalleryPopup(categoryId, i-1);
-                });
-                
-                galleryItem.addEventListener('keypress', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        openGalleryPopup(categoryId, i-1);
-                    }
+                    openGalleryPopup(categoryId, i - 1);
                 });
                 
                 grid.appendChild(galleryItem);
             }
-
-            lazyLoadGalleryImages();
         }
 
-        function lazyLoadGalleryImages() {
-            const galleryItems = document.querySelectorAll('.gallery-item img');
-            
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        // Don't add loaded class if already loaded
-                        if (!img.classList.contains('loaded')) {
-                            img.classList.add('loaded');
-                        }
-                        observer.unobserve(img);
-                    }
+        // ===== CATEGORY DROPDOWN =====
+        function initCategoryDropdown() {
+            const categoryToggle = document.getElementById('categoryToggle');
+            const categorySelector = document.getElementById('categorySelector');
+            const categoryList = document.getElementById('categoryList');
+
+            if (!categoryToggle || !categorySelector || !categoryList) return;
+
+            // Load categories
+            galleryCategories.forEach(category => {
+                const li = document.createElement('li');
+                const link = document.createElement('a');
+                link.href = `#gallery-${category.id}`;
+                link.className = 'category-link';
+                link.innerHTML = `<i class="fas ${category.icon}"></i> ${category.name}`;
+                
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const categoryId = category.id;
+                    scrollToGalleryCategory(categoryId);
                 });
-            }, {
-                rootMargin: '200px 0px',
-                threshold: 0.01
+                
+                li.appendChild(link);
+                categoryList.appendChild(li);
             });
-            
-            galleryItems.forEach(img => {
-                // Check if image is already loaded (from cache)
-                if (img.complete) {
-                    img.classList.add('loaded');
-                } else if (img.getBoundingClientRect().top < window.innerHeight + 200) {
-                    // If image is in viewport or near it
-                    img.classList.add('loaded');
-                } else {
-                    imageObserver.observe(img);
+
+            // Toggle dropdown
+            categoryToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                categorySelector.classList.toggle('active');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!categorySelector.contains(e.target) && !categoryToggle.contains(e.target)) {
+                    categorySelector.classList.remove('active');
                 }
             });
         }
 
+        function scrollToGalleryCategory(categoryId) {
+            const targetSection = document.getElementById(`gallery-${categoryId}`);
+            if (!targetSection) return;
+
+            categorySelector.classList.remove('active');
+            
+            const headerHeight = 70;
+            const categoryToggleHeight = 50;
+            const offset = headerHeight + categoryToggleHeight + 20;
+            const sectionTop = targetSection.offsetTop - offset;
+            
+            window.scrollTo({
+                top: sectionTop,
+                behavior: 'smooth'
+            });
+        }
+
         // ===== GALLERY MODAL =====
-        const galleryModal = document.getElementById('galleryModal');
-        const modalImage = document.getElementById('modalImage');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalCounter = document.getElementById('modalCounter');
-        const modalClose = document.getElementById('modalClose');
-        const modalPrev = document.getElementById('modalPrev');
-        const modalNext = document.getElementById('modalNext');
-
-        let currentGalleryImages = [];
-        let currentImageIndex = 0;
-        let currentCategoryId = '';
-
         function initGalleryModal() {
-            if (!galleryModal || !modalClose) return;
+            const modalClose = document.getElementById('modalClose');
+            const modalPrev = document.getElementById('modalPrev');
+            const modalNext = document.getElementById('modalNext');
+            const galleryModal = document.getElementById('galleryModal');
+
+            if (!modalClose || !modalPrev || !modalNext || !galleryModal) return;
 
             modalClose.addEventListener('click', closeModal);
             modalPrev.addEventListener('click', showPrevImage);
             modalNext.addEventListener('click', showNextImage);
-
-            document.addEventListener('keydown', handleKeyboardNavigation);
 
             galleryModal.addEventListener('click', (e) => {
                 if (e.target === galleryModal) {
                     closeModal();
                 }
             });
-            
-            // Touch events for mobile
-            let touchStartX = 0;
-            
-            modalImage.addEventListener('touchstart', (e) => {
-                touchStartX = e.touches[0].clientX;
-            }, { passive: true });
-            
-            modalImage.addEventListener('touchend', (e) => {
-                const touchEndX = e.changedTouches[0].clientX;
-                const diff = touchStartX - touchEndX;
+
+            document.addEventListener('keydown', (e) => {
+                if (!galleryModal.classList.contains('active')) return;
                 
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) {
-                        showNextImage(); // Swipe left
-                    } else {
-                        showPrevImage(); // Swipe right
-                    }
+                switch(e.key) {
+                    case 'Escape':
+                        closeModal();
+                        break;
+                    case 'ArrowLeft':
+                        showPrevImage();
+                        break;
+                    case 'ArrowRight':
+                        showNextImage();
+                        break;
                 }
-            }, { passive: true });
+            });
         }
 
-        function handleKeyboardNavigation(e) {
-            if (!galleryModal.classList.contains('active')) return;
+        let currentGalleryImages = [];
+        let currentImageIndex = 0;
+        let currentCategoryId = '';
+
+        function openGalleryPopup(categoryId, index) {
+            const grid = document.getElementById(`grid-${categoryId}`);
+            if (!grid) return;
+
+            const imageElements = grid.querySelectorAll('img');
+            currentGalleryImages = Array.from(imageElements).map(img => ({
+                src: img.src,
+                alt: img.alt,
+                loaded: img.classList.contains('loaded')
+            }));
+
+            currentCategoryId = categoryId;
+            currentImageIndex = index;
             
-            switch(e.key) {
-                case 'Escape':
-                    closeModal();
-                    break;
-                case 'ArrowLeft':
-                    showPrevImage();
-                    break;
-                case 'ArrowRight':
-                    showNextImage();
-                    break;
-            }
+            updateModalImage();
+
+            const galleryModal = document.getElementById('galleryModal');
+            galleryModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const galleryModal = document.getElementById('galleryModal');
+            galleryModal.classList.remove('active');
+            document.body.style.overflow = '';
         }
 
         function showPrevImage() {
@@ -3135,205 +2188,66 @@
             }
         }
 
-        function openGalleryPopup(categoryId, index) {
-            const grid = document.getElementById(`grid-${categoryId}`);
-            if (!grid) return;
-
-            const imageElements = grid.querySelectorAll('.gallery-item img');
-            currentGalleryImages = Array.from(imageElements).map((img, i) => ({
-                src: img.src,
-                alt: img.alt,
-                filename: img.getAttribute('data-filename'),
-                title: galleryCategories.find(cat => cat.id === categoryId)?.name || 'Gallery Image'
-            }));
-
-            currentCategoryId = categoryId;
-            currentImageIndex = index;
-            
-            updateModalImage();
-
-            galleryModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-            modalClose.focus();
-        }
-
-        function closeModal() {
-            galleryModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
         function updateModalImage() {
+            const modalImage = document.getElementById('modalImage');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalCounter = document.getElementById('modalCounter');
+
             if (currentGalleryImages.length === 0) return;
 
             const imageData = currentGalleryImages[currentImageIndex];
+            const category = galleryCategories.find(cat => cat.id === currentCategoryId);
             
-            const img = new Image();
-            
-            img.onload = () => {
-                modalImage.src = imageData.src;
-                modalImage.alt = imageData.alt;
-                
-                const categoryName = galleryCategories.find(cat => cat.id === currentCategoryId)?.name || 'Gallery';
-                modalTitle.textContent = `${categoryName} - Image ${currentImageIndex + 1}`;
-                modalCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
-            };
-            
-            img.onerror = () => {
-                modalImage.src = 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=800&q=80';
-                modalTitle.textContent = 'Image not available';
-                modalCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
-            };
-            
-            img.src = imageData.src;
-        }
-
-        // ===== FEATURED WORK =====
-        const featuredGrid = document.getElementById('featuredGrid');
-
-        function loadFeaturedWork() {
-            if (!featuredGrid) return;
-
-            const featuredImages = [
-                { 
-                    category: 'food', 
-                    image: "featured01.jpg",
-                    title: 'Gourmet Food Photography'
-                },
-                { 
-                    category: 'product', 
-                    image: "featured02.jpg",
-                    title: 'Product Photography'
-                },
-                { 
-                    category: 'fashion', 
-                    image: "featured03.jpg",
-                    title: 'Fashion Shoot'
-                },
-                { 
-                    category: 'pets', 
-                    image: "featured04.jpg",
-                    title: 'Pet Portrait'
-                }
-            ];
-
-            featuredGrid.innerHTML = '';
-
-            featuredImages.forEach(item => {
-                const featuredItem = document.createElement('div');
-                featuredItem.className = 'featured-item';
-                featuredItem.addEventListener('click', () => {
-                    showPage('gallery');
-                    setTimeout(() => {
-                        scrollToGalleryCategory(item.category);
-                    }, 100);
-                });
-                
-                const img = document.createElement('img');
-                img.src = item.image;
-                img.alt = item.title;
-                img.loading = "lazy";
-                img.width = 400;
-                img.height = 400;
-                
-                img.onerror = function() {
-                    this.src = 'https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=400&q=80';
-                    this.alt = 'Fallback image';
-                };
-                
-                featuredItem.appendChild(img);
-                featuredGrid.appendChild(featuredItem);
-            });
-        }
-
-        // ===== RESTORED CLIENT LOGO SCROLLING =====
-        const clientsTrack = document.getElementById('clientsTrack');
-
-        function loadClients() {
-            if (!clientsTrack) return;
-
-            clientsTrack.innerHTML = '';
-
-            const clientFiles = [
-                "client logos 1.jpg",
-                "client logos 2.jpg",
-                "client logos 3.jpg",
-                "client logos 4.jpg",
-                "client logos 5.jpg",
-                "client logos 6.jpg",
-                "client logos 7.jpg",
-                "client logos 8.jpg",
-                "client logos 9.jpg",
-                "client logos 10.jpg",
-                "client logos 11.jpg",
-                "client logos 12.jpg"
-            ];
-
-            // Create two sets for seamless looping
-            for (let set = 0; set < 2; set++) {
-                clientFiles.forEach(filename => {
-                    const clientItem = document.createElement('div');
-                    clientItem.className = 'client-logo-item';
-                    
-                    const img = document.createElement('img');
-                    img.src = filename;
-                    img.alt = "Client Logo";
-                    img.className = "client-logo-img";
-                    img.loading = "lazy";
-                    img.width = 160;
-                    img.height = 90;
-                    
-                    img.onerror = function() {
-                        this.style.display = 'none';
-                        this.parentElement.innerHTML = `<div style="width:160px;height:90px;background:#f0f0f0;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#666;font-weight:bold;">${filename.replace('.jpg', '')}</div>`;
-                    };
-                    
-                    clientItem.appendChild(img);
-                    clientsTrack.appendChild(clientItem);
-                });
-            }
+            modalImage.src = imageData.src;
+            modalImage.alt = imageData.alt;
+            modalTitle.textContent = category ? `${category.name} - Image ${currentImageIndex + 1}` : 'Gallery Image';
+            modalCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
         }
 
         // ===== CONTACT FORM =====
-        const contactForm = document.getElementById('contactForm');
-        const formStatus = document.getElementById('formStatus');
+        function initContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            const formStatus = document.getElementById('formStatus');
 
-        if (contactForm) {
+            if (!contactForm || !formStatus) return;
+
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                showFormStatus('loading', 'Sending your message...');
-
+                
                 if (!validateForm()) {
                     return;
                 }
 
-                const formData = {
-                    firstName: document.getElementById('firstName').value.trim(),
-                    lastName: document.getElementById('lastName').value.trim(),
-                    email: document.getElementById('email').value.trim(),
-                    phone: document.getElementById('phone').value.trim(),
-                    service: document.getElementById('service').value,
-                    message: document.getElementById('message').value.trim(),
-                    timestamp: new Date().toISOString()
-                };
+                showFormStatus('loading', 'Sending your message...');
 
-                try {
-                    let submissions = JSON.parse(localStorage.getItem('pqStudiosFormSubmissions') || '[]');
-                    submissions.push(formData);
-                    localStorage.setItem('pqStudiosFormSubmissions', JSON.stringify(submissions));
+                // Simulate form submission
+                setTimeout(() => {
+                    const formData = {
+                        firstName: document.getElementById('firstName').value,
+                        lastName: document.getElementById('lastName').value,
+                        email: document.getElementById('email').value,
+                        phone: document.getElementById('phone').value,
+                        service: document.getElementById('service').value,
+                        message: document.getElementById('message').value,
+                        timestamp: new Date().toISOString()
+                    };
 
-                    setTimeout(() => {
+                    // Save to localStorage (simulating submission)
+                    try {
+                        let submissions = JSON.parse(localStorage.getItem('pqStudiosFormSubmissions') || '[]');
+                        submissions.push(formData);
+                        localStorage.setItem('pqStudiosFormSubmissions', JSON.stringify(submissions));
+                        
                         showFormStatus('success', 'Message sent successfully! We will contact you within 24 hours.');
                         contactForm.reset();
-
+                        
                         setTimeout(() => {
                             formStatus.style.display = 'none';
                         }, 5000);
-                    }, 1500);
-
-                } catch (error) {
-                    showFormStatus('error', 'Failed to send message. Please try again or contact us directly.');
-                    console.error('Form submission error:', error);
-                }
+                    } catch (error) {
+                        showFormStatus('error', 'Failed to send message. Please try again or contact us directly.');
+                    }
+                }, 1500);
             });
         }
 
@@ -3346,52 +2260,52 @@
 
             let isValid = true;
 
+            // Reset styles
             [firstName, lastName, email, service, message].forEach(field => {
                 if (field) {
                     field.style.borderColor = '';
-                    field.style.boxShadow = '';
                 }
             });
 
+            // Validate
             if (!firstName.value.trim()) {
-                highlightFieldError(firstName);
+                highlightError(firstName);
                 isValid = false;
             }
-
+            
             if (!lastName.value.trim()) {
-                highlightFieldError(lastName);
+                highlightError(lastName);
                 isValid = false;
             }
-
+            
             if (!email.value.trim() || !isValidEmail(email.value)) {
-                highlightFieldError(email);
+                highlightError(email);
                 isValid = false;
             }
-
+            
             if (!service.value) {
-                highlightFieldError(service);
+                highlightError(service);
                 isValid = false;
             }
-
+            
             if (!message.value.trim()) {
-                highlightFieldError(message);
+                highlightError(message);
                 isValid = false;
             }
 
             if (!isValid) {
                 showFormStatus('error', 'Please fill in all required fields correctly.');
                 setTimeout(() => {
-                    formStatus.style.display = 'none';
+                    document.getElementById('formStatus').style.display = 'none';
                 }, 5000);
             }
 
             return isValid;
         }
 
-        function highlightFieldError(field) {
+        function highlightError(field) {
             if (field) {
                 field.style.borderColor = 'var(--accent)';
-                field.style.boxShadow = '0 0 0 3px rgba(58, 134, 255, 0.1)';
                 field.focus();
             }
         }
@@ -3402,6 +2316,7 @@
         }
 
         function showFormStatus(type, message) {
+            const formStatus = document.getElementById('formStatus');
             if (!formStatus) return;
 
             formStatus.className = `form-status ${type}`;
@@ -3412,17 +2327,18 @@
         }
 
         // ===== BACK TO TOP =====
-        const backToTop = document.getElementById('backToTop');
+        function initBackToTop() {
+            const backToTop = document.getElementById('backToTop');
+            if (!backToTop) return;
 
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
 
-        if (backToTop) {
             backToTop.addEventListener('click', () => {
                 window.scrollTo({
                     top: 0,
@@ -3431,59 +2347,45 @@
             });
         }
 
-        // ===== INITIALIZE EVERYTHING =====
-        document.addEventListener('DOMContentLoaded', function() {
-            generateIcons();
-            initPage();
-            initSlideshow();
-            loadServices();
-            loadFeaturedWork();
-            loadClients();
-            loadGallerySections();
-            initCategoryDropdown();
-            initGalleryModal();
-            
-            window.addEventListener('scroll', highlightActiveCategory, { passive: true });
+        // ===== RESIZE HANDLER =====
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                // Reinitialize anything that needs it
+                startClientLogoAnimation();
+            }, 250);
         });
 
-        function highlightActiveCategory() {
-            const sections = document.querySelectorAll('.gallery-section');
-            const header = document.querySelector('.header');
-            const categoryToggle = document.querySelector('.category-toggle');
-            
-            if (!sections.length || !header || !categoryToggle) return;
-            
-            const headerHeight = header.offsetHeight;
-            const toggleHeight = categoryToggle.offsetHeight;
-            const offset = headerHeight + toggleHeight + 20;
-            
-            let currentSection = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - offset;
-                const sectionBottom = sectionTop + section.offsetHeight;
-                
-                if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-                    currentSection = section.id.replace('gallery-', '');
-                }
-            });
-            
-            document.querySelectorAll('.category-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.dataset.category === currentSection) {
-                    link.classList.add('active');
-                }
+        // ===== LOAD STATS =====
+        function loadStats() {
+            const statsGrid = document.getElementById('statsGrid');
+            if (!statsGrid) return;
+
+            const stats = [
+                { number: '10+', label: 'Years Experience' },
+                { number: '500+', label: 'Happy Clients' },
+                { number: '1000+', label: 'Sessions' },
+                { number: '50+', label: 'Awards' }
+            ];
+
+            statsGrid.innerHTML = '';
+
+            stats.forEach(stat => {
+                const statCard = document.createElement('div');
+                statCard.className = 'stat-card';
+                statCard.innerHTML = `
+                    <div class="stat-number">${stat.number}</div>
+                    <div class="stat-label">${stat.label}</div>
+                `;
+                statsGrid.appendChild(statCard);
             });
         }
 
-        // Handle window resize
-        let resizeTimeout;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(function() {
-                generateIcons();
-            }, 250);
-        });
+        // Load stats on about page initialization
+        if (document.getElementById('about-page')) {
+            loadStats();
+        }
     </script>
 </body>
 </html>
