@@ -16,7 +16,7 @@
             width: 100%;
         }
 
-        /* ===== MOBILE FIRST DESIGN ===== */
+        /* ===== EXTREME MOBILE OPTIMIZATION ===== */
         * {
             margin: 0;
             padding: 0;
@@ -27,12 +27,13 @@
         }
 
         :root {
+            /* UPDATED BLUE COLOR THEME - #4682b4 */
             --primary: #1a1a2e;
             --secondary: #16213e;
-            --accent: #4682b4;
+            --accent: #4682b4; /* CHANGED from #3a86ff to #4682b4 */
             --accent-light: #5d9cff;
             --accent-dark: #2a5fc1;
-            --accent-gradient: linear-gradient(135deg, #4682b4, #4361ee);
+            --accent-gradient: linear-gradient(135deg, #4682b4, #4361ee); /* UPDATED */
             --light: #f8f9fa;
             --gray: #6c757d;
             --gray-light: #e9ecef;
@@ -54,6 +55,7 @@
             -webkit-text-size-adjust: 100%;
         }
 
+        /* ===== ENHANCED PHOTOGRAPHY ICONS BACKGROUND ===== */
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--black);
@@ -62,18 +64,12 @@
             position: relative;
             overflow-x: hidden;
             min-height: 100vh;
+            /* Add subtle texture overlay */
             background-image: 
                 radial-gradient(circle at 10% 20%, rgba(70, 130, 180, 0.03) 0%, transparent 20%),
                 radial-gradient(circle at 90% 80%, rgba(70, 130, 180, 0.03) 0%, transparent 20%);
         }
 
-        /* ===== IMAGE FALLBACK STYLES ===== */
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* ===== PHOTOGRAPHY ICONS BACKGROUND ===== */
         .photography-icons {
             position: fixed;
             top: 0;
@@ -84,22 +80,23 @@
             overflow: hidden;
             background-color: #ffffff;
             pointer-events: none;
-            opacity: 0.4;
+            opacity: 0.4; /* Medium opacity */
         }
         
         .icon {
             position: absolute;
-            color: rgba(70, 130, 180, 0.15);
+            color: rgba(70, 130, 180, 0.15); /* Updated to #4682b4 with 15% opacity */
             font-size: 1.5rem;
             opacity: 0.7;
             z-index: -1;
             pointer-events: none;
             animation: float 20s infinite ease-in-out;
             filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
+            text-shadow: 0 0 1px rgba(0,0,0,0.1);
         }
 
         .icon.dark {
-            color: rgba(0, 0, 0, 0.1);
+            color: rgba(0, 0, 0, 0.1); /* Faded black icons */
         }
 
         @keyframes float {
@@ -108,39 +105,41 @@
             66% { transform: translateY(4px) rotate(-1deg) scale(0.98); }
         }
 
-        /* ===== SECTION STYLES ===== */
+        /* ===== SECTION BACKGROUNDS ===== */
         .section {
             padding: 3rem 0;
             position: relative;
             background-color: transparent;
         }
 
-        .section-sm {
-            padding: 2rem 0;
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            z-index: -1;
+            pointer-events: none;
         }
 
-        /* ===== CONTAINER ===== */
+        /* ===== FULL WIDTH CONTAINER ===== */
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
             position: relative;
         }
 
         @media (min-width: 768px) {
             .container {
-                padding: 0 30px;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
                 padding: 0 40px;
             }
         }
 
-        /* ===== TYPOGRAPHY FOR MOBILE ===== */
+        /* ===== MOBILE-FIRST TYPOGRAPHY ===== */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -148,29 +147,15 @@
             margin-bottom: 1rem;
         }
 
-        h1 { 
-            font-size: 2rem !important; 
-            line-height: 1.2;
-        }
-        
-        h2 { 
-            font-size: 1.5rem !important; 
-            line-height: 1.3;
-        }
-        
-        h3 { 
-            font-size: 1.25rem !important; 
-        }
-        
-        h4 { 
-            font-size: 1.125rem !important; 
-        }
+        h1 { font-size: 2rem; }
+        h2 { font-size: 1.5rem; }
+        h3 { font-size: 1.25rem; }
+        h4 { font-size: 1.125rem; }
 
         @media (min-width: 768px) {
-            h1 { font-size: 2.5rem !important; }
-            h2 { font-size: 2rem !important; }
-            h3 { font-size: 1.5rem !important; }
-            h4 { font-size: 1.25rem !important; }
+            h1 { font-size: 3rem !important; }
+            h2 { font-size: 2.5rem !important; }
+            h3 { font-size: 1.5rem; }
         }
 
         p {
@@ -182,48 +167,39 @@
 
         .text-center { text-align: center; }
         .highlight { color: var(--accent); font-weight: 700; }
+        .owner-name { color: var(--accent); font-weight: 700; }
 
-        /* ===== SPACING UTILITIES ===== */
+        /* ===== IMPROVED SPACING ===== */
+        .section-sm {
+            padding: 2rem 0;
+        }
+
         .mb-1 { margin-bottom: 0.75rem; }
         .mb-2 { margin-bottom: 1.25rem; }
         .mb-3 { margin-bottom: 1.75rem; }
         .mb-4 { margin-bottom: 2.5rem; }
 
-        .mt-1 { margin-top: 0.75rem; }
-        .mt-2 { margin-top: 1.25rem; }
-        .mt-3 { margin-top: 1.75rem; }
-        .mt-4 { margin-top: 2.5rem; }
-
-        /* ===== MOBILE OPTIMIZED BUTTONS ===== */
+        /* ===== MOBILE-FRIENDLY BUTTONS ===== */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 0.875rem 1.5rem;
+            padding: 1rem 1.75rem;
             border-radius: 8px !important;
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 1rem;
             text-decoration: none;
             border: 2px solid transparent;
             transition: var(--transition);
             cursor: pointer;
-            min-height: 48px;
-            min-width: 48px;
-            gap: 0.5rem;
+            min-height: 56px;
+            min-width: 56px;
+            gap: 0.75rem;
             touch-action: manipulation;
             -webkit-user-select: none;
             user-select: none;
             position: relative;
             z-index: 2;
-        }
-
-        @media (min-width: 768px) {
-            .btn {
-                padding: 1rem 1.75rem;
-                font-size: 1rem;
-                min-height: 56px;
-                min-width: 56px;
-            }
         }
 
         .btn:focus {
@@ -237,11 +213,15 @@
             border: none;
         }
 
-        .btn-primary:hover,
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(70, 130, 180, 0.3); /* Updated */
+        }
+
         .btn-primary:active {
             background: var(--accent-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(70, 130, 180, 0.3);
+            transform: translateY(-1px);
         }
 
         .btn-outline {
@@ -250,11 +230,15 @@
             border-color: var(--accent);
         }
 
-        .btn-outline:hover,
-        .btn-outline:active {
+        .btn-outline:hover {
             background: var(--accent);
             color: var(--white);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline:active {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
         }
 
         .btn-block {
@@ -269,12 +253,14 @@
         .btn-group {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
             margin-top: 1.5rem;
             width: 100%;
             max-width: 350px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+            z-index: 2;
         }
 
         @media (min-width: 640px) {
@@ -284,7 +270,7 @@
             }
         }
 
-        /* ===== HEADER & NAVIGATION ===== */
+        /* ===== FIXED HEADER NAVIGATION ===== */
         .header {
             position: fixed;
             top: 0;
@@ -294,30 +280,34 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             z-index: 1000;
-            padding: 0.5rem 0;
+            padding: 0.75rem 0;
             box-shadow: var(--shadow-sm);
-            height: 60px;
+            height: 70px;
         }
 
-        @media (min-width: 768px) {
-            .header {
-                height: 70px;
-                padding: 0.75rem 0;
-            }
+        .header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                var(--accent) 25%, 
+                var(--accent-light) 50%, 
+                var(--accent) 75%, 
+                transparent 100%);
+            opacity: 0.3;
         }
 
         .nav-container {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 15px;
+            padding: 0 1.25rem;
             height: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .nav-container {
-                padding: 0 20px;
-            }
+            position: relative;
         }
 
         /* LOGO */
@@ -326,22 +316,23 @@
             align-items: center;
             text-decoration: none;
             z-index: 1002;
+            gap: 10px;
         }
 
         .logo-image {
-            height: 40px;
+            height: 50px;
             width: auto;
             object-fit: contain;
             transition: var(--transition);
         }
 
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
             .logo-image {
-                height: 50px;
+                height: 40px; /* Reduced for mobile */
             }
         }
 
-        /* Desktop Navigation */
+        /* Desktop Navigation - UPDATED ORDER */
         .desktop-nav {
             display: none;
         }
@@ -354,7 +345,7 @@
             .desktop-nav .nav-items {
                 display: flex;
                 list-style: none;
-                gap: 2rem;
+                gap: 2.5rem;
                 margin: 0;
                 padding: 0;
             }
@@ -363,8 +354,8 @@
                 color: var(--primary);
                 text-decoration: none;
                 font-weight: 500;
-                font-size: 1rem;
-                padding: 0.5rem 0;
+                font-size: 1.05rem;
+                padding: 0.75rem 0;
                 position: relative;
                 transition: var(--transition);
             }
@@ -380,7 +371,7 @@
                 bottom: 0;
                 left: 0;
                 width: 0;
-                height: 2px;
+                height: 3px;
                 background: var(--accent);
                 transition: width 0.3s ease;
             }
@@ -391,10 +382,10 @@
             }
         }
 
-        /* Mobile Menu */
+        /* Mobile Menu - FIXED: Menu starts below logo */
         .menu-toggle {
-            width: 44px;
-            height: 44px;
+            width: 48px;
+            height: 48px;
             background: none;
             border: none;
             display: flex;
@@ -413,7 +404,7 @@
 
         .menu-toggle span {
             display: block;
-            width: 22px;
+            width: 24px;
             height: 2px;
             background: var(--primary);
             position: relative;
@@ -424,18 +415,18 @@
         .menu-toggle span::after {
             content: '';
             position: absolute;
-            width: 22px;
+            width: 24px;
             height: 2px;
             background: var(--primary);
             transition: var(--transition);
         }
 
         .menu-toggle span::before {
-            top: -6px;
+            top: -7px;
         }
 
         .menu-toggle span::after {
-            bottom: -6px;
+            bottom: -7px;
         }
 
         .menu-toggle.active span {
@@ -454,22 +445,15 @@
 
         .nav-overlay {
             position: fixed;
-            top: 60px;
+            top: 70px; /* FIXED: Starts below header */
             left: 0;
             width: 100%;
-            height: calc(100vh - 60px);
+            height: calc(100vh - 70px);
             background: rgba(0,0,0,0.5);
             opacity: 0;
             visibility: hidden;
             transition: var(--transition);
             z-index: 999;
-        }
-
-        @media (min-width: 768px) {
-            .nav-overlay {
-                top: 70px;
-                height: calc(100vh - 70px);
-            }
         }
 
         .nav-overlay.active {
@@ -479,24 +463,17 @@
 
         .nav-menu {
             position: fixed;
-            top: 60px;
+            top: 70px; /* FIXED: Starts below header */
             right: -100%;
             width: 85%;
-            max-width: 300px;
-            height: calc(100vh - 60px);
+            max-width: 320px;
+            height: calc(100vh - 70px); /* FIXED: Height accounts for header */
             background: var(--white);
-            padding: 1.5rem;
+            padding: 2rem 1.75rem;
             transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
             overflow-y: auto;
             box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        }
-
-        @media (min-width: 768px) {
-            .nav-menu {
-                top: 70px;
-                height: calc(100vh - 70px);
-            }
         }
 
         .nav-menu.active {
@@ -507,47 +484,40 @@
             list-style: none;
             display: flex;
             flex-direction: column;
-            gap: 0.25rem;
+            gap: 0.5rem;
         }
 
         .nav-menu .nav-link {
             display: flex;
             align-items: center;
-            padding: 1rem;
+            padding: 1.25rem;
             color: var(--primary);
             text-decoration: none;
             font-weight: 500;
             border-radius: var(--radius-sm);
             transition: var(--transition);
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
         .nav-menu .nav-link i {
-            margin-right: 0.75rem;
-            width: 20px;
+            margin-right: 1rem;
+            width: 22px;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .nav-menu .nav-link:active,
         .nav-menu .nav-link.active {
-            background: rgba(70, 130, 180, 0.1);
+            background: rgba(70, 130, 180, 0.1); /* Updated */
             color: var(--accent);
         }
 
         /* ===== PAGE CONTENT ===== */
         .page-content {
-            padding-top: 60px;
-            min-height: calc(100vh - 60px);
+            padding-top: 70px;
+            min-height: calc(100vh - 70px);
             position: relative;
             z-index: 1;
-        }
-
-        @media (min-width: 768px) {
-            .page-content {
-                padding-top: 70px;
-                min-height: calc(100vh - 70px);
-            }
         }
 
         /* ===== PAGE TRANSITIONS ===== */
@@ -573,19 +543,28 @@
             display: block;
         }
 
-        /* ===== HOME PAGE ===== */
+        /* ===== HOME PAGE - UPDATED SLIDESHOW ===== */
         .slideshow-hero {
             position: relative;
-            min-height: 50vh;
+            min-height: 85vh; /* Desktop: Not full screen */
             display: flex;
             align-items: center;
             overflow: hidden;
-            margin-top: 0;
         }
 
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
             .slideshow-hero {
-                min-height: 60vh;
+                min-height: 60vh; /* Mobile: Square shape */
+                height: 60vh;
+                max-height: 60vh;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slideshow-hero {
+                min-height: 55vh; /* Smaller mobile */
+                height: 55vh;
+                max-height: 55vh;
             }
         }
 
@@ -619,18 +598,25 @@
             object-position: center;
         }
 
-        /* ===== FEATURED WORK ===== */
+        /* ===== HOME PAGE Featured Work - UPDATED with 6 items ===== */
+        .featured-work {
+            position: relative;
+            padding-top: 2rem;
+        }
+        
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 3px;
-            margin-top: 1.5rem;
+            gap: 4px;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         @media (min-width: 768px) {
             .featured-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 8px;
+                grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns for 6 items */
+                gap: 1rem;
             }
         }
 
@@ -640,19 +626,23 @@
             overflow: hidden;
             aspect-ratio: 1;
             cursor: pointer;
-            background: #f8f9fa;
+            background: transparent;
         }
 
         .featured-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
         }
 
-        /* ===== CLIENTS SECTION ===== */
+        .featured-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ===== FIXED CLIENT LOGO SCROLLING - UPDATED for mobile ===== */
         .clients-section {
-            padding: 2rem 0;
+            padding: 3rem 0;
             background: rgba(248, 249, 250, 0.8);
             position: relative;
             overflow: hidden;
@@ -662,50 +652,23 @@
             position: relative;
             width: 100%;
             overflow: hidden;
-            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
         
         .clients-track {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1rem 0;
-            animation: scrollClients 40s linear infinite;
+            gap: 1.5rem; /* Reduced gap for mobile */
+            padding: 1.5rem 0;
+            animation: scrollClients 30s linear infinite;
+            will-change: transform;
         }
         
-        .client-logo-item {
-            flex: 0 0 auto;
-            width: 100px;
-            height: 60px;
-            background: white;
-            border-radius: var(--radius-md);
-            padding: 10px !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--gray-light);
-            box-shadow: var(--shadow-sm);
-        }
-
-        @media (min-width: 768px) {
-            .client-logo-item {
-                width: 140px;
-                height: 80px;
-                padding: 15px !important;
-            }
-            
-            .clients-track {
-                gap: 1.5rem;
-            }
+        .clients-track:hover {
+            animation-play-state: paused;
         }
         
-        .client-logo-img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
         @keyframes scrollClients {
             0% {
                 transform: translateX(0);
@@ -714,11 +677,56 @@
                 transform: translateX(-50%);
             }
         }
+        
+        .client-logo-item {
+            flex: 0 0 auto;
+            width: 120px; /* Reduced for mobile */
+            height: 70px; /* Reduced for mobile */
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-md);
+            padding: 15px !important; /* Reduced padding */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--gray-light);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
 
-        /* ===== ABOUT PAGE ===== */
-        .about-hero,
-        .services-hero,
-        .contact-hero {
+        @media (min-width: 768px) {
+            .client-logo-item {
+                width: 160px;
+                height: 90px;
+                padding: 25px !important;
+                box-shadow: var(--shadow-lg);
+            }
+            
+            .clients-track {
+                gap: 2.5rem;
+            }
+        }
+        
+        .client-logo-item:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-color: var(--accent);
+        }
+        
+        .client-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .client-logo-item:hover .client-logo-img {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* ===== ABOUT PAGE - FIXED MOBILE LAYOUT ===== */
+        .about-hero {
             position: relative;
             min-height: 20vh;
             display: flex;
@@ -726,87 +734,56 @@
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: var(--white);
             text-align: center;
-            padding: 3rem 0;
         }
 
         .profile-image {
-            width: 150px;
-            height: 150px;
+            width: 180px; /* Slightly reduced */
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--accent);
-            margin: 0 auto 1.5rem;
+            border: 6px solid var(--accent);
+            margin: 0 auto 2rem;
             display: block;
             box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
         }
 
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
             .profile-image {
-                width: 180px;
-                height: 180px;
-                border-width: 6px;
-                margin-bottom: 2rem;
+                width: 150px;
+                height: 150px;
+                margin-bottom: 1.5rem;
             }
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin: 1.5rem 0;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
+        .profile-image:hover {
+            transform: scale(1.05);
         }
 
-        @media (min-width: 768px) {
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-                max-width: 500px;
-            }
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 1rem;
-            background: white;
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .stat-number {
-            font-size: 1.75rem;
-            font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 0.25rem;
-        }
-
-        @media (min-width: 768px) {
-            .stat-number {
-                font-size: 2.25rem;
-                margin-bottom: 0.5rem;
-            }
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-
+        /* Brand Story Section - Fixed spacing */
         .brand-story {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: var(--radius-lg);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
+            padding: 2rem;
+            margin: 2rem 0;
             box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: 2;
         }
 
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
             .brand-story {
-                padding: 2rem;
-                margin: 2rem 0;
+                padding: 1.5rem;
+                margin: 1.5rem 0;
             }
+        }
+
+        .brand-story h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
 
         .brand-values {
@@ -826,187 +803,249 @@
         .brand-value {
             display: flex;
             align-items: flex-start;
-            gap: 0.75rem;
-            padding: 1rem;
-            background: var(--light);
+            gap: 1rem;
+            padding: 1.25rem;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: var(--radius-md);
-            border-left: 3px solid var(--accent);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .brand-value:hover {
+            border-left-color: var(--accent);
+            transform: translateX(10px);
         }
 
         .brand-value i {
             color: var(--accent);
-            font-size: 1.25rem;
-            margin-top: 0.1rem;
-            min-width: 24px;
+            font-size: 1.5rem;
+            margin-top: 0.25rem;
+            min-width: 30px;
         }
 
-        /* ===== SERVICES PAGE - UPDATED ===== */
-        .services-tabs {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            gap: 8px;
-            margin: 1.5rem 0;
-            padding-bottom: 5px;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none;
-        }
-
-        .services-tabs::-webkit-scrollbar {
-            display: none;
-        }
-
-        .tab-btn {
-            flex: 0 0 auto;
-            padding: 0.75rem 1.25rem;
-            background: white;
-            border: 1px solid var(--gray-light);
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            color: var(--gray);
-            cursor: pointer;
-            transition: var(--transition);
-            white-space: nowrap;
-        }
-
-        .tab-btn.active {
-            background: var(--accent-gradient);
-            color: white;
-            border-color: var(--accent);
-        }
-
-        .services-content {
-            margin-top: 1.5rem;
-        }
-
-        .services-category {
-            display: none;
-            animation: fadeInUp 0.3s ease;
-        }
-
-        .services-category.active {
-            display: block;
-        }
-
-        .key-services-grid {
+        /* Stats Grid - UPDATED: Removed Sessions and Awards */
+        .stats-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 2rem 0;
         }
 
         @media (min-width: 768px) {
-            .key-services-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr); /* Changed to 2 columns */
                 gap: 1.5rem;
+                margin: 2.5rem 0;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.25rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .stat-card {
+                padding: 1rem;
+            }
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .stat-number {
+                font-size: 2.5rem;
+                margin-bottom: 0.75rem;
+            }
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* ===== SERVICES PAGE - UPDATED with Brand Portfolios ===== */
+        .services-hero {
+            position: relative;
+            min-height: 20vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .service-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (min-width: 768px) {
+            .service-cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .service-cards {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
         .service-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: var(--radius-lg);
-            padding: 1.5rem;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--gray-light);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
             height: 100%;
             display: flex;
             flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--gray-light);
+        }
+
+        @media (max-width: 768px) {
+            .service-card {
+                padding: 1.5rem;
+            }
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background: var(--accent-gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1rem;
-            color: white;
-            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 1.75rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
         }
 
-        .service-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            color: var(--primary);
-        }
-
-        .service-card p {
-            color: var(--gray);
-            font-size: 0.9rem;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-            flex-grow: 1;
-        }
-
-        .service-features {
-            margin: 1rem 0;
-            padding-left: 0;
-        }
-
-        .service-features li {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-
-        .service-features li i {
-            color: var(--accent);
-            font-size: 0.8rem;
-            margin-top: 0.2rem;
-        }
-
-        /* All Features Grid */
-        .all-features-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .all-features-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
+        @media (max-width: 768px) {
+            .service-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+                margin-bottom: 1.25rem;
             }
         }
 
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            padding: 0.75rem;
-            background: var(--light);
-            border-radius: var(--radius-sm);
-            font-size: 0.9rem;
-            color: var(--gray);
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
-        .feature-item i {
-            color: var(--accent);
-            font-size: 0.9rem;
-            min-width: 20px;
+        /* Service card buttons */
+        .service-card-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
+
+        .service-card-buttons .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Service anchor for footer links */
+        .service-anchor {
+            position: absolute;
+            top: -70px;
+            visibility: hidden;
+        }
+
+        /* Pricing tag */
+        .service-pricing {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid var(--gray-light);
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-top: 0.75rem;
+            box-shadow: var(--shadow-sm);
         }
 
         /* ===== GALLERY PAGE ===== */
-        .simple-dropdown {
-            position: sticky;
-            top: 60px;
-            z-index: 999;
-            padding: 10px 15px;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        #gallery-page {
+            background: var(--white);
         }
 
-        @media (min-width: 768px) {
-            .simple-dropdown {
-                top: 70px;
-                padding: 15px 30px;
-            }
+        .gallery-page-content {
+            padding-top: 70px;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* SIMPLE GALLERY DROPDOWN */
+        .simple-dropdown {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 20px;
+            max-width: 400px;
+            margin: 0 auto;
         }
 
         .simple-dropdown-toggle {
@@ -1014,14 +1053,23 @@
             background: var(--accent);
             color: white;
             border: none;
-            padding: 12px 20px;
+            padding: 14px 20px;
             border-radius: var(--radius-md);
             font-weight: 600;
             display: flex;
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3); /* Updated */
+            transition: var(--transition);
+        }
+
+        .simple-dropdown-toggle:hover {
+            background: var(--accent-light);
+        }
+
+        .simple-dropdown-toggle:active {
+            background: var(--accent-dark);
         }
 
         .simple-dropdown-toggle i {
@@ -1035,9 +1083,9 @@
         .simple-dropdown-menu {
             position: absolute;
             top: 100%;
-            left: 15px;
-            right: 15px;
-            margin-top: 5px;
+            left: 0;
+            right: 0;
+            margin-top: 8px;
             background: white;
             border-radius: var(--radius-md);
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
@@ -1048,43 +1096,51 @@
             overflow-y: auto;
         }
 
-        @media (min-width: 768px) {
-            .simple-dropdown-menu {
-                left: 30px;
-                right: 30px;
-            }
-        }
-
         .simple-dropdown-menu.active {
             display: block;
             animation: slideDown 0.2s ease;
         }
 
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .simple-dropdown-item {
             display: block;
-            padding: 12px 20px;
+            padding: 16px 20px;
             color: var(--primary);
             text-decoration: none;
             font-weight: 500;
             border-bottom: 1px solid var(--gray-light);
+            transition: var(--transition);
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 0.9rem;
+            gap: 12px;
         }
 
         .simple-dropdown-item:hover {
-            background: rgba(70, 130, 180, 0.1);
+            background: rgba(70, 130, 180, 0.1); /* Updated */
+            color: var(--accent);
+            padding-left: 25px;
         }
 
         .simple-dropdown-item i {
-            width: 18px;
+            width: 20px;
+            text-align: center;
             color: var(--accent);
         }
 
-        /* Gallery Sections */
+        /* Gallery sections */
         .gallery-section {
-            padding: 2rem 0;
+            padding: 40px 20px;
+            position: relative;
             scroll-margin-top: 120px;
         }
 
@@ -1092,24 +1148,39 @@
             background: rgba(248, 249, 250, 0.5);
         }
 
+        .section-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .gallery-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .gallery-section p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Gallery grid */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2px;
-            margin-top: 1rem;
+            width: 100%;
         }
 
         @media (min-width: 768px) {
             .gallery-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 4px;
             }
         }
 
         @media (min-width: 1024px) {
             .gallery-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 6px;
+                grid-template-columns: repeat(5, 1fr);
             }
         }
 
@@ -1127,6 +1198,11 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
         }
 
         /* ===== GALLERY MODAL ===== */
@@ -1150,22 +1226,22 @@
         .modal-content {
             position: relative;
             width: 95%;
-            max-width: 1000px;
+            max-width: 1200px;
             height: 90vh;
             background: transparent;
         }
 
         .modal-close {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 20px;
+            right: 20px;
             background: rgba(0, 0, 0, 0.7);
             color: white;
             border: none;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             cursor: pointer;
             z-index: 2001;
         }
@@ -1177,36 +1253,20 @@
             background: rgba(0, 0, 0, 0.7);
             color: white;
             border: none;
-            width: 45px;
-            height: 45px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             cursor: pointer;
             z-index: 2001;
         }
 
-        @media (min-width: 768px) {
-            .modal-close {
-                top: 20px;
-                right: 20px;
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-            }
-            
-            .modal-nav-btn {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-        }
-
         .modal-prev {
-            left: 10px;
+            left: 20px;
         }
 
         .modal-next {
-            right: 10px;
+            right: 20px;
         }
 
         .modal-image-container {
@@ -1215,7 +1275,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
         }
 
         .modal-image {
@@ -1224,31 +1283,116 @@
             object-fit: contain;
         }
 
-        /* ===== CONTACT PAGE ===== */
+        /* ===== CONTACT PAGE - UPDATED ===== */
+        .contact-hero {
+            position: relative;
+            min-height: 20vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            text-align: center;
+        }
+
         .contact-form-container {
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: var(--radius-lg);
-            padding: 1.5rem;
-            box-shadow: var(--shadow-md);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            z-index: 2;
             border: 1px solid var(--gray-light);
         }
 
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
             .contact-form-container {
-                padding: 2rem;
+                padding: 1.5rem;
+            }
+        }
+
+        /* Contact info cards - UPDATED: Removed phone and email */
+        .contact-info-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .contact-info-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .info-card {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-light);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .info-card .info-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            margin: 0 auto 1rem;
+        }
+
+        .info-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .info-card p {
+            margin: 0;
+            color: var(--black);
+            font-weight: 500;
+        }
+
+        .info-card small {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        /* Form styles */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .form-row {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-label {
             display: block;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
             font-weight: 500;
             color: var(--primary);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .form-label.required::after {
@@ -1258,18 +1402,19 @@
 
         .form-control {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.875rem 1rem;
             border: 1px solid var(--gray-light);
             border-radius: var(--radius-sm);
             font-family: 'Inter', sans-serif;
             font-size: 1rem;
             transition: var(--transition);
+            background: var(--white);
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 2px rgba(70, 130, 180, 0.1);
+            box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.1); /* Updated */
         }
 
         textarea.form-control {
@@ -1281,46 +1426,64 @@
             appearance: none;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236c757d' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
-            background-position: right 0.75rem center;
+            background-position: right 1rem center;
             background-size: 12px;
             padding-right: 2.5rem;
         }
 
+        /* WhatsApp CTA Section */
         .whatsapp-cta {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: var(--radius-lg);
             text-align: center;
             margin-top: 2rem;
+            box-shadow: var(--shadow-lg);
         }
 
-        @media (min-width: 768px) {
+        @media (max-width: 768px) {
             .whatsapp-cta {
-                padding: 2rem;
+                padding: 1.5rem;
             }
+        }
+
+        .whatsapp-cta h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .whatsapp-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1.5rem;
         }
 
         .whatsapp-btn {
             background: white;
             color: #25D366;
             font-weight: 600;
-            padding: 0.875rem 1.5rem;
+            padding: 1rem 2rem;
             border-radius: 50px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
+            gap: 10px;
+            transition: var(--transition);
         }
 
-        /* ===== ENHANCED FOOTER - COMPLETELY REORGANIZED ===== */
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ===== ENHANCED FOOTER - UPDATED ===== */
         .footer {
             background: var(--primary);
             color: var(--white);
-            padding: 2rem 0 1rem;
-            margin-top: 3rem;
+            padding: 3rem 0 1.5rem;
+            margin-top: 4rem;
             position: relative;
+            overflow: hidden;
         }
 
         .footer::before {
@@ -1333,35 +1496,28 @@
             background: linear-gradient(90deg, var(--accent), var(--accent-light));
         }
 
-        /* Mobile-first grid */
         .footer-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         @media (min-width: 768px) {
             .footer-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (min-width: 1024px) {
             .footer-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 3rem;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        .footer-section {
-            margin-bottom: 1rem;
-        }
-
         .footer h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
             color: white;
             position: relative;
             padding-bottom: 0.5rem;
@@ -1372,32 +1528,66 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 30px;
-            height: 2px;
+            width: 40px;
+            height: 3px;
             background: var(--accent);
         }
 
-        /* Contact Info */
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin-bottom: 0.35rem;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .footer ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+        }
+
+        .footer ul li a:hover {
+            color: var(--accent-light);
+            transform: translateX(5px);
+        }
+
+        .footer ul li i {
+            color: var(--accent-light);
+            width: 16px;
+            font-size: 0.8rem;
+        }
+
+        /* Footer contact info */
+        .footer-contact {
+            margin-top: 1.5rem;
+        }
+
         .contact-info {
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
-            margin-bottom: 1rem;
+            margin-top: 1rem;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: rgba(255,255,255,0.9);
         }
 
         .contact-item i {
             color: var(--accent-light);
-            width: 16px;
+            width: 20px;
             text-align: center;
-            font-size: 0.9rem;
         }
 
         .contact-item a {
@@ -1410,69 +1600,7 @@
             color: var(--accent-light);
         }
 
-        /* Social Links */
-        .social-links {
-            display: flex;
-            gap: 8px;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            text-decoration: none;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .social-link:hover {
-            transform: translateY(-3px);
-        }
-
-        .social-link.instagram { background: linear-gradient(45deg, #405DE6, #C13584); }
-        .social-link.whatsapp { background: #25D366; }
-        .social-link.email { background: #EA4335; }
-        .social-link.phone { background: #34B7F1; }
-
-        /* Footer Lists */
-        .footer ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer ul li {
-            margin-bottom: 0.5rem;
-            font-size: 0.85rem;
-        }
-
-        .footer ul li a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.85rem;
-        }
-
-        .footer ul li a:hover {
-            color: var(--accent-light);
-            transform: translateX(3px);
-        }
-
-        .footer ul li i {
-            color: var(--accent-light);
-            font-size: 0.8rem;
-            width: 14px;
-        }
-
-        /* Services Columns */
+        /* Services columns in footer */
         .services-columns {
             display: grid;
             grid-template-columns: 1fr;
@@ -1486,74 +1614,57 @@
             }
         }
 
-        /* Key Features Section */
-        .key-features-list {
+        /* ===== ENHANCED SOCIAL LINKS WITH COLORS ===== */
+        .social-links {
             display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            gap: 10px;
+            margin-top: 1.25rem;
+            flex-wrap: wrap;
         }
 
-        .key-feature-item {
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 0;
-            color: rgba(255,255,255,0.9);
-            font-size: 0.85rem;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        .key-feature-item i {
-            color: var(--accent-light);
-            font-size: 0.8rem;
-            min-width: 16px;
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
 
-        /* All Features Section */
-        .all-features-list {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 0.5rem;
-            max-height: 200px;
-            overflow-y: auto;
-            padding-right: 5px;
+        /* Specific colors for each social link */
+        .social-link.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
         }
 
-        .all-features-list::-webkit-scrollbar {
-            width: 3px;
+        .social-link.whatsapp {
+            background: #25D366;
         }
 
-        .all-features-list::-webkit-scrollbar-track {
-            background: rgba(255,255,255,0.1);
+        .social-link.email {
+            background: #EA4335;
         }
 
-        .all-features-list::-webkit-scrollbar-thumb {
-            background: var(--accent);
-            border-radius: 3px;
-        }
-
-        .all-features-item {
-            color: rgba(255,255,255,0.8);
-            font-size: 0.8rem;
-            padding: 0.25rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* Footer Bottom */
-        .footer-bottom {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.7);
-            font-size: 0.8rem;
+        .social-link.phone {
+            background: #34B7F1;
         }
 
         /* ===== BACK TO TOP ===== */
         .back-to-top {
             position: fixed;
-            bottom: 1rem;
-            right: 1rem;
-            width: 45px;
-            height: 45px;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 55px;
+            height: 55px;
             background: var(--accent-gradient);
             color: var(--white);
             border-radius: 50%;
@@ -1567,17 +1678,7 @@
             z-index: 999;
             border: none;
             box-shadow: var(--shadow-lg);
-            font-size: 1rem;
-        }
-
-        @media (min-width: 768px) {
-            .back-to-top {
-                bottom: 1.5rem;
-                right: 1.5rem;
-                width: 50px;
-                height: 50px;
-                font-size: 1.1rem;
-            }
+            font-size: 1.2rem;
         }
 
         .back-to-top.visible {
@@ -1586,18 +1687,18 @@
         }
 
         .back-to-top:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
         }
 
         /* ===== HERO TITLES ===== */
         .hero-title {
-            font-size: 1.75rem;
+            font-size: 2rem;
             margin-bottom: 0.5rem;
             color: var(--white);
         }
 
         .hero-subtitle {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.9);
             max-width: 600px;
             margin: 0 auto;
@@ -1605,39 +1706,72 @@
 
         @media (min-width: 768px) {
             .hero-title {
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
             
             .hero-subtitle {
-                font-size: 1.1rem;
+                font-size: 1.25rem;
             }
         }
 
-        /* ===== FORM STATUS ===== */
-        .form-status {
-            padding: 0.75rem;
-            border-radius: var(--radius-sm);
-            margin-bottom: 1rem;
-            display: none;
-            font-size: 0.9rem;
-        }
-
-        .form-status.loading {
-            background: rgba(70, 130, 180, 0.1);
-            color: var(--accent);
-            border: 1px solid rgba(70, 130, 180, 0.3);
-        }
-
-        .form-status.success {
-            background: rgba(40, 167, 69, 0.1);
-            color: #28a745;
-            border: 1px solid rgba(40, 167, 69, 0.3);
-        }
-
-        .form-status.error {
-            background: rgba(220, 53, 69, 0.1);
-            color: #dc3545;
-            border: 1px solid rgba(220, 53, 69, 0.3);
+        /* ===== MOBILE OPTIMIZATIONS ===== */
+        @media (max-width: 767px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .gallery-section {
+                padding: 30px 15px;
+                scroll-margin-top: 100px;
+            }
+            
+            .simple-dropdown {
+                padding: 0 15px;
+                top: 70px;
+            }
+            
+            .service-card-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.95rem;
+            }
+            
+            .modal-nav-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1rem;
+                bottom: 20px;
+                top: auto;
+                transform: none;
+            }
+            
+            .modal-prev {
+                left: 15px;
+            }
+            
+            .modal-next {
+                right: 15px;
+            }
+            
+            .contact-info-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            /* Fix text spacing on mobile */
+            .brand-story p,
+            .about-hero p,
+            .services-hero p {
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
         }
 
         /* ===== TOUCH OPTIMIZATIONS ===== */
@@ -1657,44 +1791,38 @@
             .client-logo-item:active,
             .featured-item:active img,
             .service-card:active {
-                transform: scale(0.98);
-            }
-        }
-
-        /* ===== UTILITY CLASSES ===== */
-        .hidden-mobile {
-            display: none !important;
-        }
-
-        @media (min-width: 768px) {
-            .hidden-mobile {
-                display: block !important;
+                transform: scale(0.95);
             }
             
-            .hidden-desktop {
-                display: none !important;
+            .back-to-top:active {
+                transform: scale(0.95);
             }
         }
 
-        /* ===== ANIMATIONS ===== */
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* ===== FORM STATUS ===== */
+        .form-status {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1.5rem;
+            display: none;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        .form-status.loading {
+            background: rgba(70, 130, 180, 0.1); /* Updated */
+            color: var(--accent);
+            border: 1px solid rgba(70, 130, 180, 0.3); /* Updated */
+        }
+
+        .form-status.success {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+
+        .form-status.error {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+            border: 1px solid rgba(220, 53, 69, 0.3);
         }
     </style>
 </head>
@@ -1702,14 +1830,14 @@
     <!-- Photography Icons Background -->
     <div class="photography-icons" id="photography-icons"></div>
 
-    <!-- Header & Navigation -->
+    <!-- Header & Navigation - UPDATED ORDER -->
     <header class="header">
         <div class="nav-container">
             <a href="#home" class="logo" onclick="event.preventDefault(); showPage('home');">
-                <img src="logo.png" alt="PQ Studios Logo" class="logo-image" onerror="this.src='https://via.placeholder.com/150x50/4682b4/ffffff?text=PQ+STUDIOS'">
+                <img src="Logo.png" alt="PQ Studios Logo" class="logo-image">
             </a>
             
-            <!-- Desktop Navigation -->
+            <!-- Desktop Navigation - UPDATED ORDER -->
             <nav class="desktop-nav">
                 <ul class="nav-items">
                     <li><a href="#home" class="nav-link active" onclick="event.preventDefault(); showPage('home');">Home</a></li>
@@ -1726,10 +1854,10 @@
             </button>
         </div>
         
-        <!-- Mobile Menu Overlay -->
+        <!-- Mobile Menu Overlay - FIXED: Starts below logo -->
         <div class="nav-overlay" id="navOverlay"></div>
         
-        <!-- Mobile Navigation Menu -->
+        <!-- Mobile Navigation Menu - FIXED: Starts below logo - UPDATED ORDER -->
         <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
             <ul class="nav-items">
                 <li><a href="#home" class="nav-link active" onclick="event.preventDefault(); showPage('home');"><i class="fas fa-home"></i> Home</a></li>
@@ -1759,7 +1887,7 @@
         </div>
     </div>
 
-    <!-- Page Content -->
+    <!-- Page Content - UPDATED ORDER -->
     <div class="page-content">
         <!-- HOME PAGE -->
         <div id="home-page" class="page active">
@@ -1769,40 +1897,40 @@
                 </div>
             </section>
 
-            <!-- Featured Work Section -->
+            <!-- Featured Work Section - UPDATED with 6 items -->
             <section class="section featured-work">
                 <div class="container">
-                    <h2 class="text-center mb-2">Featured Work</h2>
-                    <p class="text-center mb-3">A glimpse of our recent photography projects</p>
+                    <h2 class="text-center mb-4">Featured Work</h2>
+                    <p class="text-center mb-4">A glimpse of our recent photography projects</p>
                     
                     <div class="featured-grid" id="featuredGrid">
                         <!-- Featured items loaded by JavaScript -->
                     </div>
                     
-                    <div class="text-center mt-3">
-                        <a href="#gallery" class="btn btn-primary" onclick="event.preventDefault(); showPage('gallery');">
+                    <div class="text-center mt-4">
+                        <a href="#gallery" class="btn btn-primary btn-spacing" onclick="event.preventDefault(); showPage('gallery');">
                             <i class="fas fa-images"></i> View Full Gallery
                         </a>
                     </div>
                 </div>
             </section>
 
-            <!-- Clients Section -->
+            <!-- Clients Section - UPDATED for mobile -->
             <section class="clients-section">
                 <div class="container">
                     <h3 class="text-center mb-2" style="color: var(--primary);">Trusted By Leading Brands</h3>
-                    <p class="text-center mb-3" style="color: var(--gray);">We've worked with some of the most respected companies</p>
+                    <p class="text-center mb-4" style="color: var(--gray);">We've worked with some of the most respected companies</p>
                     
                     <div class="clients-wrapper">
                         <div class="clients-track" id="clientsTrack">
-                            <!-- Client logos loaded by JavaScript -->
+                            <!-- Client logos loaded by JavaScript - Will be duplicated for infinite loop -->
                         </div>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- SERVICES PAGE - REORGANIZED -->
+        <!-- SERVICES PAGE - UPDATED with Brand Portfolios -->
         <div id="services-page" class="page">
             <section class="services-hero">
                 <div class="container">
@@ -1813,65 +1941,17 @@
 
             <section class="section">
                 <div class="container">
-                    <h2 class="text-center mb-2">What We Offer</h2>
+                    <h2 class="text-center mb-4">What We Offer</h2>
                     <p class="text-center mb-4">Choose from our specialized photography services</p>
                     
-                    <!-- Service Tabs -->
-                    <div class="services-tabs" id="servicesTabs">
-                        <button class="tab-btn active" data-category="key">Key Features</button>
-                        <button class="tab-btn" data-category="all">All Features</button>
-                        <button class="tab-btn" data-category="studio">Studio Rentals</button>
-                    </div>
-                    
-                    <!-- Key Features Content -->
-                    <div id="keyFeatures" class="services-category active">
-                        <div class="key-services-grid" id="keyServicesGrid">
-                            <!-- Key services loaded by JavaScript -->
-                        </div>
-                    </div>
-                    
-                    <!-- All Features Content -->
-                    <div id="allFeatures" class="services-category">
-                        <div class="all-features-grid">
-                            <!-- All features will be loaded here -->
-                        </div>
-                    </div>
-                    
-                    <!-- Studio Rentals Content -->
-                    <div id="studioFeatures" class="services-category">
-                        <div class="service-card">
-                            <div class="service-icon">
-                                <i class="fas fa-camera"></i>
-                            </div>
-                            <h3>Studio Rentals</h3>
-                            <p>Professional studio available for rent with full equipment. Perfect for photographers, influencers, and content creators.</p>
-                            <ul class="service-features">
-                                <li><i class="fas fa-check"></i> Fully equipped professional studio</li>
-                                <li><i class="fas fa-check"></i> High-quality lighting setup</li>
-                                <li><i class="fas fa-check"></i> Various backdrops available</li>
-                                <li><i class="fas fa-check"></i> Changing room and makeup area</li>
-                                <li><i class="fas fa-check"></i> Professional equipment rental</li>
-                                <li><i class="fas fa-check"></i> Technical support available</li>
-                            </ul>
-                            <div class="service-pricing">
-                                <h4>Pricing</h4>
-                                <div class="price-tag">₹2000 per hour</div>
-                            </div>
-                            <div class="service-card-buttons">
-                                <button class="btn btn-primary book-service-btn" data-service="studio">
-                                    <i class="fas fa-calendar-check"></i> Book Now
-                                </button>
-                                <button class="btn btn-outline view-gallery-btn" data-category="studio">
-                                    <i class="fas fa-images"></i> View Studio
-                                </button>
-                            </div>
-                        </div>
+                    <div class="service-cards" id="servicesContainer">
+                        <!-- Services loaded by JavaScript -->
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- GALLERY PAGE -->
+        <!-- GALLERY PAGE - UPDATED with Brand Portfolios category -->
         <div id="gallery-page" class="page">
             <!-- Simple Dropdown -->
             <div class="simple-dropdown">
@@ -1893,7 +1973,7 @@
             </div>
         </div>
 
-        <!-- ABOUT PAGE -->
+        <!-- ABOUT PAGE - FIXED MOBILE LAYOUT -->
         <div id="about-page" class="page">
             <section class="about-hero">
                 <div class="container">
@@ -1905,17 +1985,17 @@
             <section class="section">
                 <div class="container">
                     <div class="text-center mb-4">
-                        <img src="sai-kumar-profile-pic.jpg" 
+                        <img src="sai kumar profile pic.jpg" 
                              alt="Sai Kumar Maddina - Professional Photographer" 
                              class="profile-image"
-                             loading="lazy"
-                             onerror="this.src='https://via.placeholder.com/180/4682b4/ffffff?text=Sai+Kumar'">
+                             loading="lazy">
                     </div>
                     
                     <div>
                         <h2 class="text-center mb-3">Your Story, Beautifully Told</h2>
                         <p class="text-center mb-4">Hi, I'm Sai Kumar Maddina, the passionate photographer behind PQ Studios. With over 10 years of experience, I specialize in capturing authentic moments that tell your unique story.</p>
                         
+                        <!-- UPDATED: Removed Sessions and Awards, only 2 stats now -->
                         <div class="stats-grid">
                             <div class="stat-card">
                                 <div class="stat-number">10+</div>
@@ -1928,7 +2008,7 @@
                         </div>
                         
                         <div class="brand-story">
-                            <h3 class="text-center mb-3">The PQ Studios Brand Story</h3>
+                            <h3>The PQ Studios Brand Story</h3>
                             <p class="text-center mb-4">PQ Studios isn't just a photography studio - it's a vision brought to life. Founded on the principle that every image should tell a compelling story, we've grown from a passion project into Hyderabad's premier photography destination.</p>
                             
                             <div class="brand-values">
@@ -1936,28 +2016,42 @@
                                     <i class="fas fa-eye"></i>
                                     <div>
                                         <h4>Vision</h4>
-                                        <p style="font-size: 0.9rem;">To redefine photography through innovative techniques and artistic expression.</p>
+                                        <p>To redefine photography through innovative techniques and artistic expression.</p>
                                     </div>
                                 </div>
                                 <div class="brand-value">
                                     <i class="fas fa-bullseye"></i>
                                     <div>
                                         <h4>Mission</h4>
-                                        <p style="font-size: 0.9rem;">To capture life's most precious moments with authenticity and technical excellence.</p>
+                                        <p>To capture life's most precious moments with authenticity and technical excellence.</p>
                                     </div>
                                 </div>
                                 <div class="brand-value">
                                     <i class="fas fa-heart"></i>
                                     <div>
                                         <h4>Passion</h4>
-                                        <p style="font-size: 0.9rem;">Photography isn't just our profession - it's our passion.</p>
+                                        <p>Photography isn't just our profession - it's our passion.</p>
                                     </div>
                                 </div>
                                 <div class="brand-value">
                                     <i class="fas fa-star"></i>
                                     <div>
                                         <h4>Excellence</h4>
-                                        <p style="font-size: 0.9rem;">We believe in excellence in every frame, from concept to final delivery.</p>
+                                        <p>We believe in excellence in every frame, from concept to final delivery.</p>
+                                    </div>
+                                </div>
+                                <div class="brand-value">
+                                    <i class="fas fa-users"></i>
+                                    <div>
+                                        <h4>Community</h4>
+                                        <p>Building lasting relationships with clients and the photography community.</p>
+                                    </div>
+                                </div>
+                                <div class="brand-value">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <div>
+                                        <h4>Innovation</h4>
+                                        <p>Constantly evolving with new techniques and creative approaches.</p>
                                     </div>
                                 </div>
                             </div>
@@ -1965,7 +2059,7 @@
                             <div class="text-center mt-4">
                                 <p><strong>Location:</strong> Hitech City, Hyderabad</p>
                                 <p><strong>Brand Philosophy:</strong> "Where every picture tells your unique story"</p>
-                                <a href="#contact" class="btn btn-primary mt-3" onclick="event.preventDefault(); showPage('contact');">
+                                <a href="#contact" class="btn btn-primary btn-spacing mt-3" onclick="event.preventDefault(); showPage('contact');">
                                     <i class="fas fa-handshake"></i> Partner With Us
                                 </a>
                             </div>
@@ -1974,23 +2068,31 @@
                         <div class="mb-4">
                             <h3 class="mb-3 text-center">My Philosophy</h3>
                             <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem; max-width: 600px; margin: 0 auto;">
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.2rem;"></i>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
                                     <span>Every shot should tell a story</span>
                                 </div>
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.2rem;"></i>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
                                     <span>Quality over quantity</span>
                                 </div>
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.9rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.2rem;"></i>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
                                     <span>Client satisfaction is our top priority</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
+                                    <span>Continuous learning and innovation</span>
+                                </div>
+                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
+                                    <span>Ethical and professional approach</span>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="text-center">
-                            <a href="#contact" class="btn btn-primary" onclick="event.preventDefault(); showPage('contact');">
+                            <a href="#contact" class="btn btn-primary btn-spacing" onclick="event.preventDefault(); showPage('contact');">
                                 <i class="fas fa-calendar-alt"></i> Work With Me
                             </a>
                         </div>
@@ -1999,7 +2101,7 @@
             </section>
         </div>
 
-        <!-- CONTACT PAGE -->
+        <!-- CONTACT PAGE - UPDATED ===== -->
         <div id="contact-page" class="page">
             <section class="contact-hero">
                 <div class="container">
@@ -2017,6 +2119,7 @@
                         <div id="formStatus" class="form-status"></div>
                         
                         <form id="contactForm" novalidate>
+                            <!-- UPDATED: Single Name field instead of First/Last -->
                             <div class="form-group">
                                 <label for="name" class="form-label required">Full Name *</label>
                                 <input type="text" id="name" class="form-control" required>
@@ -2027,22 +2130,25 @@
                                 <input type="email" id="email" class="form-control">
                             </div>
                             
+                            <!-- UPDATED: Phone Number is now required -->
                             <div class="form-group">
                                 <label for="phone" class="form-label required">Phone Number *</label>
                                 <input type="tel" id="phone" class="form-control" required>
                             </div>
                             
+                            <!-- UPDATED: Service is now required -->
                             <div class="form-group">
                                 <label for="service" class="form-label required">Service Interested In *</label>
                                 <select id="service" class="form-control" required>
                                     <option value="">Select a service</option>
                                     <option value="food">Food Photography</option>
                                     <option value="product">Product Photography</option>
+                                    <option value="ecommerce">E-Commerce Visuals</option>
                                     <option value="fashion">Fashion & Lifestyle</option>
                                     <option value="pets">Pet Photography</option>
+                                    <option value="interiors">Interiors & Architecture</option>
                                     <option value="brand">Brand Portfolios</option>
                                     <option value="studio">Studio Rentals</option>
-                                    <option value="interiors">Interiors & Architecture</option>
                                 </select>
                             </div>
                             
@@ -2056,22 +2162,32 @@
                             </button>
                         </form>
                         
-                        <div class="contact-info-cards" style="display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 2rem;">
-                            <div class="info-card" style="background: white; padding: 1rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); text-align: center;">
-                                <div class="info-icon" style="width: 40px; height: 40px; background: var(--accent-gradient); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1rem; margin: 0 auto 0.75rem;">
+                        <!-- UPDATED: Removed phone and email info cards -->
+                        <div class="contact-info-cards">
+                            <div class="info-card">
+                                <div class="info-icon">
                                     <i class="fas fa-clock"></i>
                                 </div>
-                                <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">Response Time</h4>
-                                <p style="font-size: 0.9rem; margin-bottom: 0.25rem;">Within 24 Hours</p>
-                                <small style="color: var(--gray); font-size: 0.8rem;">Monday - Saturday</small>
+                                <h4>Response Time</h4>
+                                <p>Within 24 Hours</p>
+                                <small>Monday - Saturday</small>
+                            </div>
+                            
+                            <div class="info-card">
+                                <div class="info-icon">
+                                    <i class="fas fa-headset"></i>
+                                </div>
+                                <h4>Support</h4>
+                                <p>Professional Consultation</p>
+                                <small>Free initial consultation</small>
                             </div>
                         </div>
                     </div>
 
                     <!-- WhatsApp CTA Section -->
                     <div class="whatsapp-cta">
-                        <h3 style="color: white; margin-bottom: 0.5rem;">Prefer to Chat?</h3>
-                        <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem; font-size: 0.95rem;">Get instant responses on WhatsApp for quick queries and consultations.</p>
+                        <h3>Prefer to Chat?</h3>
+                        <p>Get instant responses on WhatsApp for quick queries and consultations.</p>
                         <a href="https://wa.me/919652337710" target="_blank" class="whatsapp-btn">
                             <i class="fab fa-whatsapp"></i> Chat on WhatsApp
                         </a>
@@ -2081,17 +2197,17 @@
         </div>
     </div>
 
-    <!-- Footer - REORGANIZED -->
+    <!-- Footer - UPDATED ===== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <!-- About & Contact -->
-                <div class="footer-section">
+                <div>
                     <h3>PQ Studios Hyderabad</h3>
-                    <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem; font-size: 0.85rem; line-height: 1.5;">
+                    <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.6;">
                         Professional photography studio in Hyderabad capturing life's most precious moments.
                     </p>
                     
+                    <!-- Contact Info -->
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
@@ -2101,12 +2217,9 @@
                             <i class="fas fa-envelope"></i>
                             <a href="mailto:info@pqstudios.net">info@pqstudios.net</a>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Hitech City, Hyderabad</span>
-                        </div>
                     </div>
                     
+                    <!-- Social Links - UPDATED with working buttons -->
                     <div class="social-links">
                         <a href="https://www.instagram.com/pqstudios_hyd" target="_blank" class="social-link instagram" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
@@ -2123,76 +2236,52 @@
                     </div>
                 </div>
                 
-                <!-- Quick Links -->
-                <div class="footer-section">
+                <div>
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#home" onclick="event.preventDefault(); showPage('home');"><i class="fas fa-chevron-right"></i> Home</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); showPage('services');"><i class="fas fa-chevron-right"></i> Services</a></li>
-                        <li><a href="#gallery" onclick="event.preventDefault(); showPage('gallery');"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-                        <li><a href="#about" onclick="event.preventDefault(); showPage('about');"><i class="fas fa-chevron-right"></i> About</a></li>
-                        <li><a href="#contact" onclick="event.preventDefault(); showPage('contact');"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="#home" onclick="event.preventDefault(); showPage('home');"><i class="fas fa-arrow-right"></i> Home</a></li>
+                        <li><a href="#services" onclick="event.preventDefault(); showPage('services');"><i class="fas fa-arrow-right"></i> Services</a></li>
+                        <li><a href="#gallery" onclick="event.preventDefault(); showPage('gallery');"><i class="fas fa-arrow-right"></i> Gallery</a></li>
+                        <li><a href="#about" onclick="event.preventDefault(); showPage('about');"><i class="fas fa-arrow-right"></i> About</a></li>
+                        <li><a href="#contact" onclick="event.preventDefault(); showPage('contact');"><i class="fas fa-arrow-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
-                <!-- Key Features -->
-                <div class="footer-section">
-                    <h3>Key Features</h3>
-                    <div class="key-features-list">
-                        <div class="key-feature-item">
-                            <i class="fas fa-camera"></i>
-                            <span>Food Photography</span>
+                <div>
+                    <h3>All Services</h3>
+                    <div class="services-columns">
+                        <div>
+                            <ul>
+                                <li><a href="#services" onclick="event.preventDefault(); scrollToService('food');"><i class="fas fa-camera"></i> Food Photography</a></li>
+                                <li><a href="#services" onclick="event.preventDefault(); scrollToService('product');"><i class="fas fa-camera"></i> Product Photography</a></li>
+                                <li><a href="#services" onclick="event.preventDefault(); scrollToService('fashion');"><i class="fas fa-camera"></i> Fashion & Lifestyle</a></li>
+                                <li><a href="#services" onclick="event.preventDefault(); scrollToService('pets');"><i class="fas fa-camera"></i> Pet Photography</a></li>
+                                <li><a href="#services" onclick="event.preventDefault(); scrollToService('brand');"><i class="fas fa-camera"></i> Brand Portfolios</a></li>
+                                <li><a href="#services" onclick="event.preventDefault(); scrollToService('studio');"><i class="fas fa-camera"></i> Studio Rentals</a></li>
+                                <li><a href="#services" onclick="event.preventDefault(); scrollToService('interiors');"><i class="fas fa-camera"></i> Interiors & Architecture</a></li>
+                                <li>Architectural & Interior Photography</li>
+                            </ul>
                         </div>
-                        <div class="key-feature-item">
-                            <i class="fas fa-camera"></i>
-                            <span>Product Photography</span>
+                        <div>
+                            <ul>
+                                <li>Corporate & Brand Films</li>
+                                <li>Aerial & Drone Photography & Films</li>
+                                <li>Industrial Films & Documentaries</li>
+                                <li>Social Media Content & Ad Reels</li>
+                                <li>Hospitality Photography</li>
+                                <li>Event Photography & Cinematic Films</li>
+                                <li>Portraits & Personal Branding Shoots</li>
+                                <li>Real Estate Photography & Walkthrough Videos</li>
+                                <li>Short-Form Video Advertising</li>
+                                <li>Post-Production & Color Grading</li>
+                                <li>Brand Visual Consulting</li>
+                            </ul>
                         </div>
-                        <div class="key-feature-item">
-                            <i class="fas fa-camera"></i>
-                            <span>Fashion & Lifestyle</span>
-                        </div>
-                        <div class="key-feature-item">
-                            <i class="fas fa-camera"></i>
-                            <span>Pet Photography</span>
-                        </div>
-                        <div class="key-feature-item">
-                            <i class="fas fa-camera"></i>
-                            <span>Brand Portfolios</span>
-                        </div>
-                        <div class="key-feature-item">
-                            <i class="fas fa-camera"></i>
-                            <span>Studio Rentals</span>
-                        </div>
-                        <div class="key-feature-item">
-                            <i class="fas fa-camera"></i>
-                            <span>Interiors & Architecture</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- All Features -->
-                <div class="footer-section">
-                    <h3>All Features</h3>
-                    <div class="all-features-list">
-                        <div class="all-features-item">E-Commerce Visuals</div>
-                        <div class="all-features-item">Architectural Photography</div>
-                        <div class="all-features-item">Corporate Brand Films</div>
-                        <div class="all-features-item">Aerial & Drone Photography</div>
-                        <div class="all-features-item">Industrial Films</div>
-                        <div class="all-features-item">Social Media Content</div>
-                        <div class="all-features-item">Hospitality Photography</div>
-                        <div class="all-features-item">Event Photography</div>
-                        <div class="all-features-item">Portraits & Personal Branding</div>
-                        <div class="all-features-item">Real Estate Photography</div>
-                        <div class="all-features-item">Short-Form Video Ads</div>
-                        <div class="all-features-item">Post-Production</div>
-                        <div class="all-features-item">Color Grading</div>
-                        <div class="all-features-item">Brand Visual Consulting</div>
                     </div>
                 </div>
             </div>
             
-            <div class="footer-bottom">
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); font-size: 0.85rem;">
                 <p>&copy; 2024 PQ Studios Hyderabad. All rights reserved.</p>
             </div>
         </div>
@@ -2207,28 +2296,24 @@
         // ===== INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', function() {
             console.log('PQ Studios Website - Initializing...');
-            
-            // Initialize all components
             initBackground();
             initSlideshow();
             loadFeaturedWork();
             loadClients();
-            loadKeyServices();
-            loadAllFeatures();
+            loadServices();
             loadGallerySections();
             initSimpleDropdown();
             initGalleryModal();
             initContactForm();
             initBackToTop();
             initMobileMenu();
-            initServicesTabs();
             
             // Initialize page - THIS MUST BE LAST
             initPage();
             console.log('PQ Studios Website - Initialization Complete!');
         });
 
-        // ===== PAGE MANAGEMENT =====
+        // ===== PAGE MANAGEMENT - FIXED =====
         function showPage(pageId) {
             console.log('Switching to page:', pageId);
             
@@ -2241,6 +2326,7 @@
             const selectedPage = document.getElementById(`${pageId}-page`);
             if (selectedPage) {
                 selectedPage.classList.add('active');
+                console.log('Showing page:', selectedPage.id);
             } else {
                 console.error('Page not found:', `${pageId}-page`);
             }
@@ -2276,11 +2362,13 @@
         // Handle browser back/forward buttons
         window.addEventListener('popstate', function() {
             const pageId = window.location.hash.replace('#', '') || 'home';
+            console.log('Popstate - switching to:', pageId);
             showPage(pageId);
         });
 
         function initPage() {
             const pageId = window.location.hash.replace('#', '') || 'home';
+            console.log('Initial page:', pageId);
             showPage(pageId);
         }
 
@@ -2291,11 +2379,12 @@
             
             const icons = [
                 'camera', 'film', 'clapperboard', 'video', 'camera-retro',
-                'images', 'portrait', 'expand', 'circle', 'square',
-                'star', 'heart', 'adjust', 'filter', 'crop', 'magic'
+                'photo-video', 'images', 'portrait', 'expand', 'circle',
+                'square', 'play-circle', 'rss', 'bolt', 'star', 'heart',
+                'adjust', 'filter', 'crop', 'magic', 'paint-brush'
             ];
             
-            const totalIcons = 35;
+            const totalIcons = 45;
             container.innerHTML = '';
             
             for (let i = 0; i < totalIcons; i++) {
@@ -2305,15 +2394,16 @@
                 const isDark = Math.random() > 0.5;
                 if (isDark) {
                     icon.classList.add('dark');
+                    icon.innerHTML = `<i class="fas fa-${icons[Math.floor(Math.random() * icons.length)]}"></i>`;
+                } else {
+                    icon.innerHTML = `<i class="fas fa-${icons[Math.floor(Math.random() * icons.length)]}"></i>`;
                 }
-                
-                icon.innerHTML = `<i class="fas fa-${icons[Math.floor(Math.random() * icons.length)]}"></i>`;
                 
                 const posX = Math.random() * 100;
                 const posY = Math.random() * 100;
-                const size = 1 + Math.random() * 1;
+                const size = 1.2 + Math.random() * 1.5;
                 const rotation = Math.random() * 360;
-                const opacity = 0.2 + Math.random() * 0.3;
+                const opacity = 0.3 + Math.random() * 0.4;
                 const delay = Math.random() * 20;
                 
                 icon.style.left = `${posX}%`;
@@ -2400,7 +2490,11 @@
                 img.loading = index === 0 ? "eager" : "lazy";
                 
                 img.onerror = function() {
-                    this.src = `https://via.placeholder.com/800x500/4682b4/ffffff?text=PQ+Studios+${index+1}`;
+                    this.style.backgroundColor = '#f0f0f0';
+                    this.style.display = 'flex';
+                    this.style.alignItems = 'center';
+                    this.style.justifyContent = 'center';
+                    this.innerHTML = `<div style="color: var(--accent); font-weight: bold; text-align: center; padding: 20px;">Slide ${index + 1}<br><small>Professional Photography</small></div>`;
                 };
                 
                 slideElement.appendChild(img);
@@ -2423,7 +2517,7 @@
                 slides[currentSlide].classList.remove('active');
                 currentSlide = (currentSlide + 1) % slides.length;
                 slides[currentSlide].classList.add('active');
-            }, 4000);
+            }, 5000);
         }
 
         // ===== FEATURED WORK =====
@@ -2458,7 +2552,7 @@
                 img.loading = 'lazy';
                 
                 img.onerror = function() {
-                    this.src = `https://via.placeholder.com/400/4682b4/ffffff?text=${encodeURIComponent(item.title)}`;
+                    this.src = `https://images.unsplash.com/photo-155${Math.floor(Math.random() * 999)}?w=400&h=400&fit=crop`;
                 };
                 
                 itemElement.appendChild(img);
@@ -2472,33 +2566,38 @@
             if (!clientsTrack) return;
 
             const clientLogos = [
-                'client-logo-1.jpg',
-                'client-logo-2.jpg',
-                'client-logo-3.jpg',
-                'client-logo-4.jpg',
-                'client-logo-5.jpg',
-                'client-logo-6.jpg',
-                'client-logo-7.jpg',
-                'client-logo-8.jpg'
+                'client logos 1.jpg',
+                'client logos 2.jpg',
+                'client logos 3.jpg',
+                'client logos 4.jpg',
+                'client logos 5.jpg',
+                'client logos 6.jpg',
+                'client logos 7.jpg',
+                'client logos 8.jpg',
+                'client logos 9.jpg',
+                'client logos 10.jpg',
+                'client logos 11.jpg',
+                'client logos 12.jpg'
             ];
 
             clientsTrack.innerHTML = '';
             
-            // Create two sets for seamless scrolling
             for (let set = 0; set < 2; set++) {
-                clientLogos.forEach((filename, index) => {
+                clientLogos.forEach(filename => {
                     const logoItem = document.createElement('div');
                     logoItem.className = 'client-logo-item';
                     
                     const img = document.createElement('img');
                     img.src = filename;
-                    img.alt = `Client ${index + 1}`;
+                    img.alt = 'Client Logo';
                     img.className = 'client-logo-img';
                     img.loading = 'lazy';
                     
                     img.onerror = function() {
                         this.style.display = 'none';
-                        logoItem.innerHTML = `<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;color:#4682b4;font-weight:bold;font-size:0.8rem;">Client ${index+1}</div>`;
+                        const colors = ['#4682b4', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'];
+                        const color = colors[Math.floor(Math.random() * colors.length)];
+                        logoItem.innerHTML = `<div style="width:100%;height:100%;background:${color};border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:0.8rem;">Client</div>`;
                     };
                     
                     logoItem.appendChild(img);
@@ -2507,49 +2606,32 @@
             }
         }
 
-        // ===== SERVICES TABS =====
-        function initServicesTabs() {
-            const tabBtns = document.querySelectorAll('.tab-btn');
-            const categories = document.querySelectorAll('.services-category');
-            
-            tabBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    // Remove active class from all tabs
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    categories.forEach(c => c.classList.remove('active'));
-                    
-                    // Add active class to clicked tab
-                    this.classList.add('active');
-                    
-                    // Show corresponding category
-                    const category = this.getAttribute('data-category');
-                    const categoryElement = document.getElementById(`${category}Features`);
-                    if (categoryElement) {
-                        categoryElement.classList.add('active');
-                    }
-                });
-            });
-        }
+        // ===== SERVICES =====
+        function loadServices() {
+            const servicesContainer = document.getElementById('servicesContainer');
+            if (!servicesContainer) return;
 
-        // ===== KEY SERVICES =====
-        function loadKeyServices() {
-            const keyServicesGrid = document.getElementById('keyServicesGrid');
-            if (!keyServicesGrid) return;
-
-            const keyServices = [
+            const services = [
                 {
                     id: 'food',
                     title: 'Food Photography',
                     icon: 'fa-utensils',
-                    description: 'Mouth-watering food photography for restaurants, cafes, and food brands.',
-                    features: ['Recipe photography', 'Menu item shots', 'Food styling', 'Commercial food photos']
+                    description: 'Mouth-watering food photography for restaurants and food brands.',
+                    features: ['Recipe photography', 'Menu item shots', 'Food styling', 'Commercial photography']
                 },
                 {
                     id: 'product',
                     title: 'Product Photography',
                     icon: 'fa-box-open',
                     description: 'Professional product photography for e-commerce and advertising.',
-                    features: ['White background shots', 'Lifestyle product photos', 'Detail shots', '360° product views']
+                    features: ['White background shots', 'Lifestyle product photos', 'Detail shots', '360° views']
+                },
+                {
+                    id: 'ecommerce',
+                    title: 'E-Commerce Visuals',
+                    icon: 'fa-shopping-cart',
+                    description: 'High-quality visuals optimized for e-commerce platforms.',
+                    features: ['Amazon optimized', 'Etsy product photos', 'Shopify store', 'Social media ready']
                 },
                 {
                     id: 'fashion',
@@ -2562,8 +2644,15 @@
                     id: 'pets',
                     title: 'Pet Photography',
                     icon: 'fa-paw',
-                    description: 'Beautiful pet photography capturing personality and moments.',
-                    features: ['Studio portraits', 'Outdoor sessions', 'Action photography', 'Family with pets']
+                    description: 'Beautiful pet photography capturing personality.',
+                    features: ['Studio portraits', 'Outdoor sessions', 'Action photography', 'Family portraits']
+                },
+                {
+                    id: 'interiors',
+                    title: 'Interiors & Architecture',
+                    icon: 'fa-building',
+                    description: 'Architectural photography for real estate and designers.',
+                    features: ['Real estate', 'Interior design', 'Architectural exteriors', 'Virtual tours']
                 },
                 {
                     id: 'brand',
@@ -2573,45 +2662,65 @@
                     features: ['Corporate branding', 'Executive portraits', 'Team photography', 'Brand storytelling']
                 },
                 {
-                    id: 'interiors',
-                    title: 'Interiors & Architecture',
-                    icon: 'fa-building',
-                    description: 'Architectural photography for real estate and interior designers.',
-                    features: ['Real estate photography', 'Interior design shots', 'Architectural exteriors', 'Virtual tours']
+                    id: 'studio',
+                    title: 'Studio Rentals',
+                    icon: 'fa-camera',
+                    description: 'Professional studio available for rent with full equipment.',
+                    features: ['Fully equipped', 'Professional lighting', 'Various backdrops', 'Changing room'],
+                    pricing: '₹2000 per hour'
                 }
             ];
 
-            keyServicesGrid.innerHTML = '';
+            servicesContainer.innerHTML = '';
 
-            keyServices.forEach(service => {
+            services.forEach(service => {
                 const serviceCard = document.createElement('div');
                 serviceCard.className = 'service-card';
+                serviceCard.setAttribute('data-service', service.id);
                 
-                serviceCard.innerHTML = `
+                const anchor = document.createElement('div');
+                anchor.className = 'service-anchor';
+                anchor.id = `service-${service.id}`;
+                serviceCard.appendChild(anchor);
+                
+                let pricingHTML = '';
+                if (service.pricing) {
+                    pricingHTML = `
+                        <div class="service-pricing">
+                            <h4>Pricing</h4>
+                            <div class="price-tag">${service.pricing}</div>
+                        </div>
+                    `;
+                }
+                
+                serviceCard.innerHTML += `
                     <div class="service-icon">
                         <i class="fas ${service.icon}"></i>
                     </div>
                     <h3>${service.title}</h3>
                     <p>${service.description}</p>
-                    <ul class="service-features">
+                    <div style="margin-top: 1rem;">
                         ${service.features.map(feature => `
-                            <li><i class="fas fa-check"></i> ${feature}</li>
+                            <div style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                <i class="fas fa-check" style="color: var(--accent); margin-top: 0.2rem;"></i>
+                                <span>${feature}</span>
+                            </div>
                         `).join('')}
-                    </ul>
-                    <div class="service-card-buttons" style="margin-top: auto; padding-top: 1rem;">
-                        <button class="btn btn-primary book-service-btn" data-service="${service.id}" style="width: 100%; margin-bottom: 0.5rem;">
+                    </div>
+                    ${pricingHTML}
+                    <div class="service-card-buttons">
+                        <button class="btn btn-primary book-service-btn" data-service="${service.id}">
                             <i class="fas fa-calendar-check"></i> Book Now
                         </button>
-                        <button class="btn btn-outline view-gallery-btn" data-category="${service.id}" style="width: 100%;">
+                        <button class="btn btn-outline view-gallery-btn" data-category="${service.id}">
                             <i class="fas fa-images"></i> View Gallery
                         </button>
                     </div>
                 `;
                 
-                keyServicesGrid.appendChild(serviceCard);
+                servicesContainer.appendChild(serviceCard);
             });
 
-            // Add event listeners
             document.querySelectorAll('.book-service-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const serviceId = this.getAttribute('data-service');
@@ -2633,53 +2742,44 @@
             });
         }
 
-        // ===== ALL FEATURES =====
-        function loadAllFeatures() {
-            const allFeaturesGrid = document.querySelector('#allFeatures .all-features-grid');
-            if (!allFeaturesGrid) return;
-
-            const allFeatures = [
-                'E-Commerce Visuals',
-                'Architectural Photography',
-                'Corporate & Brand Films',
-                'Aerial & Drone Photography',
-                'Industrial Films & Documentaries',
-                'Social Media Content & Ad Reels',
-                'Hospitality Photography',
-                'Event Photography & Cinematic Films',
-                'Portraits & Personal Branding Shoots',
-                'Real Estate Photography & Walkthrough Videos',
-                'Short-Form Video Advertising',
-                'Post-Production & Color Grading',
-                'Brand Visual Consulting',
-                'Product Packaging Photography',
-                'Corporate Headshots',
-                'Fashion Editorial'
-            ];
-
-            allFeaturesGrid.innerHTML = '';
-
-            allFeatures.forEach(feature => {
-                const featureItem = document.createElement('div');
-                featureItem.className = 'feature-item';
-                featureItem.innerHTML = `
-                    <i class="fas fa-check"></i>
-                    <span>${feature}</span>
-                `;
-                allFeaturesGrid.appendChild(featureItem);
-            });
+        // ===== FOOTER SERVICE LINK FUNCTION =====
+        function scrollToService(serviceId) {
+            showPage('services');
+            setTimeout(() => {
+                const anchor = document.getElementById(`service-${serviceId}`);
+                if (anchor) {
+                    const headerHeight = 70;
+                    const offset = anchor.offsetTop - headerHeight - 20;
+                    window.scrollTo({
+                        top: offset,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
         }
 
         // ===== GALLERY =====
         const galleryCategories = [
-            { id: 'food', name: 'Food Photography', count: 12, icon: 'fa-utensils' },
-            { id: 'product', name: 'Product Photography', count: 12, icon: 'fa-box-open' },
-            { id: 'fashion', name: 'Fashion & Lifestyle', count: 12, icon: 'fa-tshirt' },
-            { id: 'pets', name: 'Pet Photography', count: 12, icon: 'fa-paw' },
-            { id: 'brand', name: 'Brand Portfolios', count: 12, icon: 'fa-briefcase' },
-            { id: 'interiors', name: 'Interiors & Architecture', count: 12, icon: 'fa-building' },
-            { id: 'studio', name: 'Studio Shots', count: 8, icon: 'fa-camera' }
+            { id: 'food', name: 'Food Photography', count: 15, icon: 'fa-utensils' },
+            { id: 'product', name: 'Product Photography', count: 15, icon: 'fa-box-open' },
+            { id: 'ecommerce', name: 'E-Commerce Visuals', count: 15, icon: 'fa-shopping-cart' },
+            { id: 'fashion', name: 'Fashion & Lifestyle', count: 15, icon: 'fa-tshirt' },
+            { id: 'pets', name: 'Pet Photography', count: 15, icon: 'fa-paw' },
+            { id: 'interiors', name: 'Interiors & Architecture', count: 15, icon: 'fa-building' },
+            { id: 'brand', name: 'Brand Portfolios', count: 15, icon: 'fa-briefcase' },
+            { id: 'studio', name: 'Studio Shots', count: 10, icon: 'fa-camera' }
         ];
+
+        const categoryFilePatterns = {
+            'food': 'food photography',
+            'product': 'product photography',
+            'ecommerce': 'ecommerce visuals',
+            'fashion': 'fashion lifestyle',
+            'pets': 'pet photography',
+            'interiors': 'interiors architecture',
+            'brand': 'brand portfolios',
+            'studio': 'studio shots'
+        };
 
         // ===== SIMPLE DROPDOWN MENU =====
         function initSimpleDropdown() {
@@ -2724,7 +2824,7 @@
 
             const headerHeight = 70;
             const dropdownHeight = document.querySelector('.simple-dropdown').offsetHeight;
-            const offset = headerHeight + dropdownHeight + 10;
+            const offset = headerHeight + dropdownHeight + 20;
             const sectionTop = targetSection.offsetTop - offset;
             
             window.scrollTo({
@@ -2769,21 +2869,28 @@
 
             grid.innerHTML = '';
             
+            const baseName = categoryFilePatterns[categoryId];
+            
             for (let i = 1; i <= count; i++) {
-                const filename = `${categoryId}-${i}.jpg`;
+                const filename = `${baseName} ${i}.jpg`;
                 
                 const galleryItem = document.createElement('div');
                 galleryItem.className = 'gallery-item';
                 
                 const img = document.createElement('img');
                 img.src = filename;
-                img.alt = `${categoryId} image ${i}`;
+                img.alt = `${baseName} image ${i}`;
                 img.loading = 'lazy';
                 img.dataset.index = i - 1;
                 img.dataset.category = categoryId;
                 
                 img.onerror = function() {
-                    this.src = `https://via.placeholder.com/400/4682b4/ffffff?text=${encodeURIComponent(categoryId)}+${i}`;
+                    console.warn(`Failed to load: ${filename}`);
+                    this.parentElement.innerHTML = `
+                        <div style="width:100%;height:100%;background:linear-gradient(135deg,#4682b4,#4361ee);display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:12px;padding:10px;text-align:center;">
+                            ${categoryId}<br>Image ${i}
+                        </div>
+                    `;
                 };
                 
                 galleryItem.appendChild(img);
@@ -2903,7 +3010,6 @@
 
                 showFormStatus('loading', '<i class="fas fa-spinner fa-spin"></i> Sending your message...');
 
-                // Simulate form submission
                 setTimeout(() => {
                     const formData = {
                         name: document.getElementById('name').value,
@@ -2915,8 +3021,9 @@
                     };
                     
                     try {
-                        // In production, replace this with actual form submission
-                        console.log('Form data:', formData);
+                        let submissions = JSON.parse(localStorage.getItem('pqStudiosContactSubmissions') || '[]');
+                        submissions.push(formData);
+                        localStorage.setItem('pqStudiosContactSubmissions', JSON.stringify(submissions));
                         
                         showFormStatus('success', 
                             '<i class="fas fa-check-circle"></i> Message sent successfully! ' +
@@ -2926,14 +3033,14 @@
                         
                         setTimeout(() => {
                             formStatus.style.display = 'none';
-                        }, 5000);
+                        }, 8000);
                         
                     } catch (error) {
                         showFormStatus('error', 
                             '<i class="fas fa-exclamation-circle"></i> ' +
                             'Failed to send message. Please try again or contact us directly.');
                     }
-                }, 1500);
+                }, 2000);
             });
         }
 
@@ -2983,7 +3090,7 @@
 
         function highlightError(field) {
             if (field) {
-                field.style.borderColor = '#dc3545';
+                field.style.borderColor = 'var(--accent)';
                 field.focus();
             }
         }
@@ -3027,9 +3134,6 @@
         window.addEventListener('resize', () => {
             setTimeout(initBackground, 250);
         });
-
-        // ===== TOUCH OPTIMIZATIONS =====
-        document.addEventListener('touchstart', function() {}, {passive: true});
     </script>
 </body>
 </html>
