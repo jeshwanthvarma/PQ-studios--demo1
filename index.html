@@ -546,7 +546,7 @@
             display: block;
         }
 
-        /* ===== HOME PAGE - FIXED MOBILE SLIDESHOW ===== */
+        /* ===== HOME PAGE - FIXED MOBILE SLIDESHOW WITH MINIMAL GAPS ===== */
         .slideshow-hero {
             position: relative;
             min-height: 75vh; /* Reduced from 85vh for better mobile proportion */
@@ -561,6 +561,9 @@
                 height: 50vh;
                 max-height: 50vh;
                 margin-top: 0;
+                /* ADDED: Minimal top and bottom spacing */
+                padding-top: 10px; /* Small gap at top */
+                padding-bottom: 10px; /* Small gap at bottom */
             }
         }
 
@@ -569,6 +572,9 @@
                 min-height: 45vh; /* Slightly smaller for very small screens */
                 height: 45vh;
                 max-height: 45vh;
+                /* ADDED: Slightly smaller gaps on very small screens */
+                padding-top: 8px;
+                padding-bottom: 8px;
             }
         }
 
