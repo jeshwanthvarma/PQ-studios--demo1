@@ -1,7 +1,7 @@
-    ** Project Rules & Guidelines**
+                                                                                         ** Project Rules & Guidelines**
 
  
-**1. Scope of Engagement**
+**1. Scope of Engagement** 
 All work shall be carried out strictly in accordance with the project scope mutually agreed upon prior to commencement. Any request beyond the approved scope will be considered additional work and will be quoted and billed separately.
 
 
