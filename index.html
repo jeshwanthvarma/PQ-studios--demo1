@@ -14,6 +14,8 @@
             overflow-x: hidden;
             position: relative;
             width: 100%;
+            margin: 0;
+            padding: 0;
         }
 
         /* ===== EXTREME MOBILE OPTIMIZATION ===== */
@@ -55,7 +57,7 @@
             -webkit-text-size-adjust: 100%;
         }
 
-        /* ===== ENHANCED PHOTOGRAPHY ICONS BACKGROUND - FIXED FOR MOBILE ===== */
+        /* ===== FIXED: IMPROVED BACKGROUND VISIBILITY - NO OVERLAPPING ===== */
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--black);
@@ -64,10 +66,10 @@
             position: relative;
             overflow-x: hidden;
             min-height: 100vh;
-            /* Add subtle texture overlay */
+            /* Lighter background for better visibility */
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(70, 130, 180, 0.03) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(70, 130, 180, 0.03) 0%, transparent 20%);
+                radial-gradient(circle at 10% 20%, rgba(70, 130, 180, 0.02) 0%, transparent 25%),
+                radial-gradient(circle at 90% 80%, rgba(70, 130, 180, 0.02) 0%, transparent 25%);
         }
 
         .photography-icons {
@@ -78,34 +80,33 @@
             height: 100%;
             z-index: -1;
             overflow: hidden;
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.95); /* Lighter background */
             pointer-events: none;
-            opacity: 0.4; /* Medium opacity */
+            opacity: 0.3; /* Reduced opacity for better visibility */
         }
         
         .icon {
             position: absolute;
-            color: rgba(70, 130, 180, 0.15); /* Updated to #4682b4 with 15% opacity */
-            font-size: 1.5rem;
-            opacity: 0.7;
+            color: rgba(70, 130, 180, 0.12); /* Lighter color for better visibility */
+            font-size: 1.2rem;
+            opacity: 0.6;
             z-index: -1;
             pointer-events: none;
-            animation: float 20s infinite ease-in-out;
-            filter: drop-shadow(0 1px 2px rgba(0,0,0,0.1));
-            text-shadow: 0 0 1px rgba(0,0,0,0.1);
-            /* Prevent overlap on mobile */
-            min-width: 24px;
-            min-height: 24px;
+            animation: float 25s infinite ease-in-out;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
+            /* Prevent overlap with better spacing */
+            min-width: 28px;
+            min-height: 28px;
         }
 
         .icon.dark {
-            color: rgba(0, 0, 0, 0.1); /* Faded black icons */
+            color: rgba(0, 0, 0, 0.08); /* Lighter faded black icons */
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-            33% { transform: translateY(-8px) rotate(2deg) scale(1.02); }
-            66% { transform: translateY(4px) rotate(-1deg) scale(0.98); }
+            33% { transform: translateY(-6px) rotate(1deg) scale(1.01); }
+            66% { transform: translateY(3px) rotate(-0.5deg) scale(0.99); }
         }
 
         /* ===== SECTION BACKGROUNDS ===== */
@@ -122,23 +123,30 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.92);
+            background: rgba(255, 255, 255, 0.96);
             z-index: -1;
             pointer-events: none;
         }
 
-        /* ===== FULL WIDTH CONTAINER ===== */
+        /* ===== FIXED: DESKTOP FULL WIDTH CONTAINER ===== */
         .container {
             width: 100%;
-            max-width: 1200px;
+            max-width: 1400px; /* Increased for wider desktop view */
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 15px;
             position: relative;
         }
 
         @media (min-width: 768px) {
             .container {
-                padding: 0 40px;
+                padding: 0 30px;
+                max-width: 100%; /* Full width on desktop */
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                padding: 0 50px;
             }
         }
 
@@ -182,7 +190,7 @@
         .mb-3 { margin-bottom: 1.75rem; }
         .mb-4 { margin-bottom: 2.5rem; }
 
-        /* ===== MOBILE-FRIENDLY BUTTONS ===== */
+        /* ===== FIXED: DESKTOP BUTTON PLACEMENT ===== */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -203,6 +211,18 @@
             user-select: none;
             position: relative;
             z-index: 2;
+        }
+
+        /* Fix for desktop button alignment */
+        @media (min-width: 768px) {
+            .btn-group {
+                justify-content: center;
+                max-width: none;
+            }
+            
+            .btn-spacing {
+                margin: 10px !important;
+            }
         }
 
         .btn:focus {
@@ -331,7 +351,7 @@
 
         @media (max-width: 768px) {
             .logo-image {
-                height: 40px; /* Reduced for mobile */
+                height: 40px;
             }
         }
 
@@ -448,7 +468,7 @@
 
         .nav-overlay {
             position: fixed;
-            top: 70px; /* FIXED: Starts below header */
+            top: 70px;
             left: 0;
             width: 100%;
             height: calc(100vh - 70px);
@@ -466,11 +486,11 @@
 
         .nav-menu {
             position: fixed;
-            top: 70px; /* FIXED: Starts below header */
+            top: 70px;
             right: -100%;
             width: 85%;
             max-width: 320px;
-            height: calc(100vh - 70px); /* FIXED: Height accounts for header */
+            height: calc(100vh - 70px);
             background: var(--white);
             padding: 2rem 1.75rem;
             transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -511,7 +531,7 @@
 
         .nav-menu .nav-link:active,
         .nav-menu .nav-link.active {
-            background: rgba(70, 130, 180, 0.1); /* Updated */
+            background: rgba(70, 130, 180, 0.1);
             color: var(--accent);
         }
 
@@ -546,37 +566,38 @@
             display: block;
         }
 
-        /* ===== HOME PAGE - FIXED MOBILE SLIDESHOW WITH MINIMAL GAPS ===== */
-        .slideshow-hero {
-            position: relative;
-            min-height: 75vh; /* Reduced from 85vh for better mobile proportion */
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
+        /* ===== FIXED: MOBILE HERO SLIDESHOW - NO BLANK SPACE ===== */
+        /* ===== FIXED: MOBILE HERO SLIDESHOW WITH PROPER SPACING ===== */
+.slideshow-hero {
+    position: relative;
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
 
-        @media (max-width: 768px) {
-            .slideshow-hero {
-                min-height: 50vh; /* Fixed: Reduced from 60vh to 50vh for rectangle shape */
-                height: 50vh;
-                max-height: 50vh;
-                margin-top: 0;
-                /* ADDED: Minimal top and bottom spacing */
-                padding-top: 10px; /* Small gap at top */
-                padding-bottom: 10px; /* Small gap at bottom */
-            }
-        }
+@media (max-width: 768px) {
+    .slideshow-hero {
+        min-height: 55vh;
+        height: 55vh;
+        max-height: 55vh;
+        margin-top: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        /* REMOVED negative margin */
+    }
+}
 
-        @media (max-width: 480px) {
-            .slideshow-hero {
-                min-height: 45vh; /* Slightly smaller for very small screens */
-                height: 45vh;
-                max-height: 45vh;
-                /* ADDED: Slightly smaller gaps on very small screens */
-                padding-top: 8px;
-                padding-bottom: 8px;
-            }
-        }
+@media (max-width: 480px) {
+    .slideshow-hero {
+        min-height: 50vh;
+        height: 50vh;
+        max-height: 50vh;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        /* REMOVED negative margin */
+    }
+}
 
         .slideshow-container {
             position: absolute;
@@ -604,44 +625,60 @@
         .slide img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Changed from cover to contain for better mobile view */
+            object-fit: cover;
             object-position: center;
         }
 
         @media (max-width: 768px) {
             .slide img {
-                object-fit: contain; /* Show full image on mobile without cropping */
-                background-color: #f8f9fa; /* Add background color for letterboxing */
+                object-fit: cover; /* Changed back to cover for mobile */
             }
         }
 
-        /* ===== HOME PAGE Featured Work - NO SPACE ABOVE ===== */
-        .featured-work {
-            position: relative;
-            padding-top: 0 !important; /* REMOVED COMPLETELY */
-            padding-bottom: 0.5rem !important; /* MINIMAL BOTTOM */
-            margin-top: -10px !important; /* PULL UP TO REMOVE GAP */
-        }
+        /* ===== HOME PAGE Featured Work - SEAMLESS CONNECTION ===== */
+        /* ===== FIXED: FEATURED WORK WITH PROPER SPACING ===== */
+.featured-work {
+    position: relative;
+    padding-top: 2rem !important; /* ADDED padding top */
+    padding-bottom: 1.5rem !important;
+    margin-top: 0 !important; /* REMOVED negative margin */
+}
 
-        .featured-work .container {
-            padding-top: 5px !important; /* ALMOST NONE */
-            padding-bottom: 5px !important;
-        }
+@media (max-width: 768px) {
+    .featured-work {
+        padding-top: 1.5rem !important; /* Slightly less on mobile */
+        padding-bottom: 1rem !important;
+        margin-top: 0 !important;
+    }
+}
+
+.featured-work .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
         
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 4px;
-            margin-top: 0.25rem !important; /* TINY GAP */
-            position: relative;
-            z-index: 2;
-        }
+       .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+    margin-top: 1rem !important;
+    position: relative;
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+    .featured-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 1.5rem !important;
+    }
+}
 
         @media (min-width: 768px) {
             .featured-grid {
-                grid-template-columns: repeat(3, 1fr); /* Changed to 3 columns for 6 items */
+                grid-template-columns: repeat(3, 1fr);
                 gap: 1rem;
-                margin-top: 0.5rem !important; /* Slightly more on desktop */
+                margin-top: 0.5rem !important;
             }
         }
 
@@ -665,7 +702,7 @@
             transform: scale(1.05);
         }
 
-        /* ===== FIXED CLIENT LOGO SCROLLING - COMPLETELY FIXED ===== */
+        /* ===== FIXED CLIENT LOGO SCROLLING ===== */
         .clients-section {
             padding: 3rem 0;
             background: rgba(248, 249, 250, 0.8);
@@ -684,7 +721,7 @@
         .clients-track {
             display: flex;
             align-items: center;
-            animation: scrollClients 25s linear infinite; /* Increased speed from 30s to 25s */
+            animation: scrollClients 25s linear infinite;
             will-change: transform;
             width: max-content;
         }
@@ -704,21 +741,20 @@
         
         .client-logo-item {
             flex: 0 0 auto;
-            width: 120px; /* Reduced for mobile */
-            height: 70px; /* Reduced for mobile */
+            width: 120px;
+            height: 70px;
             background: rgba(255, 255, 255, 0.95);
             border-radius: var(--radius-md);
-            padding: 15px !important; /* Reduced padding */
+            padding: 15px !important;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 1px solid var(--gray-light);
             transition: all 0.3s ease;
             box-shadow: var(--shadow-sm);
-            margin-right: 2rem; /* Added spacing between logos */
+            margin-right: 2rem;
         }
 
-        /* Show 4-5 logos at a time on mobile */
         @media (max-width: 767px) {
             .client-logo-item {
                 width: 110px;
@@ -727,17 +763,8 @@
                 margin-right: 1.5rem;
             }
             
-            @keyframes scrollClients {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(-50%);
-                }
-            }
-            
             .clients-track {
-                animation-duration: 20s; /* Faster on mobile */
+                animation-duration: 20s;
             }
         }
 
@@ -782,7 +809,7 @@
         }
 
         .profile-image {
-            width: 180px; /* Slightly reduced */
+            width: 180px;
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
@@ -879,7 +906,7 @@
 
         @media (min-width: 768px) {
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr); /* Changed to 2 columns */
+                grid-template-columns: repeat(2, 1fr);
                 gap: 1.5rem;
                 margin: 2.5rem 0;
                 max-width: 500px;
@@ -927,7 +954,7 @@
             color: var(--gray);
         }
 
-        /* ===== SERVICES PAGE - UPDATED with Brand Portfolios ===== */
+        /* ===== SERVICES PAGE - UPDATED ORDER ===== */
         .services-hero {
             position: relative;
             min-height: 20vh;
@@ -957,6 +984,12 @@
         @media (min-width: 1024px) {
             .service-cards {
                 grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .service-cards {
+                grid-template-columns: repeat(4, 1fr); /* 4 columns on very wide screens */
             }
         }
 
@@ -1105,7 +1138,7 @@
             align-items: center;
             justify-content: space-between;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3); /* Updated */
+            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
             transition: var(--transition);
         }
 
@@ -1171,7 +1204,7 @@
         }
 
         .simple-dropdown-item:hover {
-            background: rgba(70, 130, 180, 0.1); /* Updated */
+            background: rgba(70, 130, 180, 0.1);
             color: var(--accent);
             padding-left: 25px;
         }
@@ -1224,6 +1257,12 @@
         }
 
         @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (min-width: 1400px) {
             .gallery-grid {
                 grid-template-columns: repeat(5, 1fr);
             }
@@ -1328,7 +1367,7 @@
             object-fit: contain;
         }
 
-        /* ===== CONTACT PAGE - UPDATED ===== */
+        /* ===== FIXED: CONTACT PAGE - PROFESSIONAL THEME ===== */
         .contact-hero {
             position: relative;
             min-height: 20vh;
@@ -1347,6 +1386,8 @@
             position: relative;
             z-index: 2;
             border: 1px solid var(--gray-light);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         @media (max-width: 768px) {
@@ -1355,12 +1396,12 @@
             }
         }
 
-        /* Contact info cards - UPDATED: Removed phone and email */
+        /* Contact info cards - Clean professional design */
         .contact-info-cards {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1rem;
-            margin: 2rem 0;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
         }
 
         @media (min-width: 768px) {
@@ -1372,46 +1413,75 @@
         .info-card {
             background: white;
             border-radius: var(--radius-md);
-            padding: 1.5rem;
+            padding: 2rem;
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--gray-light);
             transition: var(--transition);
             text-align: center;
+            position: relative;
+            overflow: hidden;
         }
 
         .info-card:hover {
             transform: translateY(-5px);
             border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(70, 130, 180, 0.15);
+        }
+
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .info-card:hover::before {
+            opacity: 1;
         }
 
         .info-card .info-icon {
-            width: 50px;
-            height: 50px;
+            width: 60px;
+            height: 60px;
             background: var(--accent-gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.25rem;
-            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .info-card:hover .info-icon {
+            transform: scale(1.1);
         }
 
         .info-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
             color: var(--primary);
+            font-weight: 600;
         }
 
         .info-card p {
             margin: 0;
             color: var(--black);
             font-weight: 500;
+            font-size: 1.1rem;
         }
 
         .info-card small {
             color: var(--gray);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            display: block;
+            margin-top: 0.5rem;
         }
 
         /* Form styles */
@@ -1459,7 +1529,7 @@
         .form-control:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.1); /* Updated */
+            box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.1);
         }
 
         textarea.form-control {
@@ -1476,52 +1546,71 @@
             padding-right: 2.5rem;
         }
 
-        /* WhatsApp CTA Section */
+        /* WhatsApp CTA Section - Professional design */
         .whatsapp-cta {
             background: linear-gradient(135deg, #25D366, #128C7E);
             color: white;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: var(--radius-lg);
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 3rem;
             box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .whatsapp-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
         }
 
         @media (max-width: 768px) {
             .whatsapp-cta {
-                padding: 1.5rem;
+                padding: 1.75rem;
             }
         }
 
         .whatsapp-cta h3 {
             color: white;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
         }
 
         .whatsapp-cta p {
             color: rgba(255,255,255,0.9);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
+            font-size: 1rem;
         }
 
         .whatsapp-btn {
             background: white;
             color: #25D366;
             font-weight: 600;
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             transition: var(--transition);
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .whatsapp-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        /* ===== ENHANCED FOOTER - UPDATED with 4 columns ===== */
+        /* ===== FIXED: DESKTOP FOOTER - CORNER TO CORNER ===== */
         .footer {
             background: var(--primary);
             color: var(--white);
@@ -1529,6 +1618,26 @@
             margin-top: 4rem;
             position: relative;
             overflow: hidden;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .footer {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+            
+            .footer .container {
+                max-width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            .footer-grid {
+                padding: 0 50px !important;
+            }
         }
 
         .footer::before {
@@ -1586,7 +1695,7 @@
         }
 
         .footer ul li {
-            margin-bottom: 0.5rem; /* Reduced for better mobile spacing */
+            margin-bottom: 0.5rem;
             font-size: 0.85rem;
             line-height: 1.5;
             display: flex;
@@ -1604,8 +1713,8 @@
             gap: 8px;
             font-size: 0.85rem;
             line-height: 1.5;
-            padding: 4px 0; /* Added padding for better touch targets */
-            min-height: 24px; /* Minimum touch target height */
+            padding: 4px 0;
+            min-height: 24px;
         }
 
         .footer ul li a:hover {
@@ -1624,13 +1733,13 @@
             color: var(--accent-light);
             width: 16px;
             font-size: 0.8rem;
-            margin-top: 2px; /* Align icon with text */
+            margin-top: 2px;
             flex-shrink: 0;
         }
 
         /* All Features check icons */
         .all-features-list li i {
-            color: #4ECDC4; /* Different color for checkmarks */
+            color: #4ECDC4;
             font-size: 0.7rem;
             margin-top: 4px;
         }
@@ -1649,7 +1758,7 @@
 
         .contact-item {
             display: flex;
-            align-items: flex-start; /* Changed for better mobile alignment */
+            align-items: flex-start;
             gap: 0.75rem;
             font-size: 0.9rem;
             color: rgba(255,255,255,0.9);
@@ -1857,6 +1966,27 @@
             }
         }
 
+        /* ===== ALIGNMENT FIXES ===== */
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        
+        /* Improved alignment for desktop */
+        @media (min-width: 768px) {
+            .desktop-align-center {
+                text-align: center !important;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .desktop-full-width {
+                width: 100% !important;
+                max-width: 100% !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+        }
+
         /* ===== MOBILE OPTIMIZATIONS ===== */
         @media (max-width: 767px) {
             .container {
@@ -1951,9 +2081,9 @@
         }
 
         .form-status.loading {
-            background: rgba(70, 130, 180, 0.1); /* Updated */
+            background: rgba(70, 130, 180, 0.1);
             color: var(--accent);
-            border: 1px solid rgba(70, 130, 180, 0.3); /* Updated */
+            border: 1px solid rgba(70, 130, 180, 0.3);
         }
 
         .form-status.success {
@@ -1973,14 +2103,14 @@
     <!-- Photography Icons Background -->
     <div class="photography-icons" id="photography-icons"></div>
 
-    <!-- Header & Navigation - UPDATED ORDER -->
+    <!-- Header & Navigation -->
     <header class="header">
         <div class="nav-container">
             <a href="#home" class="logo" onclick="event.preventDefault(); showPage('home');">
                 <img src="Logo.png" alt="PQ Studios Logo" class="logo-image">
             </a>
             
-            <!-- Desktop Navigation - UPDATED ORDER -->
+            <!-- Desktop Navigation -->
             <nav class="desktop-nav">
                 <ul class="nav-items">
                     <li><a href="#home" class="nav-link active" onclick="event.preventDefault(); showPage('home');">Home</a></li>
@@ -1997,10 +2127,10 @@
             </button>
         </div>
         
-        <!-- Mobile Menu Overlay - FIXED: Starts below logo -->
+        <!-- Mobile Menu Overlay -->
         <div class="nav-overlay" id="navOverlay"></div>
         
-        <!-- Mobile Navigation Menu - FIXED: Starts below logo - UPDATED ORDER -->
+        <!-- Mobile Navigation Menu -->
         <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
             <ul class="nav-items">
                 <li><a href="#home" class="nav-link active" onclick="event.preventDefault(); showPage('home');"><i class="fas fa-home"></i> Home</a></li>
@@ -2030,7 +2160,7 @@
         </div>
     </div>
 
-    <!-- Page Content - UPDATED ORDER -->
+    <!-- Page Content -->
     <div class="page-content">
         <!-- HOME PAGE -->
         <div id="home-page" class="page active">
@@ -2040,7 +2170,7 @@
                 </div>
             </section>
 
-            <!-- Featured Work Section - NO SPACE ABOVE -->
+            <!-- Featured Work Section -->
             <section class="section featured-work">
                 <div class="container">
                     <h2 class="text-center" style="margin-bottom: 0.1rem;">Featured Work</h2>
@@ -2058,7 +2188,7 @@
                 </div>
             </section>
 
-            <!-- Clients Section - FIXED SCROLLING -->
+            <!-- Clients Section -->
             <section class="clients-section">
                 <div class="container">
                     <h3 class="text-center mb-2" style="color: var(--primary);">Trusted By Leading Brands</h3>
@@ -2066,14 +2196,14 @@
                     
                     <div class="clients-wrapper">
                         <div class="clients-track" id="clientsTrack">
-                            <!-- Client logos loaded by JavaScript - Will be duplicated for infinite loop -->
+                            <!-- Client logos loaded by JavaScript -->
                         </div>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- SERVICES PAGE - UPDATED with Brand Portfolios -->
+        <!-- SERVICES PAGE - UPDATED ORDER -->
         <div id="services-page" class="page">
             <section class="services-hero">
                 <div class="container">
@@ -2088,13 +2218,13 @@
                     <p class="text-center mb-4">Choose from our specialized photography services</p>
                     
                     <div class="service-cards" id="servicesContainer">
-                        <!-- Services loaded by JavaScript -->
+                        <!-- Services loaded by JavaScript in new order -->
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- GALLERY PAGE - UPDATED with Brand Portfolios category -->
+        <!-- GALLERY PAGE - UPDATED ORDER -->
         <div id="gallery-page" class="page">
             <!-- Simple Dropdown -->
             <div class="simple-dropdown">
@@ -2104,19 +2234,19 @@
                 </button>
                 
                 <div class="simple-dropdown-menu" id="galleryDropdownMenu">
-                    <!-- Categories loaded by JavaScript -->
+                    <!-- Categories loaded by JavaScript in new order -->
                 </div>
             </div>
 
             <!-- Gallery Content -->
             <div class="gallery-page-content">
                 <div id="gallerySections">
-                    <!-- Gallery sections loaded by JavaScript -->
+                    <!-- Gallery sections loaded by JavaScript in new order -->
                 </div>
             </div>
         </div>
 
-        <!-- ABOUT PAGE - FIXED MOBILE LAYOUT -->
+        <!-- ABOUT PAGE -->
         <div id="about-page" class="page">
             <section class="about-hero">
                 <div class="container">
@@ -2138,7 +2268,6 @@
                         <h2 class="text-center mb-3">Your Story, Beautifully Told</h2>
                         <p class="text-center mb-4">Hi, I'm Sai Kumar Maddina, the passionate photographer behind PQ Studios. With over 10 years of experience, I specialize in capturing authentic moments that tell your unique story.</p>
                         
-                        <!-- UPDATED: Removed Sessions and Awards, only 2 stats now -->
                         <div class="stats-grid">
                             <div class="stat-card">
                                 <div class="stat-number">10+</div>
@@ -2244,7 +2373,7 @@
             </section>
         </div>
 
-        <!-- CONTACT PAGE - UPDATED ===== -->
+        <!-- CONTACT PAGE - PROFESSIONAL THEME -->
         <div id="contact-page" class="page">
             <section class="contact-hero">
                 <div class="container">
@@ -2262,7 +2391,6 @@
                         <div id="formStatus" class="form-status"></div>
                         
                         <form id="contactForm" novalidate>
-                            <!-- UPDATED: Single Name field instead of First/Last -->
                             <div class="form-group">
                                 <label for="name" class="form-label required">Full Name *</label>
                                 <input type="text" id="name" class="form-control" required>
@@ -2273,24 +2401,22 @@
                                 <input type="email" id="email" class="form-control">
                             </div>
                             
-                            <!-- UPDATED: Phone Number is now required -->
                             <div class="form-group">
                                 <label for="phone" class="form-label required">Phone Number *</label>
                                 <input type="tel" id="phone" class="form-control" required>
                             </div>
                             
-                            <!-- UPDATED: Service is now required -->
                             <div class="form-group">
                                 <label for="service" class="form-label required">Service Interested In *</label>
                                 <select id="service" class="form-control" required>
                                     <option value="">Select a service</option>
                                     <option value="food">Food Photography</option>
                                     <option value="product">Product Photography</option>
-                                    <option value="ecommerce">E-Commerce Visuals</option>
                                     <option value="fashion">Fashion & Lifestyle</option>
                                     <option value="pets">Pet Photography</option>
-                                    <option value="interiors">Interiors & Architecture</option>
                                     <option value="brand">Brand Portfolios</option>
+                                    <option value="interiors">Interiors & Architecture</option>
+                                    <option value="ecommerce">E-Commerce Visuals</option>
                                     <option value="studio">Studio Rentals</option>
                                 </select>
                             </div>
@@ -2305,7 +2431,6 @@
                             </button>
                         </form>
                         
-                        <!-- UPDATED: Removed phone and email info cards -->
                         <div class="contact-info-cards">
                             <div class="info-card">
                                 <div class="info-icon">
@@ -2340,7 +2465,7 @@
         </div>
     </div>
 
-    <!-- Footer - UPDATED with Key Features and All Features sections -->
+    <!-- Footer - CORNER TO CORNER FIXED -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -2394,22 +2519,22 @@
                     </ul>
                 </div>
                 
-                <!-- New: Key Features Column -->
+                <!-- Key Features Column - UPDATED ORDER -->
                 <div>
                     <h3>Key Features</h3>
                     <ul>
                         <li><a href="#services" onclick="event.preventDefault(); scrollToService('food');"><i class="fas fa-camera"></i> Food Photography</a></li>
                         <li><a href="#services" onclick="event.preventDefault(); scrollToService('product');"><i class="fas fa-camera"></i> Product Photography</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('ecommerce');"><i class="fas fa-camera"></i> E-Commerce Visuals</a></li>
                         <li><a href="#services" onclick="event.preventDefault(); scrollToService('fashion');"><i class="fas fa-camera"></i> Fashion & Lifestyle</a></li>
                         <li><a href="#services" onclick="event.preventDefault(); scrollToService('pets');"><i class="fas fa-camera"></i> Pet Photography</a></li>
                         <li><a href="#services" onclick="event.preventDefault(); scrollToService('brand');"><i class="fas fa-camera"></i> Brand Portfolios</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('studio');"><i class="fas fa-camera"></i> Studio Rentals</a></li>
                         <li><a href="#services" onclick="event.preventDefault(); scrollToService('interiors');"><i class="fas fa-camera"></i> Interiors & Architecture</a></li>
+                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('ecommerce');"><i class="fas fa-camera"></i> E-Commerce Visuals</a></li>
+                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('studio');"><i class="fas fa-camera"></i> Studio Rentals</a></li>
                     </ul>
                 </div>
                 
-                <!-- New: All Features Column -->
+                <!-- All Features Column -->
                 <div>
                     <h3>All Features</h3>
                     <ul class="all-features-list">
@@ -2449,20 +2574,20 @@
             initSlideshow();
             loadFeaturedWork();
             loadClients();
-            loadServices();
-            loadGallerySections();
-            initSimpleDropdown();
+            loadServices(); // Loads in new order
+            loadGallerySections(); // Loads in new order
+            initSimpleDropdown(); // Updated with new order
             initGalleryModal();
             initContactForm();
             initBackToTop();
             initMobileMenu();
             
-            // Initialize page - THIS MUST BE LAST
+            // Initialize page
             initPage();
             console.log('PQ Studios Website - Initialization Complete!');
         });
 
-        // ===== PAGE MANAGEMENT - FIXED =====
+        // ===== PAGE MANAGEMENT =====
         function showPage(pageId) {
             console.log('Switching to page:', pageId);
             
@@ -2521,7 +2646,7 @@
             showPage(pageId);
         }
 
-        // ===== BACKGROUND GENERATOR - FIXED FOR MOBILE =====
+        // ===== BACKGROUND GENERATOR - FIXED: NO OVERLAPPING =====
         function initBackground() {
             const container = document.getElementById('photography-icons');
             if (!container) return;
@@ -2535,13 +2660,13 @@
             
             // Reduce number of icons on mobile to prevent overlap
             const isMobile = window.innerWidth <= 768;
-            const totalIcons = isMobile ? 25 : 45;
+            const totalIcons = isMobile ? 20 : 35; // Reduced further to prevent overlap
             
             container.innerHTML = '';
             
             // Store icon positions to prevent overlap
             const usedPositions = [];
-            const minDistance = isMobile ? 15 : 10; // Minimum distance between icons (in %)
+            const minDistance = isMobile ? 18 : 12; // Increased minimum distance
             
             for (let i = 0; i < totalIcons; i++) {
                 let posX, posY;
@@ -2550,8 +2675,8 @@
                 
                 // Try to find a non-overlapping position
                 do {
-                    posX = Math.random() * 95;
-                    posY = Math.random() * 95;
+                    posX = Math.random() * 90 + 5; // Keep away from edges
+                    posY = Math.random() * 90 + 5;
                     attempts++;
                     
                     // Check if this position is too close to any existing icon
@@ -2564,12 +2689,11 @@
                         }
                     }
                     
-                } while (!positionValid && attempts < 50);
+                } while (!positionValid && attempts < 100); // More attempts
                 
-                // If we couldn't find a good position, use this one anyway
+                // If we couldn't find a good position, skip this icon
                 if (!positionValid) {
-                    posX = Math.random() * 95;
-                    posY = Math.random() * 95;
+                    continue;
                 }
                 
                 usedPositions.push({ x: posX, y: posY });
@@ -2586,9 +2710,9 @@
                 }
                 
                 // Smaller icons on mobile
-                const size = isMobile ? (0.8 + Math.random() * 0.8) : (1.2 + Math.random() * 1.5);
+                const size = isMobile ? (0.7 + Math.random() * 0.6) : (1 + Math.random() * 1.2);
                 const rotation = Math.random() * 360;
-                const opacity = isMobile ? (0.2 + Math.random() * 0.3) : (0.3 + Math.random() * 0.4);
+                const opacity = isMobile ? (0.15 + Math.random() * 0.2) : (0.2 + Math.random() * 0.3);
                 const delay = Math.random() * 20;
                 
                 icon.style.left = `${posX}%`;
@@ -2651,7 +2775,7 @@
             document.body.style.overflow = '';
         }
 
-        // ===== SLIDESHOW - FIXED FOR MOBILE =====
+        // ===== SLIDESHOW =====
         function initSlideshow() {
             const slideshowContainer = document.getElementById('slideshowContainer');
             if (!slideshowContainer) return;
@@ -2675,9 +2799,8 @@
                 img.loading = index === 0 ? "eager" : "lazy";
                 
                 img.onerror = function() {
-                    // Create a placeholder with the right aspect ratio for mobile
                     const isMobile = window.innerWidth <= 768;
-                    const placeholderHeight = isMobile ? '50vh' : '75vh';
+                    const placeholderHeight = isMobile ? '55vh' : '75vh';
                     
                     this.style.backgroundColor = '#f0f0f0';
                     this.style.display = 'flex';
@@ -2750,7 +2873,7 @@
             });
         }
 
-        // ===== CLIENT LOGOS - COMPLETELY FIXED SCROLLING =====
+        // ===== CLIENT LOGOS =====
         function loadClients() {
             const clientsTrack = document.getElementById('clientsTrack');
             if (!clientsTrack) return;
@@ -2773,7 +2896,6 @@
             clientsTrack.innerHTML = '';
             
             // Duplicate the logos for seamless infinite scrolling
-            // Use 3 sets instead of 2 for smoother loop
             for (let set = 0; set < 3; set++) {
                 clientLogos.forEach(filename => {
                     const logoItem = document.createElement('div');
@@ -2802,17 +2924,18 @@
                 const track = document.querySelector('.clients-track');
                 if (track) {
                     track.style.animation = 'none';
-                    void track.offsetWidth; // Trigger reflow
+                    void track.offsetWidth;
                     track.style.animation = 'scrollClients 25s linear infinite';
                 }
             }, 100);
         }
 
-        // ===== SERVICES =====
+        // ===== SERVICES - UPDATED ORDER =====
         function loadServices() {
             const servicesContainer = document.getElementById('servicesContainer');
             if (!servicesContainer) return;
 
+            // Services in NEW ORDER as requested
             const services = [
                 {
                     id: 'food',
@@ -2829,13 +2952,6 @@
                     features: ['White background shots', 'Lifestyle product photos', 'Detail shots', '360° views']
                 },
                 {
-                    id: 'ecommerce',
-                    title: 'E-Commerce Visuals',
-                    icon: 'fa-shopping-cart',
-                    description: 'High-quality visuals optimized for e-commerce platforms.',
-                    features: ['Amazon optimized', 'Etsy product photos', 'Shopify store', 'Social media ready']
-                },
-                {
                     id: 'fashion',
                     title: 'Fashion & Lifestyle',
                     icon: 'fa-tshirt',
@@ -2850,6 +2966,13 @@
                     features: ['Studio portraits', 'Outdoor sessions', 'Action photography', 'Family portraits']
                 },
                 {
+                    id: 'brand',
+                    title: 'Brand Portfolios',
+                    icon: 'fa-briefcase',
+                    description: 'Comprehensive brand portfolio photography for businesses.',
+                    features: ['Corporate branding', 'Executive portraits', 'Team photography', 'Brand storytelling']
+                },
+                {
                     id: 'interiors',
                     title: 'Interiors & Architecture',
                     icon: 'fa-building',
@@ -2857,11 +2980,11 @@
                     features: ['Real estate', 'Interior design', 'Architectural exteriors', 'Virtual tours']
                 },
                 {
-                    id: 'brand',
-                    title: 'Brand Portfolios',
-                    icon: 'fa-briefcase',
-                    description: 'Comprehensive brand portfolio photography for businesses.',
-                    features: ['Corporate branding', 'Executive portraits', 'Team photography', 'Brand storytelling']
+                    id: 'ecommerce',
+                    title: 'E-Commerce Visuals',
+                    icon: 'fa-shopping-cart',
+                    description: 'High-quality visuals optimized for e-commerce platforms.',
+                    features: ['Amazon optimized', 'Etsy product photos', 'Shopify store', 'Social media ready']
                 },
                 {
                     id: 'studio',
@@ -2960,35 +3083,39 @@
             }, 100);
         }
 
-        // ===== GALLERY =====
+        // ===== GALLERY - UPDATED ORDER =====
+        // Gallery categories in NEW ORDER as requested
         const galleryCategories = [
             { id: 'food', name: 'Food Photography', count: 15, icon: 'fa-utensils' },
             { id: 'product', name: 'Product Photography', count: 15, icon: 'fa-box-open' },
-            { id: 'ecommerce', name: 'E-Commerce Visuals', count: 15, icon: 'fa-shopping-cart' },
             { id: 'fashion', name: 'Fashion & Lifestyle', count: 15, icon: 'fa-tshirt' },
             { id: 'pets', name: 'Pet Photography', count: 15, icon: 'fa-paw' },
-            { id: 'interiors', name: 'Interiors & Architecture', count: 15, icon: 'fa-building' },
             { id: 'brand', name: 'Brand Portfolios', count: 15, icon: 'fa-briefcase' },
+            { id: 'interiors', name: 'Interiors & Architecture', count: 15, icon: 'fa-building' },
+            { id: 'ecommerce', name: 'E-Commerce Visuals', count: 15, icon: 'fa-shopping-cart' },
             { id: 'studio', name: 'Studio Shots', count: 10, icon: 'fa-camera' }
         ];
 
         const categoryFilePatterns = {
             'food': 'food photography',
             'product': 'product photography',
-            'ecommerce': 'ecommerce visuals',
             'fashion': 'fashion lifestyle',
             'pets': 'pet photography',
-            'interiors': 'interiors architecture',
             'brand': 'brand portfolios',
+            'interiors': 'interiors architecture',
+            'ecommerce': 'ecommerce visuals',
             'studio': 'studio shots'
         };
 
-        // ===== SIMPLE DROPDOWN MENU =====
+        // ===== SIMPLE DROPDOWN MENU - UPDATED ORDER =====
         function initSimpleDropdown() {
             const dropdownToggle = document.getElementById('galleryDropdownToggle');
             const dropdownMenu = document.getElementById('galleryDropdownMenu');
 
             if (!dropdownToggle || !dropdownMenu) return;
+
+            // Clear existing items
+            dropdownMenu.innerHTML = '';
 
             galleryCategories.forEach(category => {
                 const item = document.createElement('a');
@@ -3035,7 +3162,7 @@
             });
         }
 
-        // ===== LOAD GALLERY SECTIONS =====
+        // ===== LOAD GALLERY SECTIONS - UPDATED ORDER =====
         function loadGallerySections() {
             const gallerySections = document.getElementById('gallerySections');
             if (!gallerySections) return;
