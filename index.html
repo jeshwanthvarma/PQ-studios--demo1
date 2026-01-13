@@ -2402,6 +2402,12 @@
                 img.alt = item.title;
                 img.loading = 'lazy';
                 
+                // Add error handling
+                img.onerror = function() {
+                    console.error(`Featured image failed to load: ${item.image}`);
+                    this.style.border = '2px solid red';
+                };
+                
                 itemElement.appendChild(img);
                 featuredGrid.appendChild(itemElement);
             });
@@ -2429,6 +2435,7 @@
 
             clientsTrack.innerHTML = '';
             
+            // Create duplicate sets for seamless scrolling
             for (let set = 0; set < 3; set++) {
                 clientLogos.forEach(filename => {
                     const logoItem = document.createElement('div');
@@ -2439,6 +2446,18 @@
                     img.alt = 'Client Logo';
                     img.className = 'client-logo-img';
                     img.loading = 'lazy';
+                    
+                    // Add error handling
+                    img.onerror = function() {
+                        console.error(`Client logo failed to load: ${filename}`);
+                        this.style.background = '#f0f0f0';
+                        this.style.display = 'flex';
+                        this.style.alignItems = 'center';
+                        this.style.justifyContent = 'center';
+                        this.style.color = '#999';
+                        this.style.fontSize = '12px';
+                        this.innerHTML = 'Logo';
+                    };
                     
                     logoItem.appendChild(img);
                     clientsTrack.appendChild(logoItem);
@@ -2561,12 +2580,16 @@
                 servicesContainer.appendChild(serviceCard);
             });
 
+            // Add event listeners for service buttons
             document.querySelectorAll('.book-service-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const serviceId = this.getAttribute('data-service');
                     showPage('contact');
                     setTimeout(() => {
-                        document.getElementById('service').value = serviceId;
+                        const serviceSelect = document.getElementById('service');
+                        if (serviceSelect) {
+                            serviceSelect.value = serviceId;
+                        }
                     }, 100);
                 });
             });
@@ -2582,42 +2605,29 @@
             });
         }
 
-        // ===== FOOTER SERVICE LINK FUNCTION =====
-        function scrollToService(serviceId) {
-            showPage('services');
-            setTimeout(() => {
-                const anchor = document.getElementById(`service-${serviceId}`);
-                if (anchor) {
-                    const headerHeight = 70;
-                    const offset = anchor.offsetTop - headerHeight - 20;
-                    window.scrollTo({
-                        top: offset,
-                        behavior: 'smooth'
-                    });
-                }
-            }, 100);
-        }
-
-        // ===== GALLERY =====
+        // ===== GALLERY CATEGORIES =====
         const galleryCategories = [
             { id: 'food', name: 'Food Photography', count: 15, icon: 'fa-utensils' },
             { id: 'product', name: 'Product Photography', count: 15, icon: 'fa-box-open' },
-            { id: 'fashion', name: 'Fashion Photography', count: 15, icon: 'fa-tshirt' },
+            { id: 'fashion', name: 'Fashion & Lifestyle', count: 15, icon: 'fa-tshirt' },
             { id: 'pets', name: 'Pet Photography', count: 15, icon: 'fa-paw' },
             { id: 'brand', name: 'Brand Portfolios', count: 15, icon: 'fa-briefcase' },
-            { id: 'interiors', name: 'Architectural Photography', count: 15, icon: 'fa-building' },
+            { id: 'interiors', name: 'Interiors & Architecture', count: 15, icon: 'fa-building' },
             { id: 'ecommerce', name: 'E-Commerce Visuals', count: 15, icon: 'fa-shopping-cart' },
             { id: 'studio', name: 'Studio Photography', count: 10, icon: 'fa-camera' }
         ];
 
+        // ===== GALLERY DROPDOWN =====
         function initSimpleDropdown() {
             const dropdownToggle = document.getElementById('galleryDropdownToggle');
             const dropdownMenu = document.getElementById('galleryDropdownMenu');
 
             if (!dropdownToggle || !dropdownMenu) return;
 
+            // Clear existing items
             dropdownMenu.innerHTML = '';
 
+            // Add category items
             galleryCategories.forEach(category => {
                 const item = document.createElement('a');
                 item.href = `#gallery-${category.id}`;
@@ -2634,28 +2644,23 @@
                 dropdownMenu.appendChild(item);
             });
 
+            // Toggle dropdown on click
             dropdownToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
                 dropdownToggle.classList.toggle('active');
                 dropdownMenu.classList.toggle('active');
             });
-        }
 
-        function scrollToGalleryCategory(categoryId) {
-            const targetSection = document.getElementById(`gallery-${categoryId}`);
-            if (!targetSection) return;
-
-            const headerHeight = 70;
-            const dropdownHeight = document.querySelector('.simple-dropdown').offsetHeight;
-            const offset = headerHeight + dropdownHeight + 20;
-            const sectionTop = targetSection.offsetTop - offset;
-            
-            window.scrollTo({
-                top: sectionTop,
-                behavior: 'smooth'
+            // Close dropdown when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                    dropdownToggle.classList.remove('active');
+                    dropdownMenu.classList.remove('active');
+                }
             });
         }
 
+        // ===== LOAD GALLERY SECTIONS =====
         function loadGallerySections() {
             const gallerySections = document.getElementById('gallerySections');
             if (!gallerySections) return;
@@ -2679,17 +2684,31 @@
                 section.appendChild(grid);
                 gallerySections.appendChild(section);
                 
+                // Load images for this category
                 loadGalleryImages(category.id, category.count);
             });
         }
 
+        // ===== LOAD GALLERY IMAGES =====
         function loadGalleryImages(categoryId, count) {
             const grid = document.getElementById(`grid-${categoryId}`);
             if (!grid) return;
 
             grid.innerHTML = '';
             
-            const baseName = categoryId.replace('-', ' ');
+            // Map category IDs to actual filename patterns
+            const filenamePatterns = {
+                'food': 'food photography',
+                'product': 'product photography',
+                'fashion': 'fashion lifestyle',
+                'pets': 'pet photography',
+                'brand': 'brand portfolios',
+                'interiors': 'interiors architecture',
+                'ecommerce': 'ecommerce visuals',
+                'studio': 'studio shots'
+            };
+            
+            const baseName = filenamePatterns[categoryId] || categoryId;
             
             for (let i = 1; i <= count; i++) {
                 const filename = `${baseName} ${i}.jpg`;
@@ -2702,9 +2721,51 @@
                 img.alt = `${categoryId} photography example ${i}`;
                 img.loading = 'lazy';
                 
+                // Add error handling
+                img.onerror = function() {
+                    console.error(`Gallery image failed to load: ${filename}`);
+                    this.style.border = '2px solid red';
+                    this.style.background = '#ffcccc';
+                    this.alt = `Image missing: ${filename}`;
+                    
+                    // Create a placeholder
+                    const placeholder = document.createElement('div');
+                    placeholder.style.width = '100%';
+                    placeholder.style.height = '100%';
+                    placeholder.style.background = 'linear-gradient(135deg, #4682b4, #4a8bc4)';
+                    placeholder.style.display = 'flex';
+                    placeholder.style.alignItems = 'center';
+                    placeholder.style.justifyContent = 'center';
+                    placeholder.style.color = 'white';
+                    placeholder.style.fontSize = '14px';
+                    placeholder.style.textAlign = 'center';
+                    placeholder.innerHTML = `${categoryId}<br>Image ${i}`;
+                    
+                    this.parentNode.replaceChild(placeholder, this);
+                };
+                
                 galleryItem.appendChild(img);
                 grid.appendChild(galleryItem);
             }
+        }
+
+        // ===== SCROLL TO GALLERY CATEGORY =====
+        function scrollToGalleryCategory(categoryId) {
+            const targetSection = document.getElementById(`gallery-${categoryId}`);
+            if (!targetSection) {
+                console.error(`Gallery section not found: gallery-${categoryId}`);
+                return;
+            }
+
+            const headerHeight = 70;
+            const dropdownHeight = document.querySelector('.simple-dropdown').offsetHeight;
+            const offset = headerHeight + dropdownHeight + 20;
+            const sectionTop = targetSection.offsetTop - offset;
+            
+            window.scrollTo({
+                top: sectionTop,
+                behavior: 'smooth'
+            });
         }
 
         // ===== REVIEWS ANIMATION =====
@@ -2712,6 +2773,7 @@
             const track = document.getElementById('reviewsTrack');
             if (!track) return;
             
+            // Pause animation on hover
             track.addEventListener('mouseenter', () => {
                 track.style.animationPlayState = 'paused';
             });
@@ -2765,10 +2827,21 @@
                     }
                     
                 } catch (error) {
+                    console.error('Form submission error:', error);
                     showFormStatus('error', 
                         '<i class="fas fa-exclamation-circle"></i> ' +
                         'Network connectivity issue. Please check your connection and try again.');
                 }
+            });
+
+            // Add real-time validation
+            const requiredFields = contactForm.querySelectorAll('[required]');
+            requiredFields.forEach(field => {
+                field.addEventListener('input', function() {
+                    if (this.value.trim()) {
+                        this.style.borderColor = '';
+                    }
+                });
             });
         }
 
@@ -2778,6 +2851,11 @@
             const service = document.getElementById('service');
 
             let isValid = true;
+
+            // Reset previous error styles
+            [name, phone, service].forEach(field => {
+                if (field) field.style.borderColor = '';
+            });
 
             if (!name.value.trim()) {
                 highlightError(name);
@@ -2802,15 +2880,13 @@
 
             if (!isValid) {
                 showFormStatus('error', 'Please complete all required fields marked with * correctly.');
-                setTimeout(() => {
-                    document.getElementById('formStatus').style.display = 'none';
-                }, 5000);
             }
 
             return isValid;
         }
 
         function validatePhone(phone) {
+            // Indian phone number validation
             const phoneRegex = /^(\+91|0)?[6789]\d{9}$/;
             return phoneRegex.test(phone.replace(/\D/g, ''));
         }
@@ -2818,6 +2894,7 @@
         function highlightError(field) {
             if (field) {
                 field.style.borderColor = '#dc3545';
+                field.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
                 field.focus();
             }
         }
@@ -2829,6 +2906,9 @@
             formStatus.className = `form-status ${type}`;
             formStatus.innerHTML = message;
             formStatus.style.display = 'block';
+            
+            // Scroll to form status
+            formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         // ===== BACK TO TOP =====
@@ -2869,6 +2949,7 @@
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
                 submitBtn.disabled = true;
                 
+                // Reset after 5 seconds if something goes wrong
                 setTimeout(() => {
                     isSubmitting = false;
                     submitBtn.innerHTML = originalText;
@@ -2876,6 +2957,36 @@
                 }, 5000);
             });
         }
+
+        // ===== DEBUG IMAGE LOADING =====
+        function debugImageLoading() {
+            console.log('=== DEBUG: Checking Image Loading ===');
+            
+            // Test portfolio image loading
+            galleryCategories.forEach(category => {
+                const filenamePatterns = {
+                    'food': 'food photography',
+                    'product': 'product photography',
+                    'fashion': 'fashion lifestyle',
+                    'pets': 'pet photography',
+                    'brand': 'brand portfolios',
+                    'interiors': 'interiors architecture',
+                    'ecommerce': 'ecommerce visuals',
+                    'studio': 'studio shots'
+                };
+                
+                const baseName = filenamePatterns[category.id];
+                const testFilename = `${baseName} 1.jpg`;
+                
+                const img = new Image();
+                img.src = testFilename;
+                img.onload = () => console.log(`✓ Portfolio: ${testFilename} loads OK`);
+                img.onerror = () => console.error(`✗ Portfolio: ${testFilename} FAILS to load`);
+            });
+        }
+
+        // Call debug on load
+        setTimeout(debugImageLoading, 1000);
     </script>
 </body>
 </html>
