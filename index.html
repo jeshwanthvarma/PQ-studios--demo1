@@ -1011,6 +1011,15 @@
 
         .footer ul li {
             margin-bottom: 0.75rem;
+            transition: var(--transition);
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .footer ul li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
         }
 
         /* Updated contact info with underlined links */
@@ -1119,6 +1128,15 @@
             gap: 10px;
             margin-bottom: 0.5rem;
             line-height: 1.5;
+            transition: var(--transition);
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .all-features-list li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
         }
 
         .all-features-list li i {
@@ -2204,32 +2222,72 @@
                 <div>
                     <h3>Core Services</h3>
                     <ul>
-                        <li><i class="fas fa-utensils"></i> Food Photography</li>
-                        <li><i class="fas fa-box-open"></i> Product Photography</li>
-                        <li><i class="fas fa-tshirt"></i> Fashion Photography</li>
-                        <li><i class="fas fa-paw"></i> Pet Photography</li>
-                        <li><i class="fas fa-briefcase"></i> Brand Portfolios</li>
-                        <li><i class="fas fa-building"></i> Architectural Photography</li>
-                        <li><i class="fas fa-shopping-cart"></i> E-Commerce Visuals</li>
-                        <li><i class="fas fa-camera"></i> Studio Rentals</li>
+                        <li onclick="goToService('food')" style="cursor: pointer;">
+                            <i class="fas fa-utensils"></i> Food Photography
+                        </li>
+                        <li onclick="goToService('product')" style="cursor: pointer;">
+                            <i class="fas fa-box-open"></i> Product Photography
+                        </li>
+                        <li onclick="goToService('fashion')" style="cursor: pointer;">
+                            <i class="fas fa-tshirt"></i> Fashion Photography
+                        </li>
+                        <li onclick="goToService('pets')" style="cursor: pointer;">
+                            <i class="fas fa-paw"></i> Pet Photography
+                        </li>
+                        <li onclick="goToService('brand')" style="cursor: pointer;">
+                            <i class="fas fa-briefcase"></i> Brand Portfolios
+                        </li>
+                        <li onclick="goToService('interiors')" style="cursor: pointer;">
+                            <i class="fas fa-building"></i> Architectural Photography
+                        </li>
+                        <li onclick="goToService('ecommerce')" style="cursor: pointer;">
+                            <i class="fas fa-shopping-cart"></i> E-Commerce Visuals
+                        </li>
+                        <li onclick="goToService('studio')" style="cursor: pointer;">
+                            <i class="fas fa-camera"></i> Studio Rentals
+                        </li>
                     </ul>
                 </div>
                 
                 <div>
                     <h3>All Services</h3>
                     <ul class="all-features-list">
-                        <li><i class="fas fa-check"></i> Wedding & Event Photography</li>
-                        <li><i class="fas fa-check"></i> Commercial Brand Photography</li>
-                        <li><i class="fas fa-check"></i> Portrait & Lifestyle Sessions</li>
-                        <li><i class="fas fa-check"></i> Product & Food Styling</li>
-                        <li><i class="fas fa-check"></i> Fashion & Editorial Photography</li>
-                        <li><i class="fas fa-check"></i> Real Estate & Architecture</li>
-                        <li><i class="fas fa-check"></i> Corporate Photography</li>
-                        <li><i class="fas fa-check"></i> Aerial & Drone Photography</li>
-                        <li><i class="fas fa-check"></i> Industrial Documentation</li>
-                        <li><i class="fas fa-check"></i> Social Media Content Creation</li>
-                        <li><i class="fas fa-check"></i> Post-Production & Editing</li>
-                        <li><i class="fas fa-check"></i> Photography Consultation</li>
+                        <li onclick="goToService('wedding')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Wedding & Event Photography
+                        </li>
+                        <li onclick="goToService('commercial')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Commercial Brand Photography
+                        </li>
+                        <li onclick="goToService('portrait')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Portrait & Lifestyle Sessions
+                        </li>
+                        <li onclick="goToService('food')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Product & Food Styling
+                        </li>
+                        <li onclick="goToService('fashion')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Fashion & Editorial Photography
+                        </li>
+                        <li onclick="goToService('interiors')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Real Estate & Architecture
+                        </li>
+                        <li onclick="goToService('corporate')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Corporate Photography
+                        </li>
+                        <li onclick="goToService('drone')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Aerial & Drone Photography
+                        </li>
+                        <li onclick="goToService('industrial')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Industrial Documentation
+                        </li>
+                        <li onclick="goToService('social')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Social Media Content Creation
+                        </li>
+                        <li onclick="goToService('editing')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Post-Production & Editing
+                        </li>
+                        <li onclick="goToService('consultation')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Photography Consultation
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -2402,12 +2460,6 @@
                 img.alt = item.title;
                 img.loading = 'lazy';
                 
-                // Add error handling
-                img.onerror = function() {
-                    console.error(`Featured image failed to load: ${item.image}`);
-                    this.style.border = '2px solid red';
-                };
-                
                 itemElement.appendChild(img);
                 featuredGrid.appendChild(itemElement);
             });
@@ -2435,7 +2487,6 @@
 
             clientsTrack.innerHTML = '';
             
-            // Create duplicate sets for seamless scrolling
             for (let set = 0; set < 3; set++) {
                 clientLogos.forEach(filename => {
                     const logoItem = document.createElement('div');
@@ -2446,18 +2497,6 @@
                     img.alt = 'Client Logo';
                     img.className = 'client-logo-img';
                     img.loading = 'lazy';
-                    
-                    // Add error handling
-                    img.onerror = function() {
-                        console.error(`Client logo failed to load: ${filename}`);
-                        this.style.background = '#f0f0f0';
-                        this.style.display = 'flex';
-                        this.style.alignItems = 'center';
-                        this.style.justifyContent = 'center';
-                        this.style.color = '#999';
-                        this.style.fontSize = '12px';
-                        this.innerHTML = 'Logo';
-                    };
                     
                     logoItem.appendChild(img);
                     clientsTrack.appendChild(logoItem);
@@ -2580,16 +2619,12 @@
                 servicesContainer.appendChild(serviceCard);
             });
 
-            // Add event listeners for service buttons
             document.querySelectorAll('.book-service-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const serviceId = this.getAttribute('data-service');
                     showPage('contact');
                     setTimeout(() => {
-                        const serviceSelect = document.getElementById('service');
-                        if (serviceSelect) {
-                            serviceSelect.value = serviceId;
-                        }
+                        document.getElementById('service').value = serviceId;
                     }, 100);
                 });
             });
@@ -2605,7 +2640,74 @@
             });
         }
 
-        // ===== GALLERY CATEGORIES =====
+        // ===== SERVICE NAVIGATION FUNCTION =====
+        function goToService(serviceId) {
+            console.log('Navigating to service:', serviceId);
+            
+            // First, switch to the Services page
+            showPage('services');
+            
+            // Wait for page transition and service cards to load
+            setTimeout(() => {
+                // Try to find the service card by data-service attribute
+                const serviceCards = document.querySelectorAll('.service-card');
+                let targetCard = null;
+                
+                // Look for the service card with matching data-service
+                serviceCards.forEach(card => {
+                    if (card.getAttribute('data-service') === serviceId) {
+                        targetCard = card;
+                    }
+                });
+                
+                if (targetCard) {
+                    // Calculate position for smooth scroll
+                    const headerHeight = 70;
+                    const cardPosition = targetCard.offsetTop - headerHeight - 40;
+                    
+                    // Smooth scroll to the service card
+                    window.scrollTo({
+                        top: cardPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Highlight the service card
+                    targetCard.style.boxShadow = '0 0 25px rgba(70, 130, 180, 0.4)';
+                    targetCard.style.border = '2px solid #4682b4';
+                    targetCard.style.transform = 'scale(1.02)';
+                    
+                    // Remove highlight after 2.5 seconds
+                    setTimeout(() => {
+                        targetCard.style.boxShadow = '';
+                        targetCard.style.border = '1px solid rgba(70, 130, 180, 0.1)';
+                        targetCard.style.transform = '';
+                    }, 2500);
+                    
+                } else {
+                    // If service card not found, scroll to top of services
+                    console.log('Service not found, showing all services');
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Show notification for services that aren't on the page
+                    const missingServices = {
+                        'wedding': 'Wedding & Events Photography',
+                        'corporate': 'Corporate Photography',
+                        'drone': 'Drone Photography',
+                        'social': 'Social Media Content',
+                        'consultation': 'Consultation Services'
+                    };
+                    
+                    if (missingServices[serviceId]) {
+                        alert(`For ${missingServices[serviceId]}, please contact us directly or use the contact form.`);
+                    }
+                }
+            }, 300);
+        }
+
+        // ===== GALLERY =====
         const galleryCategories = [
             { id: 'food', name: 'Food Photography', count: 15, icon: 'fa-utensils' },
             { id: 'product', name: 'Product Photography', count: 15, icon: 'fa-box-open' },
@@ -2617,17 +2719,14 @@
             { id: 'studio', name: 'Studio Photography', count: 10, icon: 'fa-camera' }
         ];
 
-        // ===== GALLERY DROPDOWN =====
         function initSimpleDropdown() {
             const dropdownToggle = document.getElementById('galleryDropdownToggle');
             const dropdownMenu = document.getElementById('galleryDropdownMenu');
 
             if (!dropdownToggle || !dropdownMenu) return;
 
-            // Clear existing items
             dropdownMenu.innerHTML = '';
 
-            // Add category items
             galleryCategories.forEach(category => {
                 const item = document.createElement('a');
                 item.href = `#gallery-${category.id}`;
@@ -2644,23 +2743,28 @@
                 dropdownMenu.appendChild(item);
             });
 
-            // Toggle dropdown on click
             dropdownToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
                 dropdownToggle.classList.toggle('active');
                 dropdownMenu.classList.toggle('active');
             });
+        }
 
-            // Close dropdown when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
-                    dropdownToggle.classList.remove('active');
-                    dropdownMenu.classList.remove('active');
-                }
+        function scrollToGalleryCategory(categoryId) {
+            const targetSection = document.getElementById(`gallery-${categoryId}`);
+            if (!targetSection) return;
+
+            const headerHeight = 70;
+            const dropdownHeight = document.querySelector('.simple-dropdown').offsetHeight;
+            const offset = headerHeight + dropdownHeight + 20;
+            const sectionTop = targetSection.offsetTop - offset;
+            
+            window.scrollTo({
+                top: sectionTop,
+                behavior: 'smooth'
             });
         }
 
-        // ===== LOAD GALLERY SECTIONS =====
         function loadGallerySections() {
             const gallerySections = document.getElementById('gallerySections');
             if (!gallerySections) return;
@@ -2684,19 +2788,18 @@
                 section.appendChild(grid);
                 gallerySections.appendChild(section);
                 
-                // Load images for this category
                 loadGalleryImages(category.id, category.count);
             });
         }
 
-        // ===== LOAD GALLERY IMAGES =====
+        // FIXED: This function now matches your actual filenames
         function loadGalleryImages(categoryId, count) {
             const grid = document.getElementById(`grid-${categoryId}`);
             if (!grid) return;
 
             grid.innerHTML = '';
             
-            // Map category IDs to actual filename patterns
+            // Map category IDs to actual filename patterns based on your uploaded files
             const filenamePatterns = {
                 'food': 'food photography',
                 'product': 'product photography',
@@ -2711,6 +2814,7 @@
             const baseName = filenamePatterns[categoryId] || categoryId;
             
             for (let i = 1; i <= count; i++) {
+                // Create filename exactly as you uploaded them
                 const filename = `${baseName} ${i}.jpg`;
                 
                 const galleryItem = document.createElement('div');
@@ -2721,51 +2825,9 @@
                 img.alt = `${categoryId} photography example ${i}`;
                 img.loading = 'lazy';
                 
-                // Add error handling
-                img.onerror = function() {
-                    console.error(`Gallery image failed to load: ${filename}`);
-                    this.style.border = '2px solid red';
-                    this.style.background = '#ffcccc';
-                    this.alt = `Image missing: ${filename}`;
-                    
-                    // Create a placeholder
-                    const placeholder = document.createElement('div');
-                    placeholder.style.width = '100%';
-                    placeholder.style.height = '100%';
-                    placeholder.style.background = 'linear-gradient(135deg, #4682b4, #4a8bc4)';
-                    placeholder.style.display = 'flex';
-                    placeholder.style.alignItems = 'center';
-                    placeholder.style.justifyContent = 'center';
-                    placeholder.style.color = 'white';
-                    placeholder.style.fontSize = '14px';
-                    placeholder.style.textAlign = 'center';
-                    placeholder.innerHTML = `${categoryId}<br>Image ${i}`;
-                    
-                    this.parentNode.replaceChild(placeholder, this);
-                };
-                
                 galleryItem.appendChild(img);
                 grid.appendChild(galleryItem);
             }
-        }
-
-        // ===== SCROLL TO GALLERY CATEGORY =====
-        function scrollToGalleryCategory(categoryId) {
-            const targetSection = document.getElementById(`gallery-${categoryId}`);
-            if (!targetSection) {
-                console.error(`Gallery section not found: gallery-${categoryId}`);
-                return;
-            }
-
-            const headerHeight = 70;
-            const dropdownHeight = document.querySelector('.simple-dropdown').offsetHeight;
-            const offset = headerHeight + dropdownHeight + 20;
-            const sectionTop = targetSection.offsetTop - offset;
-            
-            window.scrollTo({
-                top: sectionTop,
-                behavior: 'smooth'
-            });
         }
 
         // ===== REVIEWS ANIMATION =====
@@ -2773,7 +2835,6 @@
             const track = document.getElementById('reviewsTrack');
             if (!track) return;
             
-            // Pause animation on hover
             track.addEventListener('mouseenter', () => {
                 track.style.animationPlayState = 'paused';
             });
@@ -2827,21 +2888,10 @@
                     }
                     
                 } catch (error) {
-                    console.error('Form submission error:', error);
                     showFormStatus('error', 
                         '<i class="fas fa-exclamation-circle"></i> ' +
                         'Network connectivity issue. Please check your connection and try again.');
                 }
-            });
-
-            // Add real-time validation
-            const requiredFields = contactForm.querySelectorAll('[required]');
-            requiredFields.forEach(field => {
-                field.addEventListener('input', function() {
-                    if (this.value.trim()) {
-                        this.style.borderColor = '';
-                    }
-                });
             });
         }
 
@@ -2851,11 +2901,6 @@
             const service = document.getElementById('service');
 
             let isValid = true;
-
-            // Reset previous error styles
-            [name, phone, service].forEach(field => {
-                if (field) field.style.borderColor = '';
-            });
 
             if (!name.value.trim()) {
                 highlightError(name);
@@ -2880,13 +2925,15 @@
 
             if (!isValid) {
                 showFormStatus('error', 'Please complete all required fields marked with * correctly.');
+                setTimeout(() => {
+                    document.getElementById('formStatus').style.display = 'none';
+                }, 5000);
             }
 
             return isValid;
         }
 
         function validatePhone(phone) {
-            // Indian phone number validation
             const phoneRegex = /^(\+91|0)?[6789]\d{9}$/;
             return phoneRegex.test(phone.replace(/\D/g, ''));
         }
@@ -2894,7 +2941,6 @@
         function highlightError(field) {
             if (field) {
                 field.style.borderColor = '#dc3545';
-                field.style.boxShadow = '0 0 0 3px rgba(220, 53, 69, 0.1)';
                 field.focus();
             }
         }
@@ -2906,9 +2952,6 @@
             formStatus.className = `form-status ${type}`;
             formStatus.innerHTML = message;
             formStatus.style.display = 'block';
-            
-            // Scroll to form status
-            formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         // ===== BACK TO TOP =====
@@ -2949,7 +2992,6 @@
                 submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
                 submitBtn.disabled = true;
                 
-                // Reset after 5 seconds if something goes wrong
                 setTimeout(() => {
                     isSubmitting = false;
                     submitBtn.innerHTML = originalText;
@@ -2957,36 +2999,6 @@
                 }, 5000);
             });
         }
-
-        // ===== DEBUG IMAGE LOADING =====
-        function debugImageLoading() {
-            console.log('=== DEBUG: Checking Image Loading ===');
-            
-            // Test portfolio image loading
-            galleryCategories.forEach(category => {
-                const filenamePatterns = {
-                    'food': 'food photography',
-                    'product': 'product photography',
-                    'fashion': 'fashion lifestyle',
-                    'pets': 'pet photography',
-                    'brand': 'brand portfolios',
-                    'interiors': 'interiors architecture',
-                    'ecommerce': 'ecommerce visuals',
-                    'studio': 'studio shots'
-                };
-                
-                const baseName = filenamePatterns[category.id];
-                const testFilename = `${baseName} 1.jpg`;
-                
-                const img = new Image();
-                img.src = testFilename;
-                img.onload = () => console.log(`✓ Portfolio: ${testFilename} loads OK`);
-                img.onerror = () => console.error(`✗ Portfolio: ${testFilename} FAILS to load`);
-            });
-        }
-
-        // Call debug on load
-        setTimeout(debugImageLoading, 1000);
     </script>
 </body>
 </html>
