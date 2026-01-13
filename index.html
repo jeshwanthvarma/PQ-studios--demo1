@@ -21,6 +21,37 @@
     <link rel="manifest" href="/site.webmanifest">
     
     <style>
+        /* ===== FULL WIDTH DESKTOP FIX ===== */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 100% !important;
+                padding: 0 80px !important;
+            }
+            
+            .slideshow-hero {
+                min-height: 80vh !important;
+            }
+            
+            .featured-grid {
+                grid-template-columns: repeat(6, 1fr) !important;
+                gap: 15px !important;
+            }
+            
+            .service-cards {
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 30px !important;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(6, 1fr) !important;
+            }
+            
+            .about-section-card {
+                max-width: 90% !important;
+                padding: 3rem !important;
+            }
+        }
+
         /* ===== PERFORMANCE OPTIMIZATION ===== */
         * {
             margin: 0;
@@ -599,329 +630,6 @@
             object-fit: contain;
         }
 
-        /* ===== ABOUT PAGE - UPDATED ===== */
-        .profile-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 6px solid #4682b4;
-            margin: 0 auto 2rem;
-            display: block;
-            box-shadow: var(--shadow-lg);
-        }
-
-        @media (max-width: 768px) {
-            .profile-image {
-                width: 160px;
-                height: 160px;
-            }
-        }
-
-        .about-section-card {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: var(--shadow-md);
-            border: 1px solid rgba(70, 130, 180, 0.1);
-        }
-
-        .about-section-card h2 {
-            color: #4682b4;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .about-section-card h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: #4682b4;
-        }
-
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        @media (min-width: 768px) {
-            .expertise-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
-        }
-
-        .expertise-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.25rem;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            border-left: 4px solid #4682b4;
-        }
-
-        .expertise-item i {
-            color: #4682b4;
-            font-size: 1.5rem;
-            margin-top: 0.25rem;
-            min-width: 30px;
-        }
-
-        .why-choose-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-
-        @media (min-width: 768px) {
-            .why-choose-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .why-choose-item {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            box-shadow: var(--shadow-md);
-            text-align: center;
-            transition: var(--transition);
-            border: 1px solid rgba(70, 130, 180, 0.1);
-        }
-
-        .why-choose-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .why-choose-item h3 {
-            color: #4682b4;
-            margin-bottom: 1rem;
-        }
-
-        .why-choose-item .icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #4682b4, #4a8bc4);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: white;
-            font-size: 1.75rem;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin: 2rem 0;
-        }
-
-        @media (min-width: 768px) {
-            .stats-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1.5rem;
-            }
-        }
-
-        .stat-card {
-            text-align: center;
-            padding: 1.25rem;
-            background: var(--white);
-            border-radius: var(--radius-md);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid rgba(70, 130, 180, 0.1);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #4682b4;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        /* ===== GOOGLE REVIEWS SECTION ===== */
-        .reviews-section {
-            margin: 4rem 0;
-        }
-
-        .reviews-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .reviews-header h3 {
-            color: #4682b4;
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-        }
-
-   /* Clickable Google Badge - Blue Theme */
-.clickable-google-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #ffffff;
-    padding: 8px 16px;
-    border-radius: 50px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(70, 130, 180, 0.2); /* Blue border */
-    font-weight: 500;
-    font-size: 0.95rem;
-    height: 44px;
-    text-decoration: none;
-    color: #4682b4; /* Blue text */
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-    cursor: pointer;
-}
-
-.clickable-google-badge:hover {
-    background: #4682b4; /* Blue background on hover */
-    color: white; /* White text on hover */
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(70, 130, 180, 0.3);
-    border-color: #4682b4;
-}
-
-.clickable-google-badge:hover svg path {
-    fill: white; /* White icon on hover */
-}
-
-.clickable-google-badge svg {
-    width: 20px;
-    height: 20px;
-    display: block;
-}
-
-.clickable-google-badge span {
-    font-weight: 500;
-    line-height: 1;
-}
-
-
-        .reviews-container {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            padding: 20px 0;
-        }
-
-        .reviews-track {
-            display: flex;
-            gap: 1.5rem;
-            animation: scrollReviews 30s linear infinite;
-            width: max-content;
-            padding: 0 1rem;
-        }
-
-        @keyframes scrollReviews {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-350px * 5 - 1.5rem * 5)); }
-        }
-
-        .review-card {
-            flex: 0 0 auto;
-            width: 350px;
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            border: 1px solid rgba(70, 130, 180, 0.1);
-        }
-
-        @media (max-width: 768px) {
-            .review-card {
-                width: 300px;
-                padding: 1.5rem;
-            }
-            
-            @keyframes scrollReviews {
-                0% { transform: translateX(0); }
-                100% { transform: translateX(calc(-300px * 5 - 1.5rem * 5)); }
-            }
-        }
-
-        .review-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .review-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4682b4, #4a8bc4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .review-name {
-            font-weight: 600;
-            color: #4682b4;
-            margin-bottom: 0.25rem;
-        }
-
-        .review-date {
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-
-        .review-stars {
-            display: flex;
-            gap: 2px;
-            margin-bottom: 1rem;
-        }
-
-        .review-stars i {
-            color: #FFD700;
-            font-size: 1rem;
-        }
-
-        .review-content {
-            color: var(--gray);
-            line-height: 1.6;
-            font-style: italic;
-            font-size: 0.95rem;
-            position: relative;
-            padding-left: 1rem;
-        }
-
-        .review-content::before {
-            content: '"';
-            position: absolute;
-            left: 0;
-            top: -10px;
-            font-size: 3rem;
-            color: rgba(70, 130, 180, 0.1);
-            font-family: serif;
-        }
-
         /* ===== SERVICES PAGE ===== */
         .service-cards {
             display: grid;
@@ -1106,6 +814,12 @@
             }
         }
 
+        @media (min-width: 1400px) {
+            .gallery-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
         .gallery-item {
             position: relative;
             width: 100%;
@@ -1166,71 +880,73 @@
             box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.1);
         }
 
-       /* WhatsApp CTA Section - OLD GREEN STYLE */
-.whatsapp-cta {
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    color: white;
-    padding: 2.5rem;
-    border-radius: var(--radius-lg);
-    text-align: center;
-    margin-top: 3rem;
-    box-shadow: var(--shadow-lg);
-    position: relative;
-    overflow: hidden;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-}
+        /* WhatsApp CTA Section - BLUE THEME */
+        .whatsapp-cta {
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+            color: white;
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.whatsapp-cta::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: rgba(255, 255, 255, 0.3);
-}
+        .whatsapp-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+        }
 
-@media (max-width: 768px) {
-    .whatsapp-cta {
-        padding: 1.75rem;
-    }
-}
+        @media (max-width: 768px) {
+            .whatsapp-cta {
+                padding: 1.75rem;
+            }
+        }
 
-.whatsapp-cta h3 {
-    color: white;
-    margin-bottom: 0.75rem;
-    font-size: 1.5rem;
-}
+        .whatsapp-cta h3 {
+            color: white;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
 
-.whatsapp-cta p {
-    color: rgba(255,255,255,0.9);
-    margin-bottom: 1.75rem;
-    font-size: 1rem;
-}
+        .whatsapp-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1.75rem;
+            font-size: 1rem;
+        }
 
-.whatsapp-btn {
-    background: white;
-    color: #25D366;
-    font-weight: 600;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    transition: var(--transition);
-    font-size: 1.1rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
+        .whatsapp-btn {
+            background: white;
+            color: #4682b4;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-.whatsapp-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
+        .whatsapp-btn:hover {
+            background: #4682b4;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(70, 130, 180, 0.3);
+        }
 
-        /* ===== FOOTER ===== */
+        /* ===== FOOTER - UPDATED ===== */
         .footer {
             background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: var(--white);
@@ -1266,7 +982,7 @@
 
         @media (min-width: 1024px) {
             .footer-grid {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
                 gap: 2rem;
             }
         }
@@ -1297,25 +1013,103 @@
             margin-bottom: 0.75rem;
         }
 
-        .footer ul li a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            transition: var(--transition);
+        /* Updated contact info with underlined links */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 6px 0;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.4;
         }
 
-        .footer ul li a:hover {
+        .contact-item a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: underline;
+            text-decoration-color: rgba(255,255,255,0.3);
+            text-underline-offset: 3px;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
             color: #6ba1d6;
-            transform: translateX(5px);
+            text-decoration-color: #6ba1d6;
         }
 
-        .footer ul li a i {
+        .contact-item i {
             color: #6ba1d6;
             width: 20px;
-            font-size: 1rem;
+            text-align: center;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        /* Updated Social Links with colorful buttons */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-link:hover::before {
+            opacity: 1;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .social-link.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+
+        .social-link.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+
+        .social-link.email {
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+        }
+
+        .social-link.phone {
+            background: linear-gradient(135deg, #34B7F1, #1E9FE0);
         }
 
         .all-features-list li {
@@ -1333,69 +1127,17 @@
             margin-top: 4px;
         }
 
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.75rem;
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.9);
-            line-height: 1.4;
-        }
-
-        .contact-item i {
-            color: #6ba1d6;
-            width: 20px;
+        .footer-bottom {
             text-align: center;
-            margin-top: 2px;
-            flex-shrink: 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
         }
 
-        .social-links {
-            display: flex;
-            gap: 10px;
-            margin-top: 1.25rem;
-            flex-wrap: wrap;
-        }
-
-        .social-link {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            text-decoration: none;
-            transition: var(--transition);
-            font-size: 1.2rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .social-link:hover {
-            transform: translateY(-5px);
-        }
-
-        .social-link.instagram {
-            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
-        }
-
-        .social-link.whatsapp {
-            background: #25D366;
-        }
-
-        .social-link.email {
-            background: #4682b4;
-        }
-
-        .social-link.phone {
-            background: #34B7F1;
+        .footer-bottom p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.5rem;
         }
 
         /* ===== BACK TO TOP ===== */
@@ -1445,6 +1187,27 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
+            
+            /* Mobile touch improvements */
+            .nav-menu .nav-link,
+            .btn,
+            .simple-dropdown-item {
+                padding: 1rem;
+                min-height: 48px;
+            }
+            
+            /* Larger touch targets for mobile */
+            .featured-item,
+            .gallery-item {
+                cursor: pointer;
+            }
+            
+            /* Smaller social buttons on mobile */
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
         }
 
         /* ===== FORM STATUS ===== */
@@ -1471,6 +1234,381 @@
             background: rgba(220, 53, 69, 0.1);
             color: #dc3545;
             border: 1px solid rgba(220, 53, 69, 0.3);
+        }
+
+        /* ===== NEW ABOUT PAGE STYLES ===== */
+        /* Profile Image */
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #4682b4;
+            margin: 0 auto 2rem;
+            display: block;
+            box-shadow: var(--shadow-lg);
+        }
+
+        @media (max-width: 768px) {
+            .profile-image {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        /* Updated About Section Cards */
+        .about-section-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin: 2rem auto;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(70, 130, 180, 0.1);
+            transition: var(--transition);
+        }
+
+        .about-section-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .about-section-card h2 {
+            color: #4682b4;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .about-section-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #4682b4;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        .expertise-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid #4682b4;
+            transition: var(--transition);
+        }
+
+        .expertise-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .expertise-item i {
+            color: #4682b4;
+            font-size: 1.5rem;
+            margin-top: 0.25rem;
+            min-width: 30px;
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .why-choose-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .why-choose-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(70, 130, 180, 0.1);
+        }
+
+        .why-choose-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .why-choose-item h3 {
+            color: #4682b4;
+            margin-bottom: 1rem;
+        }
+
+        .why-choose-item .icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.75rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.25rem;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(70, 130, 180, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4682b4;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* ===== REVIEWS SECTION ===== */
+        .reviews-section {
+            margin: 4rem 0;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .reviews-header h3 {
+            color: #4682b4;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Clickable Google Badge - Blue Theme */
+        .clickable-google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            padding: 8px 16px;
+            border-radius: 50px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(70, 130, 180, 0.2);
+            font-weight: 500;
+            font-size: 0.95rem;
+            height: 44px;
+            text-decoration: none;
+            color: #4682b4;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+
+        .clickable-google-badge:hover {
+            background: #4682b4;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(70, 130, 180, 0.3);
+            border-color: #4682b4;
+        }
+
+        .clickable-google-badge:hover svg path {
+            fill: white;
+        }
+
+        .clickable-google-badge svg {
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
+
+        .clickable-google-badge span {
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .reviews-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .reviews-track {
+            display: flex;
+            gap: 1.5rem;
+            animation: scrollReviews 30s linear infinite;
+            width: max-content;
+            padding: 0 1rem;
+        }
+
+        @keyframes scrollReviews {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-350px * 5 - 1.5rem * 5)); }
+        }
+
+        .review-card {
+            flex: 0 0 auto;
+            width: 350px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(70, 130, 180, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .review-card {
+                width: 300px;
+                padding: 1.5rem;
+            }
+            
+            @keyframes scrollReviews {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-300px * 5 - 1.5rem * 5)); }
+            }
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .review-name {
+            font-weight: 600;
+            color: #4682b4;
+            margin-bottom: 0.25rem;
+        }
+
+        .review-date {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .review-stars i {
+            color: #FFD700;
+            font-size: 1rem;
+        }
+
+        .review-content {
+            color: var(--gray);
+            line-height: 1.6;
+            font-style: italic;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .review-content::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 3rem;
+            color: rgba(70, 130, 180, 0.1);
+            font-family: serif;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin: 3rem auto;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(70, 130, 180, 0.08);
+            max-width: 1200px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .final-cta:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 767px) {
+            .final-cta {
+                padding: 1.75rem;
+                margin: 2rem 0;
+            }
+        }
+
+        .final-cta h3 {
+            color: #4682b4;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+        }
+
+        .final-cta p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -1609,7 +1747,7 @@
             </div>
         </div>
 
-        <!-- ABOUT PAGE - UPDATED STRUCTURE -->
+        <!-- NEW ABOUT PAGE -->
         <div id="about-page" class="page">
             <section class="about-hero">
                 <div class="container">
@@ -1631,28 +1769,21 @@
                         
                         <h2>About Me: The Visionary Behind PQ Studios</h2>
                         
-                        <p>I am Sai Kumar Maddina, the founder and principal photographer at PQ Studios Hyderabad. With over eight years of dedicated expertise in professional photography, I have established our studio as Hyderabad's premier destination for exceptional visual storytelling.</p>
+                        <p>I am <span class="owner-name">Sai Kumar Maddina</span>, the founder and principal photographer at PQ Studios Hyderabad. With over eight years of dedicated expertise in professional photography, I have established our studio as Hyderabad's premier destination for exceptional visual storytelling.</p>
                         
                         <p>My journey in photography began with formal education in visual arts, complemented by continuous mastery of evolving photographic techniques. This academic foundation, combined with extensive field experience, enables me to approach each project with both artistic vision and technical precision.</p>
                         
-                        <p>My philosophy is encapsulated in this guiding principle: "Great photography transcends mere visual representation; it evokes emotion, tells stories, and creates lasting impact." This ethos informs every project we undertake, from intimate portrait sessions to comprehensive commercial productions.</p>
+                        <p>My philosophy is encapsulated in this guiding principle: <em>"Great photography transcends mere visual representation; it evokes emotion, tells stories, and creates lasting impact."</em> This ethos informs every project we undertake, from intimate portrait sessions to comprehensive commercial productions.</p>
                         
+                        <!-- SIMPLIFIED STATS GRID -->
                         <div class="stats-grid">
                             <div class="stat-card">
                                 <div class="stat-number">8+</div>
-                                <div class="stat-label">Years Excellence</div>
+                                <div class="stat-label">Years of Excellence</div>
                             </div>
                             <div class="stat-card">
                                 <div class="stat-number">500+</div>
                                 <div class="stat-label">Satisfied Clients</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">1000+</div>
-                                <div class="stat-label">Successful Projects</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="stat-number">24/7</div>
-                                <div class="stat-label">Client Support</div>
                             </div>
                         </div>
                     </div>
@@ -1701,36 +1832,42 @@
                         
                         <p>PQ Studios represents the culmination of a passionate vision transformed into Hyderabad's most distinguished photography studio. Our journey began with a commitment to excellence and has evolved into a comprehensive visual solutions provider serving clients across India.</p>
                         
-                        <p>Our state-of-the-art facility in Hyderabad's Hitech City is equipped with cutting-edge photographic technology, professional lighting systems, and versatile studio spaces designed to accommodate diverse photographic requirements.</p>
-                        
-                        <div class="why-choose-grid">
-                            <div class="why-choose-item">
+                        <div class="expertise-grid">
+                            <div class="expertise-item">
                                 <div class="icon">
                                     <i class="fas fa-camera-retro"></i>
                                 </div>
-                                <h3>Professional Studio</h3>
-                                <p>Modern photography studio with advanced equipment and versatile backdrops for all your photography needs in Hyderabad.</p>
+                                <div>
+                                    <h4>Professional Studio</h4>
+                                    <p>Modern photography studio with advanced equipment and versatile backdrops for all your photography needs in Hyderabad.</p>
+                                </div>
                             </div>
-                            <div class="why-choose-item">
+                            <div class="expertise-item">
                                 <div class="icon">
                                     <i class="fas fa-video"></i>
                                 </div>
-                                <h3>Complete Solutions</h3>
-                                <p>End-to-end visual services including photography, videography, post-production, and brand visual consulting.</p>
+                                <div>
+                                    <h4>Complete Solutions</h4>
+                                    <p>End-to-end visual services including photography, videography, post-production, and brand visual consulting.</p>
+                                </div>
                             </div>
-                            <div class="why-choose-item">
+                            <div class="expertise-item">
                                 <div class="icon">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
-                                <h3>Strategic Location</h3>
-                                <p>Conveniently situated in Hyderabad's Hitech City, serving clients throughout India with professional photography excellence.</p>
+                                <div>
+                                    <h4>Strategic Location</h4>
+                                    <p>Conveniently situated in Hyderabad's Hitech City, serving clients throughout India with professional photography excellence.</p>
+                                </div>
                             </div>
-                            <div class="why-choose-item">
+                            <div class="expertise-item">
                                 <div class="icon">
                                     <i class="fas fa-clock"></i>
                                 </div>
-                                <h3>Timely Delivery</h3>
-                                <p>Commitment to punctual project completion without compromising on the quality and excellence of deliverables.</p>
+                                <div>
+                                    <h4>Timely Delivery</h4>
+                                    <p>Commitment to punctual project completion without compromising on the quality and excellence of deliverables.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1739,90 +1876,69 @@
                     <div class="about-section-card">
                         <h2>Why Choose PQ Studios Hyderabad</h2>
                         
-                        <div class="why-choose-grid">
-                            <div class="why-choose-item">
+                        <div class="expertise-grid">
+                            <div class="expertise-item">
                                 <div class="icon">
                                     <i class="fas fa-graduation-cap"></i>
                                 </div>
-                                <h3>Education Meets Experience</h3>
-                                <p>Formally trained photographers combining academic knowledge with extensive practical expertise for superior results.</p>
+                                <div>
+                                    <h4>Education Meets Experience</h4>
+                                    <p>Formally trained photographers combining academic knowledge with extensive practical expertise for superior results.</p>
+                                </div>
                             </div>
-                            <div class="why-choose-item">
+                            <div class="expertise-item">
                                 <div class="icon">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
-                                <h3>Hyderabad-Based, India-Ready</h3>
-                                <p>While anchored in Hyderabad, our professional services extend nationwide, bringing consistent excellence to every project location.</p>
+                                <div>
+                                    <h4>Hyderabad-Based, India-Ready</h4>
+                                    <p>While anchored in Hyderabad, our professional services extend nationwide, bringing consistent excellence to every project location.</p>
+                                </div>
                             </div>
-                            <div class="why-choose-item">
+                            <div class="expertise-item">
                                 <div class="icon">
                                     <i class="fas fa-layer-group"></i>
                                 </div>
-                                <h3>Comprehensive Service Portfolio</h3>
-                                <p>From wedding photography to commercial brand imaging, we offer complete photographic solutions under one roof.</p>
+                                <div>
+                                    <h4>Comprehensive Service Portfolio</h4>
+                                    <p>From wedding photography to commercial brand imaging, we offer complete photographic solutions under one roof.</p>
+                                </div>
                             </div>
-                            <div class="why-choose-item">
+                            <div class="expertise-item">
                                 <div class="icon">
                                     <i class="fas fa-handshake"></i>
                                 </div>
-                                <h3>Client-Centric Partnership</h3>
-                                <p>We believe in collaborative relationships, working closely with clients to exceed expectations and deliver exceptional value.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="expertise-grid" style="margin-top: 2rem;">
-                            <div class="expertise-item">
-                                <i class="fas fa-award"></i>
                                 <div>
-                                    <h4>Proven Excellence</h4>
-                                    <p>Eight years of delivering exceptional photography services with consistently outstanding client satisfaction.</p>
-                                </div>
-                            </div>
-                            <div class="expertise-item">
-                                <i class="fas fa-certificate"></i>
-                                <div>
-                                    <h4>Quality Assurance</h4>
-                                    <p>Rigorous quality control processes ensure every deliverable meets our exacting standards of excellence.</p>
+                                    <h4>Client-Centric Partnership</h4>
+                                    <p>We believe in collaborative relationships, working closely with clients to exceed expectations and deliver exceptional value.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- 5. Customer Reviews -->
-                    <div class="reviews-section">
+                    <div class="about-section-card">
+                        <h2>Client Testimonials</h2>
+                        
                         <div class="reviews-header">
-                            <h3>Client Testimonials</h3>
                             <p>Experience the excellence that has earned us outstanding reviews from satisfied clients</p>
                         
-    <!-- Simple Google "G" icon -->
-                       <!-- 5. Customer Reviews -->
-                    <div class="reviews-section">
-                        <div class="reviews-header">
-                            <h3>Client Testimonials</h3>
-                            <p>Experience the excellence that has earned us outstanding reviews from satisfied clients</p>
-                        <!-- Clickable Google Badge (Blue theme) -->
-                        <a href="https://www.google.com/search?q=pqstudios&oq=pq&gs_lcrp=EgZjaHJvbWUqBggCEEUYOzIGCAAQRRg8MgYIARBFGDwyBggCEEUYOzIICAMQRRgnGDsyDggEEEUYJxg7GIAEGIoFMhQIBRBFGDkYQxiDARixAxiABBiKBTIKCAYQABixAxiABDIGCAcQRRg80gEIMjY2N2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8&sei=UEBmaeOACJar4-EP-pKLuQo#lrd=0x3bcb96ac2b3a006b:0x3bd301b0878d0bbb,1,,,,&topic=mid:/m/028hfb" 
-                           target="_blank" 
-                           class="google-badge clickable-google-badge">
-                            <!-- Blue Google "G" icon -->
-                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Single blue Google "G" -->
-                                <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" fill="#4682b4"/>
-                            </svg>
-                            <span>Google Reviews</span>
-                        </a>
-                            </div>
-   
+                            <!-- Google Badge -->
+                            <a href="https://www.google.com/search?sca_esv=6cd0ff9fcc6c64b6&sxsrf=ANbL-n5bgiqLbDCg2Mvr9Jj12-Al7kT3SA:1768330104158&q=p+q+studios+hyderabad+reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaIGCz296tTmAN5YG53c9HanWD5nNaCgGyrj-JrHb16ZMXycdiXOwcnxqgLup1zc8cqkjne7zO3R1IQ7T46YBim8PWk4dYxLveMguw-hjE6pLW-xCQ%3D%3D&sa=X&ved=2ahUKEwiW0ND9lomSAxVRVmwGHdbzHEgQ9qsLegQIGRAG&biw=392&bih=784&dpr=2.75&aic=0#ebo=4" 
+                               target="_blank" 
+                               class="clickable-google-badge">
+                                <!-- Original Google Logo -->
+                                <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                                </svg>
+                                <span>Read Our Google Reviews</span>
+                            </a>
                         </div>
                         
-                        <div class="reviews-container">
-                            <div class="reviews-track" id="reviewsTrack">
-                                <!-- Your existing review cards -->
-                            </div>
-                        </div>
-                    </div> 
-
-                        
+                        <!-- Reviews Track -->
                         <div class="reviews-container">
                             <div class="reviews-track" id="reviewsTrack">
                                 <!-- Review 1 -->
@@ -1947,15 +2063,14 @@
                     </div>
                     
                     <!-- Final CTA -->
-                    <div class="text-center" style="margin-top: 3rem;">
+                    <div class="final-cta">
                         <h3>Ready to Transform Your Visual Narrative?</h3>
-                        <p style="margin-bottom: 1.5rem;">Partner with Hyderabad's premier photography studio for exceptional results</p>
-                        <a href="#contact" class="btn btn-primary btn-spacing" onclick="event.preventDefault(); showPage('contact');">
-                            <i class="fas fa-calendar-alt"></i> Schedule Your Consultation
-                        </a>
-                        <a href="tel:+919652337710" class="btn btn-outline btn-spacing">
-                            <i class="fas fa-phone"></i> Call Now: +91 96523 37710
-                        </a>
+                        <p>Partner with Hyderabad's premier photography studio for exceptional results</p>
+                        <div style="margin-top: 2rem;">
+                            <a href="#contact" class="btn btn-primary" onclick="event.preventDefault(); showPage('contact');">
+                                <i class="fas fa-calendar-alt"></i> Schedule Your Consultation
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -2026,7 +2141,7 @@
                         </form>
                     </div>
 
-                                        <!-- WhatsApp CTA Section - OLD GREEN STYLE -->
+                    <!-- WhatsApp CTA Section - BLUE THEME -->
                     <div class="whatsapp-cta">
                         <h3>Prefer to Chat?</h3>
                         <p>Get instant responses on WhatsApp for quick queries and consultations.</p>
@@ -2039,7 +2154,7 @@
         </div>
     </div>
 
-    <!-- Footer -->
+        <!-- Footer - UPDATED -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -2049,14 +2164,15 @@
                         Premier photography studio in Hyderabad delivering exceptional visual storytelling through masterful photography and artistic excellence.
                     </p>
                     
+                    <!-- Contact Info -->
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
-                            <a href="tel:+919652337710">+91 96523 37710</a>
+                            <a href="tel:+919652337710" class="footer-link">+91 96523 37710</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <a href="mailto:info@pqstudios.net">info@pqstudios.net</a>
+                            <a href="mailto:info@pqstudios.net" class="footer-link">info@pqstudios.net</a>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -2068,6 +2184,7 @@
                         </div>
                     </div>
                     
+                    <!-- Modern Colorful Social Icons -->
                     <div class="social-links">
                         <a href="https://www.instagram.com/pqstudios_hyd" target="_blank" class="social-link instagram" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
@@ -2079,39 +2196,27 @@
                             <i class="fas fa-envelope"></i>
                         </a>
                         <a href="tel:+919652337710" class="social-link phone" aria-label="Phone">
-                            <i class="fas fa-phone"></i>
+                            <i class="fas fa-phone-alt"></i>
                         </a>
                     </div>
                 </div>
                 
                 <div>
-                    <h3>Navigation</h3>
-                    <ul>
-                        <li><a href="#home" onclick="event.preventDefault(); showPage('home');"><i class="fas fa-arrow-right"></i> Home</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); showPage('services');"><i class="fas fa-arrow-right"></i> Services</a></li>
-                        <li><a href="#gallery" onclick="event.preventDefault(); showPage('gallery');"><i class="fas fa-arrow-right"></i> Portfolio</a></li>
-                        <li><a href="#about" onclick="event.preventDefault(); showPage('about');"><i class="fas fa-arrow-right"></i> About Studio</a></li>
-                        <li><a href="#contact" onclick="event.preventDefault(); showPage('contact');"><i class="fas fa-arrow-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Updated Key Features with correct icons -->
-                <div>
                     <h3>Core Services</h3>
                     <ul>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('food');"><i class="fas fa-utensils"></i> Food Photography</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('product');"><i class="fas fa-box-open"></i> Product Photography</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('fashion');"><i class="fas fa-tshirt"></i> Fashion Photography</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('pets');"><i class="fas fa-paw"></i> Pet Photography</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('brand');"><i class="fas fa-briefcase"></i> Brand Portfolios</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('interiors');"><i class="fas fa-building"></i> Architectural Photography</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('ecommerce');"><i class="fas fa-shopping-cart"></i> E-Commerce Visuals</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('studio');"><i class="fas fa-camera"></i> Studio Rentals</a></li>
+                        <li><i class="fas fa-utensils"></i> Food Photography</li>
+                        <li><i class="fas fa-box-open"></i> Product Photography</li>
+                        <li><i class="fas fa-tshirt"></i> Fashion Photography</li>
+                        <li><i class="fas fa-paw"></i> Pet Photography</li>
+                        <li><i class="fas fa-briefcase"></i> Brand Portfolios</li>
+                        <li><i class="fas fa-building"></i> Architectural Photography</li>
+                        <li><i class="fas fa-shopping-cart"></i> E-Commerce Visuals</li>
+                        <li><i class="fas fa-camera"></i> Studio Rentals</li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h3>Complete Service Portfolio</h3>
+                    <h3>All Services</h3>
                     <ul class="all-features-list">
                         <li><i class="fas fa-check"></i> Wedding & Event Photography</li>
                         <li><i class="fas fa-check"></i> Commercial Brand Photography</li>
@@ -2129,7 +2234,7 @@
                 </div>
             </div>
             
-            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); font-size: 0.85rem;">
+            <div class="footer-bottom">
                 <p>&copy; 2024 PQ Studios Hyderabad. All Rights Reserved. | Professional Photography Services</p>
                 <p style="margin-top: 0.5rem; font-size: 0.8rem;">Hyderabad's Premier Photography Studio | Master Photography by Sai Kumar Maddina</p>
             </div>
