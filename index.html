@@ -3,48 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <meta name="description" content="PQ Studios Hyderabad - Professional Photography Studio offering Food, Product, Fashion, Pet, and Interior Photography services">
-    <title>PQ Studios - Professional Photography | Hyderabad</title>
+    <meta name="description" content="Discover PQ Studios Hyderabad - founded by award-winning photographer Sai Kumar Maddina. With 8+ years of expertise in wedding, commercial, and portrait photography, we transform moments into timeless visual masterpieces.">
+    <title>PQ Studios - Professional Photography Studio | Hyderabad, India</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-
-<!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-
-<!-- Android Chrome Icons -->
-<link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
-
-<!-- Safari Pinned Tab -->
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-
-<!-- Microsoft Tile -->
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-<meta name="msapplication-TileColor" content="#da532c">
-
-<!-- Theme Color -->
-<meta name="theme-color" content="#ffffff">
-
-<!-- Web App Manifest -->
-<link rel="manifest" href="/site.webmanifest">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4682b4">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-TileColor" content="#4682b4">
+    <meta name="theme-color" content="#4682b4">
+    <link rel="manifest" href="/site.webmanifest">
     
     <style>
-        /* ===== CRITICAL FIXES ===== */
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
-            position: relative;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* ===== EXTREME MOBILE OPTIMIZATION ===== */
+        /* ===== PERFORMANCE OPTIMIZATION ===== */
         * {
             margin: 0;
             padding: 0;
@@ -55,13 +32,12 @@
         }
 
         :root {
-            /* UPDATED BLUE COLOR THEME - #4682b4 */
             --primary: #1a1a2e;
             --secondary: #16213e;
             --accent: #4682b4;
-            --accent-light: #5d9cff;
-            --accent-dark: #2a5fc1;
-            --accent-gradient: linear-gradient(135deg, #4682b4, #4361ee);
+            --accent-light: #6ba1d6;
+            --accent-dark: #2a5c8a;
+            --accent-gradient: linear-gradient(135deg, #4682b4, #4a8bc4);
             --light: #ffffff;
             --gray: #6c757d;
             --gray-light: #e9ecef;
@@ -90,79 +66,25 @@
             position: relative;
             overflow-x: hidden;
             min-height: 100vh;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(70, 130, 180, 0.02) 0%, transparent 25%),
-                radial-gradient(circle at 90% 80%, rgba(70, 130, 180, 0.02) 0%, transparent 25%);
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
         }
 
+        /* Remove heavy animations */
         .photography-icons {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            background-color: rgba(255, 255, 255, 0.95);
-            pointer-events: none;
-            opacity: 0.3;
-        }
-        
-        .icon {
-            position: absolute;
-            color: rgba(70, 130, 180, 0.12);
-            font-size: 1.2rem;
-            opacity: 0.6;
-            z-index: -1;
-            pointer-events: none;
-            animation: float 25s infinite ease-in-out;
-            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.05));
-            min-width: 28px;
-            min-height: 28px;
+            display: none;
         }
 
-        .icon.dark {
-            color: rgba(0, 0, 0, 0.08);
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-            33% { transform: translateY(-6px) rotate(1deg) scale(1.01); }
-            66% { transform: translateY(3px) rotate(-0.5deg) scale(0.99); }
-        }
-
-        /* ===== SECTION BACKGROUNDS ===== */
-        .section {
-            padding: 3rem 0;
-            position: relative;
-            background-color: transparent;
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.96);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* ===== FIXED: DESKTOP FULL WIDTH CONTAINER ===== */
+        /* ===== LAYOUT ===== */
         .container {
             width: 100%;
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 15px;
-            position: relative;
         }
 
         @media (min-width: 768px) {
             .container {
                 padding: 0 30px;
-                max-width: 100%;
             }
         }
 
@@ -172,7 +94,11 @@
             }
         }
 
-        /* ===== MOBILE-FIRST TYPOGRAPHY ===== */
+        .section {
+            padding: 3rem 0;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
         h1, h2, h3, h4, h5, h6 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
@@ -199,20 +125,10 @@
         }
 
         .text-center { text-align: center; }
-        .highlight { color: var(--accent); font-weight: 700; }
-        .owner-name { color: var(--accent); font-weight: 700; }
+        .highlight { color: #4682b4; font-weight: 700; }
+        .owner-name { color: #4682b4; font-weight: 700; }
 
-        /* ===== IMPROVED SPACING ===== */
-        .section-sm {
-            padding: 2rem 0;
-        }
-
-        .mb-1 { margin-bottom: 0.75rem; }
-        .mb-2 { margin-bottom: 1.25rem; }
-        .mb-3 { margin-bottom: 1.75rem; }
-        .mb-4 { margin-bottom: 2.5rem; }
-
-        /* ===== FIXED: DESKTOP BUTTON PLACEMENT ===== */
+        /* ===== BUTTONS ===== */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -233,86 +149,35 @@
             z-index: 2;
         }
 
-        @media (min-width: 768px) {
-            .btn-group {
-                justify-content: center;
-                max-width: none;
-            }
-            
-            .btn-spacing {
-                margin: 10px !important;
-            }
-        }
-
-        .btn:focus {
-            outline: 3px solid var(--accent);
-            outline-offset: 2px;
-        }
-
         .btn-primary {
-            background: var(--accent-gradient);
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
             color: var(--white);
             border: none;
         }
 
         .btn-primary:hover {
-            background: var(--accent-light);
+            background: #6ba1d6;
             transform: translateY(-3px);
             box-shadow: 0 10px 25px rgba(70, 130, 180, 0.3);
         }
 
-        .btn-primary:active {
-            background: var(--accent-dark);
-            transform: translateY(-1px);
-        }
-
         .btn-outline {
             background: transparent;
-            color: var(--accent);
-            border-color: var(--accent);
+            color: #4682b4;
+            border-color: #4682b4;
         }
 
         .btn-outline:hover {
-            background: var(--accent);
+            background: #4682b4;
             color: var(--white);
             transform: translateY(-3px);
-        }
-
-        .btn-outline:active {
-            background: var(--accent-dark);
-            transform: translateY(-1px);
-        }
-
-        .btn-block {
-            display: flex;
-            width: 100%;
         }
 
         .btn-spacing {
             margin: 8px !important;
         }
 
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 1.5rem;
-            width: 100%;
-            max-width: 350px;
-            margin-left: auto;
-            margin-right: auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        @media (min-width: 640px) {
-            .btn-group {
-                flex-direction: row;
-                gap: 12px;
-            }
-        }
-
-        /* ===== FIXED HEADER NAVIGATION ===== */
+        /* ===== HEADER ===== */
         .header {
             position: fixed;
             top: 0;
@@ -334,12 +199,7 @@
             left: 0;
             width: 100%;
             height: 2px;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                var(--accent) 25%, 
-                var(--accent-light) 50%, 
-                var(--accent) 75%, 
-                transparent 100%);
+            background: linear-gradient(90deg, transparent 0%, #4682b4 25%, #6ba1d6 50%, #4682b4 75%, transparent 100%);
             opacity: 0.3;
         }
 
@@ -349,23 +209,12 @@
             justify-content: space-between;
             padding: 0 1.25rem;
             height: 100%;
-            position: relative;
-        }
-
-        /* LOGO */
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            z-index: 1002;
-            gap: 10px;
         }
 
         .logo-image {
             height: 50px;
             width: auto;
             object-fit: contain;
-            transition: var(--transition);
         }
 
         @media (max-width: 768px) {
@@ -374,7 +223,7 @@
             }
         }
 
-        /* Desktop Navigation - UPDATED ORDER */
+        /* Desktop Navigation */
         .desktop-nav {
             display: none;
         }
@@ -404,7 +253,7 @@
             
             .desktop-nav .nav-link:hover,
             .desktop-nav .nav-link.active {
-                color: var(--accent);
+                color: #4682b4;
             }
             
             .desktop-nav .nav-link::after {
@@ -414,7 +263,7 @@
                 left: 0;
                 width: 0;
                 height: 3px;
-                background: var(--accent);
+                background: #4682b4;
                 transition: width 0.3s ease;
             }
             
@@ -551,7 +400,7 @@
         .nav-menu .nav-link:active,
         .nav-menu .nav-link.active {
             background: rgba(70, 130, 180, 0.1);
-            color: var(--accent);
+            color: #4682b4;
         }
 
         /* ===== PAGE CONTENT ===== */
@@ -562,12 +411,9 @@
             z-index: 1;
         }
 
-        /* ===== PAGE TRANSITIONS ===== */
         .page {
             display: none;
             animation: fadeInUp 0.5s ease;
-            position: relative;
-            z-index: 1;
         }
 
         @keyframes fadeInUp {
@@ -585,128 +431,104 @@
             display: block;
         }
 
-        /* ===== FIXED: MOBILE-OPTIMIZED HERO SLIDESHOW ===== */
+        /* ===== HERO SECTIONS ===== */
+        .about-hero,
+        .services-hero,
+        .contact-hero,
+        .gallery-hero {
+            position: relative;
+            min-height: 20vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* ===== HOME PAGE ===== */
         .slideshow-hero {
             position: relative;
-            min-height: 75vh;
+            min-height: 60vh;
             display: flex;
             align-items: center;
             overflow: hidden;
         }
 
-        @media (max-width: 768px) {
-            .slideshow-hero {
-                min-height: 55vh;
-                height: 55vh;
-                max-height: 55vh;
-                margin-top: 0;
-                padding-top: 5px;
-                padding-bottom: 5px;
-            }
+        .slideshow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: #ffffff;
         }
 
-        @media (max-width: 480px) {
-            .slideshow-hero {
-                min-height: 50vh;
-                height: 50vh;
-                max-height: 50vh;
-                padding-top: 3px;
-                padding-bottom: 3px;
-            }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-color: #ffffff;
         }
-
-        /* Find this CSS for slideshow container */
-.slideshow-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: #ffffff; /* ← ADD THIS - Pure white background */
-}
-
-/* Also change the slide background */
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    background-color: #ffffff; /* ← ADD THIS - White fallback */
-}
-
-/* For mobile - make sure images fit properly */
-@media (max-width: 768px) {
-    .slide img {
-        object-fit: contain;
-        background-color: #ffffff; /* ← CHANGE THIS from #f8f9fa to #ffffff */
-    }
-}
 
         .slide.active {
             opacity: 1;
         }
 
-        .slide picture {
+        .slide img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            object-position: center;
             display: block;
+            background-color: #ffffff;
         }
 
-        .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    background-color: #ffffff; /* ADD THIS LINE */
-}
-
-      @media (max-width: 768px) {
-    .slide img {
-        object-fit: contain;
-        background-color: #ffffff; /* CHANGE TO WHITE */
-    }
-}
-
-        /* ===== FIXED: FEATURED WORK WITH PROPER SPACING ===== */
+        /* ===== FEATURED WORK ===== */
         .featured-work {
             position: relative;
             padding-top: 2rem !important;
             padding-bottom: 1.5rem !important;
-            margin-top: 0 !important;
         }
 
-        @media (max-width: 768px) {
-            .featured-work {
-                padding-top: 1.5rem !important;
-                padding-bottom: 1rem !important;
-                margin-top: 0 !important;
-            }
-        }
-
-        .featured-work .container {
-            padding-top: 0 !important;
-            padding-bottom: 0 !important;
-        }
-        
         .featured-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 4px;
             margin-top: 1rem !important;
-            position: relative;
-            z-index: 2;
         }
 
         @media (min-width: 768px) {
             .featured-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 1rem;
-                margin-top: 1.5rem !important;
             }
         }
 
@@ -730,11 +552,10 @@
             transform: scale(1.05);
         }
 
-        /* ===== FIXED CLIENT LOGO SCROLLING ===== */
+        /* ===== CLIENTS SECTION ===== */
         .clients-section {
             padding: 3rem 0;
             background: rgba(248, 249, 250, 0.8);
-            position: relative;
             overflow: hidden;
         }
         
@@ -743,28 +564,18 @@
             width: 100%;
             overflow: hidden;
             mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
         }
         
         .clients-track {
             display: flex;
             align-items: center;
             animation: scrollClients 25s linear infinite;
-            will-change: transform;
             width: max-content;
         }
         
-        .clients-track:hover {
-            animation-play-state: paused;
-        }
-        
         @keyframes scrollClients {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
         
         .client-logo-item {
@@ -778,128 +589,78 @@
             align-items: center;
             justify-content: center;
             border: 1px solid var(--gray-light);
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-sm);
             margin-right: 2rem;
+            box-shadow: var(--shadow-sm);
         }
 
-        @media (max-width: 767px) {
-            .client-logo-item {
-                width: 110px;
-                height: 65px;
-                padding: 12px !important;
-                margin-right: 1.5rem;
-            }
-            
-            .clients-track {
-                animation-duration: 20s;
-            }
-        }
-
-        @media (min-width: 768px) {
-            .client-logo-item {
-                width: 160px;
-                height: 90px;
-                padding: 25px !important;
-                box-shadow: var(--shadow-lg);
-                margin-right: 2.5rem;
-            }
-        }
-        
-        .client-logo-item:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-            border-color: var(--accent);
-        }
-        
         .client-logo-img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            opacity: 1;
-            transition: all 0.3s ease;
-        }
-        
-        .client-logo-item:hover .client-logo-img {
-            opacity: 1;
-            transform: scale(1.1);
         }
 
-        /* ===== ABOUT PAGE ===== */
-        .about-hero {
-            position: relative;
-            min-height: 20vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            text-align: center;
-        }
-
+        /* ===== ABOUT PAGE - UPDATED ===== */
         .profile-image {
-            width: 180px;
-            height: 180px;
+            width: 200px;
+            height: 200px;
             border-radius: 50%;
             object-fit: cover;
-            border: 6px solid var(--accent);
+            border: 6px solid #4682b4;
             margin: 0 auto 2rem;
             display: block;
             box-shadow: var(--shadow-lg);
-            transition: var(--transition);
-            position: relative;
-            z-index: 2;
         }
 
         @media (max-width: 768px) {
             .profile-image {
-                width: 150px;
-                height: 150px;
-                margin-bottom: 1.5rem;
+                width: 160px;
+                height: 160px;
             }
         }
 
-        .profile-image:hover {
-            transform: scale(1.05);
-        }
-
-        .brand-story {
-            background: rgba(255, 255, 255, 0.95);
+        .about-section-card {
+            background: var(--white);
             border-radius: var(--radius-lg);
             padding: 2rem;
             margin: 2rem 0;
             box-shadow: var(--shadow-md);
-            position: relative;
-            z-index: 2;
+            border: 1px solid rgba(70, 130, 180, 0.1);
         }
 
-        @media (max-width: 768px) {
-            .brand-story {
-                padding: 1.5rem;
-                margin: 1.5rem 0;
-            }
-        }
-
-        .brand-story h3 {
-            color: var(--accent);
-            margin-bottom: 1.5rem;
+        .about-section-card h2 {
+            color: #4682b4;
             text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
         }
 
-        .brand-values {
+        .about-section-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #4682b4;
+        }
+
+        .expertise-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1rem;
-            margin-top: 1.5rem;
+            margin: 2rem 0;
         }
 
         @media (min-width: 768px) {
-            .brand-values {
+            .expertise-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1.5rem;
             }
         }
 
-        .brand-value {
+        .expertise-item {
             display: flex;
             align-items: flex-start;
             gap: 1rem;
@@ -907,23 +668,62 @@
             background: rgba(255, 255, 255, 0.95);
             border-radius: var(--radius-md);
             box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-            border-left: 4px solid transparent;
+            border-left: 4px solid #4682b4;
         }
 
-        .brand-value:hover {
-            border-left-color: var(--accent);
-            transform: translateX(10px);
-        }
-
-        .brand-value i {
-            color: var(--accent);
+        .expertise-item i {
+            color: #4682b4;
             font-size: 1.5rem;
             margin-top: 0.25rem;
             min-width: 30px;
         }
 
-        /* Stats Grid */
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .why-choose-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .why-choose-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(70, 130, 180, 0.1);
+        }
+
+        .why-choose-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .why-choose-item h3 {
+            color: #4682b4;
+            margin-bottom: 1rem;
+        }
+
+        .why-choose-item .icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.75rem;
+        }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -933,47 +733,25 @@
 
         @media (min-width: 768px) {
             .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(4, 1fr);
                 gap: 1.5rem;
-                margin: 2.5rem 0;
-                max-width: 500px;
-                margin-left: auto;
-                margin-right: auto;
             }
         }
 
         .stat-card {
             text-align: center;
             padding: 1.25rem;
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--white);
             border-radius: var(--radius-md);
             box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .stat-card {
-                padding: 1rem;
-            }
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border: 1px solid rgba(70, 130, 180, 0.1);
         }
 
         .stat-number {
             font-size: 2rem;
             font-weight: 700;
-            color: var(--accent);
+            color: #4682b4;
             margin-bottom: 0.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .stat-number {
-                font-size: 2.5rem;
-                margin-bottom: 0.75rem;
-            }
         }
 
         .stat-label {
@@ -981,578 +759,9 @@
             color: var(--gray);
         }
 
-        /* ===== SERVICES PAGE ===== */
-        .services-hero {
-            position: relative;
-            min-height: 20vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            text-align: center;
-        }
-
-        .service-cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        @media (min-width: 768px) {
-            .service-cards {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .service-cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (min-width: 1400px) {
-            .service-cards {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        .service-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: var(--radius-lg);
-            padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            transition: var(--transition);
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid var(--gray-light);
-        }
-
-        @media (max-width: 768px) {
-            .service-card {
-                padding: 1.5rem;
-            }
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--accent-gradient);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .service-card:hover::before {
-            opacity: 1;
-        }
-
-        .service-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--accent-gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: var(--white);
-            font-size: 1.75rem;
-            box-shadow: var(--shadow-md);
-            transition: var(--transition);
-        }
-
-        @media (max-width: 768px) {
-            .service-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-                margin-bottom: 1.25rem;
-            }
-        }
-
-        .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        /* Service card buttons */
-        .service-card-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: auto;
-            padding-top: 1.5rem;
-        }
-
-        .service-card-buttons .btn {
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Service anchor for footer links */
-        .service-anchor {
-            position: absolute;
-            top: -70px;
-            visibility: hidden;
-        }
-
-        /* Pricing tag */
-        .service-pricing {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 2px solid var(--gray-light);
-        }
-
-        .price-tag {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: var(--radius-md);
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin-top: 0.75rem;
-            box-shadow: var(--shadow-sm);
-        }
-
-        /* ===== GALLERY PAGE ===== */
-        #gallery-page {
-            background: var(--white);
-        }
-
-        .gallery-page-content {
-            padding-top: 70px;
-            min-height: 100vh;
-            position: relative;
-        }
-
-        /* SIMPLE GALLERY DROPDOWN */
-        .simple-dropdown {
-            position: fixed;
-            top: 70px;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 0 20px;
-            max-width: 400px;
-            margin: 0 auto;
-        }
-
-        .simple-dropdown-toggle {
-            width: 100%;
-            background: var(--accent);
-            color: white;
-            border: none;
-            padding: 14px 20px;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
-            transition: var(--transition);
-        }
-
-        .simple-dropdown-toggle:hover {
-            background: var(--accent-light);
-        }
-
-        .simple-dropdown-toggle:active {
-            background: var(--accent-dark);
-        }
-
-        .simple-dropdown-toggle i {
-            transition: transform 0.3s ease;
-        }
-
-        .simple-dropdown-toggle.active i {
-            transform: rotate(180deg);
-        }
-
-        .simple-dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            margin-top: 8px;
-            background: white;
-            border-radius: var(--radius-md);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            overflow: hidden;
-            display: none;
-            z-index: 1001;
-            max-height: 60vh;
-            overflow-y: auto;
-        }
-
-        .simple-dropdown-menu.active {
-            display: block;
-            animation: slideDown 0.2s ease;
-        }
-
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .simple-dropdown-item {
-            display: block;
-            padding: 16px 20px;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid var(--gray-light);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .simple-dropdown-item:hover {
-            background: rgba(70, 130, 180, 0.1);
-            color: var(--accent);
-            padding-left: 25px;
-        }
-
-        .simple-dropdown-item i {
-            width: 20px;
-            text-align: center;
-            color: var(--accent);
-        }
-
-        /* Gallery sections */
-        .gallery-section {
-            padding: 40px 20px;
-            position: relative;
-            scroll-margin-top: 120px;
-        }
-
-        .gallery-section:nth-child(odd) {
-            background: rgba(248, 249, 250, 0.5);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 24px;
-        }
-
-        .gallery-section h2 {
-            font-size: 1.5rem;
-            margin-bottom: 8px;
-            color: var(--primary);
-        }
-
-        .gallery-section p {
-            color: var(--gray);
-            font-size: 0.9rem;
-        }
-
-        /* Gallery grid */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2px;
-            width: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .gallery-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        @media (min-width: 1400px) {
-            .gallery-grid {
-                grid-template-columns: repeat(5, 1fr);
-            }
-        }
-
-        .gallery-item {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-            aspect-ratio: 1;
-            background: #ffffff;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* ===== GALLERY MODAL ===== */
-        .gallery-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            z-index: 2000;
-        }
-
-        .gallery-modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            position: relative;
-            width: 95%;
-            max-width: 1200px;
-            height: 90vh;
-            background: transparent;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 2001;
-        }
-
-        .modal-nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            border: none;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 2001;
-        }
-
-        .modal-prev {
-            left: 20px;
-        }
-
-        .modal-next {
-            right: 20px;
-        }
-
-        .modal-image-container {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-image {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        /* ===== CONTACT PAGE ===== */
-        .contact-hero {
-            position: relative;
-            min-height: 20vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--white);
-            text-align: center;
-        }
-
-        .contact-form-container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: var(--radius-lg);
-            padding: 2.5rem;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            z-index: 2;
-            border: 1px solid var(--gray-light);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .contact-form-container {
-                padding: 1.5rem;
-            }
-        }
-
-        /* Form styles */
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .form-row {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--primary);
-            font-size: 0.95rem;
-        }
-
-        .form-label.required::after {
-            content: " *";
-            color: #dc3545;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.875rem 1rem;
-            border: 1px solid var(--gray-light);
-            border-radius: var(--radius-sm);
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
-            background: var(--white);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.1);
-        }
-
-        textarea.form-control {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        select.form-control {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%236c757d' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 1rem center;
-            background-size: 12px;
-            padding-right: 2.5rem;
-        }
-
-        /* WhatsApp CTA Section */
-        .whatsapp-cta {
-            background: linear-gradient(135deg, #25D366, #128C7E);
-            color: white;
-            padding: 2.5rem;
-            border-radius: var(--radius-lg);
-            text-align: center;
-            margin-top: 3rem;
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            overflow: hidden;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .whatsapp-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        @media (max-width: 768px) {
-            .whatsapp-cta {
-                padding: 1.75rem;
-            }
-        }
-
-        .whatsapp-cta h3 {
-            color: white;
-            margin-bottom: 0.75rem;
-            font-size: 1.5rem;
-        }
-
-        .whatsapp-cta p {
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 1.75rem;
-            font-size: 1rem;
-        }
-
-        .whatsapp-btn {
-            background: white;
-            color: #25D366;
-            font-weight: 600;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            transition: var(--transition);
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
         /* ===== GOOGLE REVIEWS SECTION ===== */
         .reviews-section {
             margin: 4rem 0;
-            position: relative;
         }
 
         .reviews-header {
@@ -1561,39 +770,54 @@
         }
 
         .reviews-header h3 {
-            color: var(--accent);
+            color: #4682b4;
             font-size: 1.75rem;
             margin-bottom: 0.5rem;
         }
 
-        .reviews-header p {
-            color: var(--gray);
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+   /* Clickable Google Badge - Blue Theme */
+.clickable-google-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #ffffff;
+    padding: 8px 16px;
+    border-radius: 50px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(70, 130, 180, 0.2); /* Blue border */
+    font-weight: 500;
+    font-size: 0.95rem;
+    height: 44px;
+    text-decoration: none;
+    color: #4682b4; /* Blue text */
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    cursor: pointer;
+}
 
-        .google-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--white);
-            padding: 8px 16px;
-            border-radius: 50px;
-            box-shadow: var(--shadow-sm);
-            margin-top: 1rem;
-            border: 1px solid rgba(70, 130, 180, 0.1);
-        }
+.clickable-google-badge:hover {
+    background: #4682b4; /* Blue background on hover */
+    color: white; /* White text on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(70, 130, 180, 0.3);
+    border-color: #4682b4;
+}
 
-        .google-badge i {
-            color: #4285F4;
-            font-size: 1.2rem;
-        }
+.clickable-google-badge:hover svg path {
+    fill: white; /* White icon on hover */
+}
 
-        .google-badge span {
-            font-weight: 600;
-            color: var(--primary);
-        }
+.clickable-google-badge svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.clickable-google-badge span {
+    font-weight: 500;
+    line-height: 1;
+}
+
 
         .reviews-container {
             position: relative;
@@ -1610,17 +834,9 @@
             padding: 0 1rem;
         }
 
-        .reviews-track:hover {
-            animation-play-state: paused;
-        }
-
         @keyframes scrollReviews {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-350px * 5 - 1.5rem * 5));
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-350px * 5 - 1.5rem * 5)); }
         }
 
         .review-card {
@@ -1631,7 +847,6 @@
             padding: 2rem;
             box-shadow: var(--shadow-lg);
             border: 1px solid rgba(70, 130, 180, 0.1);
-            transition: var(--transition);
         }
 
         @media (max-width: 768px) {
@@ -1641,19 +856,9 @@
             }
             
             @keyframes scrollReviews {
-                0% {
-                    transform: translateX(0);
-                }
-                100% {
-                    transform: translateX(calc(-300px * 5 - 1.5rem * 5));
-                }
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-300px * 5 - 1.5rem * 5)); }
             }
-        }
-
-        .review-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-            border-color: var(--accent);
         }
 
         .review-header {
@@ -1667,7 +872,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: var(--accent-gradient);
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1676,13 +881,9 @@
             font-size: 1.2rem;
         }
 
-        .review-info {
-            flex: 1;
-        }
-
         .review-name {
             font-weight: 600;
-            color: var(--primary);
+            color: #4682b4;
             margin-bottom: 0.25rem;
         }
 
@@ -1719,37 +920,325 @@
             font-size: 3rem;
             color: rgba(70, 130, 180, 0.1);
             font-family: serif;
-            line-height: 1;
         }
 
-        /* ===== FIXED: DESKTOP FOOTER - CORNER TO CORNER ===== */
+        /* ===== SERVICES PAGE ===== */
+        .service-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .service-cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .service-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .service-cards {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(70, 130, 180, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: #4682b4;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 1.75rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-card-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
+
+        .service-anchor {
+            position: absolute;
+            top: -70px;
+            visibility: hidden;
+        }
+
+        .service-pricing {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid rgba(70, 130, 180, 0.1);
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: #4682b4;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-top: 0.75rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* ===== GALLERY PAGE ===== */
+        .simple-dropdown {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .simple-dropdown-toggle {
+            width: 100%;
+            background: #4682b4;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
+        }
+
+        .simple-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 8px;
+            background: white;
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+            display: none;
+            z-index: 1001;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .simple-dropdown-menu.active {
+            display: block;
+        }
+
+        .simple-dropdown-item {
+            display: block;
+            padding: 16px 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--gray-light);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .simple-dropdown-item:hover {
+            background: rgba(70, 130, 180, 0.1);
+            color: #4682b4;
+        }
+
+        .gallery-page-content {
+            padding-top: 70px;
+            min-height: 100vh;
+        }
+
+        .gallery-section {
+            padding: 40px 20px;
+            scroll-margin-top: 120px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ===== CONTACT PAGE ===== */
+        .contact-form-container {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(70, 130, 180, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #4682b4;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid rgba(70, 130, 180, 0.3);
+            border-radius: var(--radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #4682b4;
+            box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.1);
+        }
+
+       /* WhatsApp CTA Section - OLD GREEN STYLE */
+.whatsapp-cta {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-top: 3rem;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.whatsapp-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .whatsapp-cta {
+        padding: 1.75rem;
+    }
+}
+
+.whatsapp-cta h3 {
+    color: white;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+}
+
+.whatsapp-cta p {
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 1.75rem;
+    font-size: 1rem;
+}
+
+.whatsapp-btn {
+    background: white;
+    color: #25D366;
+    font-weight: 600;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    transition: var(--transition);
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+        /* ===== FOOTER ===== */
         .footer {
-            background: var(--primary);
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: var(--white);
             padding: 3rem 0 1.5rem;
             margin-top: 4rem;
             position: relative;
             overflow: hidden;
             width: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .footer {
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-            }
-            
-            .footer .container {
-                max-width: 100% !important;
-                padding-left: 0 !important;
-                padding-right: 0 !important;
-            }
-            
-            .footer-grid {
-                padding: 0 50px !important;
-            }
         }
 
         .footer::before {
@@ -1759,10 +1248,9 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-light));
+            background: linear-gradient(90deg, #4682b4, #6ba1d6);
         }
 
-        /* Updated: 4-column grid for desktop */
         .footer-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -1773,7 +1261,6 @@
         @media (min-width: 768px) {
             .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
             }
         }
 
@@ -1799,7 +1286,7 @@
             left: 0;
             width: 40px;
             height: 3px;
-            background: var(--accent);
+            background: #4682b4;
         }
 
         .footer ul {
@@ -1807,56 +1294,45 @@
         }
 
         .footer ul li {
-            margin-bottom: 0.5rem;
-            font-size: 0.85rem;
-            line-height: 1.5;
-            display: flex;
-            align-items: flex-start;
-            gap: 8px;
+            margin-bottom: 0.75rem;
         }
 
-        /* Links in Key Features */
         .footer ul li a {
             color: rgba(255,255,255,0.9);
             text-decoration: none;
             transition: var(--transition);
             display: flex;
-            align-items: flex-start;
-            gap: 8px;
-            font-size: 0.85rem;
-            line-height: 1.5;
-            padding: 4px 0;
-            min-height: 24px;
+            align-items: center;
+            gap: 10px;
+            padding: 6px 0;
         }
 
         .footer ul li a:hover {
-            color: var(--accent-light);
+            color: #6ba1d6;
             transform: translateX(5px);
         }
 
-        /* All Features list items (no links) */
+        .footer ul li a i {
+            color: #6ba1d6;
+            width: 20px;
+            font-size: 1rem;
+        }
+
         .all-features-list li {
             color: rgba(255,255,255,0.9);
-            padding: 4px 0;
-            min-height: 24px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
         }
 
-        .footer ul li i {
-            color: var(--accent-light);
-            width: 16px;
-            font-size: 0.8rem;
-            margin-top: 2px;
-            flex-shrink: 0;
-        }
-
-        /* All Features check icons */
         .all-features-list li i {
             color: #4ECDC4;
-            font-size: 0.7rem;
+            font-size: 0.8rem;
             margin-top: 4px;
         }
 
-        /* Footer contact info */
         .contact-info {
             display: flex;
             flex-direction: column;
@@ -1874,29 +1350,13 @@
         }
 
         .contact-item i {
-            color: var(--accent-light);
+            color: #6ba1d6;
             width: 20px;
             text-align: center;
             margin-top: 2px;
             flex-shrink: 0;
         }
 
-        .contact-item a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .contact-item a:hover {
-            color: var(--accent-light);
-        }
-
-        .contact-item span {
-            color: rgba(255,255,255,0.9);
-            line-height: 1.4;
-        }
-
-        /* Social Links */
         .social-links {
             display: flex;
             gap: 10px;
@@ -1920,10 +1380,8 @@
 
         .social-link:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
         }
 
-        /* Specific colors for each social link */
         .social-link.instagram {
             background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
         }
@@ -1933,7 +1391,7 @@
         }
 
         .social-link.email {
-            background: #EA4335;
+            background: #4682b4;
         }
 
         .social-link.phone {
@@ -1947,7 +1405,7 @@
             right: 1.5rem;
             width: 55px;
             height: 55px;
-            background: var(--accent-gradient);
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
             color: var(--white);
             border-radius: 50%;
             display: flex;
@@ -1968,48 +1426,10 @@
             visibility: visible;
         }
 
-        .back-to-top:hover {
-            transform: translateY(-5px);
-        }
-
-        /* ===== HERO TITLES ===== */
-        .hero-title {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            color: var(--white);
-        }
-
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        @media (min-width: 768px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.25rem;
-            }
-        }
-
         /* ===== MOBILE OPTIMIZATIONS ===== */
         @media (max-width: 767px) {
             .container {
                 padding: 0 15px;
-            }
-            
-            .gallery-section {
-                padding: 30px 15px;
-                scroll-margin-top: 100px;
-            }
-            
-            .simple-dropdown {
-                padding: 0 15px;
-                top: 70px;
             }
             
             .service-card-buttons {
@@ -2021,79 +1441,9 @@
                 font-size: 0.95rem;
             }
             
-            .modal-nav-btn {
-                width: 45px;
-                height: 45px;
-                font-size: 1rem;
-                bottom: 20px;
-                top: auto;
-                transform: none;
-            }
-            
-            .modal-prev {
-                left: 15px;
-            }
-            
-            .modal-next {
-                right: 15px;
-            }
-            
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-            }
-            
-            /* Mobile-specific touch improvements */
-            .btn, .nav-link, .social-link, .client-logo-item,
-            .featured-item, .service-card, .info-card {
-                -webkit-tap-highlight-color: rgba(70, 130, 180, 0.2);
-            }
-            
-            /* Larger tap targets for mobile */
-            .btn {
-                min-height: 48px;
-                min-width: 48px;
-            }
-            
-            .nav-menu .nav-link {
-                min-height: 54px;
-            }
-        }
-
-        /* ===== TOUCH OPTIMIZATIONS ===== */
-        @media (hover: none) and (pointer: coarse) {
-            .btn:hover,
-            .nav-link:hover,
-            .social-link:hover,
-            .client-logo-item:hover,
-            .featured-item:hover img,
-            .service-card:hover,
-            .info-card:hover {
-                transform: none;
-            }
-            
-            .btn:active,
-            .nav-link:active,
-            .social-link:active,
-            .client-logo-item:active,
-            .featured-item:active img,
-            .service-card:active,
-            .info-card:active {
-                transform: scale(0.95);
-            }
-            
-            .back-to-top:active {
-                transform: scale(0.95);
-            }
-            
-            /* Remove hover effects on touch devices */
-            .desktop-nav .nav-link:hover::after {
-                width: 0;
-            }
-            
-            .client-logo-item:hover .client-logo-img {
-                opacity: 1;
-                transform: none;
             }
         }
 
@@ -2107,7 +1457,7 @@
 
         .form-status.loading {
             background: rgba(70, 130, 180, 0.1);
-            color: var(--accent);
+            color: #4682b4;
             border: 1px solid rgba(70, 130, 180, 0.3);
         }
 
@@ -2122,29 +1472,14 @@
             color: #dc3545;
             border: 1px solid rgba(220, 53, 69, 0.3);
         }
-
-        /* ===== PERFORMANCE OPTIMIZATIONS ===== */
-        @media (prefers-reduced-motion: reduce) {
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Photography Icons Background -->
-    <div class="photography-icons" id="photography-icons"></div>
-
     <!-- Header & Navigation -->
     <header class="header">
         <div class="nav-container">
             <a href="#home" class="logo" onclick="event.preventDefault(); showPage('home');">
-                <img src="Logo.png" alt="PQ Studios Logo" class="logo-image">
+                <img src="Logo.png" alt="PQ Studios - Professional Photography Studio Hyderabad" class="logo-image">
             </a>
             
             <!-- Desktop Navigation -->
@@ -2152,7 +1487,7 @@
                 <ul class="nav-items">
                     <li><a href="#home" class="nav-link active" onclick="event.preventDefault(); showPage('home');">Home</a></li>
                     <li><a href="#services" class="nav-link" onclick="event.preventDefault(); showPage('services');">Services</a></li>
-                    <li><a href="#gallery" class="nav-link" onclick="event.preventDefault(); showPage('gallery');">Gallery</a></li>
+                    <li><a href="#gallery" class="nav-link" onclick="event.preventDefault(); showPage('gallery');">Portfolio</a></li>
                     <li><a href="#about" class="nav-link" onclick="event.preventDefault(); showPage('about');">About</a></li>
                     <li><a href="#contact" class="nav-link" onclick="event.preventDefault(); showPage('contact');">Contact</a></li>
                 </ul>
@@ -2172,55 +1507,30 @@
             <ul class="nav-items">
                 <li><a href="#home" class="nav-link active" onclick="event.preventDefault(); showPage('home');"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="#services" class="nav-link" onclick="event.preventDefault(); showPage('services');"><i class="fas fa-camera"></i> Services</a></li>
-                <li><a href="#gallery" class="nav-link" onclick="event.preventDefault(); showPage('gallery');"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="#gallery" class="nav-link" onclick="event.preventDefault(); showPage('gallery');"><i class="fas fa-images"></i> Portfolio</a></li>
                 <li><a href="#about" class="nav-link" onclick="event.preventDefault(); showPage('about');"><i class="fas fa-user"></i> About</a></li>
                 <li><a href="#contact" class="nav-link" onclick="event.preventDefault(); showPage('contact');"><i class="fas fa-envelope"></i> Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Gallery Modal Popup -->
-    <div class="gallery-modal" id="galleryModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose" aria-label="Close gallery">
-                <i class="fas fa-times"></i>
-            </button>
-            <button class="modal-nav-btn modal-prev" id="modalPrev" aria-label="Previous image">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="modal-nav-btn modal-next" id="modalNext" aria-label="Next image">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            <div class="modal-image-container">
-                <img id="modalImage" class="modal-image" src="" alt="">
-            </div>
-        </div>
-    </div>
-
     <!-- Page Content -->
     <div class="page-content">
-        <!-- HOME PAGE - MOBILE OPTIMIZED -->
+        <!-- HOME PAGE -->
         <div id="home-page" class="page active">
             <section class="slideshow-hero">
                 <div class="slideshow-container" id="slideshowContainer">
-                    <!-- Slide 1 - Single image for both desktop and mobile -->
                     <div class="slide active">
-                        <img src="homepageslideshow01.jpg" alt="Professional Photography Studio" loading="eager">
+                        <img src="homepageslideshow01.jpg" alt="Professional Photography Studio Hyderabad" loading="eager">
                     </div>
-                    
-                    <!-- Slide 2 - Single image for both desktop and mobile -->
                     <div class="slide">
-                        <img src="homepageslideshow02.jpg" alt="Food Photography" loading="lazy">
+                        <img src="homepageslideshow02.jpg" alt="Food Photography Hyderabad" loading="lazy">
                     </div>
-                    
-                    <!-- Slide 3 - Single image for both desktop and mobile -->
                     <div class="slide">
-                        <img src="homepageslideshow03.jpg" alt="Product Photography" loading="lazy">
+                        <img src="homepageslideshow03.jpg" alt="Product Photography Services" loading="lazy">
                     </div>
-                    
-                    <!-- Slide 4 - Single image for both desktop and mobile -->
                     <div class="slide">
-                        <img src="homepageslideshow04.jpg" alt="Fashion Photography" loading="lazy">
+                        <img src="homepageslideshow04.jpg" alt="Fashion Photography Hyderabad" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -2228,16 +1538,16 @@
             <!-- Featured Work Section -->
             <section class="section featured-work">
                 <div class="container">
-                    <h2 class="text-center" style="margin-bottom: 0.1rem;">Featured Work</h2>
-                    <p class="text-center" style="margin-bottom: 0.25rem;">A glimpse of our recent photography projects</p>
+                    <h2 class="text-center">Our Portfolio Excellence</h2>
+                    <p class="text-center">A curated selection of our most distinguished photography projects showcasing unparalleled artistry and technical mastery.</p>
                     
                     <div class="featured-grid" id="featuredGrid">
                         <!-- Featured items loaded by JavaScript -->
                     </div>
                     
-                    <div class="text-center" style="margin-top: 0.5rem;">
+                    <div class="text-center" style="margin-top: 2rem;">
                         <a href="#gallery" class="btn btn-primary btn-spacing" onclick="event.preventDefault(); showPage('gallery');">
-                            <i class="fas fa-images"></i> View Full Gallery
+                            <i class="fas fa-images"></i> Explore Complete Portfolio
                         </a>
                     </div>
                 </div>
@@ -2246,8 +1556,8 @@
             <!-- Clients Section -->
             <section class="clients-section">
                 <div class="container">
-                    <h3 class="text-center mb-2" style="color: var(--primary);">Trusted By Leading Brands</h3>
-                    <p class="text-center mb-4" style="color: var(--gray);">We've worked with some of the most respected companies</p>
+                    <h3 class="text-center mb-2" style="color: #4682b4;">Trusted By Prestigious Brands</h3>
+                    <p class="text-center mb-4">Collaborating with industry leaders to deliver exceptional visual narratives</p>
                     
                     <div class="clients-wrapper">
                         <div class="clients-track" id="clientsTrack">
@@ -2258,400 +1568,465 @@
             </section>
         </div>
 
-        <!-- SERVICES PAGE - UPDATED ORDER -->
+        <!-- SERVICES PAGE -->
         <div id="services-page" class="page">
             <section class="services-hero">
                 <div class="container">
-                    <h1 class="hero-title">Our <span class="highlight">Services</span></h1>
-                    <p class="hero-subtitle">Professional photography services tailored to your needs</p>
+                    <h1 class="hero-title">Comprehensive <span class="highlight">Photography Services</span></h1>
+                    <p class="hero-subtitle">Elevating brands and capturing moments through masterful visual storytelling</p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <h2 class="text-center mb-4">What We Offer</h2>
-                    <p class="text-center mb-4">Choose from our specialized photography services</p>
+                    <h2 class="text-center mb-4">Our Service Portfolio</h2>
+                    <p class="text-center mb-4">Specialized photography solutions tailored to meet your specific visual requirements</p>
                     
                     <div class="service-cards" id="servicesContainer">
-                        <!-- Services loaded by JavaScript in new order -->
+                        <!-- Services loaded by JavaScript -->
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- GALLERY PAGE - UPDATED ORDER -->
+        <!-- GALLERY PAGE -->
         <div id="gallery-page" class="page">
-            <!-- Simple Dropdown -->
             <div class="simple-dropdown">
                 <button class="simple-dropdown-toggle" id="galleryDropdownToggle">
-                    <span>Select Gallery Category</span>
+                    <span>Select Portfolio Category</span>
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 
                 <div class="simple-dropdown-menu" id="galleryDropdownMenu">
-                    <!-- Categories loaded by JavaScript in new order -->
+                    <!-- Categories loaded by JavaScript -->
                 </div>
             </div>
 
-            <!-- Gallery Content -->
             <div class="gallery-page-content">
                 <div id="gallerySections">
-                    <!-- Gallery sections loaded by JavaScript in new order -->
+                    <!-- Gallery sections loaded by JavaScript -->
                 </div>
             </div>
         </div>
 
-        <!-- ABOUT PAGE -->
+        <!-- ABOUT PAGE - UPDATED STRUCTURE -->
         <div id="about-page" class="page">
             <section class="about-hero">
                 <div class="container">
-                    <h1 class="hero-title">Meet <span class="highlight">Sai Kumar Maddina</span></h1>
-                    <p class="hero-subtitle">The creative mind behind PQ Studios</p>
+                    <h1 class="hero-title">About <span class="highlight">PQ Studios</span></h1>
+                    <p class="hero-subtitle">Master Photography in Hyderabad by Award-Winning Photographer Sai Kumar Maddina</p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
-                    <div class="text-center mb-4">
-                        <img src="sai kumar profile pic.jpg" 
-                             alt="Sai Kumar Maddina - Professional Photographer" 
-                             class="profile-image"
-                             loading="lazy">
-                    </div>
-                    
-                    <div>
-                        <h2 class="text-center mb-3">Your Story, Beautifully Told</h2>
-                        <p class="text-center mb-4">Hi, I'm Sai Kumar Maddina, the passionate photographer behind PQ Studios. With over 10 years of experience, I specialize in capturing authentic moments that tell your unique story.</p>
+                    <!-- 1. About Me -->
+                    <div class="about-section-card">
+                        <div class="text-center mb-4">
+                            <img src="sai kumar profile pic.jpg" 
+                                 alt="Sai Kumar Maddina - Award-Winning Photographer Hyderabad" 
+                                 class="profile-image"
+                                 loading="lazy">
+                        </div>
+                        
+                        <h2>About Me: The Visionary Behind PQ Studios</h2>
+                        
+                        <p>I am Sai Kumar Maddina, the founder and principal photographer at PQ Studios Hyderabad. With over eight years of dedicated expertise in professional photography, I have established our studio as Hyderabad's premier destination for exceptional visual storytelling.</p>
+                        
+                        <p>My journey in photography began with formal education in visual arts, complemented by continuous mastery of evolving photographic techniques. This academic foundation, combined with extensive field experience, enables me to approach each project with both artistic vision and technical precision.</p>
+                        
+                        <p>My philosophy is encapsulated in this guiding principle: "Great photography transcends mere visual representation; it evokes emotion, tells stories, and creates lasting impact." This ethos informs every project we undertake, from intimate portrait sessions to comprehensive commercial productions.</p>
                         
                         <div class="stats-grid">
                             <div class="stat-card">
-                                <div class="stat-number">10+</div>
-                                <div class="stat-label">Years Experience</div>
+                                <div class="stat-number">8+</div>
+                                <div class="stat-label">Years Excellence</div>
                             </div>
                             <div class="stat-card">
                                 <div class="stat-number">500+</div>
-                                <div class="stat-label">Happy Clients</div>
+                                <div class="stat-label">Satisfied Clients</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">1000+</div>
+                                <div class="stat-label">Successful Projects</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Client Support</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. My Photography Philosophy -->
+                    <div class="about-section-card">
+                        <h2>My Photography Philosophy</h2>
+                        
+                        <p>At PQ Studios, we believe that photography is an art form that requires both technical mastery and emotional intelligence. Our approach is built on three fundamental pillars:</p>
+                        
+                        <div class="expertise-grid">
+                            <div class="expertise-item">
+                                <i class="fas fa-eye"></i>
+                                <div>
+                                    <h4>Artistic Vision</h4>
+                                    <p>Every image must possess aesthetic integrity and emotional resonance, transforming ordinary moments into extraordinary visual narratives.</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-cogs"></i>
+                                <div>
+                                    <h4>Technical Excellence</h4>
+                                    <p>Meticulous attention to lighting, composition, and post-production ensures flawless execution of every photographic assignment.</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <h4>Client Collaboration</h4>
+                                    <p>We partner with clients to understand their vision, ensuring the final imagery authentically represents their unique story and brand identity.</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <h4>Innovative Approach</h4>
+                                    <p>Continuous learning and adaptation to emerging photographic techniques and technologies keeps our work at the industry forefront.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. About My Studio / The Experience -->
+                    <div class="about-section-card">
+                        <h2>The PQ Studios Experience</h2>
+                        
+                        <p>PQ Studios represents the culmination of a passionate vision transformed into Hyderabad's most distinguished photography studio. Our journey began with a commitment to excellence and has evolved into a comprehensive visual solutions provider serving clients across India.</p>
+                        
+                        <p>Our state-of-the-art facility in Hyderabad's Hitech City is equipped with cutting-edge photographic technology, professional lighting systems, and versatile studio spaces designed to accommodate diverse photographic requirements.</p>
+                        
+                        <div class="why-choose-grid">
+                            <div class="why-choose-item">
+                                <div class="icon">
+                                    <i class="fas fa-camera-retro"></i>
+                                </div>
+                                <h3>Professional Studio</h3>
+                                <p>Modern photography studio with advanced equipment and versatile backdrops for all your photography needs in Hyderabad.</p>
+                            </div>
+                            <div class="why-choose-item">
+                                <div class="icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <h3>Complete Solutions</h3>
+                                <p>End-to-end visual services including photography, videography, post-production, and brand visual consulting.</p>
+                            </div>
+                            <div class="why-choose-item">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h3>Strategic Location</h3>
+                                <p>Conveniently situated in Hyderabad's Hitech City, serving clients throughout India with professional photography excellence.</p>
+                            </div>
+                            <div class="why-choose-item">
+                                <div class="icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <h3>Timely Delivery</h3>
+                                <p>Commitment to punctual project completion without compromising on the quality and excellence of deliverables.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Why Choose Us -->
+                    <div class="about-section-card">
+                        <h2>Why Choose PQ Studios Hyderabad</h2>
+                        
+                        <div class="why-choose-grid">
+                            <div class="why-choose-item">
+                                <div class="icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <h3>Education Meets Experience</h3>
+                                <p>Formally trained photographers combining academic knowledge with extensive practical expertise for superior results.</p>
+                            </div>
+                            <div class="why-choose-item">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h3>Hyderabad-Based, India-Ready</h3>
+                                <p>While anchored in Hyderabad, our professional services extend nationwide, bringing consistent excellence to every project location.</p>
+                            </div>
+                            <div class="why-choose-item">
+                                <div class="icon">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <h3>Comprehensive Service Portfolio</h3>
+                                <p>From wedding photography to commercial brand imaging, we offer complete photographic solutions under one roof.</p>
+                            </div>
+                            <div class="why-choose-item">
+                                <div class="icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h3>Client-Centric Partnership</h3>
+                                <p>We believe in collaborative relationships, working closely with clients to exceed expectations and deliver exceptional value.</p>
                             </div>
                         </div>
                         
-                        <div class="brand-story">
-                            <h3>The PQ Studios Brand Story</h3>
-                            <p class="text-center mb-4">PQ Studios isn't just a photography studio - it's a vision brought to life. Founded on the principle that every image should tell a compelling story, we've grown from a passion project into Hyderabad's premier photography destination.</p>
-                            
-                            <div class="brand-values">
-                                <div class="brand-value">
-                                    <i class="fas fa-eye"></i>
-                                    <div>
-                                        <h4>Vision</h4>
-                                        <p>To redefine photography through innovative techniques and artistic expression.</p>
-                                    </div>
-                                </div>
-                                <div class="brand-value">
-                                    <i class="fas fa-bullseye"></i>
-                                    <div>
-                                        <h4>Mission</h4>
-                                        <p>To capture life's most precious moments with authenticity and technical excellence.</p>
-                                    </div>
-                                </div>
-                                <div class="brand-value">
-                                    <i class="fas fa-heart"></i>
-                                    <div>
-                                        <h4>Passion</h4>
-                                        <p>Photography isn't just our profession - it's our passion.</p>
-                                    </div>
-                                </div>
-                                <div class="brand-value">
-                                    <i class="fas fa-star"></i>
-                                    <div>
-                                        <h4>Excellence</h4>
-                                        <p>We believe in excellence in every frame, from concept to final delivery.</p>
-                                    </div>
-                                </div>
-                                <div class="brand-value">
-                                    <i class="fas fa-users"></i>
-                                    <div>
-                                        <h4>Community</h4>
-                                        <p>Building lasting relationships with clients and the photography community.</p>
-                                    </div>
-                                </div>
-                                <div class="brand-value">
-                                    <i class="fas fa-lightbulb"></i>
-                                    <div>
-                                        <h4>Innovation</h4>
-                                        <p>Constantly evolving with new techniques and creative approaches.</p>
-                                    </div>
+                        <div class="expertise-grid" style="margin-top: 2rem;">
+                            <div class="expertise-item">
+                                <i class="fas fa-award"></i>
+                                <div>
+                                    <h4>Proven Excellence</h4>
+                                    <p>Eight years of delivering exceptional photography services with consistently outstanding client satisfaction.</p>
                                 </div>
                             </div>
-                            
-                            <div class="text-center mt-4">
-                                <p><strong>Location:</strong> Hitech City, Hyderabad</p>
-                                <p><strong>Brand Philosophy:</strong> "Where every picture tells your unique story"</p>
-                                <a href="#contact" class="btn btn-primary btn-spacing mt-3" onclick="event.preventDefault(); showPage('contact');">
-                                    <i class="fas fa-handshake"></i> Partner With Us
-                                </a>
+                            <div class="expertise-item">
+                                <i class="fas fa-certificate"></i>
+                                <div>
+                                    <h4>Quality Assurance</h4>
+                                    <p>Rigorous quality control processes ensure every deliverable meets our exacting standards of excellence.</p>
+                                </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Customer Reviews -->
+                    <div class="reviews-section">
+                        <div class="reviews-header">
+                            <h3>Client Testimonials</h3>
+                            <p>Experience the excellence that has earned us outstanding reviews from satisfied clients</p>
+                        
+    <!-- Simple Google "G" icon -->
+                       <!-- 5. Customer Reviews -->
+                    <div class="reviews-section">
+                        <div class="reviews-header">
+                            <h3>Client Testimonials</h3>
+                            <p>Experience the excellence that has earned us outstanding reviews from satisfied clients</p>
+                        <!-- Clickable Google Badge (Blue theme) -->
+                        <a href="https://www.google.com/search?q=pqstudios&oq=pq&gs_lcrp=EgZjaHJvbWUqBggCEEUYOzIGCAAQRRg8MgYIARBFGDwyBggCEEUYOzIICAMQRRgnGDsyDggEEEUYJxg7GIAEGIoFMhQIBRBFGDkYQxiDARixAxiABBiKBTIKCAYQABixAxiABDIGCAcQRRg80gEIMjY2N2owajeoAgCwAgA&sourceid=chrome&ie=UTF-8&sei=UEBmaeOACJar4-EP-pKLuQo#lrd=0x3bcb96ac2b3a006b:0x3bd301b0878d0bbb,1,,,,&topic=mid:/m/028hfb" 
+                           target="_blank" 
+                           class="google-badge clickable-google-badge">
+                            <!-- Blue Google "G" icon -->
+                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Single blue Google "G" -->
+                                <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" fill="#4682b4"/>
+                            </svg>
+                            <span>Google Reviews</span>
+                        </a>
+                            </div>
+   
                         </div>
                         
-                        <div class="mb-4">
-                            <h3 class="mb-3 text-center">My Philosophy</h3>
-                            <div style="display: grid; grid-template-columns: 1fr; gap: 0.75rem; max-width: 600px; margin: 0 auto;">
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
-                                    <span>Every shot should tell a story</span>
-                                </div>
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
-                                    <span>Quality over quantity</span>
-                                </div>
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
-                                    <span>Client satisfaction is our top priority</span>
-                                </div>
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
-                                    <span>Continuous learning and innovation</span>
-                                </div>
-                                <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
-                                    <i class="fas fa-check" style="color: var(--accent); margin-top: 0.25rem;"></i>
-                                    <span>Ethical and professional approach</span>
-                                </div>
+                        <div class="reviews-container">
+                            <div class="reviews-track" id="reviewsTrack">
+                                <!-- Your existing review cards -->
                             </div>
                         </div>
+                    </div> 
+
                         
-                        <!-- GOOGLE REVIEWS SECTION -->
-                        <div class="reviews-section">
-                            <div class="reviews-header">
-                                <h3>Client Testimonials</h3>
-                                <p>See what our clients say about their experience with PQ Studios</p>
-                                <div class="google-badge">
-                                    <i class="fab fa-google"></i>
-                                    <span>Google Reviews</span>
+                        <div class="reviews-container">
+                            <div class="reviews-track" id="reviewsTrack">
+                                <!-- Review 1 -->
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">RK</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Rajesh Kumar</div>
+                                            <div class="review-date">2 weeks ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Exceptional wedding photography services from PQ Studios. Sai and his team captured every precious moment with artistic precision and emotional depth. Highly recommended for any photography requirement in Hyderabad.
+                                    </div>
                                 </div>
-                            </div>
-                            
-                            <div class="reviews-container">
-                                <div class="reviews-track" id="reviewsTrack">
-                                    <!-- Review 1 -->
-                                    <div class="review-card">
-                                        <div class="review-header">
-                                            <div class="review-avatar">RK</div>
-                                            <div class="review-info">
-                                                <div class="review-name">Rajesh Kumar</div>
-                                                <div class="review-date">2 weeks ago</div>
-                                            </div>
-                                        </div>
-                                        <div class="review-stars">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        </div>
-                                        <div class="review-content">
-                                            Sai and team did an amazing job for our wedding photography. They captured every special moment beautifully. Highly recommended!
+                                
+                                <!-- Review 2 -->
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">PS</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Priya Sharma</div>
+                                            <div class="review-date">1 month ago</div>
                                         </div>
                                     </div>
-                                    
-                                    <!-- Review 2 -->
-                                    <div class="review-card">
-                                        <div class="review-header">
-                                            <div class="review-avatar">PS</div>
-                                            <div class="review-info">
-                                                <div class="review-name">Priya Sharma</div>
-                                                <div class="review-date">1 month ago</div>
-                                            </div>
-                                        </div>
-                                        <div class="review-stars">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        </div>
-                                        <div class="review-content">
-                                            Professional product photography for our e-commerce store. The images increased our sales by 40%! Excellent work.
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Professional product photography that significantly enhanced our e-commerce conversions. The attention to detail and lighting expertise resulted in imagery that perfectly represents our brand ethos.
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 3 -->
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">AM</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Anil Mehta</div>
+                                            <div class="review-date">3 weeks ago</div>
                                         </div>
                                     </div>
-                                    
-                                    <!-- Review 3 -->
-                                    <div class="review-card">
-                                        <div class="review-header">
-                                            <div class="review-avatar">AM</div>
-                                            <div class="review-info">
-                                                <div class="review-name">Anil Mehta</div>
-                                                <div class="review-date">3 weeks ago</div>
-                                            </div>
-                                        </div>
-                                        <div class="review-stars">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        </div>
-                                        <div class="review-content">
-                                            Corporate branding photoshoot for our company. Sai understood our brand perfectly and delivered exceptional results.
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Corporate branding photography that exceeded all expectations. Sai understood our corporate identity perfectly and delivered imagery that strengthens our brand positioning.
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 4 -->
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">SN</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Sneha Nair</div>
+                                            <div class="review-date">2 months ago</div>
                                         </div>
                                     </div>
-                                    
-                                    <!-- Review 4 -->
-                                    <div class="review-card">
-                                        <div class="review-header">
-                                            <div class="review-avatar">SN</div>
-                                            <div class="review-info">
-                                                <div class="review-name">Sneha Nair</div>
-                                                <div class="review-date">2 months ago</div>
-                                            </div>
-                                        </div>
-                                        <div class="review-stars">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        </div>
-                                        <div class="review-content">
-                                            Family portrait session was fantastic! The team made us feel comfortable and the photos are priceless. Thank you!
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Family portrait session executed with professional excellence. The team created a comfortable environment and delivered timeless images that we will cherish forever.
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 5 -->
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">VR</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Vikram Reddy</div>
+                                            <div class="review-date">1 week ago</div>
                                         </div>
                                     </div>
-                                    
-                                    <!-- Review 5 -->
-                                    <div class="review-card">
-                                        <div class="review-header">
-                                            <div class="review-avatar">VR</div>
-                                            <div class="review-info">
-                                                <div class="review-name">Vikram Reddy</div>
-                                                <div class="review-date">1 week ago</div>
-                                            </div>
-                                        </div>
-                                        <div class="review-stars">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        </div>
-                                        <div class="review-content">
-                                            Real estate photography for our luxury apartments. The photos captured the essence perfectly and helped us sell faster.
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Real estate photography that perfectly captured the architectural essence of our luxury properties. The professional imagery significantly accelerated our sales process.
+                                    </div>
+                                </div>
+                                
+                                <!-- Duplicate reviews for seamless scrolling -->
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">RK</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Rajesh Kumar</div>
+                                            <div class="review-date">2 weeks ago</div>
                                         </div>
                                     </div>
-                                    
-                                    <!-- Duplicate for seamless scroll -->
-                                    <div class="review-card">
-                                        <div class="review-header">
-                                            <div class="review-avatar">RK</div>
-                                            <div class="review-info">
-                                                <div class="review-name">Rajesh Kumar</div>
-                                                <div class="review-date">2 weeks ago</div>
-                                            </div>
-                                        </div>
-                                        <div class="review-stars">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        </div>
-                                        <div class="review-content">
-                                            Sai and team did an amazing job for our wedding photography. They captured every special moment beautifully. Highly recommended!
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Exceptional wedding photography services from PQ Studios. Sai and his team captured every precious moment with artistic precision and emotional depth. Highly recommended for any photography requirement in Hyderabad.
+                                    </div>
+                                </div>
+                                
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">PS</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Priya Sharma</div>
+                                            <div class="review-date">1 month ago</div>
                                         </div>
                                     </div>
-                                    
-                                    <div class="review-card">
-                                        <div class="review-header">
-                                            <div class="review-avatar">PS</div>
-                                            <div class="review-info">
-                                                <div class="review-name">Priya Sharma</div>
-                                                <div class="review-date">1 month ago</div>
-                                            </div>
-                                        </div>
-                                        <div class="review-stars">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        </div>
-                                        <div class="review-content">
-                                            Professional product photography for our e-commerce store. The images increased our sales by 40%! Excellent work.
-                                        </div>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                                     </div>
-                                    
-                                    <div class="review-card">
-                                        <div class="review-header">
-                                            <div class="review-avatar">AM</div>
-                                            <div class="review-info">
-                                                <div class="review-name">Anil Mehta</div>
-                                                <div class="review-date">3 weeks ago</div>
-                                            </div>
-                                        </div>
-                                        <div class="review-stars">
-                                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                                        </div>
-                                        <div class="review-content">
-                                            Corporate branding photoshoot for our company. Sai understood our brand perfectly and delivered exceptional results.
-                                        </div>
+                                    <div class="review-content">
+                                        Professional product photography that significantly enhanced our e-commerce conversions. The attention to detail and lighting expertise resulted in imagery that perfectly represents our brand ethos.
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="text-center">
-                            <a href="#contact" class="btn btn-primary btn-spacing" onclick="event.preventDefault(); showPage('contact');">
-                                <i class="fas fa-calendar-alt"></i> Work With Me
-                            </a>
-                        </div>
+                    </div>
+                    
+                    <!-- Final CTA -->
+                    <div class="text-center" style="margin-top: 3rem;">
+                        <h3>Ready to Transform Your Visual Narrative?</h3>
+                        <p style="margin-bottom: 1.5rem;">Partner with Hyderabad's premier photography studio for exceptional results</p>
+                        <a href="#contact" class="btn btn-primary btn-spacing" onclick="event.preventDefault(); showPage('contact');">
+                            <i class="fas fa-calendar-alt"></i> Schedule Your Consultation
+                        </a>
+                        <a href="tel:+919652337710" class="btn btn-outline btn-spacing">
+                            <i class="fas fa-phone"></i> Call Now: +91 96523 37710
+                        </a>
                     </div>
                 </div>
             </section>
         </div>
 
-        <!-- CONTACT PAGE - PROFESSIONAL THEME -->
+        <!-- CONTACT PAGE -->
         <div id="contact-page" class="page">
             <section class="contact-hero">
                 <div class="container">
-                    <h1 class="hero-title">Contact <span class="highlight">Us</span></h1>
-                    <p class="hero-subtitle">Get in touch for your photography needs</p>
+                    <h1 class="hero-title">Contact <span class="highlight">PQ Studios</span></h1>
+                    <p class="hero-subtitle">Connect with Hyderabad's Premier Photography Studio for Exceptional Visual Solutions</p>
                 </div>
             </section>
 
             <section class="section">
                 <div class="container">
                     <div class="contact-form-container">
-                        <h2 class="mb-3">Send a Message</h2>
-                        <p class="mb-4">Fill out the form below and we'll get back to you within 24 hours.</p>
+                        <h2 class="mb-3">Professional Consultation Request</h2>
+                        <p class="mb-4">Complete the form below for a personalized photography consultation. Our team will respond within 24 hours.</p>
                         
                         <div id="formStatus" class="form-status"></div>
                         
-                        <!-- WEB3FORMS WORKING CONTACT FORM -->
-                        <!-- WEB3FORMS WORKING CONTACT FORM -->
-<form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-    <!-- Web3Forms Required Fields -->
-    <input type="hidden" name="access_key" value="701f0f4c-cea4-40a0-ba87-0b0859fab2bb">
-    <input type="hidden" name="subject" value="New Contact Form Submission - PQ Studios">
-    <input type="hidden" name="from_name" value="PQ Studios Website">
-    <input type="hidden" name="redirect" value="https://web3forms.com/success">
-    <input type="checkbox" name="botcheck" style="display: none;">
-    
-    <!-- Name field -->
-    <div class="form-group">
-        <label for="name" class="form-label required">Full Name *</label>
-        <input type="text" id="name" name="name" class="form-control" required>
-    </div>
-    
-    <!-- Email field - Now on next line -->
-    <div class="form-group">
-        <label for="email" class="form-label">Email Address</label>
-        <input type="email" id="email" name="email" class="form-control">
-    </div>
-    
-    <!-- Phone field -->
-    <div class="form-group">
-        <label for="phone" class="form-label required">Phone Number *</label>
-        <input type="tel" id="phone" name="phone" class="form-control" required>
-    </div>
-    
-    <!-- Service dropdown -->
-    <div class="form-group">
-        <label for="service" class="form-label required">Service Interested In *</label>
-        <select id="service" name="service" class="form-control" required>
-            <option value="">Select a service</option>
-            <option value="food">Food Photography</option>
-            <option value="product">Product Photography</option>
-            <option value="fashion">Fashion & Lifestyle</option>
-            <option value="pets">Pet Photography</option>
-            <option value="brand">Brand Portfolios</option>
-            <option value="interiors">Interiors & Architecture</option>
-            <option value="ecommerce">E-Commerce Visuals</option>
-            <option value="studio">Studio Rentals</option>
-        </select>
-    </div>
-    
-    <!-- Message field -->
-    <div class="form-group">
-        <label for="message" class="form-label">Your Message</label>
-        <textarea id="message" name="message" class="form-control" rows="4"></textarea>
-    </div>
-    
-    <button type="submit" class="btn btn-primary btn-block">
-        <i class="fas fa-paper-plane"></i> Send Message
-    </button>
-</form>
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="701f0f4c-cea4-40a0-ba87-0b0859fab2bb">
+                            <input type="hidden" name="subject" value="PQ Studios Consultation Request">
+                            <input type="hidden" name="from_name" value="PQ Studios Website">
+                            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                            <input type="checkbox" name="botcheck" style="display: none;">
+                            
+                            <div class="form-group">
+                                <label for="name" class="form-label required">Full Name *</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label required">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service" class="form-label required">Service Requirement *</label>
+                                <select id="service" name="service" class="form-control" required>
+                                    <option value="">Select photography service</option>
+                                    <option value="wedding">Wedding & Events Photography</option>
+                                    <option value="commercial">Commercial & Brand Photography</option>
+                                    <option value="portrait">Portrait & Lifestyle Photography</option>
+                                    <option value="product">Product & Food Photography</option>
+                                    <option value="fashion">Fashion & Editorial Photography</option>
+                                    <option value="real-estate">Real Estate & Architecture</option>
+                                    <option value="studio">Studio Rental Services</option>
+                                    <option value="consultation">Photography Consultation</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Project Details & Requirements</label>
+                                <textarea id="message" name="message" class="form-control" rows="4" placeholder="Please share details about your project, timeline, and specific requirements..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-paper-plane"></i> Submit Consultation Request
+                            </button>
+                        </form>
                     </div>
 
-                    <!-- WhatsApp CTA Section -->
+                                        <!-- WhatsApp CTA Section - OLD GREEN STYLE -->
                     <div class="whatsapp-cta">
                         <h3>Prefer to Chat?</h3>
                         <p>Get instant responses on WhatsApp for quick queries and consultations.</p>
@@ -2664,17 +2039,16 @@
         </div>
     </div>
 
-    <!-- Footer - CORNER TO CORNER FIXED -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
                     <h3>PQ Studios Hyderabad</h3>
                     <p style="color: rgba(255,255,255,0.9); margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.6;">
-                        Professional photography studio in Hyderabad capturing life's most precious moments.
+                        Premier photography studio in Hyderabad delivering exceptional visual storytelling through masterful photography and artistic excellence.
                     </p>
                     
-                    <!-- Contact Info -->
                     <div class="contact-info">
                         <div class="contact-item">
                             <i class="fas fa-phone"></i>
@@ -2686,11 +2060,14 @@
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span>Hitech City, Hyderabad</span>
+                            <span>Hitech City, Hyderabad | Serving Across India</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>By Appointment: Monday - Saturday, 10AM - 7PM</span>
                         </div>
                     </div>
                     
-                    <!-- Social Links -->
                     <div class="social-links">
                         <a href="https://www.instagram.com/pqstudios_hyd" target="_blank" class="social-link instagram" aria-label="Instagram">
                             <i class="fab fa-instagram"></i>
@@ -2708,59 +2085,58 @@
                 </div>
                 
                 <div>
-                    <h3>Quick Links</h3>
+                    <h3>Navigation</h3>
                     <ul>
                         <li><a href="#home" onclick="event.preventDefault(); showPage('home');"><i class="fas fa-arrow-right"></i> Home</a></li>
                         <li><a href="#services" onclick="event.preventDefault(); showPage('services');"><i class="fas fa-arrow-right"></i> Services</a></li>
-                        <li><a href="#gallery" onclick="event.preventDefault(); showPage('gallery');"><i class="fas fa-arrow-right"></i> Gallery</a></li>
-                        <li><a href="#about" onclick="event.preventDefault(); showPage('about');"><i class="fas fa-arrow-right"></i> About</a></li>
+                        <li><a href="#gallery" onclick="event.preventDefault(); showPage('gallery');"><i class="fas fa-arrow-right"></i> Portfolio</a></li>
+                        <li><a href="#about" onclick="event.preventDefault(); showPage('about');"><i class="fas fa-arrow-right"></i> About Studio</a></li>
                         <li><a href="#contact" onclick="event.preventDefault(); showPage('contact');"><i class="fas fa-arrow-right"></i> Contact</a></li>
                     </ul>
                 </div>
                 
-                <!-- Key Features Column - UPDATED ORDER -->
+                <!-- Updated Key Features with correct icons -->
                 <div>
-                    <h3>Key Features</h3>
+                    <h3>Core Services</h3>
                     <ul>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('food');"><i class="fas fa-camera"></i> Food Photography</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('product');"><i class="fas fa-camera"></i> Product Photography</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('fashion');"><i class="fas fa-camera"></i> Fashion & Lifestyle</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('pets');"><i class="fas fa-camera"></i> Pet Photography</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('brand');"><i class="fas fa-camera"></i> Brand Portfolios</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('interiors');"><i class="fas fa-camera"></i> Interiors & Architecture</a></li>
-                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('ecommerce');"><i class="fas fa-camera"></i> E-Commerce Visuals</a></li>
+                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('food');"><i class="fas fa-utensils"></i> Food Photography</a></li>
+                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('product');"><i class="fas fa-box-open"></i> Product Photography</a></li>
+                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('fashion');"><i class="fas fa-tshirt"></i> Fashion Photography</a></li>
+                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('pets');"><i class="fas fa-paw"></i> Pet Photography</a></li>
+                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('brand');"><i class="fas fa-briefcase"></i> Brand Portfolios</a></li>
+                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('interiors');"><i class="fas fa-building"></i> Architectural Photography</a></li>
+                        <li><a href="#services" onclick="event.preventDefault(); scrollToService('ecommerce');"><i class="fas fa-shopping-cart"></i> E-Commerce Visuals</a></li>
                         <li><a href="#services" onclick="event.preventDefault(); scrollToService('studio');"><i class="fas fa-camera"></i> Studio Rentals</a></li>
                     </ul>
                 </div>
                 
-                <!-- All Features Column -->
                 <div>
-                    <h3>All Features</h3>
+                    <h3>Complete Service Portfolio</h3>
                     <ul class="all-features-list">
-                        <li><i class="fas fa-check"></i> E-Commerce Visuals</li>
-                        <li><i class="fas fa-check"></i> Architectural Photography</li>
-                        <li><i class="fas fa-check"></i> Corporate & Brand Films</li>
-                        <li><i class="fas fa-check"></i> Aerial & Drone Photography & Films</li>
-                        <li><i class="fas fa-check"></i> Industrial Films & Documentaries</li>
-                        <li><i class="fas fa-check"></i> Social Media Content & Ad Reels</li>
-                        <li><i class="fas fa-check"></i> Hospitality Photography</li>
-                        <li><i class="fas fa-check"></i> Event Photography & Cinematic Films</li>
-                        <li><i class="fas fa-check"></i> Portraits & Personal Branding Shoots</li>
-                        <li><i class="fas fa-check"></i> Real Estate Photography & Walkthrough Videos</li>
-                        <li><i class="fas fa-check"></i> Short-Form Video Advertising</li>
-                        <li><i class="fas fa-check"></i> Post-Production & Color Grading</li>
-                        <li><i class="fas fa-check"></i> Brand Visual Consulting</li>
+                        <li><i class="fas fa-check"></i> Wedding & Event Photography</li>
+                        <li><i class="fas fa-check"></i> Commercial Brand Photography</li>
+                        <li><i class="fas fa-check"></i> Portrait & Lifestyle Sessions</li>
+                        <li><i class="fas fa-check"></i> Product & Food Styling</li>
+                        <li><i class="fas fa-check"></i> Fashion & Editorial Photography</li>
+                        <li><i class="fas fa-check"></i> Real Estate & Architecture</li>
+                        <li><i class="fas fa-check"></i> Corporate Photography</li>
+                        <li><i class="fas fa-check"></i> Aerial & Drone Photography</li>
+                        <li><i class="fas fa-check"></i> Industrial Documentation</li>
+                        <li><i class="fas fa-check"></i> Social Media Content Creation</li>
+                        <li><i class="fas fa-check"></i> Post-Production & Editing</li>
+                        <li><i class="fas fa-check"></i> Photography Consultation</li>
                     </ul>
                 </div>
             </div>
             
             <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); font-size: 0.85rem;">
-                <p>&copy; 2024 PQ Studios Hyderabad. All rights reserved.</p>
+                <p>&copy; 2024 PQ Studios Hyderabad. All Rights Reserved. | Professional Photography Services</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Hyderabad's Premier Photography Studio | Master Photography by Sai Kumar Maddina</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
+    <!-- Back to Top -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <i class="fas fa-chevron-up"></i>
     </button>
@@ -2769,43 +2145,31 @@
         // ===== INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', function() {
             console.log('PQ Studios Website - Initializing...');
-            initBackground();
             initSlideshow();
             loadFeaturedWork();
             loadClients();
             loadServices();
             loadGallerySections();
             initSimpleDropdown();
-            initGalleryModal();
             initContactForm();
             initBackToTop();
             initMobileMenu();
-            initReviewsAnimation(); // Initialize reviews animation
-            
-            // Initialize page
+            initReviewsAnimation();
             initPage();
             console.log('PQ Studios Website - Initialization Complete!');
         });
 
         // ===== PAGE MANAGEMENT =====
         function showPage(pageId) {
-            console.log('Switching to page:', pageId);
-            
-            // Hide all pages
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
 
-            // Show the selected page
             const selectedPage = document.getElementById(`${pageId}-page`);
             if (selectedPage) {
                 selectedPage.classList.add('active');
-                console.log('Showing page:', selectedPage.id);
-            } else {
-                console.error('Page not found:', `${pageId}-page`);
             }
 
-            // Update active navigation links
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') === `#${pageId}`) {
@@ -2813,16 +2177,10 @@
                 }
             });
 
-            // Update URL
             history.pushState(null, '', `#${pageId}`);
-            
-            // Scroll to top
             window.scrollTo(0, 0);
-            
-            // Close mobile menu
             closeMenu();
             
-            // Close gallery dropdown if not on gallery page
             if (pageId !== 'gallery') {
                 const dropdownMenu = document.getElementById('galleryDropdownMenu');
                 const dropdownToggle = document.getElementById('galleryDropdownToggle');
@@ -2833,89 +2191,14 @@
             }
         }
 
-        // Handle browser back/forward buttons
         window.addEventListener('popstate', function() {
             const pageId = window.location.hash.replace('#', '') || 'home';
-            console.log('Popstate - switching to:', pageId);
             showPage(pageId);
         });
 
         function initPage() {
             const pageId = window.location.hash.replace('#', '') || 'home';
-            console.log('Initial page:', pageId);
             showPage(pageId);
-        }
-
-        // ===== BACKGROUND GENERATOR =====
-        function initBackground() {
-            const container = document.getElementById('photography-icons');
-            if (!container) return;
-            
-            const icons = [
-                'camera', 'film', 'clapperboard', 'video', 'camera-retro',
-                'photo-video', 'images', 'portrait', 'expand', 'circle',
-                'square', 'play-circle', 'rss', 'bolt', 'star', 'heart',
-                'adjust', 'filter', 'crop', 'magic', 'paint-brush'
-            ];
-            
-            const isMobile = window.innerWidth <= 768;
-            const totalIcons = isMobile ? 20 : 35;
-            
-            container.innerHTML = '';
-            
-            const usedPositions = [];
-            const minDistance = isMobile ? 18 : 12;
-            
-            for (let i = 0; i < totalIcons; i++) {
-                let posX, posY;
-                let attempts = 0;
-                let positionValid = false;
-                
-                do {
-                    posX = Math.random() * 90 + 5;
-                    posY = Math.random() * 90 + 5;
-                    attempts++;
-                    
-                    positionValid = true;
-                    for (const pos of usedPositions) {
-                        const distance = Math.sqrt(Math.pow(pos.x - posX, 2) + Math.pow(pos.y - posY, 2));
-                        if (distance < minDistance) {
-                            positionValid = false;
-                            break;
-                        }
-                    }
-                    
-                } while (!positionValid && attempts < 100);
-                
-                if (!positionValid) continue;
-                
-                usedPositions.push({ x: posX, y: posY });
-                
-                const icon = document.createElement('div');
-                icon.className = 'icon';
-                
-                const isDark = Math.random() > 0.5;
-                if (isDark) {
-                    icon.classList.add('dark');
-                    icon.innerHTML = `<i class="fas fa-${icons[Math.floor(Math.random() * icons.length)]}"></i>`;
-                } else {
-                    icon.innerHTML = `<i class="fas fa-${icons[Math.floor(Math.random() * icons.length)]}"></i>`;
-                }
-                
-                const size = isMobile ? (0.7 + Math.random() * 0.6) : (1 + Math.random() * 1.2);
-                const rotation = Math.random() * 360;
-                const opacity = isMobile ? (0.15 + Math.random() * 0.2) : (0.2 + Math.random() * 0.3);
-                const delay = Math.random() * 20;
-                
-                icon.style.left = `${posX}%`;
-                icon.style.top = `${posY}%`;
-                icon.style.fontSize = `${size}rem`;
-                icon.style.transform = `rotate(${rotation}deg)`;
-                icon.style.opacity = `${opacity}`;
-                icon.style.animationDelay = `${delay}s`;
-                
-                container.appendChild(icon);
-            }
         }
 
         // ===== MOBILE MENU =====
@@ -2934,14 +2217,6 @@
 
             document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
                 link.addEventListener('click', closeMenu);
-            });
-
-            document.addEventListener('click', (e) => {
-                if (navMenu.classList.contains('active') && 
-                    !navMenu.contains(e.target) && 
-                    !menuToggle.contains(e.target)) {
-                    closeMenu();
-                }
             });
         }
 
@@ -2997,12 +2272,12 @@
             if (!featuredGrid) return;
 
             const featuredItems = [
-                { image: 'featured01.jpg', category: 'food', title: 'Food Photography' },
-                { image: 'featured02.jpg', category: 'product', title: 'Product Photography' },
-                { image: 'featured03.jpg', category: 'fashion', title: 'Fashion Photography' },
-                { image: 'featured04.jpg', category: 'pets', title: 'Pet Photography' },
-                { image: 'featured05.jpg', category: 'brand', title: 'Brand Portfolio' },
-                { image: 'featured06.jpg', category: 'interiors', title: 'Interior Photography' }
+                { image: 'featured01.jpg', category: 'food', title: 'Food Photography Excellence' },
+                { image: 'featured02.jpg', category: 'product', title: 'Product Photography Mastery' },
+                { image: 'featured03.jpg', category: 'fashion', title: 'Fashion Photography Artistry' },
+                { image: 'featured04.jpg', category: 'pets', title: 'Pet Photography Expertise' },
+                { image: 'featured05.jpg', category: 'brand', title: 'Brand Portfolio Photography' },
+                { image: 'featured06.jpg', category: 'interiors', title: 'Architectural Photography' }
             ];
 
             featuredGrid.innerHTML = '';
@@ -3021,10 +2296,6 @@
                 img.src = item.image;
                 img.alt = item.title;
                 img.loading = 'lazy';
-                
-                img.onerror = function() {
-                    this.src = `https://images.unsplash.com/photo-155${Math.floor(Math.random() * 999)}?w=400&h=400&fit=crop`;
-                };
                 
                 itemElement.appendChild(img);
                 featuredGrid.appendChild(itemElement);
@@ -3064,29 +2335,13 @@
                     img.className = 'client-logo-img';
                     img.loading = 'lazy';
                     
-                    img.onerror = function() {
-                        this.style.display = 'none';
-                        const colors = ['#4682b4', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'];
-                        const color = colors[Math.floor(Math.random() * colors.length)];
-                        logoItem.innerHTML = `<div style="width:100%;height:100%;background:${color};border-radius:8px;display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:0.8rem;">Client</div>`;
-                    };
-                    
                     logoItem.appendChild(img);
                     clientsTrack.appendChild(logoItem);
                 });
             }
-            
-            setTimeout(() => {
-                const track = document.querySelector('.clients-track');
-                if (track) {
-                    track.style.animation = 'none';
-                    void track.offsetWidth;
-                    track.style.animation = 'scrollClients 25s linear infinite';
-                }
-            }, 100);
         }
 
-        // ===== SERVICES - UPDATED ORDER =====
+        // ===== SERVICES =====
         function loadServices() {
             const servicesContainer = document.getElementById('servicesContainer');
             if (!servicesContainer) return;
@@ -3096,58 +2351,58 @@
                     id: 'food',
                     title: 'Food Photography',
                     icon: 'fa-utensils',
-                    description: 'Mouth-watering food photography for restaurants and food brands.',
-                    features: ['Recipe photography', 'Menu item shots', 'Food styling', 'Commercial photography']
+                    description: 'Mouth-watering culinary photography for restaurants, food brands, and culinary publications.',
+                    features: ['Recipe photography', 'Menu item showcase', 'Food styling', 'Commercial culinary']
                 },
                 {
                     id: 'product',
                     title: 'Product Photography',
                     icon: 'fa-box-open',
-                    description: 'Professional product photography for e-commerce and advertising.',
-                    features: ['White background shots', 'Lifestyle product photos', 'Detail shots', '360° views']
+                    description: 'Professional product imagery optimized for e-commerce platforms and advertising campaigns.',
+                    features: ['White background shots', 'Lifestyle integration', 'Detail photography', '360° product views']
                 },
                 {
                     id: 'fashion',
-                    title: 'Fashion & Lifestyle',
+                    title: 'Fashion Photography',
                     icon: 'fa-tshirt',
-                    description: 'Fashion photography for brands, designers, and boutiques.',
-                    features: ['Lookbook photography', 'Editorial fashion', 'Street style', 'Model portfolio']
+                    description: 'Editorial fashion photography for designers, boutiques, and fashion publications.',
+                    features: ['Lookbook creation', 'Editorial fashion', 'Street style', 'Model portfolio development']
                 },
                 {
                     id: 'pets',
                     title: 'Pet Photography',
                     icon: 'fa-paw',
-                    description: 'Beautiful pet photography capturing personality.',
-                    features: ['Studio portraits', 'Outdoor sessions', 'Action photography', 'Family portraits']
+                    description: 'Artistic pet photography capturing the unique personality of your animal companions.',
+                    features: ['Studio portraits', 'Outdoor sessions', 'Action photography', 'Family integration']
                 },
                 {
                     id: 'brand',
                     title: 'Brand Portfolios',
                     icon: 'fa-briefcase',
-                    description: 'Comprehensive brand portfolio photography for businesses.',
+                    description: 'Comprehensive brand portfolio development for corporate identity and marketing.',
                     features: ['Corporate branding', 'Executive portraits', 'Team photography', 'Brand storytelling']
                 },
                 {
                     id: 'interiors',
-                    title: 'Interiors & Architecture',
+                    title: 'Architectural Photography',
                     icon: 'fa-building',
-                    description: 'Architectural photography for real estate and designers.',
-                    features: ['Real estate', 'Interior design', 'Architectural exteriors', 'Virtual tours']
+                    description: 'Professional architectural and interior photography for real estate and design firms.',
+                    features: ['Real estate marketing', 'Interior design', 'Architectural exteriors', 'Virtual tours']
                 },
                 {
                     id: 'ecommerce',
                     title: 'E-Commerce Visuals',
                     icon: 'fa-shopping-cart',
-                    description: 'High-quality visuals optimized for e-commerce platforms.',
-                    features: ['Amazon optimized', 'Etsy product photos', 'Shopify store', 'Social media ready']
+                    description: 'High-conversion e-commerce photography optimized for digital retail platforms.',
+                    features: ['Amazon optimization', 'Etsy product photos', 'Shopify integration', 'Social commerce']
                 },
                 {
                     id: 'studio',
                     title: 'Studio Rentals',
                     icon: 'fa-camera',
-                    description: 'Professional studio available for rent with full equipment.',
-                    features: ['Fully equipped', 'Professional lighting', 'Various backdrops', 'Changing room'],
-                    pricing: '₹2000 per hour'
+                    description: 'Professional photography studio rental with complete equipment and support.',
+                    features: ['Fully equipped studio', 'Professional lighting', 'Versatile backdrops', 'Technical support'],
+                    pricing: 'Starting at ₹2000/hour'
                 }
             ];
 
@@ -3167,7 +2422,7 @@
                 if (service.pricing) {
                     pricingHTML = `
                         <div class="service-pricing">
-                            <h4>Pricing</h4>
+                            <h4>Professional Rates</h4>
                             <div class="price-tag">${service.pricing}</div>
                         </div>
                     `;
@@ -3182,7 +2437,7 @@
                     <div style="margin-top: 1rem;">
                         ${service.features.map(feature => `
                             <div style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.9rem;">
-                                <i class="fas fa-check" style="color: var(--accent); margin-top: 0.2rem;"></i>
+                                <i class="fas fa-check" style="color: #4682b4; margin-top: 0.2rem;"></i>
                                 <span>${feature}</span>
                             </div>
                         `).join('')}
@@ -3190,10 +2445,10 @@
                     ${pricingHTML}
                     <div class="service-card-buttons">
                         <button class="btn btn-primary book-service-btn" data-service="${service.id}">
-                            <i class="fas fa-calendar-check"></i> Book Now
+                            <i class="fas fa-calendar-check"></i> Schedule Consultation
                         </button>
                         <button class="btn btn-outline view-gallery-btn" data-category="${service.id}">
-                            <i class="fas fa-images"></i> View Gallery
+                            <i class="fas fa-images"></i> View Portfolio
                         </button>
                     </div>
                 `;
@@ -3238,30 +2493,18 @@
             }, 100);
         }
 
-        // ===== GALLERY - UPDATED ORDER =====
+        // ===== GALLERY =====
         const galleryCategories = [
             { id: 'food', name: 'Food Photography', count: 15, icon: 'fa-utensils' },
             { id: 'product', name: 'Product Photography', count: 15, icon: 'fa-box-open' },
-            { id: 'fashion', name: 'Fashion & Lifestyle', count: 15, icon: 'fa-tshirt' },
+            { id: 'fashion', name: 'Fashion Photography', count: 15, icon: 'fa-tshirt' },
             { id: 'pets', name: 'Pet Photography', count: 15, icon: 'fa-paw' },
             { id: 'brand', name: 'Brand Portfolios', count: 15, icon: 'fa-briefcase' },
-            { id: 'interiors', name: 'Interiors & Architecture', count: 15, icon: 'fa-building' },
+            { id: 'interiors', name: 'Architectural Photography', count: 15, icon: 'fa-building' },
             { id: 'ecommerce', name: 'E-Commerce Visuals', count: 15, icon: 'fa-shopping-cart' },
-            { id: 'studio', name: 'Studio Shots', count: 10, icon: 'fa-camera' }
+            { id: 'studio', name: 'Studio Photography', count: 10, icon: 'fa-camera' }
         ];
 
-        const categoryFilePatterns = {
-            'food': 'food photography',
-            'product': 'product photography',
-            'fashion': 'fashion lifestyle',
-            'pets': 'pet photography',
-            'brand': 'brand portfolios',
-            'interiors': 'interiors architecture',
-            'ecommerce': 'ecommerce visuals',
-            'studio': 'studio shots'
-        };
-
-        // ===== SIMPLE DROPDOWN MENU =====
         function initSimpleDropdown() {
             const dropdownToggle = document.getElementById('galleryDropdownToggle');
             const dropdownMenu = document.getElementById('galleryDropdownMenu');
@@ -3291,13 +2534,6 @@
                 dropdownToggle.classList.toggle('active');
                 dropdownMenu.classList.toggle('active');
             });
-
-            document.addEventListener('click', (e) => {
-                if (!dropdownMenu.contains(e.target) && !dropdownToggle.contains(e.target)) {
-                    dropdownToggle.classList.remove('active');
-                    dropdownMenu.classList.remove('active');
-                }
-            });
         }
 
         function scrollToGalleryCategory(categoryId) {
@@ -3315,7 +2551,6 @@
             });
         }
 
-        // ===== LOAD GALLERY SECTIONS =====
         function loadGallerySections() {
             const gallerySections = document.getElementById('gallerySections');
             if (!gallerySections) return;
@@ -3349,7 +2584,7 @@
 
             grid.innerHTML = '';
             
-            const baseName = categoryFilePatterns[categoryId];
+            const baseName = categoryId.replace('-', ' ');
             
             for (let i = 1; i <= count; i++) {
                 const filename = `${baseName} ${i}.jpg`;
@@ -3359,119 +2594,12 @@
                 
                 const img = document.createElement('img');
                 img.src = filename;
-                img.alt = `${baseName} image ${i}`;
+                img.alt = `${categoryId} photography example ${i}`;
                 img.loading = 'lazy';
-                img.dataset.index = i - 1;
-                img.dataset.category = categoryId;
-                
-                img.onerror = function() {
-                    console.warn(`Failed to load: ${filename}`);
-                    this.parentElement.innerHTML = `
-                        <div style="width:100%;height:100%;background:linear-gradient(135deg,#4682b4,#4361ee);display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;font-size:12px;padding:10px;text-align:center;">
-                            ${categoryId}<br>Image ${i}
-                        </div>
-                    `;
-                };
                 
                 galleryItem.appendChild(img);
-                
-                galleryItem.addEventListener('click', () => {
-                    openGalleryPopup(categoryId, i - 1);
-                });
-                
                 grid.appendChild(galleryItem);
             }
-        }
-
-        // ===== GALLERY MODAL =====
-        function initGalleryModal() {
-            const modalClose = document.getElementById('modalClose');
-            const modalPrev = document.getElementById('modalPrev');
-            const modalNext = document.getElementById('modalNext');
-            const galleryModal = document.getElementById('galleryModal');
-
-            if (!modalClose || !modalPrev || !modalNext || !galleryModal) return;
-
-            modalClose.addEventListener('click', closeModal);
-            modalPrev.addEventListener('click', showPrevImage);
-            modalNext.addEventListener('click', showNextImage);
-
-            galleryModal.addEventListener('click', (e) => {
-                if (e.target === galleryModal) {
-                    closeModal();
-                }
-            });
-
-            document.addEventListener('keydown', (e) => {
-                if (!galleryModal.classList.contains('active')) return;
-                
-                switch(e.key) {
-                    case 'Escape':
-                        closeModal();
-                        break;
-                    case 'ArrowLeft':
-                        showPrevImage();
-                        break;
-                    case 'ArrowRight':
-                        showNextImage();
-                        break;
-                }
-            });
-        }
-
-        let currentGalleryImages = [];
-        let currentImageIndex = 0;
-        let currentCategoryId = '';
-
-        function openGalleryPopup(categoryId, index) {
-            const grid = document.getElementById(`grid-${categoryId}`);
-            if (!grid) return;
-
-            const imageElements = grid.querySelectorAll('img');
-            currentGalleryImages = Array.from(imageElements).map(img => ({
-                src: img.src,
-                alt: img.alt,
-                loaded: true
-            }));
-
-            currentCategoryId = categoryId;
-            currentImageIndex = index;
-            
-            updateModalImage();
-
-            const galleryModal = document.getElementById('galleryModal');
-            galleryModal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal() {
-            const galleryModal = document.getElementById('galleryModal');
-            galleryModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function showPrevImage() {
-            if (currentGalleryImages.length > 0) {
-                currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
-                updateModalImage();
-            }
-        }
-
-        function showNextImage() {
-            if (currentGalleryImages.length > 0) {
-                currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
-                updateModalImage();
-            }
-        }
-
-        function updateModalImage() {
-            const modalImage = document.getElementById('modalImage');
-
-            if (currentGalleryImages.length === 0) return;
-
-            const imageData = currentGalleryImages[currentImageIndex];
-            modalImage.src = imageData.src;
-            modalImage.alt = imageData.alt;
         }
 
         // ===== REVIEWS ANIMATION =====
@@ -3479,7 +2607,6 @@
             const track = document.getElementById('reviewsTrack');
             if (!track) return;
             
-            // Pause animation on hover/focus
             track.addEventListener('mouseenter', () => {
                 track.style.animationPlayState = 'paused';
             });
@@ -3487,82 +2614,9 @@
             track.addEventListener('mouseleave', () => {
                 track.style.animationPlayState = 'running';
             });
-            
-            // Pause when any review card gets focus
-            const reviewCards = track.querySelectorAll('.review-card');
-            reviewCards.forEach(card => {
-                card.addEventListener('focus', () => {
-                    track.style.animationPlayState = 'paused';
-                });
-                
-                card.addEventListener('blur', () => {
-                    track.style.animationPlayState = 'running';
-                });
-            });
-            
-            // Touch support for mobile
-            track.addEventListener('touchstart', () => {
-                track.style.animationPlayState = 'paused';
-            });
-            
-            track.addEventListener('touchend', () => {
-                setTimeout(() => {
-                    track.style.animationPlayState = 'running';
-                }, 3000);
-            });
         }
 
-        // ===== EASY REVIEWS UPDATE FUNCTION =====
-        window.updateReview = function(index, data) {
-            const reviews = document.querySelectorAll('.review-card');
-            if (index < reviews.length) {
-                const review = reviews[index];
-                
-                // Update avatar
-                const avatar = review.querySelector('.review-avatar');
-                if (avatar && data.initials) {
-                    avatar.textContent = data.initials;
-                    avatar.setAttribute('aria-label', `Avatar for ${data.name}`);
-                }
-                
-                // Update name
-                const name = review.querySelector('.review-name');
-                if (name && data.name) {
-                    name.textContent = data.name;
-                }
-                
-                // Update date
-                const date = review.querySelector('.review-date');
-                if (date && data.date) {
-                    date.textContent = data.date;
-                }
-                
-                // Update stars
-                const stars = review.querySelector('.review-stars');
-                if (stars && data.rating) {
-                    stars.innerHTML = '';
-                    for (let i = 0; i < 5; i++) {
-                        const star = document.createElement('i');
-                        star.className = i < data.rating ? 'fas fa-star' : 'far fa-star';
-                        star.setAttribute('aria-hidden', 'true');
-                        stars.appendChild(star);
-                    }
-                    stars.setAttribute('aria-label', `${data.rating} out of 5 stars`);
-                }
-                
-                // Update content
-                const content = review.querySelector('.review-content');
-                if (content && data.content) {
-                    content.textContent = data.content;
-                }
-                
-                console.log(`Review ${index} updated successfully!`);
-            } else {
-                console.error(`Review index ${index} not found. Available: 0-${reviews.length-1}`);
-            }
-        };
-
-        // ===== WORKING WEB3FORMS CONTACT FORM =====
+        // ===== CONTACT FORM =====
         function initContactForm() {
             const contactForm = document.getElementById('contactForm');
             const formStatus = document.getElementById('formStatus');
@@ -3572,24 +2626,15 @@
             contactForm.addEventListener('submit', async function(e) {
                 e.preventDefault();
                 
-                // Show loading state
-                showFormStatus('loading', '<i class="fas fa-spinner fa-spin"></i> Sending your message...');
+                showFormStatus('loading', '<i class="fas fa-spinner fa-spin"></i> Processing your consultation request...');
                 
-                // Validate form
                 if (!validateForm()) {
                     return;
                 }
 
                 try {
-                    // Get form data
                     const formData = new FormData(contactForm);
                     
-                    // Add additional data for Web3Forms
-                    formData.append('botcheck', ''); // Anti-bot check
-                    formData.append('from_name', 'PQ Studios Website');
-                    formData.append('subject', 'New Contact Form Submission - PQ Studios');
-                    
-                    // Send to Web3Forms
                     const response = await fetch('https://api.web3forms.com/submit', {
                         method: 'POST',
                         body: formData
@@ -3598,31 +2643,26 @@
                     const result = await response.json();
 
                     if (result.success) {
-                        // Success message
                         showFormStatus('success', 
-                            '<i class="fas fa-check-circle"></i> Message sent successfully! ' +
-                            'We will contact you within 24 hours.');
+                            '<i class="fas fa-check-circle"></i> Consultation request submitted successfully! ' +
+                            'Our team will contact you within 24 hours.');
                         
-                        // Reset form
                         contactForm.reset();
                         
-                        // Hide success message after 8 seconds
                         setTimeout(() => {
                             formStatus.style.display = 'none';
                         }, 8000);
                         
                     } else {
-                        // Error from Web3Forms
                         showFormStatus('error', 
                             '<i class="fas fa-exclamation-circle"></i> ' +
-                            'Failed to send message. Please try again or contact us directly.');
+                            'Submission unsuccessful. Please try again or contact us directly.');
                     }
                     
                 } catch (error) {
-                    // Network error
                     showFormStatus('error', 
                         '<i class="fas fa-exclamation-circle"></i> ' +
-                        'Network error. Please check your connection and try again.');
+                        'Network connectivity issue. Please check your connection and try again.');
                 }
             });
         }
@@ -3631,18 +2671,9 @@
             const name = document.getElementById('name');
             const phone = document.getElementById('phone');
             const service = document.getElementById('service');
-            const email = document.getElementById('email');
 
             let isValid = true;
 
-            // Reset border colors
-            [name, phone, service, email].forEach(field => {
-                if (field) {
-                    field.style.borderColor = '';
-                }
-            });
-
-            // Validate required fields
             if (!name.value.trim()) {
                 highlightError(name);
                 isValid = false;
@@ -3657,22 +2688,15 @@
                 highlightError(service);
                 isValid = false;
             }
-            
-            // Validate email if provided
-            if (email.value.trim() && !isValidEmail(email.value)) {
-                highlightError(email);
-                isValid = false;
-            }
 
-            // Phone number validation (Indian format)
             if (phone.value.trim() && !validatePhone(phone.value)) {
                 highlightError(phone);
-                showFormStatus('error', 'Please enter a valid 10-digit phone number.');
+                showFormStatus('error', 'Please enter a valid 10-digit Indian phone number.');
                 isValid = false;
             }
 
             if (!isValid) {
-                showFormStatus('error', 'Please fill in all required fields correctly (marked with *).');
+                showFormStatus('error', 'Please complete all required fields marked with * correctly.');
                 setTimeout(() => {
                     document.getElementById('formStatus').style.display = 'none';
                 }, 5000);
@@ -3682,7 +2706,6 @@
         }
 
         function validatePhone(phone) {
-            // Accepts: 10 digits, may start with +91, 0, or nothing
             const phoneRegex = /^(\+91|0)?[6789]\d{9}$/;
             return phoneRegex.test(phone.replace(/\D/g, ''));
         }
@@ -3694,11 +2717,6 @@
             }
         }
 
-        function isValidEmail(email) {
-            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            return re.test(email);
-        }
-
         function showFormStatus(type, message) {
             const formStatus = document.getElementById('formStatus');
             if (!formStatus) return;
@@ -3706,9 +2724,6 @@
             formStatus.className = `form-status ${type}`;
             formStatus.innerHTML = message;
             formStatus.style.display = 'block';
-            
-            // Scroll to form status
-            formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
 
         // ===== BACK TO TOP =====
@@ -3732,58 +2747,6 @@
             });
         }
 
-        // ===== RESIZE HANDLER FOR BACKGROUND ICONS =====
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                initBackground();
-            }, 250);
-        });
-
-        // ===== ERROR HANDLING FOR SLIDESHOW IMAGES =====
-        document.querySelectorAll('.slide img').forEach(img => {
-            img.addEventListener('error', function() {
-                console.warn(`Failed to load slideshow image: ${this.src}`);
-                
-                const isMobile = window.innerWidth <= 768;
-                const placeholderHeight = isMobile ? '55vh' : '75vh';
-                
-                this.style.backgroundColor = '#f0f0f0';
-                this.style.display = 'flex';
-                this.style.alignItems = 'center';
-                this.style.justifyContent = 'center';
-                this.style.minHeight = placeholderHeight;
-                this.style.objectFit = 'none';
-                this.innerHTML = `<div style="color: var(--accent); font-weight: bold; text-align: center; padding: 20px; font-size: 1.2rem;">${this.alt}<br><small>PQ Studios Hyderabad</small></div>`;
-            });
-        });
-
-        // ===== IMPROVED TOUCH HANDLING FOR MOBILE =====
-        if ('ontouchstart' in window || navigator.maxTouchPoints) {
-            const style = document.createElement('style');
-            style.textContent = `
-                @media (hover: none) and (pointer: coarse) {
-                    .btn:hover, .btn:focus {
-                        transform: none !important;
-                    }
-                    .service-card:hover {
-                        transform: none !important;
-                    }
-                    .featured-item:hover img {
-                        transform: none !important;
-                    }
-                    .nav-link:hover::after {
-                        width: 0 !important;
-                    }
-                    .client-logo-item:hover {
-                        transform: none !important;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-        }
-
         // ===== PREVENT MULTIPLE FORM SUBMISSIONS =====
         let isSubmitting = false;
         const contactForm = document.getElementById('contactForm');
@@ -3798,10 +2761,9 @@
                 
                 const submitBtn = this.querySelector('button[type="submit"]');
                 const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
                 submitBtn.disabled = true;
                 
-                // Re-enable after 5 seconds
                 setTimeout(() => {
                     isSubmitting = false;
                     submitBtn.innerHTML = originalText;
@@ -3809,15 +2771,6 @@
                 }, 5000);
             });
         }
-
-        // Example usage for updating reviews (you can run this in browser console):
-        // updateReview(0, {
-        //     initials: "JS",
-        //     name: "John Smith",
-        //     date: "Yesterday",
-        //     rating: 5,
-        //     content: "Amazing photography work!"
-        // });
     </script>
 </body>
 </html>
