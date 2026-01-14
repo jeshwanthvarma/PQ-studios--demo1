@@ -1,0 +1,3374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <meta name="description" content="Discover PQ Studios Hyderabad - founded by award-winning photographer Sai Kumar Maddina. With 8+ years of expertise in wedding, commercial, and portrait photography, we transform moments into timeless visual masterpieces.">
+    <title>PQ Studios - Professional Photography Studio | Hyderabad, India</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#4682b4">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="msapplication-TileColor" content="#4682b4">
+    <meta name="theme-color" content="#4682b4">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <style>
+        /* ===== FULL WIDTH DESKTOP FIX ===== */
+        @media (min-width: 1400px) {
+            .container {
+                max-width: 100% !important;
+                padding: 0 80px !important;
+            }
+            
+            .slideshow-hero {
+                min-height: 80vh !important;
+            }
+            
+            .featured-grid {
+                grid-template-columns: repeat(3, 1fr) !important;
+                gap: 15px !important;
+            }
+            
+            .service-cards {
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 30px !important;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(5, 1fr) !important;
+            }
+            
+            .about-section-card {
+                max-width: 90% !important;
+                padding: 3rem !important;
+            }
+        }
+
+        /* ===== PERFORMANCE OPTIMIZATION ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #4682b4;
+            --accent-light: #6ba1d6;
+            --accent-dark: #2a5c8a;
+            --accent-gradient: linear-gradient(135deg, #4682b4, #4a8bc4);
+            --light: #ffffff;
+            --gray: #6c757d;
+            --gray-light: #e9ecef;
+            --white: #ffffff;
+            --black: #212529;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.16);
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--black);
+            line-height: 1.6;
+            background-color: var(--white);
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        /* Remove heavy animations */
+        .photography-icons {
+            display: none;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 30px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                padding: 0 50px;
+            }
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 { font-size: 2rem; }
+        h2 { font-size: 1.5rem; }
+        h3 { font-size: 1.25rem; }
+        h4 { font-size: 1.125rem; }
+
+        @media (min-width: 768px) {
+            h1 { font-size: 3rem !important; }
+            h2 { font-size: 2.5rem !important; }
+            h3 { font-size: 1.5rem; }
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .text-center { text-align: center; }
+        .highlight { color: #4682b4; font-weight: 700; }
+        .owner-name { color: #4682b4; font-weight: 700; }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 1.75rem;
+            border-radius: 8px !important;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border: 2px solid transparent;
+            transition: var(--transition);
+            cursor: pointer;
+            min-height: 56px;
+            min-width: 56px;
+            gap: 0.75rem;
+            touch-action: manipulation;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+            color: var(--white);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: #6ba1d6;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(70, 130, 180, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #4682b4;
+            border-color: #4682b4;
+        }
+
+        .btn-outline:hover {
+            background: #4682b4;
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-spacing {
+            margin: 8px !important;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0.75rem 0;
+            box-shadow: var(--shadow-sm);
+            height: 70px;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #4682b4 25%, #6ba1d6 50%, #4682b4 75%, transparent 100%);
+            opacity: 0.3;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.25rem;
+            height: 100%;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .logo-image {
+                height: 40px;
+            }
+        }
+
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .desktop-nav {
+                display: block;
+            }
+            
+            .desktop-nav .nav-items {
+                display: flex;
+                list-style: none;
+                gap: 2.5rem;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .desktop-nav .nav-link {
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 500;
+                font-size: 1.05rem;
+                padding: 0.75rem 0;
+                position: relative;
+                transition: var(--transition);
+            }
+            
+            .desktop-nav .nav-link:hover,
+            .desktop-nav .nav-link.active {
+                color: #4682b4;
+            }
+            
+            .desktop-nav .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 3px;
+                background: #4682b4;
+                transition: width 0.3s ease;
+            }
+            
+            .desktop-nav .nav-link:hover::after,
+            .desktop-nav .nav-link.active::after {
+                width: 100%;
+            }
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            width: 48px;
+            height: 48px;
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0;
+        }
+
+        @media (min-width: 1024px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--primary);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .menu-toggle span::before,
+        .menu-toggle span::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .menu-toggle span::before {
+            top: -7px;
+        }
+
+        .menu-toggle span::after {
+            bottom: -7px;
+        }
+
+        .menu-toggle.active span {
+            background: transparent;
+        }
+
+        .menu-toggle.active span::before {
+            transform: rotate(45deg);
+            top: 0;
+        }
+
+        .menu-toggle.active span::after {
+            transform: rotate(-45deg);
+            bottom: 0;
+        }
+
+        .nav-overlay {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 70px);
+            background: rgba(0,0,0,0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .nav-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 85%;
+            max-width: 320px;
+            height: calc(100vh - 70px);
+            background: var(--white);
+            padding: 2rem 1.75rem;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        }
+
+        .nav-menu.active {
+            right: 0;
+        }
+
+        .nav-menu .nav-items {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-menu .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 1.25rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            font-size: 1.05rem;
+        }
+
+        .nav-menu .nav-link i {
+            margin-right: 1rem;
+            width: 22px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .nav-menu .nav-link:active,
+        .nav-menu .nav-link.active {
+            background: rgba(70, 130, 180, 0.1);
+            color: #4682b4;
+        }
+
+        /* ===== PAGE CONTENT ===== */
+        .page-content {
+            padding-top: 70px;
+            min-height: calc(100vh - 70px);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page {
+            display: none;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* ===== HERO SECTIONS ===== */
+        .about-hero,
+        .services-hero,
+        .contact-hero,
+        .gallery-hero {
+            position: relative;
+            min-height: 20vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--white);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* ===== HOME PAGE ===== */
+        /* ===== FIXED: MOBILE-OPTIMIZED HERO SLIDESHOW ===== */
+        .slideshow-hero {
+            position: relative;
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .slideshow-hero {
+                min-height: 55vh;
+                height: 55vh;
+                max-height: 55vh;
+                margin-top: 0;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slideshow-hero {
+                min-height: 50vh;
+                height: 50vh;
+                max-height: 50vh;
+                padding-top: 3px;
+                padding-bottom: 3px;
+            }
+        }
+
+        .slideshow-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            background-color: #ffffff;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-color: #ffffff;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            background-color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .slide img {
+                object-fit: contain;
+                background-color: #ffffff;
+            }
+        }
+
+        /* ===== FEATURED WORK ===== */
+        .featured-work {
+            position: relative;
+            padding-top: 2rem !important;
+            padding-bottom: 1.5rem !important;
+            margin-top: 0 !important;
+        }
+
+        @media (max-width: 768px) {
+            .featured-work {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1rem !important;
+                margin-top: 0 !important;
+            }
+        }
+
+        .featured-work .container {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4px;
+            margin-top: 1rem !important;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (min-width: 768px) {
+            .featured-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1rem;
+                margin-top: 1.5rem !important;
+            }
+        }
+
+        .featured-item {
+            position: relative;
+            border-radius: 0;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+            background: transparent;
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .featured-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ===== CLIENTS SECTION ===== */
+        .clients-section {
+            padding: 3rem 0;
+            background: rgba(248, 249, 250, 0.8);
+            overflow: hidden;
+        }
+        
+        .clients-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+        }
+        
+        .clients-track {
+            display: flex;
+            align-items: center;
+            animation: scrollClients 25s linear infinite;
+            width: max-content;
+        }
+        
+        @keyframes scrollClients {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .client-logo-item {
+            flex: 0 0 auto;
+            width: 120px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-md);
+            padding: 15px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--gray-light);
+            margin-right: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .client-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* ===== SERVICES PAGE ===== */
+        .service-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .service-cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .service-cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .service-cards {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(70, 130, 180, 0.1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: #4682b4;
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+            font-size: 1.75rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-card-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 1.5rem;
+        }
+
+        .service-anchor {
+            position: absolute;
+            top: -70px;
+            visibility: hidden;
+        }
+
+        .service-pricing {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid rgba(70, 130, 180, 0.1);
+        }
+
+        .price-tag {
+            display: inline-block;
+            background: #4682b4;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-top: 0.75rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* ===== GALLERY PAGE ===== */
+        .simple-dropdown {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 20px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .simple-dropdown-toggle {
+            width: 100%;
+            background: #4682b4;
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
+        }
+
+        .simple-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 8px;
+            background: white;
+            border-radius: var(--radius-md);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            overflow: hidden;
+            display: none;
+            z-index: 1001;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+
+        .simple-dropdown-menu.active {
+            display: block;
+        }
+
+        .simple-dropdown-item {
+            display: block;
+            padding: 16px 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--gray-light);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .simple-dropdown-item:hover {
+            background: rgba(70, 130, 180, 0.1);
+            color: #4682b4;
+        }
+
+        .gallery-page-content {
+            padding-top: 70px;
+            min-height: 100vh;
+        }
+
+        .gallery-section {
+            padding: 40px 20px;
+            scroll-margin-top: 120px;
+        }
+
+        /* ===== GALLERY GRID - RESTORED TO OLD LAYOUT ===== */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .gallery-grid {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: #ffffff;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* ===== GALLERY MODAL POPUP ===== */
+        .gallery-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .gallery-modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 95%;
+            max-width: 1200px;
+            height: 90vh;
+            background: transparent;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                width: 100%;
+                height: 100vh;
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 2001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .modal-close {
+                top: 10px;
+                right: 10px;
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        .modal-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 2001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .modal-nav-btn {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+                bottom: 20px;
+                top: auto;
+                transform: none;
+            }
+        }
+
+        .modal-prev {
+            left: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-prev {
+                left: 10px;
+                bottom: 10px;
+            }
+        }
+
+        .modal-next {
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-next {
+                right: 10px;
+                bottom: 10px;
+            }
+        }
+
+        .modal-nav-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .modal-nav-btn:hover {
+                transform: scale(1.1);
+            }
+        }
+
+        .modal-image-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-image-container {
+                padding: 50px 10px;
+            }
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .modal-counter {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            z-index: 2001;
+        }
+
+        @media (max-width: 768px) {
+            .modal-counter {
+                bottom: 60px;
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+        }
+
+        /* ===== CONTACT PAGE ===== */
+        .contact-form-container {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(70, 130, 180, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #4682b4;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 1px solid rgba(70, 130, 180, 0.3);
+            border-radius: var(--radius-sm);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #4682b4;
+            box-shadow: 0 0 0 3px rgba(70, 130, 180, 0.1);
+        }
+
+        /* WhatsApp CTA Section - BLUE THEME */
+        .whatsapp-cta {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .whatsapp-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-cta {
+                padding: 1.75rem;
+            }
+        }
+
+        .whatsapp-cta h3 {
+            color: white;
+            margin-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        .whatsapp-cta p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 1.75rem;
+            font-size: 1rem;
+        }
+
+        .whatsapp-btn {
+            background: white;
+            color: #4682b4;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .whatsapp-btn:hover {
+            background: #4682b4;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(70, 130, 180, 0.3);
+        }
+
+        /* ===== FOOTER - FIXED ALIGNMENT ===== */
+        .footer {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: var(--white);
+            padding: 3rem 0 1.5rem;
+            margin-top: 4rem;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4682b4, #6ba1d6);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        .footer h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            color: white;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #4682b4;
+        }
+
+        /* FIXED: Core Services List Alignment */
+        .footer ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 0.75rem;
+            transition: var(--transition);
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .footer ul li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .footer ul li i {
+            color: #6ba1d6;
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+            font-size: 0.9rem;
+        }
+
+        /* Updated contact info with underlined links */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.4;
+        }
+
+        .contact-item a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: underline;
+            text-decoration-color: rgba(255,255,255,0.3);
+            text-underline-offset: 3px;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: #6ba1d6;
+            text-decoration-color: #6ba1d6;
+        }
+
+        .contact-item i {
+            color: #6ba1d6;
+            width: 20px;
+            text-align: center;
+            flex-shrink: 0;
+            font-size: 1.1rem;
+        }
+
+        /* UPDATED: Colorful Social Icons like Instagram */
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 1.25rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.3rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-link:hover::before {
+            opacity: 1;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Instagram-like gradient for all social icons */
+        .social-link.instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+        }
+
+        .social-link.whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+
+        .social-link.email {
+            background: linear-gradient(135deg, #EA4335, #D14836);
+        }
+
+        .social-link.phone {
+            background: linear-gradient(135deg, #34B7F1, #1E9FE0);
+        }
+
+        .social-link.facebook {
+            background: linear-gradient(135deg, #1877F2, #0A58CA);
+        }
+
+        .social-link.youtube {
+            background: linear-gradient(135deg, #FF0000, #CC0000);
+        }
+
+        .all-features-list li {
+            color: rgba(255,255,255,0.9);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+            transition: var(--transition);
+            padding: 4px 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .all-features-list li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+
+        .all-features-list li i {
+            color: #4ECDC4;
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.85rem;
+        }
+
+        .footer-bottom p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            border: none;
+            box-shadow: var(--shadow-lg);
+            font-size: 1.2rem;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* ===== MOBILE OPTIMIZATIONS ===== */
+        @media (max-width: 767px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .service-card-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.95rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            /* Mobile touch improvements */
+            .nav-menu .nav-link,
+            .btn,
+            .simple-dropdown-item {
+                padding: 1rem;
+                min-height: 48px;
+            }
+            
+            /* Larger touch targets for mobile */
+            .featured-item,
+            .gallery-item {
+                cursor: pointer;
+            }
+            
+            /* Smaller social buttons on mobile */
+            .social-link {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ===== FORM STATUS ===== */
+        .form-status {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+
+        .form-status.loading {
+            background: rgba(70, 130, 180, 0.1);
+            color: #4682b4;
+            border: 1px solid rgba(70, 130, 180, 0.3);
+        }
+
+        .form-status.success {
+            background: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.3);
+        }
+
+        .form-status.error {
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+        }
+
+        /* ===== NEW ABOUT PAGE STYLES ===== */
+        /* Profile Image */
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #4682b4;
+            margin: 0 auto 2rem;
+            display: block;
+            box-shadow: var(--shadow-lg);
+        }
+
+        @media (max-width: 768px) {
+            .profile-image {
+                width: 160px;
+                height: 160px;
+            }
+        }
+
+        /* Updated About Section Cards */
+        .about-section-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin: 2rem auto;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(70, 130, 180, 0.1);
+            transition: var(--transition);
+        }
+
+        .about-section-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .about-section-card h2 {
+            color: #4682b4;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .about-section-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #4682b4;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        .expertise-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid #4682b4;
+            transition: var(--transition);
+        }
+
+        .expertise-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .expertise-item i {
+            color: #4682b4;
+            font-size: 1.5rem;
+            margin-top: 0.25rem;
+            min-width: 30px;
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .why-choose-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .why-choose-item {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(70, 130, 180, 0.1);
+        }
+
+        .why-choose-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .why-choose-item h3 {
+            color: #4682b4;
+            margin-bottom: 1rem;
+        }
+
+        .why-choose-item .icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.75rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 2rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.25rem;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(70, 130, 180, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #4682b4;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        /* ===== REVIEWS SECTION ===== */
+        .reviews-section {
+            margin: 4rem 0;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .reviews-header h3 {
+            color: #4682b4;
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Clickable Google Badge - Blue Theme */
+        .clickable-google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #ffffff;
+            padding: 8px 16px;
+            border-radius: 50px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(70, 130, 180, 0.2);
+            font-weight: 500;
+            font-size: 0.95rem;
+            height: 44px;
+            text-decoration: none;
+            color: #4682b4;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+
+        .clickable-google-badge:hover {
+            background: #4682b4;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(70, 130, 180, 0.3);
+            border-color: #4682b4;
+        }
+
+        .clickable-google-badge:hover svg path {
+            fill: white;
+        }
+
+        .clickable-google-badge svg {
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
+
+        .clickable-google-badge span {
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .reviews-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .reviews-track {
+            display: flex;
+            gap: 1.5rem;
+            animation: scrollReviews 30s linear infinite;
+            width: max-content;
+            padding: 0 1rem;
+        }
+
+        @keyframes scrollReviews {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-350px * 5 - 1.5rem * 5)); }
+        }
+
+        .review-card {
+            flex: 0 0 auto;
+            width: 350px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(70, 130, 180, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .review-card {
+                width: 300px;
+                padding: 1.5rem;
+            }
+            
+            @keyframes scrollReviews {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-300px * 5 - 1.5rem * 5)); }
+            }
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .review-name {
+            font-weight: 600;
+            color: #4682b4;
+            margin-bottom: 0.25rem;
+        }
+
+        .review-date {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .review-stars i {
+            color: #FFD700;
+            font-size: 1rem;
+        }
+
+        .review-content {
+            color: var(--gray);
+            line-height: 1.6;
+            font-style: italic;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .review-content::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 3rem;
+            color: rgba(70, 130, 180, 0.1);
+            font-family: serif;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin: 3rem auto;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(70, 130, 180, 0.08);
+            max-width: 1200px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .final-cta:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 767px) {
+            .final-cta {
+                padding: 1.75rem;
+                margin: 2rem 0;
+            }
+        }
+
+        .final-cta h3 {
+            color: #4682b4;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+        }
+
+        .final-cta p {
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Gallery Modal Popup -->
+    <div class="gallery-modal" id="galleryModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose" aria-label="Close gallery">
+                <i class="fas fa-times"></i>
+            </button>
+            <button class="modal-nav-btn modal-prev" id="modalPrev" aria-label="Previous image">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="modal-nav-btn modal-next" id="modalNext" aria-label="Next image">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <div class="modal-image-container">
+                <img id="modalImage" class="modal-image" src="" alt="">
+            </div>
+            <div class="modal-counter" id="modalCounter">1 / 1</div>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#home" class="logo" onclick="event.preventDefault(); showPage('home');">
+                <img src="Logo.png" alt="PQ Studios - Professional Photography Studio Hyderabad" class="logo-image">
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="nav-items">
+                    <li><a href="#home" class="nav-link active" onclick="event.preventDefault(); showPage('home');">Home</a></li>
+                    <li><a href="#services" class="nav-link" onclick="event.preventDefault(); showPage('services');">Services</a></li>
+                    <li><a href="#gallery" class="nav-link" onclick="event.preventDefault(); showPage('gallery');">Portfolio</a></li>
+                    <li><a href="#about" class="nav-link" onclick="event.preventDefault(); showPage('about');">About</a></li>
+                    <li><a href="#contact" class="nav-link" onclick="event.preventDefault(); showPage('contact');">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <span></span>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div class="nav-overlay" id="navOverlay"></div>
+        
+        <!-- Mobile Navigation Menu -->
+        <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
+            <ul class="nav-items">
+                <li><a href="#home" class="nav-link active" onclick="event.preventDefault(); showPage('home');"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#services" class="nav-link" onclick="event.preventDefault(); showPage('services');"><i class="fas fa-camera"></i> Services</a></li>
+                <li><a href="#gallery" class="nav-link" onclick="event.preventDefault(); showPage('gallery');"><i class="fas fa-images"></i> Portfolio</a></li>
+                <li><a href="#about" class="nav-link" onclick="event.preventDefault(); showPage('about');"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#contact" class="nav-link" onclick="event.preventDefault(); showPage('contact');"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <div class="page-content">
+        <!-- HOME PAGE -->
+        <div id="home-page" class="page active">
+            <section class="slideshow-hero">
+                <div class="slideshow-container" id="slideshowContainer">
+                    <div class="slide active">
+                        <img src="homepageslideshow01.jpg" alt="Professional Photography Studio Hyderabad" loading="eager">
+                    </div>
+                    <div class="slide">
+                        <img src="homepageslideshow02.jpg" alt="Food Photography Hyderabad" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="homepageslideshow03.jpg" alt="Product Photography Services" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="homepageslideshow04.jpg" alt="Fashion Photography Hyderabad" loading="lazy">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Work Section -->
+            <section class="section featured-work">
+                <div class="container">
+                    <h2 class="text-center">Our Portfolio Excellence</h2>
+                    <p class="text-center">A curated selection of our most distinguished photography projects showcasing unparalleled artistry and technical mastery.</p>
+                    
+                    <div class="featured-grid" id="featuredGrid">
+                        <!-- Featured items loaded by JavaScript -->
+                    </div>
+                    
+                    <div class="text-center" style="margin-top: 2rem;">
+                        <a href="#gallery" class="btn btn-primary btn-spacing" onclick="event.preventDefault(); showPage('gallery');">
+                            <i class="fas fa-images"></i> Explore Complete Portfolio
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Clients Section -->
+            <section class="clients-section">
+                <div class="container">
+                    <h3 class="text-center mb-2" style="color: #4682b4;">Trusted By Prestigious Brands</h3>
+                    <p class="text-center mb-4">Collaborating with industry leaders to deliver exceptional visual narratives</p>
+                    
+                    <div class="clients-wrapper">
+                        <div class="clients-track" id="clientsTrack">
+                            <!-- Client logos loaded by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- SERVICES PAGE -->
+        <div id="services-page" class="page">
+            <section class="services-hero">
+                <div class="container">
+                    <h1 class="hero-title">Comprehensive <span class="highlight">Photography Services</span></h1>
+                    <p class="hero-subtitle">Elevating brands and capturing moments through masterful visual storytelling</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <h2 class="text-center mb-4">Our Service Portfolio</h2>
+                    <p class="text-center mb-4">Specialized photography solutions tailored to meet your specific visual requirements</p>
+                    
+                    <div class="service-cards" id="servicesContainer">
+                        <!-- Services loaded by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- GALLERY PAGE -->
+        <div id="gallery-page" class="page">
+            <div class="simple-dropdown">
+                <button class="simple-dropdown-toggle" id="galleryDropdownToggle">
+                    <span>Select Portfolio Category</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                
+                <div class="simple-dropdown-menu" id="galleryDropdownMenu">
+                    <!-- Categories loaded by JavaScript -->
+                </div>
+            </div>
+
+            <div class="gallery-page-content">
+                <div id="gallerySections">
+                    <!-- Gallery sections loaded by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- NEW ABOUT PAGE -->
+        <div id="about-page" class="page">
+            <section class="about-hero">
+                <div class="container">
+                    <h1 class="hero-title">About <span class="highlight">PQ Studios</span></h1>
+                    <p class="hero-subtitle">Master Photography in Hyderabad by Award-Winning Photographer Sai Kumar Maddina</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <!-- 1. About Me -->
+                    <div class="about-section-card">
+                        <div class="text-center mb-4">
+                            <img src="sai kumar profile pic.jpg" 
+                                 alt="Sai Kumar Maddina - Award-Winning Photographer Hyderabad" 
+                                 class="profile-image"
+                                 loading="lazy">
+                        </div>
+                        
+                        <h2>About Me: The Visionary Behind PQ Studios</h2>
+                        
+                        <p>I am <span class="owner-name">Sai Kumar Maddina</span>, the founder and principal photographer at PQ Studios Hyderabad. With over eight years of dedicated expertise in professional photography, I have established our studio as Hyderabad's premier destination for exceptional visual storytelling.</p>
+                        
+                        <p>My journey in photography began with formal education in visual arts, complemented by continuous mastery of evolving photographic techniques. This academic foundation, combined with extensive field experience, enables me to approach each project with both artistic vision and technical precision.</p>
+                        
+                        <p>My philosophy is encapsulated in this guiding principle: <em>"Great photography transcends mere visual representation; it evokes emotion, tells stories, and creates lasting impact."</em> This ethos informs every project we undertake, from intimate portrait sessions to comprehensive commercial productions.</p>
+                        
+                        <!-- SIMPLIFIED STATS GRID -->
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">8+</div>
+                                <div class="stat-label">Years of Excellence</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">500+</div>
+                                <div class="stat-label">Satisfied Clients</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. My Photography Philosophy -->
+                    <div class="about-section-card">
+                        <h2>My Photography Philosophy</h2>
+                        
+                        <p>At PQ Studios, we believe that photography is an art form that requires both technical mastery and emotional intelligence. Our approach is built on three fundamental pillars:</p>
+                        
+                        <div class="expertise-grid">
+                            <div class="expertise-item">
+                                <i class="fas fa-eye"></i>
+                                <div>
+                                    <h4>Artistic Vision</h4>
+                                    <p>Every image must possess aesthetic integrity and emotional resonance, transforming ordinary moments into extraordinary visual narratives.</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-cogs"></i>
+                                <div>
+                                    <h4>Technical Excellence</h4>
+                                    <p>Meticulous attention to lighting, composition, and post-production ensures flawless execution of every photographic assignment.</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-heart"></i>
+                                <div>
+                                    <h4>Client Collaboration</h4>
+                                    <p>We partner with clients to understand their vision, ensuring the final imagery authentically represents their unique story and brand identity.</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <h4>Innovative Approach</h4>
+                                    <p>Continuous learning and adaptation to emerging photographic techniques and technologies keeps our work at the industry forefront.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. About My Studio / The Experience -->
+                    <div class="about-section-card">
+                        <h2>The PQ Studios Experience</h2>
+                        
+                        <p>PQ Studios represents the culmination of a passionate vision transformed into Hyderabad's most distinguished photography studio. Our journey began with a commitment to excellence and has evolved into a comprehensive visual solutions provider serving clients across India.</p>
+                        
+                        <div class="expertise-grid">
+                            <div class="expertise-item">
+                                <div class="icon">
+                                    <i class="fas fa-camera-retro"></i>
+                                </div>
+                                <div>
+                                    <h4>Professional Studio</h4>
+                                    <p>Modern photography studio with advanced equipment and versatile backdrops for all your photography needs in Hyderabad.</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="icon">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div>
+                                    <h4>Complete Solutions</h4>
+                                    <p>End-to-end visual services including photography, videography, post-production, and brand visual consulting.</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Strategic Location</h4>
+                                    <p>Conveniently situated in Hyderabad's Hitech City, serving clients throughout India with professional photography excellence.</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <h4>Timely Delivery</h4>
+                                    <p>Commitment to punctual project completion without compromising on the quality and excellence of deliverables.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Why Choose Us -->
+                    <div class="about-section-card">
+                        <h2>Why Choose PQ Studios Hyderabad</h2>
+                        
+                        <div class="expertise-grid">
+                            <div class="expertise-item">
+                                <div class="icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h4>Education Meets Experience</h4>
+                                    <p>Formally trained photographers combining academic knowledge with extensive practical expertise for superior results.</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Hyderabad-Based, India-Ready</h4>
+                                    <p>While anchored in Hyderabad, our professional services extend nationwide, bringing consistent excellence to every project location.</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="icon">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <div>
+                                    <h4>Comprehensive Service Portfolio</h4>
+                                    <p>From wedding photography to commercial brand imaging, we offer complete photographic solutions under one roof.</p>
+                                </div>
+                            </div>
+                            <div class="expertise-item">
+                                <div class="icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <div>
+                                    <h4>Client-Centric Partnership</h4>
+                                    <p>We believe in collaborative relationships, working closely with clients to exceed expectations and deliver exceptional value.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Customer Reviews -->
+                    <div class="about-section-card">
+                        <h2>Client Testimonials</h2>
+                        
+                        <div class="reviews-header">
+                            <p>Experience the excellence that has earned us outstanding reviews from satisfied clients</p>
+                        
+                            <!-- Google Badge -->
+                            <a href="https://www.google.com/search?sca_esv=6cd0ff9fcc6c64b6&sxsrf=ANbL-n5bgiqLbDCg2Mvr9Jj12-Al7kT3SA:1768330104158&q=p+q+studios+hyderabad+reviews&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOaIGCz296tTmAN5YG53c9HanWD5nNaCgGyrj-JrHb16ZMXycdiXOwcnxqgLup1zc8cqkjne7zO3R1IQ7T46YBim8PWk4dYxLveMguw-hjE6pLW-xCQ%3D%3D&sa=X&ved=2ahUKEwiW0ND9lomSAxVRVmwGHdbzHEgQ9qsLegQIGRAG&biw=392&bih=784&dpr=2.75&aic=0#ebo=4" 
+                               target="_blank" 
+                               class="clickable-google-badge">
+                                <!-- Original Google Logo -->
+                                <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                                </svg>
+                                <span>Read Our Google Reviews</span>
+                            </a>
+                        </div>
+                        
+                        <!-- Reviews Track -->
+                        <div class="reviews-container">
+                            <div class="reviews-track" id="reviewsTrack">
+                                <!-- Review 1 -->
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">RK</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Rajesh Kumar</div>
+                                            <div class="review-date">2 weeks ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Exceptional wedding photography services from PQ Studios. Sai and his team captured every precious moment with artistic precision and emotional depth. Highly recommended for any photography requirement in Hyderabad.
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 2 -->
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">PS</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Priya Sharma</div>
+                                            <div class="review-date">1 month ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Professional product photography that significantly enhanced our e-commerce conversions. The attention to detail and lighting expertise resulted in imagery that perfectly represents our brand ethos.
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 3 -->
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">AM</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Anil Mehta</div>
+                                            <div class="review-date">3 weeks ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Corporate branding photography that exceeded all expectations. Sai understood our corporate identity perfectly and delivered imagery that strengthens our brand positioning.
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 4 -->
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">SN</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Sneha Nair</div>
+                                            <div class="review-date">2 months ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Family portrait session executed with professional excellence. The team created a comfortable environment and delivered timeless images that we will cherish forever.
+                                    </div>
+                                </div>
+                                
+                                <!-- Review 5 -->
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">VR</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Vikram Reddy</div>
+                                            <div class="review-date">1 week ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Real estate photography that perfectly captured the architectural essence of our luxury properties. The professional imagery significantly accelerated our sales process.
+                                    </div>
+                                </div>
+                                
+                                <!-- Duplicate reviews for seamless scrolling -->
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">RK</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Rajesh Kumar</div>
+                                            <div class="review-date">2 weeks ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Exceptional wedding photography services from PQ Studios. Sai and his team captured every precious moment with artistic precision and emotional depth. Highly recommended for any photography requirement in Hyderabad.
+                                    </div>
+                                </div>
+                                
+                                <div class="review-card">
+                                    <div class="review-header">
+                                        <div class="review-avatar">PS</div>
+                                        <div class="review-info">
+                                            <div class="review-name">Priya Sharma</div>
+                                            <div class="review-date">1 month ago</div>
+                                        </div>
+                                    </div>
+                                    <div class="review-stars">
+                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                    </div>
+                                    <div class="review-content">
+                                        Professional product photography that significantly enhanced our e-commerce conversions. The attention to detail and lighting expertise resulted in imagery that perfectly represents our brand ethos.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Final CTA -->
+                    <div class="final-cta">
+                        <h3>Ready to Transform Your Visual Narrative?</h3>
+                        <p>Partner with Hyderabad's premier photography studio for exceptional results</p>
+                        <div style="margin-top: 2rem;">
+                            <a href="#contact" class="btn btn-primary" onclick="event.preventDefault(); showPage('contact');">
+                                <i class="fas fa-calendar-alt"></i> Schedule Your Consultation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- CONTACT PAGE -->
+        <div id="contact-page" class="page">
+            <section class="contact-hero">
+                <div class="container">
+                    <h1 class="hero-title">Contact <span class="highlight">PQ Studios</span></h1>
+                    <p class="hero-subtitle">Connect with Hyderabad's Premier Photography Studio for Exceptional Visual Solutions</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="contact-form-container">
+                        <h2 class="mb-3">Professional Consultation Request</h2>
+                        <p class="mb-4">Complete the form below for a personalized photography consultation. Our team will respond within 24 hours.</p>
+                        
+                        <div id="formStatus" class="form-status"></div>
+                        
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="701f0f4c-cea4-40a0-ba87-0b0859fab2bb">
+                            <input type="hidden" name="subject" value="PQ Studios Consultation Request">
+                            <input type="hidden" name="from_name" value="PQ Studios Website">
+                            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                            <input type="checkbox" name="botcheck" style="display: none;">
+                            
+                            <div class="form-group">
+                                <label for="name" class="form-label required">Full Name *</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone" class="form-label required">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="service" class="form-label required">Service Requirement *</label>
+                                <select id="service" name="service" class="form-control" required>
+                                    <option value="">Select photography service</option>
+                                    <option value="wedding">Wedding & Events Photography</option>
+                                    <option value="commercial">Commercial & Brand Photography</option>
+                                    <option value="portrait">Portrait & Lifestyle Photography</option>
+                                    <option value="product">Product & Food Photography</option>
+                                    <option value="fashion">Fashion & Editorial Photography</option>
+                                    <option value="real-estate">Real Estate & Architecture</option>
+                                    <option value="studio">Studio Rental Services</option>
+                                    <option value="consultation">Photography Consultation</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Project Details & Requirements</label>
+                                <textarea id="message" name="message" class="form-control" rows="4" placeholder="Please share details about your project, timeline, and specific requirements..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-block">
+                                <i class="fas fa-paper-plane"></i> Submit Consultation Request
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- WhatsApp CTA Section - BLUE THEME -->
+                    <div class="whatsapp-cta">
+                        <h3>Prefer to Chat?</h3>
+                        <p>Get instant responses on WhatsApp for quick queries and consultations.</p>
+                        <a href="https://wa.me/919652337710" target="_blank" class="whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+        <!-- Footer - UPDATED -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>PQ Studios Hyderabad</h3>
+                    <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 1rem; font-size: 0.9rem; line-height: 1.6;">
+                        Premier photography studio in Hyderabad delivering exceptional visual storytelling through masterful photography and artistic excellence.
+                    </p>
+                    
+                    <!-- Contact Info -->
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919652337710" class="footer-link">+91 96523 37710</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@pqstudios.net" class="footer-link">info@pqstudios.net</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Hitech City, Hyderabad | Serving Across India</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <span>By Appointment: Monday - Saturday, 10AM - 7PM</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Modern Colorful Social Icons -->
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/pqstudios_hyd" target="_blank" class="social-link instagram" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/919652337710" target="_blank" class="social-link whatsapp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:info@pqstudios.net" class="social-link email" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:+919652337710" class="social-link phone" aria-label="Phone">
+                            <i class="fas fa-phone-alt"></i>
+                        </a>
+                        <a href="https://www.facebook.com/portrayalque" class="social-link facebook" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    <!-- <a href="#" class="social-link youtube" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a> -->
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Core Services</h3>
+                    <ul>
+                        <li onclick="goToService('food')" style="cursor: pointer;">
+                            <i class="fas fa-utensils"></i> Food Photography
+                        </li>
+                        <li onclick="goToService('product')" style="cursor: pointer;">
+                            <i class="fas fa-box-open"></i> Product Photography
+                        </li>
+                        <li onclick="goToService('fashion')" style="cursor: pointer;">
+                            <i class="fas fa-tshirt"></i> Fashion Photography
+                        </li>
+                        <li onclick="goToService('pets')" style="cursor: pointer;">
+                            <i class="fas fa-paw"></i> Pet Photography
+                        </li>
+                        <li onclick="goToService('brand')" style="cursor: pointer;">
+                            <i class="fas fa-briefcase"></i> Brand Portfolios
+                        </li>
+                        <li onclick="goToService('interiors')" style="cursor: pointer;">
+                            <i class="fas fa-building"></i> Architectural Photography
+                        </li>
+                        <li onclick="goToService('ecommerce')" style="cursor: pointer;">
+                            <i class="fas fa-shopping-cart"></i> E-Commerce Visuals
+                        </li>
+                        <li onclick="goToService('studio')" style="cursor: pointer;">
+                            <i class="fas fa-camera"></i> Studio Rentals
+                        </li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>All Services</h3>
+                    <ul class="all-features-list">
+                        <li onclick="goToService('wedding')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Wedding & Event Photography
+                        </li>
+                        <li onclick="goToService('commercial')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Commercial Brand Photography
+                        </li>
+                        <li onclick="goToService('portrait')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Portrait & Lifestyle Sessions
+                        </li>
+                        <li onclick="goToService('food')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Product & Food Styling
+                        </li>
+                        <li onclick="goToService('fashion')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Fashion & Editorial Photography
+                        </li>
+                        <li onclick="goToService('interiors')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Real Estate & Architecture
+                        </li>
+                        <li onclick="goToService('corporate')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Corporate Photography
+                        </li>
+                        <li onclick="goToService('drone')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Aerial & Drone Photography
+                        </li>
+                        <li onclick="goToService('industrial')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Industrial Documentation
+                        </li>
+                        <li onclick="goToService('social')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Social Media Content Creation
+                        </li>
+                        <li onclick="goToService('editing')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Post-Production & Editing
+                        </li>
+                        <li onclick="goToService('consultation')" style="cursor: pointer;">
+                            <i class="fas fa-check"></i> Photography Consultation
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 PQ Studios Hyderabad. All Rights Reserved. | Professional Photography Services</p>
+                <p style="margin-top: 0.5rem; font-size: 0.8rem;">Hyderabad's Premier Photography Studio | Master Photography by Sai Kumar Maddina</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('PQ Studios Website - Initializing...');
+            initSlideshow();
+            loadFeaturedWork();
+            loadClients();
+            loadServices();
+            loadGallerySections();
+            initSimpleDropdown();
+            initGalleryModal();
+            initContactForm();
+            initBackToTop();
+            initMobileMenu();
+            initReviewsAnimation();
+            initPage();
+            console.log('PQ Studios Website - Initialization Complete!');
+        });
+
+        // ===== PAGE MANAGEMENT =====
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            const selectedPage = document.getElementById(`${pageId}-page`);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${pageId}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            history.pushState(null, '', `#${pageId}`);
+            window.scrollTo(0, 0);
+            closeMenu();
+            
+            if (pageId !== 'gallery') {
+                const dropdownMenu = document.getElementById('galleryDropdownMenu');
+                const dropdownToggle = document.getElementById('galleryDropdownToggle');
+                if (dropdownMenu && dropdownToggle) {
+                    dropdownMenu.classList.remove('active');
+                    dropdownToggle.classList.remove('active');
+                }
+            }
+        }
+
+        window.addEventListener('popstate', function() {
+            const pageId = window.location.hash.replace('#', '') || 'home';
+            showPage(pageId);
+        });
+
+        function initPage() {
+            const pageId = window.location.hash.replace('#', '') || 'home';
+            showPage(pageId);
+        }
+
+        // ===== MOBILE MENU =====
+        function initMobileMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
+
+            if (menuToggle) {
+                menuToggle.addEventListener('click', toggleMenu);
+            }
+            
+            if (navOverlay) {
+                navOverlay.addEventListener('click', closeMenu);
+            }
+
+            document.querySelectorAll('.nav-menu .nav-link').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        }
+
+        function toggleMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
+            
+            const isActive = menuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+            document.body.style.overflow = isActive ? 'hidden' : '';
+        }
+
+        function closeMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navMenu = document.getElementById('navMenu');
+            const navOverlay = document.getElementById('navOverlay');
+            
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // ===== SLIDESHOW =====
+        let slideshowInterval;
+        let currentSlide = 0;
+
+        function initSlideshow() {
+            const slides = document.querySelectorAll('.slide');
+            if (slides.length === 0) return;
+            
+            startSlideshow();
+        }
+
+        function startSlideshow() {
+            if (slideshowInterval) clearInterval(slideshowInterval);
+            
+            const slides = document.querySelectorAll('.slide');
+            if (slides.length === 0) return;
+            
+            slideshowInterval = setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 5000);
+        }
+
+        // ===== FEATURED WORK =====
+        function loadFeaturedWork() {
+            const featuredGrid = document.getElementById('featuredGrid');
+            if (!featuredGrid) return;
+
+            const featuredItems = [
+                { image: 'featured01.jpg', category: 'food', title: 'Food Photography Excellence' },
+                { image: 'featured02.jpg', category: 'product', title: 'Product Photography Mastery' },
+                { image: 'featured03.jpg', category: 'fashion', title: 'Fashion Photography Artistry' },
+                { image: 'featured04.jpg', category: 'pets', title: 'Pet Photography Expertise' },
+                { image: 'featured05.jpg', category: 'brand', title: 'Brand Portfolio Photography' },
+                { image: 'featured06.jpg', category: 'interiors', title: 'Architectural Photography' }
+            ];
+
+            featuredGrid.innerHTML = '';
+
+            featuredItems.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.className = 'featured-item';
+                itemElement.addEventListener('click', () => {
+                    showPage('gallery');
+                    setTimeout(() => {
+                        scrollToGalleryCategory(item.category);
+                    }, 100);
+                });
+                
+                const img = document.createElement('img');
+                img.src = item.image;
+                img.alt = item.title;
+                img.loading = 'lazy';
+                
+                itemElement.appendChild(img);
+                featuredGrid.appendChild(itemElement);
+            });
+        }
+
+        // ===== CLIENT LOGOS =====
+        function loadClients() {
+            const clientsTrack = document.getElementById('clientsTrack');
+            if (!clientsTrack) return;
+
+            const clientLogos = [
+                'client logos 1.jpg',
+                'client logos 2.jpg',
+                'client logos 3.jpg',
+                'client logos 4.jpg',
+                'client logos 5.jpg',
+                'client logos 6.jpg',
+                'client logos 7.jpg',
+                'client logos 8.jpg',
+                'client logos 9.jpg',
+                'client logos 10.jpg',
+                'client logos 11.jpg',
+                'client logos 12.jpg'
+            ];
+
+            clientsTrack.innerHTML = '';
+            
+            for (let set = 0; set < 3; set++) {
+                clientLogos.forEach(filename => {
+                    const logoItem = document.createElement('div');
+                    logoItem.className = 'client-logo-item';
+                    
+                    const img = document.createElement('img');
+                    img.src = filename;
+                    img.alt = 'Client Logo';
+                    img.className = 'client-logo-img';
+                    img.loading = 'lazy';
+                    
+                    logoItem.appendChild(img);
+                    clientsTrack.appendChild(logoItem);
+                });
+            }
+        }
+
+        // ===== SERVICES =====
+        function loadServices() {
+            const servicesContainer = document.getElementById('servicesContainer');
+            if (!servicesContainer) return;
+
+            const services = [
+                {
+                    id: 'food',
+                    title: 'Food Photography',
+                    icon: 'fa-utensils',
+                    description: 'Mouth-watering culinary photography for restaurants, food brands, and culinary publications.',
+                    features: ['Recipe photography', 'Menu item showcase', 'Food styling', 'Commercial culinary']
+                },
+                {
+                    id: 'product',
+                    title: 'Product Photography',
+                    icon: 'fa-box-open',
+                    description: 'Professional product imagery optimized for e-commerce platforms and advertising campaigns.',
+                    features: ['White background shots', 'Lifestyle integration', 'Detail photography', '360° product views']
+                },
+                {
+                    id: 'fashion',
+                    title: 'Fashion Photography',
+                    icon: 'fa-tshirt',
+                    description: 'Editorial fashion photography for designers, boutiques, and fashion publications.',
+                    features: ['Lookbook creation', 'Editorial fashion', 'Street style', 'Model portfolio development']
+                },
+                {
+                    id: 'pets',
+                    title: 'Pet Photography',
+                    icon: 'fa-paw',
+                    description: 'Artistic pet photography capturing the unique personality of your animal companions.',
+                    features: ['Studio portraits', 'Outdoor sessions', 'Action photography', 'Family integration']
+                },
+                {
+                    id: 'brand',
+                    title: 'Brand Portfolios',
+                    icon: 'fa-briefcase',
+                    description: 'Comprehensive brand portfolio development for corporate identity and marketing.',
+                    features: ['Corporate branding', 'Executive portraits', 'Team photography', 'Brand storytelling']
+                },
+                {
+                    id: 'interiors',
+                    title: 'Architectural Photography',
+                    icon: 'fa-building',
+                    description: 'Professional architectural and interior photography for real estate and design firms.',
+                    features: ['Real estate marketing', 'Interior design', 'Architectural exteriors', 'Virtual tours']
+                },
+                {
+                    id: 'ecommerce',
+                    title: 'E-Commerce Visuals',
+                    icon: 'fa-shopping-cart',
+                    description: 'High-conversion e-commerce photography optimized for digital retail platforms.',
+                    features: ['Amazon optimization', 'Etsy product photos', 'Shopify integration', 'Social commerce']
+                },
+                {
+                    id: 'studio',
+                    title: 'Studio Rentals',
+                    icon: 'fa-camera',
+                    description: 'Professional photography studio rental with complete equipment and support.',
+                    features: ['Fully equipped studio', 'Professional lighting', 'Versatile backdrops', 'Technical support'],
+                    pricing: 'Starting at ₹2000/hour'
+                }
+            ];
+
+            servicesContainer.innerHTML = '';
+
+            services.forEach(service => {
+                const serviceCard = document.createElement('div');
+                serviceCard.className = 'service-card';
+                serviceCard.setAttribute('data-service', service.id);
+                
+                const anchor = document.createElement('div');
+                anchor.className = 'service-anchor';
+                anchor.id = `service-${service.id}`;
+                serviceCard.appendChild(anchor);
+                
+                let pricingHTML = '';
+                if (service.pricing) {
+                    pricingHTML = `
+                        <div class="service-pricing">
+                            <h4>Professional Rates</h4>
+                            <div class="price-tag">${service.pricing}</div>
+                        </div>
+                    `;
+                }
+                
+                serviceCard.innerHTML += `
+                    <div class="service-icon">
+                        <i class="fas ${service.icon}"></i>
+                    </div>
+                    <h3>${service.title}</h3>
+                    <p>${service.description}</p>
+                    <div style="margin-top: 1rem;">
+                        ${service.features.map(feature => `
+                            <div style="display: flex; align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                                <i class="fas fa-check" style="color: #4682b4; margin-top: 0.2rem;"></i>
+                                <span>${feature}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    ${pricingHTML}
+                    <div class="service-card-buttons">
+                        <button class="btn btn-primary book-service-btn" data-service="${service.id}">
+                            <i class="fas fa-calendar-check"></i> Schedule Consultation
+                        </button>
+                        <button class="btn btn-outline view-gallery-btn" data-category="${service.id}">
+                            <i class="fas fa-images"></i> View Portfolio
+                        </button>
+                    </div>
+                `;
+                
+                servicesContainer.appendChild(serviceCard);
+            });
+
+            document.querySelectorAll('.book-service-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const serviceId = this.getAttribute('data-service');
+                    showPage('contact');
+                    setTimeout(() => {
+                        document.getElementById('service').value = serviceId;
+                    }, 100);
+                });
+            });
+
+            document.querySelectorAll('.view-gallery-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    showPage('gallery');
+                    setTimeout(() => {
+                        scrollToGalleryCategory(category);
+                    }, 100);
+                });
+            });
+        }
+
+        // ===== SERVICE NAVIGATION FUNCTION =====
+        function goToService(serviceId) {
+            console.log('Navigating to service:', serviceId);
+            
+            // First, switch to the Services page
+            showPage('services');
+            
+            // Wait for page transition and service cards to load
+            setTimeout(() => {
+                // Try to find the service card by data-service attribute
+                const serviceCards = document.querySelectorAll('.service-card');
+                let targetCard = null;
+                
+                // Look for the service card with matching data-service
+                serviceCards.forEach(card => {
+                    if (card.getAttribute('data-service') === serviceId) {
+                        targetCard = card;
+                    }
+                });
+                
+                if (targetCard) {
+                    // Calculate position for smooth scroll
+                    const headerHeight = 70;
+                    const cardPosition = targetCard.offsetTop - headerHeight - 40;
+                    
+                    // Smooth scroll to the service card
+                    window.scrollTo({
+                        top: cardPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Highlight the service card
+                    targetCard.style.boxShadow = '0 0 25px rgba(70, 130, 180, 0.4)';
+                    targetCard.style.border = '2px solid #4682b4';
+                    targetCard.style.transform = 'scale(1.02)';
+                    
+                    // Remove highlight after 2.5 seconds
+                    setTimeout(() => {
+                        targetCard.style.boxShadow = '';
+                        targetCard.style.border = '1px solid rgba(70, 130, 180, 0.1)';
+                        targetCard.style.transform = '';
+                    }, 2500);
+                    
+                } else {
+                    // If service card not found, scroll to top of services
+                    console.log('Service not found, showing all services');
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Show notification for services that aren't on the page
+                    const missingServices = {
+                        'wedding': 'Wedding & Events Photography',
+                        'corporate': 'Corporate Photography',
+                        'drone': 'Drone Photography',
+                        'social': 'Social Media Content',
+                        'consultation': 'Consultation Services'
+                    };
+                    
+                    if (missingServices[serviceId]) {
+                        alert(`For ${missingServices[serviceId]}, please contact us directly or use the contact form.`);
+                    }
+                }
+            }, 300);
+        }
+
+        // ===== GALLERY =====
+        const galleryCategories = [
+            { id: 'food', name: 'Food Photography', count: 15, icon: 'fa-utensils' },
+            { id: 'product', name: 'Product Photography', count: 15, icon: 'fa-box-open' },
+            { id: 'fashion', name: 'Fashion & Lifestyle', count: 15, icon: 'fa-tshirt' },
+            { id: 'pets', name: 'Pet Photography', count: 15, icon: 'fa-paw' },
+            { id: 'brand', name: 'Brand Portfolios', count: 15, icon: 'fa-briefcase' },
+            { id: 'interiors', name: 'Interiors & Architecture', count: 15, icon: 'fa-building' },
+            { id: 'ecommerce', name: 'E-Commerce Visuals', count: 15, icon: 'fa-shopping-cart' },
+            { id: 'studio', name: 'Studio Photography', count: 10, icon: 'fa-camera' }
+        ];
+
+        function initSimpleDropdown() {
+            const dropdownToggle = document.getElementById('galleryDropdownToggle');
+            const dropdownMenu = document.getElementById('galleryDropdownMenu');
+
+            if (!dropdownToggle || !dropdownMenu) return;
+
+            dropdownMenu.innerHTML = '';
+
+            galleryCategories.forEach(category => {
+                const item = document.createElement('a');
+                item.href = `#gallery-${category.id}`;
+                item.className = 'simple-dropdown-item';
+                item.innerHTML = `<i class="fas ${category.icon}"></i> ${category.name}`;
+                
+                item.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    dropdownToggle.classList.remove('active');
+                    dropdownMenu.classList.remove('active');
+                    scrollToGalleryCategory(category.id);
+                });
+                
+                dropdownMenu.appendChild(item);
+            });
+
+            dropdownToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdownToggle.classList.toggle('active');
+                dropdownMenu.classList.toggle('active');
+            });
+        }
+
+        function scrollToGalleryCategory(categoryId) {
+            const targetSection = document.getElementById(`gallery-${categoryId}`);
+            if (!targetSection) return;
+
+            const headerHeight = 70;
+            const dropdownHeight = document.querySelector('.simple-dropdown').offsetHeight;
+            const offset = headerHeight + dropdownHeight + 20;
+            const sectionTop = targetSection.offsetTop - offset;
+            
+            window.scrollTo({
+                top: sectionTop,
+                behavior: 'smooth'
+            });
+        }
+
+        function loadGallerySections() {
+            const gallerySections = document.getElementById('gallerySections');
+            if (!gallerySections) return;
+
+            gallerySections.innerHTML = '';
+
+            galleryCategories.forEach(category => {
+                const section = document.createElement('section');
+                section.className = 'gallery-section';
+                section.id = `gallery-${category.id}`;
+                
+                const header = document.createElement('div');
+                header.className = 'section-header';
+                header.innerHTML = `<h2>${category.name}</h2>`;
+                
+                const grid = document.createElement('div');
+                grid.className = 'gallery-grid';
+                grid.id = `grid-${category.id}`;
+                
+                section.appendChild(header);
+                section.appendChild(grid);
+                gallerySections.appendChild(section);
+                
+                loadGalleryImages(category.id, category.count);
+            });
+        }
+
+        // FIXED: This function now matches your actual filenames
+        function loadGalleryImages(categoryId, count) {
+            const grid = document.getElementById(`grid-${categoryId}`);
+            if (!grid) return;
+
+            grid.innerHTML = '';
+            
+            // Map category IDs to actual filename patterns based on your uploaded files
+            const filenamePatterns = {
+                'food': 'food photography',
+                'product': 'product photography',
+                'fashion': 'fashion lifestyle',
+                'pets': 'pet photography',
+                'brand': 'brand portfolios',
+                'interiors': 'interiors architecture',
+                'ecommerce': 'ecommerce visuals',
+                'studio': 'studio shots'
+            };
+            
+            const baseName = filenamePatterns[categoryId] || categoryId;
+            
+            for (let i = 1; i <= count; i++) {
+                // Create filename exactly as you uploaded them
+                const filename = `${baseName} ${i}.jpg`;
+                
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                
+                const img = document.createElement('img');
+                img.src = filename;
+                img.alt = `${categoryId} photography example ${i}`;
+                img.loading = 'lazy';
+                img.dataset.index = i - 1;
+                img.dataset.category = categoryId;
+                
+                galleryItem.appendChild(img);
+                grid.appendChild(galleryItem);
+                
+                // Add click event for modal
+                galleryItem.addEventListener('click', () => {
+                    openGalleryModal(categoryId, i - 1);
+                });
+            }
+        }
+
+        // ===== GALLERY MODAL =====
+        let currentGalleryImages = [];
+        let currentImageIndex = 0;
+        let currentCategory = '';
+
+        function initGalleryModal() {
+            const modalClose = document.getElementById('modalClose');
+            const modalPrev = document.getElementById('modalPrev');
+            const modalNext = document.getElementById('modalNext');
+            const galleryModal = document.getElementById('galleryModal');
+
+            if (!modalClose || !modalPrev || !modalNext || !galleryModal) return;
+
+            modalClose.addEventListener('click', closeGalleryModal);
+            modalPrev.addEventListener('click', showPrevImage);
+            modalNext.addEventListener('click', showNextImage);
+
+            galleryModal.addEventListener('click', (e) => {
+                if (e.target === galleryModal) {
+                    closeGalleryModal();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!galleryModal.classList.contains('active')) return;
+                
+                switch(e.key) {
+                    case 'Escape':
+                        closeGalleryModal();
+                        break;
+                    case 'ArrowLeft':
+                        showPrevImage();
+                        break;
+                    case 'ArrowRight':
+                        showNextImage();
+                        break;
+                }
+            });
+        }
+
+        function openGalleryModal(categoryId, index) {
+            const grid = document.getElementById(`grid-${categoryId}`);
+            if (!grid) return;
+
+            // Get all images in the current category
+            const imageElements = grid.querySelectorAll('img');
+            currentGalleryImages = Array.from(imageElements).map(img => ({
+                src: img.src,
+                alt: img.alt
+            }));
+            
+            currentCategory = categoryId;
+            currentImageIndex = index;
+            
+            updateModalImage();
+            
+            const galleryModal = document.getElementById('galleryModal');
+            galleryModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeGalleryModal() {
+            const galleryModal = document.getElementById('galleryModal');
+            galleryModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function showPrevImage() {
+            if (currentGalleryImages.length > 0) {
+                currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+                updateModalImage();
+            }
+        }
+
+        function showNextImage() {
+            if (currentGalleryImages.length > 0) {
+                currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+                updateModalImage();
+            }
+        }
+
+        function updateModalImage() {
+            const modalImage = document.getElementById('modalImage');
+            const modalCounter = document.getElementById('modalCounter');
+
+            if (currentGalleryImages.length === 0) return;
+
+            const imageData = currentGalleryImages[currentImageIndex];
+            modalImage.src = imageData.src;
+            modalImage.alt = imageData.alt;
+            modalCounter.textContent = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
+        }
+
+        // ===== REVIEWS ANIMATION =====
+        function initReviewsAnimation() {
+            const track = document.getElementById('reviewsTrack');
+            if (!track) return;
+            
+            track.addEventListener('mouseenter', () => {
+                track.style.animationPlayState = 'paused';
+            });
+            
+            track.addEventListener('mouseleave', () => {
+                track.style.animationPlayState = 'running';
+            });
+        }
+
+        // ===== CONTACT FORM =====
+        function initContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            const formStatus = document.getElementById('formStatus');
+
+            if (!contactForm || !formStatus) return;
+
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                showFormStatus('loading', '<i class="fas fa-spinner fa-spin"></i> Processing your consultation request...');
+                
+                if (!validateForm()) {
+                    return;
+                }
+
+                try {
+                    const formData = new FormData(contactForm);
+                    
+                    const response = await fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const result = await response.json();
+
+                    if (result.success) {
+                        showFormStatus('success', 
+                            '<i class="fas fa-check-circle"></i> Consultation request submitted successfully! ' +
+                            'Our team will contact you within 24 hours.');
+                        
+                        contactForm.reset();
+                        
+                        setTimeout(() => {
+                            formStatus.style.display = 'none';
+                        }, 8000);
+                        
+                    } else {
+                        showFormStatus('error', 
+                            '<i class="fas fa-exclamation-circle"></i> ' +
+                            'Submission unsuccessful. Please try again or contact us directly.');
+                    }
+                    
+                } catch (error) {
+                    showFormStatus('error', 
+                        '<i class="fas fa-exclamation-circle"></i> ' +
+                        'Network connectivity issue. Please check your connection and try again.');
+                }
+            });
+        }
+
+        function validateForm() {
+            const name = document.getElementById('name');
+            const phone = document.getElementById('phone');
+            const service = document.getElementById('service');
+
+            let isValid = true;
+
+            if (!name.value.trim()) {
+                highlightError(name);
+                isValid = false;
+            }
+            
+            if (!phone.value.trim()) {
+                highlightError(phone);
+                isValid = false;
+            }
+            
+            if (!service.value) {
+                highlightError(service);
+                isValid = false;
+            }
+
+            if (phone.value.trim() && !validatePhone(phone.value)) {
+                highlightError(phone);
+                showFormStatus('error', 'Please enter a valid 10-digit Indian phone number.');
+                isValid = false;
+            }
+
+            if (!isValid) {
+                showFormStatus('error', 'Please complete all required fields marked with * correctly.');
+                setTimeout(() => {
+                    document.getElementById('formStatus').style.display = 'none';
+                }, 5000);
+            }
+
+            return isValid;
+        }
+
+        function validatePhone(phone) {
+            const phoneRegex = /^(\+91|0)?[6789]\d{9}$/;
+            return phoneRegex.test(phone.replace(/\D/g, ''));
+        }
+
+        function highlightError(field) {
+            if (field) {
+                field.style.borderColor = '#dc3545';
+                field.focus();
+            }
+        }
+
+        function showFormStatus(type, message) {
+            const formStatus = document.getElementById('formStatus');
+            if (!formStatus) return;
+
+            formStatus.className = `form-status ${type}`;
+            formStatus.innerHTML = message;
+            formStatus.style.display = 'block';
+        }
+
+        // ===== BACK TO TOP =====
+        function initBackToTop() {
+            const backToTop = document.getElementById('backToTop');
+            if (!backToTop) return;
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // ===== PREVENT MULTIPLE FORM SUBMISSIONS =====
+        let isSubmitting = false;
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                if (isSubmitting) {
+                    e.preventDefault();
+                    return;
+                }
+                isSubmitting = true;
+                
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                submitBtn.disabled = true;
+                
+                setTimeout(() => {
+                    isSubmitting = false;
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                }, 5000);
+            });
+        }
+    </script>
+</body>
+</html>
