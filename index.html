@@ -1192,7 +1192,7 @@
             box-shadow: 0 10px 25px rgba(70, 130, 180, 0.3);
         }
 
-        /* ===== FOOTER - FIXED ALIGNMENT ===== */
+        /* ===== FOOTER - UPDATED WITH DROPDOWNS ===== */
         .footer {
             background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: var(--white);
@@ -1251,36 +1251,174 @@
             background: #4682b4;
         }
 
-        /* FIXED: Core Services List Alignment */
-        .footer ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        /* ===== FOOTER DROPDOWN STYLES ===== */
+        .footer-dropdown {
+            position: relative;
+            margin-bottom: 1.5rem;
+            width: 100%;
         }
 
-        .footer ul li {
-            margin-bottom: 0.75rem;
-            transition: var(--transition);
-            cursor: pointer;
-            padding: 4px 8px;
-            border-radius: 4px;
+        .footer-dropdown-toggle {
+            width: 100%;
+            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+            color: white;
+            border: none;
+            padding: 14px 18px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
             display: flex;
-            align-items: flex-start;
-            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.95rem;
+            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
+            text-align: left;
         }
 
-        .footer ul li:hover {
-            background: rgba(255, 255, 255, 0.1);
+        .footer-dropdown-toggle:hover {
+            background: linear-gradient(135deg, #4a8bc4, #5a9bd6);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(70, 130, 180, 0.4);
+        }
+
+        .footer-dropdown-toggle.active {
+            background: linear-gradient(135deg, #4a8bc4, #5a9bd6);
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .footer-dropdown-toggle .dropdown-icon {
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-dropdown-toggle.active .dropdown-icon {
+            transform: rotate(180deg);
+        }
+
+        .footer-dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            margin-top: 0;
+            background: var(--white);
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+            display: none;
+            z-index: 100;
+            max-height: 350px;
+            overflow-y: auto;
+            border-top: 3px solid #4682b4;
+        }
+
+        .footer-dropdown-menu.active {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(70, 130, 180, 0.1);
+            transition: var(--transition);
+            font-size: 0.9rem;
+            background: white;
+            cursor: pointer;
+        }
+
+        .dropdown-item:hover {
+            background: linear-gradient(to right, rgba(70, 130, 180, 0.1), rgba(70, 130, 180, 0.05));
+            color: #4682b4;
             transform: translateX(5px);
+            padding-left: 22px;
         }
 
-        .footer ul li i {
-            color: #6ba1d6;
+        .dropdown-item i {
+            color: #4682b4;
             width: 20px;
             text-align: center;
-            flex-shrink: 0;
-            margin-top: 2px;
-            font-size: 0.9rem;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .dropdown-item:hover i {
+            transform: scale(1.2);
+        }
+
+        /* Desktop hover support */
+        @media (min-width: 768px) {
+            .footer-dropdown:hover .footer-dropdown-menu {
+                display: block;
+            }
+            
+            .footer-dropdown:hover .footer-dropdown-toggle {
+                background: linear-gradient(135deg, #4a8bc4, #5a9bd6);
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            
+            .footer-dropdown:hover .dropdown-icon {
+                transform: rotate(180deg);
+            }
+        }
+
+        /* Mobile styles for dropdown */
+        @media (max-width: 767px) {
+            .footer-dropdown-menu {
+                position: static;
+                margin-top: 5px;
+                border-radius: var(--radius-md);
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+                max-height: 300px;
+            }
+            
+            .dropdown-item {
+                padding: 12px 16px;
+                font-size: 0.95rem;
+            }
+            
+            .footer-dropdown-toggle {
+                padding: 16px 20px;
+                font-size: 1rem;
+            }
+            
+            /* Better touch targets for mobile */
+            .dropdown-item {
+                min-height: 50px;
+            }
+        }
+
+        /* Scrollbar styling for dropdown */
+        .footer-dropdown-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .footer-dropdown-menu::-webkit-scrollbar-track {
+            background: rgba(70, 130, 180, 0.1);
+        }
+
+        .footer-dropdown-menu::-webkit-scrollbar-thumb {
+            background: #4682b4;
+            border-radius: 3px;
         }
 
         /* Updated contact info with underlined links */
@@ -1389,30 +1527,6 @@
 
         .social-link.youtube {
             background: linear-gradient(135deg, #FF0000, #CC0000);
-        }
-
-        .all-features-list li {
-            color: rgba(255,255,255,0.9);
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
-            transition: var(--transition);
-            padding: 4px 8px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .all-features-list li:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateX(5px);
-        }
-
-        .all-features-list li i {
-            color: #4ECDC4;
-            font-size: 0.8rem;
-            margin-top: 4px;
         }
 
         .footer-bottom {
@@ -2462,7 +2576,7 @@
         </div>
     </div>
 
-        <!-- Footer - UPDATED -->
+    <!-- Footer - WITH DROPDOWNS -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -2514,74 +2628,90 @@
                 
                 <div>
                     <h3>Core Services</h3>
-                    <ul>
-                        <li onclick="goToService('food')" style="cursor: pointer;">
-                            <i class="fas fa-utensils"></i> Food Photography
-                        </li>
-                        <li onclick="goToService('product')" style="cursor: pointer;">
-                            <i class="fas fa-box-open"></i> Product Photography
-                        </li>
-                        <li onclick="goToService('fashion')" style="cursor: pointer;">
-                            <i class="fas fa-tshirt"></i> Fashion Photography
-                        </li>
-                        <li onclick="goToService('pets')" style="cursor: pointer;">
-                            <i class="fas fa-paw"></i> Pet Photography
-                        </li>
-                        <li onclick="goToService('brand')" style="cursor: pointer;">
-                            <i class="fas fa-briefcase"></i> Brand Portfolios
-                        </li>
-                        <li onclick="goToService('interiors')" style="cursor: pointer;">
-                            <i class="fas fa-building"></i> Architectural Photography
-                        </li>
-                        <li onclick="goToService('ecommerce')" style="cursor: pointer;">
-                            <i class="fas fa-shopping-cart"></i> E-Commerce Visuals
-                        </li>
-                        <li onclick="goToService('studio')" style="cursor: pointer;">
-                            <i class="fas fa-camera"></i> Studio Rentals
-                        </li>
-                    </ul>
+                    <!-- Core Services Dropdown -->
+                    <div class="footer-dropdown">
+                        <button class="footer-dropdown-toggle">
+                            <span>Select Core Service</span>
+                            <i class="fas fa-chevron-down dropdown-icon"></i>
+                        </button>
+                        
+                        <div class="footer-dropdown-menu">
+                            <div onclick="goToService('food')" class="dropdown-item">
+                                <i class="fas fa-utensils"></i> Food Photography
+                            </div>
+                            <div onclick="goToService('product')" class="dropdown-item">
+                                <i class="fas fa-box-open"></i> Product Photography
+                            </div>
+                            <div onclick="goToService('fashion')" class="dropdown-item">
+                                <i class="fas fa-tshirt"></i> Fashion Photography
+                            </div>
+                            <div onclick="goToService('pets')" class="dropdown-item">
+                                <i class="fas fa-paw"></i> Pet Photography
+                            </div>
+                            <div onclick="goToService('brand')" class="dropdown-item">
+                                <i class="fas fa-briefcase"></i> Brand Portfolios
+                            </div>
+                            <div onclick="goToService('interiors')" class="dropdown-item">
+                                <i class="fas fa-building"></i> Architectural Photography
+                            </div>
+                            <div onclick="goToService('ecommerce')" class="dropdown-item">
+                                <i class="fas fa-shopping-cart"></i> E-Commerce Visuals
+                            </div>
+                            <div onclick="goToService('studio')" class="dropdown-item">
+                                <i class="fas fa-camera"></i> Studio Rentals
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div>
                     <h3>All Services</h3>
-                    <ul class="all-features-list">
-                        <li onclick="goToService('wedding')" style="cursor: pointer;">
-                            <i class="fas fa-check"></i> Wedding & Event Photography
-                        </li>
-                        <li onclick="goToService('commercial')" style="cursor: pointer;">
-                            <i class="fas fa-check"></i> Commercial Brand Photography
-                        </li>
-                        <li onclick="goToService('portrait')" style="cursor: pointer;">
-                            <i class="fas fa-check"></i> Portrait & Lifestyle Sessions
-                        </li>
-                        <li onclick="goToService('food')" style="cursor: pointer;">
-                            <i class="fas fa-check"></i> Product & Food Styling
-                        </li>
-                        <li onclick="goToService('fashion')" style="cursor: pointer;">
-                            <i class="fas fa-check"></i> Fashion & Editorial Photography
-                        </li>
-                        <li onclick="goToService('interiors')" style="cursor: pointer;">
-                            <i class="fas fa-check"></i> Real Estate & Architecture
-                        </li>
-                        <li onclick="goToService('corporate')" style="cursor: pointer;">
-                            <i class="fas fa-check"></i> Corporate Photography
-                        </li>
-                        <li onclick="goToService('drone')" style="cursor: pointer;">
-                            <i class="fas fa-check"></i> Aerial & Drone Photography
-                        </li>
-                        <li onclick="goToService('industrial')" style="cursor: pointer;">
-                            <i class="fas fa-check"></i> Industrial Documentation
-                        </li>
-                        <li onclick="goToService('social')" style="cursor: pointer;">
-                            <i class="fas fa-check"></i> Social Media Content Creation
-                        </li>
-                        <li onclick="goToService('editing')" style="cursor: pointer;">
-                            <i class="fas fa-check"></i> Post-Production & Editing
-                        </li>
-                        <li onclick="goToService('consultation')" style="cursor: pointer;">
-                            <i class="fas fa-check"></i> Photography Consultation
-                        </li>
-                    </ul>
+                    <!-- All Services Dropdown -->
+                    <div class="footer-dropdown">
+                        <button class="footer-dropdown-toggle">
+                            <span>Browse All Services</span>
+                            <i class="fas fa-chevron-down dropdown-icon"></i>
+                        </button>
+                        
+                        <div class="footer-dropdown-menu">
+                            <div onclick="goToService('wedding')" class="dropdown-item">
+                                <i class="fas fa-ring"></i> Wedding & Event Photography
+                            </div>
+                            <div onclick="goToService('commercial')" class="dropdown-item">
+                                <i class="fas fa-briefcase"></i> Commercial Brand Photography
+                            </div>
+                            <div onclick="goToService('portrait')" class="dropdown-item">
+                                <i class="fas fa-user"></i> Portrait & Lifestyle Sessions
+                            </div>
+                            <div onclick="goToService('food')" class="dropdown-item">
+                                <i class="fas fa-utensils"></i> Product & Food Styling
+                            </div>
+                            <div onclick="goToService('fashion')" class="dropdown-item">
+                                <i class="fas fa-tshirt"></i> Fashion & Editorial Photography
+                            </div>
+                            <div onclick="goToService('interiors')" class="dropdown-item">
+                                <i class="fas fa-building"></i> Real Estate & Architecture
+                            </div>
+                            <div onclick="goToService('corporate')" class="dropdown-item">
+                                <i class="fas fa-users"></i> Corporate Photography
+                            </div>
+                            <div onclick="goToService('drone')" class="dropdown-item">
+                                <i class="fas fa-camera"></i> Aerial & Drone Photography
+                            </div>
+                            <div onclick="goToService('industrial')" class="dropdown-item">
+                                <i class="fas fa-industry"></i> Industrial Documentation
+                            </div>
+                            <div onclick="goToService('social')" class="dropdown-item">
+                                <i class="fas fa-hashtag"></i> Social Media Content Creation
+                            </div>
+                            <div onclick="goToService('editing')" class="dropdown-item">
+                                <i class="fas fa-edit"></i> Post-Production & Editing
+                            </div>
+                            <div onclick="goToService('consultation')" class="dropdown-item">
+                                <i class="fas fa-comments"></i> Photography Consultation
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -2613,8 +2743,72 @@
             initMobileMenu();
             initReviewsAnimation();
             initPage();
+            initFooterDropdowns();
             console.log('PQ Studios Website - Initialization Complete!');
         });
+
+        // ===== FOOTER DROPDOWNS =====
+        function initFooterDropdowns() {
+            const dropdowns = document.querySelectorAll('.footer-dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                const toggle = dropdown.querySelector('.footer-dropdown-toggle');
+                const menu = dropdown.querySelector('.footer-dropdown-menu');
+                
+                if (toggle && menu) {
+                    // Click event for mobile
+                    toggle.addEventListener('click', function(e) {
+                        e.stopPropagation();
+                        
+                        // Close all other dropdowns first
+                        dropdowns.forEach(d => {
+                            if (d !== dropdown) {
+                                const t = d.querySelector('.footer-dropdown-toggle');
+                                const m = d.querySelector('.footer-dropdown-menu');
+                                if (t && m) {
+                                    t.classList.remove('active');
+                                    m.classList.remove('active');
+                                }
+                            }
+                        });
+                        
+                        // Toggle current dropdown
+                        toggle.classList.toggle('active');
+                        menu.classList.toggle('active');
+                    });
+                    
+                    // Close when clicking outside (for mobile)
+                    document.addEventListener('click', function(e) {
+                        if (!dropdown.contains(e.target) && window.innerWidth < 768) {
+                            toggle.classList.remove('active');
+                            menu.classList.remove('active');
+                        }
+                    });
+                    
+                    // Close dropdown items when clicked
+                    menu.querySelectorAll('.dropdown-item').forEach(item => {
+                        item.addEventListener('click', function() {
+                            if (window.innerWidth < 768) {
+                                toggle.classList.remove('active');
+                                menu.classList.remove('active');
+                            }
+                        });
+                    });
+                }
+            });
+            
+            // Close dropdowns on scroll
+            window.addEventListener('scroll', function() {
+                dropdowns.forEach(dropdown => {
+                    const toggle = dropdown.querySelector('.footer-dropdown-toggle');
+                    const menu = dropdown.querySelector('.footer-dropdown-menu');
+                    if (toggle && menu && toggle.classList.contains('active')) {
+                        toggle.classList.remove('active');
+                        menu.classList.remove('active');
+                    }
+                });
+            });
+        }
 
         // ===== PAGE MANAGEMENT =====
         function showPage(pageId) {
