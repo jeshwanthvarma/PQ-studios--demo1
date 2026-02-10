@@ -208,7 +208,7 @@
             margin: 8px !important;
         }
 
-        /* ===== HEADER ===== */
+        /* ===== IMPROVED HEADER ===== */
         .header {
             position: fixed;
             top: 0;
@@ -221,6 +221,12 @@
             padding: 0.75rem 0;
             box-shadow: var(--shadow-sm);
             height: 70px;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .header::before {
@@ -499,11 +505,10 @@
             }
         }
 
-        /* ===== HOME PAGE ===== */
-        /* ===== FIXED: MOBILE-OPTIMIZED HERO SLIDESHOW ===== */
+        /* ===== IMPROVED HOME PAGE LANDING ===== */
         .slideshow-hero {
             position: relative;
-            min-height: 75vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             overflow: hidden;
@@ -511,22 +516,17 @@
 
         @media (max-width: 768px) {
             .slideshow-hero {
-                min-height: 55vh;
-                height: 55vh;
-                max-height: 55vh;
-                margin-top: 0;
-                padding-top: 5px;
-                padding-bottom: 5px;
+                min-height: 70vh;
+                height: 70vh;
+                max-height: 70vh;
             }
         }
 
         @media (max-width: 480px) {
             .slideshow-hero {
-                min-height: 50vh;
-                height: 50vh;
-                max-height: 50vh;
-                padding-top: 3px;
-                padding-bottom: 3px;
+                min-height: 60vh;
+                height: 60vh;
+                max-height: 60vh;
             }
         }
 
@@ -566,8 +566,83 @@
 
         @media (max-width: 768px) {
             .slide img {
-                object-fit: contain;
+                object-fit: cover;
                 background-color: #ffffff;
+            }
+        }
+
+        /* Hero Content Overlay */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            background: rgba(26, 26, 46, 0.7);
+            backdrop-filter: blur(5px);
+            margin-top: auto;
+            padding-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-content {
+                background: rgba(26, 26, 46, 0.6);
+                margin-top: 0;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+            }
+        }
+
+        .hero-main-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: 768px) {
+            .hero-main-title {
+                font-size: 3.5rem;
+            }
+            
+            .hero-tagline {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* CTA Buttons */
+        .hero-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .hero-cta-buttons .btn {
+            min-width: 200px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
             }
         }
 
@@ -1192,7 +1267,7 @@
             box-shadow: 0 10px 25px rgba(70, 130, 180, 0.3);
         }
 
-        /* ===== FOOTER - UPDATED WITH DROPDOWNS ===== */
+        /* ===== IMPROVED FOOTER WITH DROPDOWNS ===== */
         .footer {
             background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: var(--white);
@@ -1251,19 +1326,17 @@
             background: #4682b4;
         }
 
-        /* ===== FOOTER DROPDOWN STYLES ===== */
-        .footer-dropdown {
-            position: relative;
+        /* IMPROVED FOOTER DROPDOWN STYLES */
+        .footer-dropdown-container {
             margin-bottom: 1.5rem;
-            width: 100%;
         }
 
         .footer-dropdown-toggle {
             width: 100%;
-            background: linear-gradient(135deg, #4682b4, #4a8bc4);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             border: none;
-            padding: 14px 18px;
+            padding: 1rem 1.25rem;
             border-radius: var(--radius-md);
             font-weight: 600;
             display: flex;
@@ -1271,140 +1344,74 @@
             justify-content: space-between;
             cursor: pointer;
             transition: var(--transition);
-            font-size: 0.95rem;
-            box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
+            font-size: 1rem;
             text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-dropdown-toggle:hover {
-            background: linear-gradient(135deg, #4a8bc4, #5a9bd6);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(70, 130, 180, 0.4);
+            background: rgba(255, 255, 255, 0.15);
         }
 
         .footer-dropdown-toggle.active {
-            background: linear-gradient(135deg, #4a8bc4, #5a9bd6);
+            background: rgba(70, 130, 180, 0.3);
             border-bottom-left-radius: 0;
             border-bottom-right-radius: 0;
         }
 
-        .footer-dropdown-toggle .dropdown-icon {
-            font-size: 0.9rem;
+        .footer-dropdown-toggle .chevron {
             transition: transform 0.3s ease;
+            font-size: 0.9rem;
         }
 
-        .footer-dropdown-toggle.active .dropdown-icon {
+        .footer-dropdown-toggle.active .chevron {
             transform: rotate(180deg);
         }
 
         .footer-dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            margin-top: 0;
-            background: var(--white);
-            border-radius: 0 0 var(--radius-md) var(--radius-md);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+            max-height: 0;
             overflow: hidden;
-            display: none;
-            z-index: 100;
-            max-height: 350px;
-            overflow-y: auto;
-            border-top: 3px solid #4682b4;
+            transition: max-height 0.3s ease;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0 0 var(--radius-md) var(--radius-md);
+            margin-top: -1px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: none;
         }
 
         .footer-dropdown-menu.active {
-            display: block;
-            animation: slideDown 0.3s ease;
+            max-height: 400px;
+            overflow-y: auto;
         }
 
-        @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .dropdown-item {
+        .footer-dropdown-item {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 14px 18px;
-            color: var(--primary);
+            gap: 0.75rem;
+            padding: 0.875rem 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
-            font-weight: 500;
-            border-bottom: 1px solid rgba(70, 130, 180, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             transition: var(--transition);
-            font-size: 0.9rem;
-            background: white;
             cursor: pointer;
+            font-size: 0.95rem;
         }
 
-        .dropdown-item:hover {
-            background: linear-gradient(to right, rgba(70, 130, 180, 0.1), rgba(70, 130, 180, 0.05));
-            color: #4682b4;
-            transform: translateX(5px);
-            padding-left: 22px;
+        .footer-dropdown-item:last-child {
+            border-bottom: none;
         }
 
-        .dropdown-item i {
-            color: #4682b4;
+        .footer-dropdown-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #6ba1d6;
+            padding-left: 1.5rem;
+        }
+
+        .footer-dropdown-item i {
+            color: #6ba1d6;
             width: 20px;
             text-align: center;
             font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .dropdown-item:hover i {
-            transform: scale(1.2);
-        }
-
-        /* Desktop hover support */
-        @media (min-width: 768px) {
-            .footer-dropdown:hover .footer-dropdown-menu {
-                display: block;
-            }
-            
-            .footer-dropdown:hover .footer-dropdown-toggle {
-                background: linear-gradient(135deg, #4a8bc4, #5a9bd6);
-                border-bottom-left-radius: 0;
-                border-bottom-right-radius: 0;
-            }
-            
-            .footer-dropdown:hover .dropdown-icon {
-                transform: rotate(180deg);
-            }
-        }
-
-        /* Mobile styles for dropdown */
-        @media (max-width: 767px) {
-            .footer-dropdown-menu {
-                position: static;
-                margin-top: 5px;
-                border-radius: var(--radius-md);
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-                max-height: 300px;
-            }
-            
-            .dropdown-item {
-                padding: 12px 16px;
-                font-size: 0.95rem;
-            }
-            
-            .footer-dropdown-toggle {
-                padding: 16px 20px;
-                font-size: 1rem;
-            }
-            
-            /* Better touch targets for mobile */
-            .dropdown-item {
-                min-height: 50px;
-            }
         }
 
         /* Scrollbar styling for dropdown */
@@ -1421,7 +1428,7 @@
             border-radius: 3px;
         }
 
-        /* Updated contact info with underlined links */
+        /* Updated contact info */
         .contact-info {
             display: flex;
             flex-direction: column;
@@ -1459,7 +1466,7 @@
             font-size: 1.1rem;
         }
 
-        /* UPDATED: Colorful Social Icons like Instagram */
+        /* Colorful Social Icons */
         .social-links {
             display: flex;
             gap: 12px;
@@ -1610,6 +1617,17 @@
                 height: 45px;
                 font-size: 1.2rem;
             }
+            
+            /* Improved footer dropdowns for mobile */
+            .footer-dropdown-toggle {
+                padding: 1.25rem;
+                font-size: 1.05rem;
+            }
+            
+            .footer-dropdown-item {
+                padding: 1rem 1.25rem;
+                min-height: 50px;
+            }
         }
 
         /* ===== FORM STATUS ===== */
@@ -1639,7 +1657,6 @@
         }
 
         /* ===== NEW ABOUT PAGE STYLES ===== */
-        /* Profile Image */
         .profile-image {
             width: 200px;
             height: 200px;
@@ -2035,7 +2052,7 @@
     </div>
 
     <!-- Header & Navigation -->
-    <header class="header">
+    <header class="header" id="mainHeader">
         <div class="nav-container">
             <a href="#home" class="logo" onclick="event.preventDefault(); showPage('home');">
                 <img src="Logo.png" alt="PQ Studios - Professional Photography Studio Hyderabad" class="logo-image">
@@ -2075,7 +2092,7 @@
 
     <!-- Page Content -->
     <div class="page-content">
-        <!-- HOME PAGE -->
+        <!-- IMPROVED HOME PAGE -->
         <div id="home-page" class="page active">
             <section class="slideshow-hero">
                 <div class="slideshow-container" id="slideshowContainer">
@@ -2090,6 +2107,24 @@
                     </div>
                     <div class="slide">
                         <img src="homepageslideshow04.jpg" alt="Fashion Photography Hyderabad" loading="lazy">
+                    </div>
+                </div>
+                
+                <!-- IMPROVED HERO CONTENT -->
+                <div class="hero-content">
+                    <h1 class="hero-main-title">PQ Studios Hyderabad</h1>
+                    <p class="hero-tagline">Professional Photography Studio | Award-Winning Visual Storytelling | 8+ Years of Excellence</p>
+                    
+                    <div class="hero-cta-buttons">
+                        <a href="#services" class="btn btn-primary" onclick="event.preventDefault(); showPage('services');">
+                            <i class="fas fa-camera"></i> Our Services
+                        </a>
+                        <a href="#contact" class="btn btn-outline" onclick="event.preventDefault(); showPage('contact');">
+                            <i class="fas fa-calendar-alt"></i> Book Consultation
+                        </a>
+                        <a href="#gallery" class="btn btn-outline" onclick="event.preventDefault(); showPage('gallery');">
+                            <i class="fas fa-images"></i> View Portfolio
+                        </a>
                     </div>
                 </div>
             </section>
@@ -2498,7 +2533,7 @@
             </section>
         </div>
 
-        <!-- CONTACT PAGE -->
+        <!-- IMPROVED CONTACT PAGE -->
         <div id="contact-page" class="page">
             <section class="contact-hero">
                 <div class="container">
@@ -2541,14 +2576,7 @@
                                 <label for="service" class="form-label required">Service Requirement *</label>
                                 <select id="service" name="service" class="form-control" required>
                                     <option value="">Select photography service</option>
-                                    <option value="food">Wedding & Events Photography</option>
-                                    <option value="commercial">Commercial & Brand Photography</option>
-                                    <option value="portrait">Portrait & Lifestyle Photography</option>
-                                    <option value="product">Product & Food Photography</option>
-                                    <option value="fashion">Fashion & Editorial Photography</option>
-                                    <option value="real-estate">Real Estate & Architecture</option>
-                                    <option value="studio">Studio Rental Services</option>
-                                    <option value="consultation">Photography Consultation</option>
+                                    <!-- Options will be populated dynamically -->
                                 </select>
                             </div>
                             
@@ -2576,7 +2604,7 @@
         </div>
     </div>
 
-    <!-- Footer - WITH DROPDOWNS -->
+    <!-- IMPROVED FOOTER WITH DROPDOWNS -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -2629,35 +2657,35 @@
                 <div>
                     <h3>Core Services</h3>
                     <!-- Core Services Dropdown -->
-                    <div class="footer-dropdown">
-                        <button class="footer-dropdown-toggle">
+                    <div class="footer-dropdown-container">
+                        <button class="footer-dropdown-toggle" onclick="toggleFooterDropdown(this)">
                             <span>Select Core Service</span>
-                            <i class="fas fa-chevron-down dropdown-icon"></i>
+                            <i class="fas fa-chevron-down chevron"></i>
                         </button>
                         
                         <div class="footer-dropdown-menu">
-                            <div onclick="goToService('food')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('food')">
                                 <i class="fas fa-utensils"></i> Food Photography
                             </div>
-                            <div onclick="goToService('product')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('product')">
                                 <i class="fas fa-box-open"></i> Product Photography
                             </div>
-                            <div onclick="goToService('fashion')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('fashion')">
                                 <i class="fas fa-tshirt"></i> Fashion Photography
                             </div>
-                            <div onclick="goToService('pets')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('pets')">
                                 <i class="fas fa-paw"></i> Pet Photography
                             </div>
-                            <div onclick="goToService('brand')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('brand')">
                                 <i class="fas fa-briefcase"></i> Brand Portfolios
                             </div>
-                            <div onclick="goToService('interiors')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('interiors')">
                                 <i class="fas fa-building"></i> Architectural Photography
                             </div>
-                            <div onclick="goToService('ecommerce')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('ecommerce')">
                                 <i class="fas fa-shopping-cart"></i> E-Commerce Visuals
                             </div>
-                            <div onclick="goToService('studio')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('studio')">
                                 <i class="fas fa-camera"></i> Studio Rentals
                             </div>
                         </div>
@@ -2667,47 +2695,47 @@
                 <div>
                     <h3>All Services</h3>
                     <!-- All Services Dropdown -->
-                    <div class="footer-dropdown">
-                        <button class="footer-dropdown-toggle">
+                    <div class="footer-dropdown-container">
+                        <button class="footer-dropdown-toggle" onclick="toggleFooterDropdown(this)">
                             <span>Browse All Services</span>
-                            <i class="fas fa-chevron-down dropdown-icon"></i>
+                            <i class="fas fa-chevron-down chevron"></i>
                         </button>
                         
                         <div class="footer-dropdown-menu">
-                            <div onclick="goToService('wedding')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('wedding')">
                                 <i class="fas fa-ring"></i> Wedding & Event Photography
                             </div>
-                            <div onclick="goToService('commercial')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('commercial')">
                                 <i class="fas fa-briefcase"></i> Commercial Brand Photography
                             </div>
-                            <div onclick="goToService('portrait')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('portrait')">
                                 <i class="fas fa-user"></i> Portrait & Lifestyle Sessions
                             </div>
-                            <div onclick="goToService('food')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('food')">
                                 <i class="fas fa-utensils"></i> Product & Food Styling
                             </div>
-                            <div onclick="goToService('fashion')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('fashion')">
                                 <i class="fas fa-tshirt"></i> Fashion & Editorial Photography
                             </div>
-                            <div onclick="goToService('interiors')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('interiors')">
                                 <i class="fas fa-building"></i> Real Estate & Architecture
                             </div>
-                            <div onclick="goToService('corporate')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('corporate')">
                                 <i class="fas fa-users"></i> Corporate Photography
                             </div>
-                            <div onclick="goToService('drone')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('drone')">
                                 <i class="fas fa-camera"></i> Aerial & Drone Photography
                             </div>
-                            <div onclick="goToService('industrial')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('industrial')">
                                 <i class="fas fa-industry"></i> Industrial Documentation
                             </div>
-                            <div onclick="goToService('social')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('social')">
                                 <i class="fas fa-hashtag"></i> Social Media Content Creation
                             </div>
-                            <div onclick="goToService('editing')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('editing')">
                                 <i class="fas fa-edit"></i> Post-Production & Editing
                             </div>
-                            <div onclick="goToService('consultation')" class="dropdown-item">
+                            <div class="footer-dropdown-item" onclick="goToService('consultation')">
                                 <i class="fas fa-comments"></i> Photography Consultation
                             </div>
                         </div>
@@ -2731,6 +2759,7 @@
         // ===== INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', function() {
             console.log('PQ Studios Website - Initializing...');
+            initHeaderScroll();
             initSlideshow();
             loadFeaturedWork();
             loadClients();
@@ -2743,72 +2772,67 @@
             initMobileMenu();
             initReviewsAnimation();
             initPage();
-            initFooterDropdowns();
+            populateServiceDropdown();
             console.log('PQ Studios Website - Initialization Complete!');
         });
 
-        // ===== FOOTER DROPDOWNS =====
-        function initFooterDropdowns() {
-            const dropdowns = document.querySelectorAll('.footer-dropdown');
+        // ===== IMPROVED HEADER SCROLL EFFECT =====
+        function initHeaderScroll() {
+            const header = document.getElementById('mainHeader');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // ===== FOOTER DROPDOWN FUNCTIONS =====
+        function toggleFooterDropdown(button) {
+            const menu = button.nextElementSibling;
+            const isActive = button.classList.toggle('active');
             
-            dropdowns.forEach(dropdown => {
-                const toggle = dropdown.querySelector('.footer-dropdown-toggle');
-                const menu = dropdown.querySelector('.footer-dropdown-menu');
-                
-                if (toggle && menu) {
-                    // Click event for mobile
-                    toggle.addEventListener('click', function(e) {
-                        e.stopPropagation();
-                        
-                        // Close all other dropdowns first
-                        dropdowns.forEach(d => {
-                            if (d !== dropdown) {
-                                const t = d.querySelector('.footer-dropdown-toggle');
-                                const m = d.querySelector('.footer-dropdown-menu');
-                                if (t && m) {
-                                    t.classList.remove('active');
-                                    m.classList.remove('active');
-                                }
-                            }
-                        });
-                        
-                        // Toggle current dropdown
-                        toggle.classList.toggle('active');
-                        menu.classList.toggle('active');
-                    });
-                    
-                    // Close when clicking outside (for mobile)
-                    document.addEventListener('click', function(e) {
-                        if (!dropdown.contains(e.target) && window.innerWidth < 768) {
-                            toggle.classList.remove('active');
-                            menu.classList.remove('active');
-                        }
-                    });
-                    
-                    // Close dropdown items when clicked
-                    menu.querySelectorAll('.dropdown-item').forEach(item => {
-                        item.addEventListener('click', function() {
-                            if (window.innerWidth < 768) {
-                                toggle.classList.remove('active');
-                                menu.classList.remove('active');
-                            }
-                        });
-                    });
+            // Close other dropdowns
+            document.querySelectorAll('.footer-dropdown-toggle').forEach(toggle => {
+                if (toggle !== button) {
+                    toggle.classList.remove('active');
+                    const otherMenu = toggle.nextElementSibling;
+                    otherMenu.classList.remove('active');
+                    otherMenu.style.maxHeight = null;
                 }
             });
             
-            // Close dropdowns on scroll
-            window.addEventListener('scroll', function() {
-                dropdowns.forEach(dropdown => {
-                    const toggle = dropdown.querySelector('.footer-dropdown-toggle');
-                    const menu = dropdown.querySelector('.footer-dropdown-menu');
-                    if (toggle && menu && toggle.classList.contains('active')) {
-                        toggle.classList.remove('active');
-                        menu.classList.remove('active');
-                    }
-                });
-            });
+            if (isActive) {
+                menu.classList.add('active');
+                menu.style.maxHeight = menu.scrollHeight + "px";
+            } else {
+                menu.classList.remove('active');
+                menu.style.maxHeight = null;
+            }
         }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.footer-dropdown-container')) {
+                document.querySelectorAll('.footer-dropdown-toggle').forEach(toggle => {
+                    toggle.classList.remove('active');
+                    const menu = toggle.nextElementSibling;
+                    menu.classList.remove('active');
+                    menu.style.maxHeight = null;
+                });
+            }
+        });
+
+        // Close dropdowns on scroll
+        window.addEventListener('scroll', function() {
+            document.querySelectorAll('.footer-dropdown-toggle').forEach(toggle => {
+                toggle.classList.remove('active');
+                const menu = toggle.nextElementSibling;
+                menu.classList.remove('active');
+                menu.style.maxHeight = null;
+            });
+        });
 
         // ===== PAGE MANAGEMENT =====
         function showPage(pageId) {
@@ -2922,7 +2946,6 @@
             const featuredGrid = document.getElementById('featuredGrid');
             if (!featuredGrid) return;
 
-            // UPDATED: 6 featured images matching your files
             const featuredItems = [
                 { image: 'featured01.jpg', category: 'food', title: 'Food Photography Excellence' },
                 { image: 'featured02.jpg', category: 'product', title: 'Product Photography Mastery' },
@@ -2959,7 +2982,6 @@
             const clientsTrack = document.getElementById('clientsTrack');
             if (!clientsTrack) return;
 
-            // UPDATED: Client logos exactly as per your files
             const clientLogos = [
                 'client logos 1.jpg',
                 'client logos 2.jpg',
@@ -2995,11 +3017,29 @@
         }
 
         // ===== SERVICES =====
+        const allServices = [
+            { id: 'food', name: 'Food Photography' },
+            { id: 'product', name: 'Product Photography' },
+            { id: 'fashion', name: 'Fashion & Lifestyle' },
+            { id: 'pets', name: 'Pet Photography' },
+            { id: 'brand', name: 'Brand Portfolios' },
+            { id: 'interiors', name: 'Interiors & Architecture' },
+            { id: 'ecommerce', name: 'E-Commerce Visuals' },
+            { id: 'studio', name: 'Studio Rentals' },
+            { id: 'wedding', name: 'Wedding & Events Photography' },
+            { id: 'commercial', name: 'Commercial & Brand Photography' },
+            { id: 'portrait', name: 'Portrait & Lifestyle Photography' },
+            { id: 'real-estate', name: 'Real Estate & Architecture' },
+            { id: 'corporate', name: 'Corporate Photography' },
+            { id: 'drone', name: 'Aerial & Drone Photography' },
+            { id: 'consultation', name: 'Photography Consultation' }
+        ];
+
         function loadServices() {
             const servicesContainer = document.getElementById('servicesContainer');
             if (!servicesContainer) return;
 
-            const services = [
+            const coreServices = [
                 {
                     id: 'food',
                     title: 'Food Photography',
@@ -3061,7 +3101,7 @@
 
             servicesContainer.innerHTML = '';
 
-            services.forEach(service => {
+            coreServices.forEach(service => {
                 const serviceCard = document.createElement('div');
                 serviceCard.className = 'service-card';
                 serviceCard.setAttribute('data-service', service.id);
@@ -3109,13 +3149,23 @@
                 servicesContainer.appendChild(serviceCard);
             });
 
+            // FIXED: Service booking buttons - now working properly
             document.querySelectorAll('.book-service-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const serviceId = this.getAttribute('data-service');
+                    const serviceName = getServiceName(serviceId);
+                    
+                    // Store service in localStorage
+                    localStorage.setItem('selectedService', serviceId);
+                    localStorage.setItem('selectedServiceName', serviceName);
+                    
                     showPage('contact');
                     setTimeout(() => {
-                        document.getElementById('service').value = serviceId;
-                    }, 100);
+                        const serviceSelect = document.getElementById('service');
+                        if (serviceSelect) {
+                            serviceSelect.value = serviceId;
+                        }
+                    }, 300);
                 });
             });
 
@@ -3130,75 +3180,92 @@
             });
         }
 
+        // ===== SERVICE DROPDOWN POPULATION =====
+        function populateServiceDropdown() {
+            const serviceSelect = document.getElementById('service');
+            if (!serviceSelect) return;
+            
+            // Clear existing options
+            serviceSelect.innerHTML = '<option value="">Select photography service</option>';
+            
+            // Add all services as options
+            allServices.forEach(service => {
+                const option = document.createElement('option');
+                option.value = service.id;
+                option.textContent = service.name;
+                serviceSelect.appendChild(option);
+            });
+            
+            // Check if a service was pre-selected
+            const savedService = localStorage.getItem('selectedService');
+            const savedServiceName = localStorage.getItem('selectedServiceName');
+            
+            if (savedService && savedServiceName) {
+                serviceSelect.value = savedService;
+                
+                // Clear localStorage after use
+                localStorage.removeItem('selectedService');
+                localStorage.removeItem('selectedServiceName');
+            }
+        }
+
+        function getServiceName(serviceId) {
+            const service = allServices.find(s => s.id === serviceId);
+            return service ? service.name : '';
+        }
+
         // ===== SERVICE NAVIGATION FUNCTION =====
         function goToService(serviceId) {
             console.log('Navigating to service:', serviceId);
             
-            // First, switch to the Services page
-            showPage('services');
+            // Store service for contact form
+            const serviceName = getServiceName(serviceId);
+            localStorage.setItem('selectedService', serviceId);
+            localStorage.setItem('selectedServiceName', serviceName);
             
-            // Wait for page transition and service cards to load
-            setTimeout(() => {
-                // Try to find the service card by data-service attribute
-                const serviceCards = document.querySelectorAll('.service-card');
-                let targetCard = null;
+            // Check if it's a core service on the services page
+            const coreServices = ['food', 'product', 'fashion', 'pets', 'brand', 'interiors', 'ecommerce', 'studio'];
+            
+            if (coreServices.includes(serviceId)) {
+                // Switch to Services page
+                showPage('services');
                 
-                // Look for the service card with matching data-service
-                serviceCards.forEach(card => {
-                    if (card.getAttribute('data-service') === serviceId) {
-                        targetCard = card;
+                // Wait for page transition and service cards to load
+                setTimeout(() => {
+                    // Find the service card
+                    const serviceCard = document.querySelector(`.service-card[data-service="${serviceId}"]`);
+                    
+                    if (serviceCard) {
+                        // Calculate position for smooth scroll
+                        const headerHeight = 70;
+                        const cardPosition = serviceCard.offsetTop - headerHeight - 40;
+                        
+                        // Smooth scroll to the service card
+                        window.scrollTo({
+                            top: cardPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Highlight the service card
+                        serviceCard.style.boxShadow = '0 0 25px rgba(70, 130, 180, 0.4)';
+                        serviceCard.style.border = '2px solid #4682b4';
+                        serviceCard.style.transform = 'scale(1.02)';
+                        
+                        // Remove highlight after 2.5 seconds
+                        setTimeout(() => {
+                            serviceCard.style.boxShadow = '';
+                            serviceCard.style.border = '1px solid rgba(70, 130, 180, 0.1)';
+                            serviceCard.style.transform = '';
+                        }, 2500);
                     }
-                });
-                
-                if (targetCard) {
-                    // Calculate position for smooth scroll
-                    const headerHeight = 70;
-                    const cardPosition = targetCard.offsetTop - headerHeight - 40;
-                    
-                    // Smooth scroll to the service card
-                    window.scrollTo({
-                        top: cardPosition,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Highlight the service card
-                    targetCard.style.boxShadow = '0 0 25px rgba(70, 130, 180, 0.4)';
-                    targetCard.style.border = '2px solid #4682b4';
-                    targetCard.style.transform = 'scale(1.02)';
-                    
-                    // Remove highlight after 2.5 seconds
-                    setTimeout(() => {
-                        targetCard.style.boxShadow = '';
-                        targetCard.style.border = '1px solid rgba(70, 130, 180, 0.1)';
-                        targetCard.style.transform = '';
-                    }, 2500);
-                    
-                } else {
-                    // If service card not found, scroll to top of services
-                    console.log('Service not found, showing all services');
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Show notification for services that aren't on the page
-                    const missingServices = {
-                        'wedding': 'Wedding & Events Photography',
-                        'corporate': 'Corporate Photography',
-                        'drone': 'Drone Photography',
-                        'social': 'Social Media Content',
-                        'consultation': 'Consultation Services'
-                    };
-                    
-                    if (missingServices[serviceId]) {
-                        alert(`For ${missingServices[serviceId]}, please contact us directly or use the contact form.`);
-                    }
-                }
-            }, 300);
+                }, 300);
+            } else {
+                // For other services, go to contact page
+                showPage('contact');
+            }
         }
 
         // ===== GALLERY =====
-        // UPDATED: All categories with correct image counts
         const galleryCategories = [
             { id: 'food', name: 'Food Photography', count: 15, icon: 'fa-utensils' },
             { id: 'product', name: 'Product Photography', count: 15, icon: 'fa-box-open' },
@@ -3283,14 +3350,12 @@
             });
         }
 
-        // UPDATED: Fixed to match EXACT filenames from your document
         function loadGalleryImages(categoryId, count) {
             const grid = document.getElementById(`grid-${categoryId}`);
             if (!grid) return;
 
             grid.innerHTML = '';
             
-            // Map category IDs to EXACT filename patterns from your document
             const filenamePatterns = {
                 'food': 'food photography',
                 'product': 'product photography',
@@ -3298,14 +3363,13 @@
                 'pets': 'pet photography',
                 'brand': 'brand portfolios',
                 'interiors': 'interiors architecture',
-                'ecommerce': 'ecommerce visuals',  // NO HYPHEN
+                'ecommerce': 'ecommerce visuals',
                 'studio': 'studio shots'
             };
             
             const baseName = filenamePatterns[categoryId] || categoryId;
             
             for (let i = 1; i <= count; i++) {
-                // Create filename EXACTLY as in your document
                 const filename = `${baseName} ${i}.jpg`;
                 
                 const galleryItem = document.createElement('div');
@@ -3321,7 +3385,6 @@
                 galleryItem.appendChild(img);
                 grid.appendChild(galleryItem);
                 
-                // Add click event for modal
                 galleryItem.addEventListener('click', () => {
                     openGalleryModal(categoryId, i - 1);
                 });
@@ -3372,7 +3435,6 @@
             const grid = document.getElementById(`grid-${categoryId}`);
             if (!grid) return;
 
-            // Get all images in the current category
             const imageElements = grid.querySelectorAll('img');
             currentGalleryImages = Array.from(imageElements).map(img => ({
                 src: img.src,
