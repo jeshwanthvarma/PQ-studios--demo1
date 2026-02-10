@@ -1284,7 +1284,7 @@
             box-shadow: 0 10px 25px rgba(70, 130, 180, 0.3);
         }
 
-        /* ===== IMPROVED FOOTER WITH DROPDOWNS ===== */
+        /* ===== IMPROVED FOOTER WITH EXACT OPTION 2 HOVER DROPDOWNS ===== */
         .footer {
             background: linear-gradient(135deg, #1a1a2e, #16213e);
             color: var(--white);
@@ -1343,106 +1343,120 @@
             background: #4682b4;
         }
 
-        /* IMPROVED FOOTER DROPDOWN STYLES */
-        .footer-dropdown-container {
-            margin-bottom: 1.5rem;
+        /* ===== EXACT OPTION 2 HOVER DROPDOWN STYLES ===== */
+        .hover-dropdown-container {
+            position: relative;
         }
 
-        .footer-dropdown-toggle {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: none;
-            padding: 1rem 1.25rem;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
+        .hover-trigger {
+            color: rgba(255, 255, 255, 0.9);
+            padding: 0.75rem 0;
+            display: block;
+            text-decoration: none;
+            font-size: 0.95rem;
             transition: var(--transition);
-            font-size: 1rem;
-            text-align: left;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hover-trigger:hover {
+            color: var(--accent-light);
+        }
+
+        .hover-trigger i {
+            margin-left: 0.5rem;
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .hover-dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            min-width: 220px;
+            box-shadow: var(--shadow-md);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 100;
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .footer-dropdown-toggle:hover {
-            background: rgba(255, 255, 255, 0.15);
+        .hover-dropdown-container:hover .hover-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
 
-        .footer-dropdown-toggle.active {
-            background: rgba(70, 130, 180, 0.3);
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
+        /* Service item styles to match Option 2 demo */
+        .service-item-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1rem;
         }
 
-        .footer-dropdown-toggle .chevron {
-            transition: transform 0.3s ease;
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            transition: var(--transition);
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .service-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+            color: var(--accent-light);
+        }
+
+        .service-item i {
+            color: var(--accent-light);
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+            width: 16px;
+        }
+
+        .service-item span {
             font-size: 0.9rem;
         }
 
-        .footer-dropdown-toggle.active .chevron {
-            transform: rotate(180deg);
-        }
-
-        .footer-dropdown-menu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 0 0 var(--radius-md) var(--radius-md);
-            margin-top: -1px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-top: none;
-        }
-
-        .footer-dropdown-menu.active {
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .footer-dropdown-item {
+        /* Hover dropdown list items */
+        .hover-dropdown li {
+            padding: 0.6rem 0;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-            padding: 0.875rem 1.25rem;
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            gap: 0.5rem;
             transition: var(--transition);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             cursor: pointer;
-            font-size: 0.95rem;
         }
 
-        .footer-dropdown-item:last-child {
+        .hover-dropdown li:last-child {
             border-bottom: none;
         }
 
-        .footer-dropdown-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            color: #6ba1d6;
-            padding-left: 1.5rem;
+        .hover-dropdown li:hover {
+            color: var(--accent-light);
+            transform: translateX(5px);
         }
 
-        .footer-dropdown-item i {
-            color: #6ba1d6;
-            width: 20px;
-            text-align: center;
-            font-size: 1rem;
-        }
-
-        /* Scrollbar styling for dropdown */
-        .footer-dropdown-menu::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .footer-dropdown-menu::-webkit-scrollbar-track {
-            background: rgba(70, 130, 180, 0.1);
-        }
-
-        .footer-dropdown-menu::-webkit-scrollbar-thumb {
-            background: #4682b4;
-            border-radius: 3px;
+        .hover-dropdown li i {
+            font-size: 0.7rem;
+            color: var(--accent-light);
+            width: 16px;
         }
 
         /* Updated contact info */
@@ -1635,15 +1649,22 @@
                 font-size: 1.2rem;
             }
             
-            /* Improved footer dropdowns for mobile */
-            .footer-dropdown-toggle {
-                padding: 1.25rem;
-                font-size: 1.05rem;
+            /* Mobile adaptation for hover dropdown */
+            .hover-dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                margin-top: 0.5rem;
+                display: none;
             }
             
-            .footer-dropdown-item {
-                padding: 1rem 1.25rem;
-                min-height: 50px;
+            .hover-dropdown-container:hover .hover-dropdown {
+                display: block;
+            }
+            
+            .hover-trigger {
+                cursor: pointer;
             }
         }
 
@@ -2624,7 +2645,7 @@
         </div>
     </div>
 
-    <!-- IMPROVED FOOTER WITH DROPDOWNS -->
+    <!-- FOOTER WITH EXACT OPTION 2 HOVER DROPDOWNS -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -2676,89 +2697,79 @@
                 
                 <div>
                     <h3>Core Services</h3>
-                    <!-- Core Services Dropdown -->
-                    <div class="footer-dropdown-container">
-                        <button class="footer-dropdown-toggle" onclick="toggleFooterDropdown(this)">
-                            <span>Select Core Service</span>
-                            <i class="fas fa-chevron-down chevron"></i>
-                        </button>
-                        
-                        <div class="footer-dropdown-menu">
-                            <div class="footer-dropdown-item" onclick="goToService('food')">
+                    <!-- Core Services Hover Dropdown -->
+                    <div class="hover-dropdown-container">
+                        <a class="hover-trigger">
+                            Photography Categories <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="hover-dropdown">
+                            <li onclick="goToService('food')">
                                 <i class="fas fa-utensils"></i> Food Photography
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('product')">
+                            </li>
+                            <li onclick="goToService('product')">
                                 <i class="fas fa-box-open"></i> Product Photography
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('fashion')">
+                            </li>
+                            <li onclick="goToService('fashion')">
                                 <i class="fas fa-tshirt"></i> Fashion Photography
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('pets')">
+                            </li>
+                            <li onclick="goToService('pets')">
                                 <i class="fas fa-paw"></i> Pet Photography
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('brand')">
+                            </li>
+                            <li onclick="goToService('brand')">
                                 <i class="fas fa-briefcase"></i> Brand Portfolios
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('interiors')">
-                                <i class="fas fa-building"></i> Architectural Photography
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('ecommerce')">
-                                <i class="fas fa-shopping-cart"></i> E-Commerce Visuals
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('studio')">
-                                <i class="fas fa-camera"></i> Studio Rentals
-                            </div>
+                            </li>
+                            <li onclick="goToService('interiors')">
+                                <i class="fas fa-building"></i> Architectural
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Direct Service Items -->
+                    <div class="service-item-list">
+                        <div class="service-item" onclick="goToService('ecommerce')">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>E-Commerce Visuals</span>
+                        </div>
+                        <div class="service-item" onclick="goToService('studio')">
+                            <i class="fas fa-camera"></i>
+                            <span>Studio Rentals</span>
                         </div>
                     </div>
                 </div>
                 
                 <div>
                     <h3>All Services</h3>
-                    <!-- All Services Dropdown -->
-                    <div class="footer-dropdown-container">
-                        <button class="footer-dropdown-toggle" onclick="toggleFooterDropdown(this)">
-                            <span>Browse All Services</span>
-                            <i class="fas fa-chevron-down chevron"></i>
-                        </button>
-                        
-                        <div class="footer-dropdown-menu">
-                            <div class="footer-dropdown-item" onclick="goToService('wedding')">
-                                <i class="fas fa-ring"></i> Wedding & Event Photography
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('commercial')">
-                                <i class="fas fa-briefcase"></i> Commercial Brand Photography
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('portrait')">
-                                <i class="fas fa-user"></i> Portrait & Lifestyle Sessions
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('food')">
-                                <i class="fas fa-utensils"></i> Product & Food Styling
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('fashion')">
-                                <i class="fas fa-tshirt"></i> Fashion & Editorial Photography
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('interiors')">
-                                <i class="fas fa-building"></i> Real Estate & Architecture
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('corporate')">
-                                <i class="fas fa-users"></i> Corporate Photography
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('drone')">
-                                <i class="fas fa-camera"></i> Aerial & Drone Photography
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('industrial')">
-                                <i class="fas fa-industry"></i> Industrial Documentation
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('social')">
-                                <i class="fas fa-hashtag"></i> Social Media Content Creation
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('editing')">
-                                <i class="fas fa-edit"></i> Post-Production & Editing
-                            </div>
-                            <div class="footer-dropdown-item" onclick="goToService('consultation')">
-                                <i class="fas fa-comments"></i> Photography Consultation
-                            </div>
-                        </div>
+                    <!-- All Services Hover Dropdown -->
+                    <div class="hover-dropdown-container">
+                        <a class="hover-trigger">
+                            Complete Service List <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="hover-dropdown">
+                            <li onclick="goToService('wedding')">
+                                <i class="fas fa-check"></i> Wedding & Events
+                            </li>
+                            <li onclick="goToService('commercial')">
+                                <i class="fas fa-check"></i> Commercial & Brand
+                            </li>
+                            <li onclick="goToService('portrait')">
+                                <i class="fas fa-check"></i> Portrait & Lifestyle
+                            </li>
+                            <li onclick="goToService('food')">
+                                <i class="fas fa-check"></i> Product & Food Styling
+                            </li>
+                            <li onclick="goToService('fashion')">
+                                <i class="fas fa-check"></i> Fashion & Editorial
+                            </li>
+                            <li onclick="goToService('interiors')">
+                                <i class="fas fa-check"></i> Real Estate & Architecture
+                            </li>
+                            <li onclick="goToService('corporate')">
+                                <i class="fas fa-check"></i> Corporate Photography
+                            </li>
+                            <li onclick="goToService('drone')">
+                                <i class="fas fa-check"></i> Aerial & Drone
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -2776,6 +2787,25 @@
     </button>
 
     <script>
+        // ===== SERVICE DATA =====
+        const allServices = [
+            { id: 'food', name: 'Food Photography' },
+            { id: 'product', name: 'Product Photography' },
+            { id: 'fashion', name: 'Fashion & Lifestyle' },
+            { id: 'pets', name: 'Pet Photography' },
+            { id: 'brand', name: 'Brand Portfolios' },
+            { id: 'interiors', name: 'Interiors & Architecture' },
+            { id: 'ecommerce', name: 'E-Commerce Visuals' },
+            { id: 'studio', name: 'Studio Rentals' },
+            { id: 'wedding', name: 'Wedding & Events Photography' },
+            { id: 'commercial', name: 'Commercial & Brand Photography' },
+            { id: 'portrait', name: 'Portrait & Lifestyle Photography' },
+            { id: 'real-estate', name: 'Real Estate & Architecture' },
+            { id: 'corporate', name: 'Corporate Photography' },
+            { id: 'drone', name: 'Aerial & Drone Photography' },
+            { id: 'consultation', name: 'Photography Consultation' }
+        ];
+
         // ===== INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', function() {
             console.log('PQ Studios Website - Initializing...');
@@ -2792,7 +2822,14 @@
             initMobileMenu();
             initReviewsAnimation();
             initPage();
-            populateServiceDropdown();
+            
+            // Check if we're on contact page initially and populate dropdown
+            if (window.location.hash === '#contact') {
+                setTimeout(() => {
+                    populateServiceDropdown();
+                }, 500);
+            }
+            
             console.log('PQ Studios Website - Initialization Complete!');
         });
 
@@ -2807,52 +2844,6 @@
                 }
             });
         }
-
-        // ===== FOOTER DROPDOWN FUNCTIONS =====
-        function toggleFooterDropdown(button) {
-            const menu = button.nextElementSibling;
-            const isActive = button.classList.toggle('active');
-            
-            // Close other dropdowns
-            document.querySelectorAll('.footer-dropdown-toggle').forEach(toggle => {
-                if (toggle !== button) {
-                    toggle.classList.remove('active');
-                    const otherMenu = toggle.nextElementSibling;
-                    otherMenu.classList.remove('active');
-                    otherMenu.style.maxHeight = null;
-                }
-            });
-            
-            if (isActive) {
-                menu.classList.add('active');
-                menu.style.maxHeight = menu.scrollHeight + "px";
-            } else {
-                menu.classList.remove('active');
-                menu.style.maxHeight = null;
-            }
-        }
-
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.footer-dropdown-container')) {
-                document.querySelectorAll('.footer-dropdown-toggle').forEach(toggle => {
-                    toggle.classList.remove('active');
-                    const menu = toggle.nextElementSibling;
-                    menu.classList.remove('active');
-                    menu.style.maxHeight = null;
-                });
-            }
-        });
-
-        // Close dropdowns on scroll
-        window.addEventListener('scroll', function() {
-            document.querySelectorAll('.footer-dropdown-toggle').forEach(toggle => {
-                toggle.classList.remove('active');
-                const menu = toggle.nextElementSibling;
-                menu.classList.remove('active');
-                menu.style.maxHeight = null;
-            });
-        });
 
         // ===== PAGE MANAGEMENT =====
         function showPage(pageId) {
@@ -2883,6 +2874,13 @@
                     dropdownMenu.classList.remove('active');
                     dropdownToggle.classList.remove('active');
                 }
+            }
+            
+            // If switching to contact page, populate service dropdown
+            if (pageId === 'contact') {
+                setTimeout(() => {
+                    populateServiceDropdown();
+                }, 300);
             }
         }
 
@@ -3037,24 +3035,6 @@
         }
 
         // ===== SERVICES =====
-        const allServices = [
-            { id: 'food', name: 'Food Photography' },
-            { id: 'product', name: 'Product Photography' },
-            { id: 'fashion', name: 'Fashion & Lifestyle' },
-            { id: 'pets', name: 'Pet Photography' },
-            { id: 'brand', name: 'Brand Portfolios' },
-            { id: 'interiors', name: 'Interiors & Architecture' },
-            { id: 'ecommerce', name: 'E-Commerce Visuals' },
-            { id: 'studio', name: 'Studio Rentals' },
-            { id: 'wedding', name: 'Wedding & Events Photography' },
-            { id: 'commercial', name: 'Commercial & Brand Photography' },
-            { id: 'portrait', name: 'Portrait & Lifestyle Photography' },
-            { id: 'real-estate', name: 'Real Estate & Architecture' },
-            { id: 'corporate', name: 'Corporate Photography' },
-            { id: 'drone', name: 'Aerial & Drone Photography' },
-            { id: 'consultation', name: 'Photography Consultation' }
-        ];
-
         function loadServices() {
             const servicesContainer = document.getElementById('servicesContainer');
             if (!servicesContainer) return;
@@ -3169,7 +3149,7 @@
                 servicesContainer.appendChild(serviceCard);
             });
 
-            // FIXED: Service booking buttons - now working properly
+            // Service booking buttons
             document.querySelectorAll('.book-service-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const serviceId = this.getAttribute('data-service');
@@ -3180,12 +3160,6 @@
                     localStorage.setItem('selectedServiceName', serviceName);
                     
                     showPage('contact');
-                    setTimeout(() => {
-                        const serviceSelect = document.getElementById('service');
-                        if (serviceSelect) {
-                            serviceSelect.value = serviceId;
-                        }
-                    }, 300);
                 });
             });
 
@@ -3216,16 +3190,30 @@
                 serviceSelect.appendChild(option);
             });
             
-            // Check if a service was pre-selected
+            // Check if a service was pre-selected from localStorage
             const savedService = localStorage.getItem('selectedService');
             const savedServiceName = localStorage.getItem('selectedServiceName');
             
             if (savedService && savedServiceName) {
+                console.log('Found pre-selected service:', savedService, savedServiceName);
+                
+                // Set the dropdown value
                 serviceSelect.value = savedService;
                 
                 // Clear localStorage after use
                 localStorage.removeItem('selectedService');
                 localStorage.removeItem('selectedServiceName');
+                
+                // Scroll to form for better UX
+                setTimeout(() => {
+                    const contactForm = document.getElementById('contactForm');
+                    if (contactForm) {
+                        contactForm.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start' 
+                        });
+                    }
+                }, 500);
             }
         }
 
@@ -3234,19 +3222,21 @@
             return service ? service.name : '';
         }
 
-        // ===== SERVICE NAVIGATION FUNCTION =====
+        // ===== SERVICE NAVIGATION FUNCTION (FIXED) =====
         function goToService(serviceId) {
             console.log('Navigating to service:', serviceId);
             
-            // Store service for contact form
+            // Get service name
             const serviceName = getServiceName(serviceId);
-            localStorage.setItem('selectedService', serviceId);
-            localStorage.setItem('selectedServiceName', serviceName);
             
             // Check if it's a core service on the services page
             const coreServices = ['food', 'product', 'fashion', 'pets', 'brand', 'interiors', 'ecommerce', 'studio'];
             
             if (coreServices.includes(serviceId)) {
+                // Store service for contact form just in case
+                localStorage.setItem('selectedService', serviceId);
+                localStorage.setItem('selectedServiceName', serviceName);
+                
                 // Switch to Services page
                 showPage('services');
                 
@@ -3280,8 +3270,15 @@
                     }
                 }, 300);
             } else {
-                // For other services, go to contact page
+                // For other services (wedding, commercial, portrait, etc.)
+                // Store service for contact form
+                localStorage.setItem('selectedService', serviceId);
+                localStorage.setItem('selectedServiceName', serviceName);
+                
+                // Switch to Contact page
                 showPage('contact');
+                
+                // populateServiceDropdown will handle the selection automatically
             }
         }
 
